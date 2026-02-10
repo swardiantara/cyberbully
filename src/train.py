@@ -94,7 +94,7 @@ def train_model(
         train_dataset=train_dataset,
         eval_dataset=val_dataset,
         compute_metrics=compute_metrics_fn,
-        processing_class=tokenizer,
+        tokenizer=tokenizer,
     )
 
     logger.info("Starting training...")
