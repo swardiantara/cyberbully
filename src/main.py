@@ -51,6 +51,12 @@ def parse_args():
         help="Apply RandomOverSampler to balance training data",
     )
     parser.add_argument(
+        "--compute_attribution",
+        action="store_true",
+        default=False,
+        help="Compute words attribution using Integrated Gradients",
+    )
+    parser.add_argument(
         "--seed",
         type=int,
         required=True,
@@ -190,18 +196,19 @@ def main():
     )
 
     # --- Integrated Gradients Attribution ---
-    logger.info("Step 6: Computing Integrated Gradients attributions...")
-    compute_attributions(
-        model=model,
-        tokenizer=tokenizer,
-        test_texts=test_df["text"].tolist(),
-        test_labels=test_df["label"].tolist(),
-        id2label=id2label,
-        device=device,
-        model_name=args.model,
-        output_dir=output_dir,
-        n_steps=50,
-    )
+    if args.compute_attribution:
+        logger.info("Step 6: Computing Integrated Gradients attributions...")
+        compute_attributions(
+            model=model,
+            tokenizer=tokenizer,
+            test_texts=test_df["text"].tolist(),
+            test_labels=test_df["label"].tolist(),
+            id2label=id2label,
+            device=device,
+            model_name=args.model,
+            output_dir=output_dir,
+            n_steps=50,
+        )
 
     logger.info("=" * 60)
     logger.info("Pipeline complete. Results saved to: %s", output_dir)
