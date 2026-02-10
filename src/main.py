@@ -98,6 +98,12 @@ def parse_args():
         default="Datasets",
         help="Directory containing dataset CSV files (default: Datasets)",
     )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        default=False,
+        help="Overwrite existing experiment results",
+    )
     return parser.parse_args()
 
 
@@ -122,6 +128,13 @@ def main():
     logger.info("  %-15s: %s", "device", device)
     logger.info("  %-15s: %s", "output_dir", output_dir)
     logger.info("=" * 60)
+
+    # Check if the scenario has been executed successfully before
+    if os.path.exists(os.path.join(output_dir, "metrics.json")) and not args.overwrite:
+        logger.info(
+            "This experiment has been completed before. Skipped!"
+        )
+        sys.exit(0)
 
     # Save run configuration
     config_path = os.path.join(output_dir, "config.json")
