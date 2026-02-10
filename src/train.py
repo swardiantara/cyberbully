@@ -71,7 +71,7 @@ def get_training_args(
         learning_rate=lr,
         weight_decay=0.01,
         warmup_ratio=0.1,
-        eval_strategy="epoch",
+        evaluation_strategy="epoch",
         save_strategy="no",
         logging_steps=50,
         seed=seed,
