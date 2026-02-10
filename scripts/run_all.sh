@@ -13,7 +13,7 @@
 set -euo pipefail
 
 # --- Configuration ---
-SEEDS=(42 123 456 789 1024 2048 4096 8192 16384 32768)
+SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
     "bert-base-uncased"
@@ -30,14 +30,14 @@ DATASETS=(
 )
 
 # Training hyperparameters
-EPOCHS=3
+EPOCHS=5
 BATCH_SIZE=16
 LR=2e-5
 MAX_LENGTH=128
 
 # Directories
 OUTPUT_DIR="experiments"
-DATA_DIR="Datasets"
+DATA_DIR="dataset"
 
 # --- Run experiments ---
 total=0
