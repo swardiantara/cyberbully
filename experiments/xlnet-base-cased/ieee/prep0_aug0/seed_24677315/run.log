@@ -1,0 +1,45 @@
+2026-02-12 12:20:13,485 - cyberbully - INFO - ============================================================
+2026-02-12 12:20:13,485 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-12 12:20:13,485 - cyberbully - INFO - ============================================================
+2026-02-12 12:20:13,485 - cyberbully - INFO - Configuration:
+2026-02-12 12:20:13,485 - cyberbully - INFO -   model          : xlnet-base-cased
+2026-02-12 12:20:13,485 - cyberbully - INFO -   dataset        : ieee
+2026-02-12 12:20:13,485 - cyberbully - INFO -   preprocess     : False
+2026-02-12 12:20:13,485 - cyberbully - INFO -   augment        : False
+2026-02-12 12:20:13,485 - cyberbully - INFO -   compute_attribution: False
+2026-02-12 12:20:13,485 - cyberbully - INFO -   seed           : 24677315
+2026-02-12 12:20:13,485 - cyberbully - INFO -   epochs         : 5
+2026-02-12 12:20:13,485 - cyberbully - INFO -   batch_size     : 16
+2026-02-12 12:20:13,485 - cyberbully - INFO -   lr             : 2e-05
+2026-02-12 12:20:13,485 - cyberbully - INFO -   max_length     : 128
+2026-02-12 12:20:13,485 - cyberbully - INFO -   output_dir     : experiments
+2026-02-12 12:20:13,485 - cyberbully - INFO -   data_dir       : dataset
+2026-02-12 12:20:13,485 - cyberbully - INFO -   overwrite      : False
+2026-02-12 12:20:13,485 - cyberbully - INFO -   device         : cuda
+2026-02-12 12:20:13,485 - cyberbully - INFO -   output_dir     : experiments/xlnet-base-cased/ieee/prep0_aug0/seed_24677315
+2026-02-12 12:20:13,485 - cyberbully - INFO - ============================================================
+2026-02-12 12:20:13,485 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-12 12:20:13,485 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-12 12:20:13,491 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-12 12:20:13,492 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-12 12:20:13,494 - cyberbully - INFO - Split sizes — train: 1348, val: 338, test: 422
+2026-02-12 12:20:13,494 - cyberbully - INFO - Number of classes: 5
+2026-02-12 12:20:13,494 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-12 12:20:13,494 - cyberbully - INFO - Loading model 'xlnet-base-cased' with 5 labels
+2026-02-12 12:20:15,586 - cyberbully - INFO - Step 3: Tokenizing datasets...
+2026-02-12 12:20:15,620 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-02-12 12:20:15,620 - cyberbully - INFO - Step 4: Training...
+2026-02-12 12:20:15,845 - cyberbully - INFO - Starting training...
+2026-02-12 12:20:49,743 - cyberbully - INFO - Training complete.
+2026-02-12 12:20:49,743 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-12 12:20:54,497 - cyberbully - INFO - Metrics saved to experiments/xlnet-base-cased/ieee/prep0_aug0/seed_24677315/metrics.json
+2026-02-12 12:20:54,498 - cyberbully - INFO - Confusion matrix saved to experiments/xlnet-base-cased/ieee/prep0_aug0/seed_24677315/confusion_matrix.json
+2026-02-12 12:20:54,600 - cyberbully - INFO - Confusion matrix figure saved to experiments/xlnet-base-cased/ieee/prep0_aug0/seed_24677315/confusion_matrix.pdf
+2026-02-12 12:20:54,600 - cyberbully - INFO - Accuracy: 0.8507
+2026-02-12 12:20:54,600 - cyberbully - INFO - Weighted F1: 0.8511
+2026-02-12 12:20:54,600 - cyberbully - INFO - Micro F1: 0.8507
+2026-02-12 12:20:54,600 - cyberbully - INFO - Inference time: 0.51 seconds
+2026-02-12 12:20:54,600 - cyberbully - INFO - Energy consumption: 0.000033 kWh
+2026-02-12 12:20:54,600 - cyberbully - INFO - ============================================================
+2026-02-12 12:20:54,600 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/xlnet-base-cased/ieee/prep0_aug0/seed_24677315
+2026-02-12 12:20:54,600 - cyberbully - INFO - ============================================================

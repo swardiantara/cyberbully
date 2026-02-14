@@ -1,0 +1,49 @@
+2026-02-11 15:12:58,656 - cyberbully - INFO - ============================================================
+2026-02-11 15:12:58,656 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-11 15:12:58,656 - cyberbully - INFO - ============================================================
+2026-02-11 15:12:58,656 - cyberbully - INFO - Configuration:
+2026-02-11 15:12:58,656 - cyberbully - INFO -   model          : distilbert-base-uncased
+2026-02-11 15:12:58,656 - cyberbully - INFO -   dataset        : tweeteval
+2026-02-11 15:12:58,656 - cyberbully - INFO -   preprocess     : True
+2026-02-11 15:12:58,656 - cyberbully - INFO -   augment        : True
+2026-02-11 15:12:58,656 - cyberbully - INFO -   compute_attribution: False
+2026-02-11 15:12:58,656 - cyberbully - INFO -   seed           : 43782163
+2026-02-11 15:12:58,656 - cyberbully - INFO -   epochs         : 5
+2026-02-11 15:12:58,657 - cyberbully - INFO -   batch_size     : 16
+2026-02-11 15:12:58,657 - cyberbully - INFO -   lr             : 2e-05
+2026-02-11 15:12:58,657 - cyberbully - INFO -   max_length     : 128
+2026-02-11 15:12:58,657 - cyberbully - INFO -   output_dir     : experiments
+2026-02-11 15:12:58,657 - cyberbully - INFO -   data_dir       : dataset
+2026-02-11 15:12:58,657 - cyberbully - INFO -   overwrite      : False
+2026-02-11 15:12:58,657 - cyberbully - INFO -   device         : cuda
+2026-02-11 15:12:58,657 - cyberbully - INFO -   output_dir     : experiments/distilbert-base-uncased/tweeteval/prep1_aug1/seed_43782163
+2026-02-11 15:12:58,657 - cyberbully - INFO - ============================================================
+2026-02-11 15:12:58,657 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-11 15:12:58,657 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
+2026-02-11 15:12:58,731 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
+2026-02-11 15:12:58,731 - cyberbully - INFO - Applying text preprocessing...
+2026-02-11 15:13:53,650 - cyberbully - INFO - After preprocessing: 47385 samples remain
+2026-02-11 15:13:53,652 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-02-11 15:13:53,664 - cyberbully - INFO - Split sizes — train: 30326, val: 7582, test: 9477
+2026-02-11 15:13:53,664 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-02-11 15:13:53,671 - cyberbully - INFO - After oversampling — class distribution: {0: 7755, 1: 7755, 2: 7755, 3: 7755, 4: 7755}
+2026-02-11 15:13:53,672 - cyberbully - INFO - Number of classes: 5
+2026-02-11 15:13:53,672 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-11 15:13:53,672 - cyberbully - INFO - Loading model 'distilbert-base-uncased' with 5 labels
+2026-02-11 15:13:54,386 - cyberbully - INFO - Step 3: Tokenizing datasets...
+2026-02-11 15:13:55,423 - cyberbully - INFO - Dataset sizes — train: 38775, val: 7582, test: 9477
+2026-02-11 15:13:55,423 - cyberbully - INFO - Step 4: Training...
+2026-02-11 15:13:55,652 - cyberbully - INFO - Starting training...
+2026-02-11 15:20:34,142 - cyberbully - INFO - Training complete.
+2026-02-11 15:20:34,142 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-11 15:20:42,218 - cyberbully - INFO - Metrics saved to experiments/distilbert-base-uncased/tweeteval/prep1_aug1/seed_43782163/metrics.json
+2026-02-11 15:20:42,219 - cyberbully - INFO - Confusion matrix saved to experiments/distilbert-base-uncased/tweeteval/prep1_aug1/seed_43782163/confusion_matrix.json
+2026-02-11 15:20:42,321 - cyberbully - INFO - Confusion matrix figure saved to experiments/distilbert-base-uncased/tweeteval/prep1_aug1/seed_43782163/confusion_matrix.pdf
+2026-02-11 15:20:42,322 - cyberbully - INFO - Accuracy: 0.9440
+2026-02-11 15:20:42,322 - cyberbully - INFO - Weighted F1: 0.9439
+2026-02-11 15:20:42,322 - cyberbully - INFO - Micro F1: 0.9440
+2026-02-11 15:20:42,322 - cyberbully - INFO - Inference time: 3.75 seconds
+2026-02-11 15:20:42,322 - cyberbully - INFO - Energy consumption: 0.000223 kWh
+2026-02-11 15:20:42,322 - cyberbully - INFO - ============================================================
+2026-02-11 15:20:42,322 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/distilbert-base-uncased/tweeteval/prep1_aug1/seed_43782163
+2026-02-11 15:20:42,322 - cyberbully - INFO - ============================================================

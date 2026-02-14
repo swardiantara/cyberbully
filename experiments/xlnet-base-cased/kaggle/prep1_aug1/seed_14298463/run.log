@@ -1,0 +1,49 @@
+2026-02-12 19:16:53,332 - cyberbully - INFO - ============================================================
+2026-02-12 19:16:53,332 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-12 19:16:53,332 - cyberbully - INFO - ============================================================
+2026-02-12 19:16:53,332 - cyberbully - INFO - Configuration:
+2026-02-12 19:16:53,332 - cyberbully - INFO -   model          : xlnet-base-cased
+2026-02-12 19:16:53,332 - cyberbully - INFO -   dataset        : kaggle
+2026-02-12 19:16:53,333 - cyberbully - INFO -   preprocess     : True
+2026-02-12 19:16:53,333 - cyberbully - INFO -   augment        : True
+2026-02-12 19:16:53,333 - cyberbully - INFO -   compute_attribution: False
+2026-02-12 19:16:53,333 - cyberbully - INFO -   seed           : 14298463
+2026-02-12 19:16:53,333 - cyberbully - INFO -   epochs         : 5
+2026-02-12 19:16:53,333 - cyberbully - INFO -   batch_size     : 16
+2026-02-12 19:16:53,333 - cyberbully - INFO -   lr             : 2e-05
+2026-02-12 19:16:53,333 - cyberbully - INFO -   max_length     : 128
+2026-02-12 19:16:53,333 - cyberbully - INFO -   output_dir     : experiments
+2026-02-12 19:16:53,333 - cyberbully - INFO -   data_dir       : dataset
+2026-02-12 19:16:53,333 - cyberbully - INFO -   overwrite      : False
+2026-02-12 19:16:53,333 - cyberbully - INFO -   device         : cuda
+2026-02-12 19:16:53,333 - cyberbully - INFO -   output_dir     : experiments/xlnet-base-cased/kaggle/prep1_aug1/seed_14298463
+2026-02-12 19:16:53,333 - cyberbully - INFO - ============================================================
+2026-02-12 19:16:53,333 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-12 19:16:53,333 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-12 19:16:53,392 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-12 19:16:53,392 - cyberbully - INFO - Applying text preprocessing...
+2026-02-12 19:17:46,808 - cyberbully - INFO - After preprocessing: 41399 samples remain
+2026-02-12 19:17:46,810 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-12 19:17:46,821 - cyberbully - INFO - Split sizes — train: 26495, val: 6624, test: 8280
+2026-02-12 19:17:46,821 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-02-12 19:17:46,827 - cyberbully - INFO - After oversampling — class distribution: {0: 5065, 1: 5065, 2: 5065, 3: 5065, 4: 5065, 5: 5065}
+2026-02-12 19:17:46,828 - cyberbully - INFO - Number of classes: 6
+2026-02-12 19:17:46,828 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-12 19:17:46,828 - cyberbully - INFO - Loading model 'xlnet-base-cased' with 6 labels
+2026-02-12 19:17:48,962 - cyberbully - INFO - Step 3: Tokenizing datasets...
+2026-02-12 19:17:49,963 - cyberbully - INFO - Dataset sizes — train: 30390, val: 6624, test: 8280
+2026-02-12 19:17:49,963 - cyberbully - INFO - Step 4: Training...
+2026-02-12 19:17:50,210 - cyberbully - INFO - Starting training...
+2026-02-12 19:30:19,537 - cyberbully - INFO - Training complete.
+2026-02-12 19:30:19,537 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-12 19:30:34,293 - cyberbully - INFO - Metrics saved to experiments/xlnet-base-cased/kaggle/prep1_aug1/seed_14298463/metrics.json
+2026-02-12 19:30:34,293 - cyberbully - INFO - Confusion matrix saved to experiments/xlnet-base-cased/kaggle/prep1_aug1/seed_14298463/confusion_matrix.json
+2026-02-12 19:30:34,405 - cyberbully - INFO - Confusion matrix figure saved to experiments/xlnet-base-cased/kaggle/prep1_aug1/seed_14298463/confusion_matrix.pdf
+2026-02-12 19:30:34,405 - cyberbully - INFO - Accuracy: 0.8674
+2026-02-12 19:30:34,405 - cyberbully - INFO - Weighted F1: 0.8656
+2026-02-12 19:30:34,405 - cyberbully - INFO - Micro F1: 0.8674
+2026-02-12 19:30:34,405 - cyberbully - INFO - Inference time: 10.44 seconds
+2026-02-12 19:30:34,405 - cyberbully - INFO - Energy consumption: 0.000626 kWh
+2026-02-12 19:30:34,405 - cyberbully - INFO - ============================================================
+2026-02-12 19:30:34,405 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/xlnet-base-cased/kaggle/prep1_aug1/seed_14298463
+2026-02-12 19:30:34,405 - cyberbully - INFO - ============================================================

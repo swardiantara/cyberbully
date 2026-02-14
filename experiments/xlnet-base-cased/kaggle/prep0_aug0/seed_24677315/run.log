@@ -1,0 +1,45 @@
+2026-02-12 13:03:28,094 - cyberbully - INFO - ============================================================
+2026-02-12 13:03:28,094 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-12 13:03:28,094 - cyberbully - INFO - ============================================================
+2026-02-12 13:03:28,094 - cyberbully - INFO - Configuration:
+2026-02-12 13:03:28,094 - cyberbully - INFO -   model          : xlnet-base-cased
+2026-02-12 13:03:28,094 - cyberbully - INFO -   dataset        : kaggle
+2026-02-12 13:03:28,094 - cyberbully - INFO -   preprocess     : False
+2026-02-12 13:03:28,094 - cyberbully - INFO -   augment        : False
+2026-02-12 13:03:28,094 - cyberbully - INFO -   compute_attribution: False
+2026-02-12 13:03:28,094 - cyberbully - INFO -   seed           : 24677315
+2026-02-12 13:03:28,094 - cyberbully - INFO -   epochs         : 5
+2026-02-12 13:03:28,094 - cyberbully - INFO -   batch_size     : 16
+2026-02-12 13:03:28,094 - cyberbully - INFO -   lr             : 2e-05
+2026-02-12 13:03:28,094 - cyberbully - INFO -   max_length     : 128
+2026-02-12 13:03:28,094 - cyberbully - INFO -   output_dir     : experiments
+2026-02-12 13:03:28,094 - cyberbully - INFO -   data_dir       : dataset
+2026-02-12 13:03:28,094 - cyberbully - INFO -   overwrite      : False
+2026-02-12 13:03:28,094 - cyberbully - INFO -   device         : cuda
+2026-02-12 13:03:28,094 - cyberbully - INFO -   output_dir     : experiments/xlnet-base-cased/kaggle/prep0_aug0/seed_24677315
+2026-02-12 13:03:28,094 - cyberbully - INFO - ============================================================
+2026-02-12 13:03:28,094 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-12 13:03:28,094 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-12 13:03:28,151 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-12 13:03:28,153 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-12 13:03:28,166 - cyberbully - INFO - Split sizes — train: 30499, val: 7625, test: 9532
+2026-02-12 13:03:28,166 - cyberbully - INFO - Number of classes: 6
+2026-02-12 13:03:28,166 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-12 13:03:28,166 - cyberbully - INFO - Loading model 'xlnet-base-cased' with 6 labels
+2026-02-12 13:03:30,324 - cyberbully - INFO - Step 3: Tokenizing datasets...
+2026-02-12 13:03:31,442 - cyberbully - INFO - Dataset sizes — train: 30499, val: 7625, test: 9532
+2026-02-12 13:03:31,442 - cyberbully - INFO - Step 4: Training...
+2026-02-12 13:03:31,685 - cyberbully - INFO - Starting training...
+2026-02-12 13:16:17,452 - cyberbully - INFO - Training complete.
+2026-02-12 13:16:17,452 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-12 13:16:33,824 - cyberbully - INFO - Metrics saved to experiments/xlnet-base-cased/kaggle/prep0_aug0/seed_24677315/metrics.json
+2026-02-12 13:16:33,825 - cyberbully - INFO - Confusion matrix saved to experiments/xlnet-base-cased/kaggle/prep0_aug0/seed_24677315/confusion_matrix.json
+2026-02-12 13:16:33,938 - cyberbully - INFO - Confusion matrix figure saved to experiments/xlnet-base-cased/kaggle/prep0_aug0/seed_24677315/confusion_matrix.pdf
+2026-02-12 13:16:33,938 - cyberbully - INFO - Accuracy: 0.8656
+2026-02-12 13:16:33,938 - cyberbully - INFO - Weighted F1: 0.8636
+2026-02-12 13:16:33,938 - cyberbully - INFO - Micro F1: 0.8656
+2026-02-12 13:16:33,938 - cyberbully - INFO - Inference time: 12.04 seconds
+2026-02-12 13:16:33,938 - cyberbully - INFO - Energy consumption: 0.000722 kWh
+2026-02-12 13:16:33,938 - cyberbully - INFO - ============================================================
+2026-02-12 13:16:33,938 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/xlnet-base-cased/kaggle/prep0_aug0/seed_24677315
+2026-02-12 13:16:33,938 - cyberbully - INFO - ============================================================

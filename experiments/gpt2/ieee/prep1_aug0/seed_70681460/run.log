@@ -1,0 +1,48 @@
+2026-02-11 16:27:47,605 - cyberbully - INFO - ============================================================
+2026-02-11 16:27:47,605 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-11 16:27:47,605 - cyberbully - INFO - ============================================================
+2026-02-11 16:27:47,605 - cyberbully - INFO - Configuration:
+2026-02-11 16:27:47,605 - cyberbully - INFO -   model          : gpt2
+2026-02-11 16:27:47,605 - cyberbully - INFO -   dataset        : ieee
+2026-02-11 16:27:47,605 - cyberbully - INFO -   preprocess     : True
+2026-02-11 16:27:47,605 - cyberbully - INFO -   augment        : False
+2026-02-11 16:27:47,605 - cyberbully - INFO -   compute_attribution: False
+2026-02-11 16:27:47,605 - cyberbully - INFO -   seed           : 70681460
+2026-02-11 16:27:47,605 - cyberbully - INFO -   epochs         : 5
+2026-02-11 16:27:47,605 - cyberbully - INFO -   batch_size     : 16
+2026-02-11 16:27:47,605 - cyberbully - INFO -   lr             : 2e-05
+2026-02-11 16:27:47,605 - cyberbully - INFO -   max_length     : 128
+2026-02-11 16:27:47,605 - cyberbully - INFO -   output_dir     : experiments
+2026-02-11 16:27:47,605 - cyberbully - INFO -   data_dir       : dataset
+2026-02-11 16:27:47,606 - cyberbully - INFO -   overwrite      : False
+2026-02-11 16:27:47,606 - cyberbully - INFO -   device         : cuda
+2026-02-11 16:27:47,606 - cyberbully - INFO -   output_dir     : experiments/gpt2/ieee/prep1_aug0/seed_70681460
+2026-02-11 16:27:47,606 - cyberbully - INFO - ============================================================
+2026-02-11 16:27:47,606 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-11 16:27:47,606 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-11 16:27:47,612 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-11 16:27:47,612 - cyberbully - INFO - Applying text preprocessing...
+2026-02-11 16:27:50,719 - cyberbully - INFO - After preprocessing: 1816 samples remain
+2026-02-11 16:27:50,719 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-11 16:27:50,721 - cyberbully - INFO - Split sizes — train: 1161, val: 291, test: 364
+2026-02-11 16:27:50,722 - cyberbully - INFO - Number of classes: 5
+2026-02-11 16:27:50,722 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-11 16:27:50,722 - cyberbully - INFO - Loading model 'gpt2' with 5 labels
+2026-02-11 16:27:51,467 - cyberbully - INFO - Set pad_token to eos_token ('<|endoftext|>') for model 'gpt2'
+2026-02-11 16:27:51,467 - cyberbully - INFO - Step 3: Tokenizing datasets...
+2026-02-11 16:27:51,494 - cyberbully - INFO - Dataset sizes — train: 1161, val: 291, test: 364
+2026-02-11 16:27:51,494 - cyberbully - INFO - Step 4: Training...
+2026-02-11 16:27:51,722 - cyberbully - INFO - Starting training...
+2026-02-11 16:28:21,467 - cyberbully - INFO - Training complete.
+2026-02-11 16:28:21,467 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-11 16:28:26,138 - cyberbully - INFO - Metrics saved to experiments/gpt2/ieee/prep1_aug0/seed_70681460/metrics.json
+2026-02-11 16:28:26,138 - cyberbully - INFO - Confusion matrix saved to experiments/gpt2/ieee/prep1_aug0/seed_70681460/confusion_matrix.json
+2026-02-11 16:28:26,240 - cyberbully - INFO - Confusion matrix figure saved to experiments/gpt2/ieee/prep1_aug0/seed_70681460/confusion_matrix.pdf
+2026-02-11 16:28:26,240 - cyberbully - INFO - Accuracy: 0.7857
+2026-02-11 16:28:26,240 - cyberbully - INFO - Weighted F1: 0.7880
+2026-02-11 16:28:26,240 - cyberbully - INFO - Micro F1: 0.7857
+2026-02-11 16:28:26,240 - cyberbully - INFO - Inference time: 0.42 seconds
+2026-02-11 16:28:26,240 - cyberbully - INFO - Energy consumption: 0.000023 kWh
+2026-02-11 16:28:26,240 - cyberbully - INFO - ============================================================
+2026-02-11 16:28:26,240 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/gpt2/ieee/prep1_aug0/seed_70681460
+2026-02-11 16:28:26,240 - cyberbully - INFO - ============================================================

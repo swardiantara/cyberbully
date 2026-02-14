@@ -1,0 +1,49 @@
+2026-02-11 07:32:09,018 - cyberbully - INFO - ============================================================
+2026-02-11 07:32:09,018 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-11 07:32:09,018 - cyberbully - INFO - ============================================================
+2026-02-11 07:32:09,018 - cyberbully - INFO - Configuration:
+2026-02-11 07:32:09,018 - cyberbully - INFO -   model          : distilbert-base-uncased
+2026-02-11 07:32:09,018 - cyberbully - INFO -   dataset        : ieee
+2026-02-11 07:32:09,018 - cyberbully - INFO -   preprocess     : True
+2026-02-11 07:32:09,018 - cyberbully - INFO -   augment        : True
+2026-02-11 07:32:09,018 - cyberbully - INFO -   compute_attribution: False
+2026-02-11 07:32:09,018 - cyberbully - INFO -   seed           : 24677315
+2026-02-11 07:32:09,018 - cyberbully - INFO -   epochs         : 5
+2026-02-11 07:32:09,018 - cyberbully - INFO -   batch_size     : 16
+2026-02-11 07:32:09,018 - cyberbully - INFO -   lr             : 2e-05
+2026-02-11 07:32:09,018 - cyberbully - INFO -   max_length     : 128
+2026-02-11 07:32:09,018 - cyberbully - INFO -   output_dir     : experiments
+2026-02-11 07:32:09,018 - cyberbully - INFO -   data_dir       : dataset
+2026-02-11 07:32:09,018 - cyberbully - INFO -   overwrite      : False
+2026-02-11 07:32:09,018 - cyberbully - INFO -   device         : cuda
+2026-02-11 07:32:09,018 - cyberbully - INFO -   output_dir     : experiments/distilbert-base-uncased/ieee/prep1_aug1/seed_24677315
+2026-02-11 07:32:09,018 - cyberbully - INFO - ============================================================
+2026-02-11 07:32:09,018 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-11 07:32:09,018 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-11 07:32:09,024 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-11 07:32:09,024 - cyberbully - INFO - Applying text preprocessing...
+2026-02-11 07:32:12,111 - cyberbully - INFO - After preprocessing: 1811 samples remain
+2026-02-11 07:32:12,112 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-11 07:32:12,114 - cyberbully - INFO - Split sizes — train: 1158, val: 290, test: 363
+2026-02-11 07:32:12,114 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-02-11 07:32:12,115 - cyberbully - INFO - After oversampling — class distribution: {0: 285, 1: 285, 2: 285, 3: 285, 4: 285}
+2026-02-11 07:32:12,115 - cyberbully - INFO - Number of classes: 5
+2026-02-11 07:32:12,115 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-11 07:32:12,115 - cyberbully - INFO - Loading model 'distilbert-base-uncased' with 5 labels
+2026-02-11 07:32:12,778 - cyberbully - INFO - Step 3: Tokenizing datasets...
+2026-02-11 07:32:12,808 - cyberbully - INFO - Dataset sizes — train: 1425, val: 290, test: 363
+2026-02-11 07:32:12,808 - cyberbully - INFO - Step 4: Training...
+2026-02-11 07:32:13,028 - cyberbully - INFO - Starting training...
+2026-02-11 07:32:28,041 - cyberbully - INFO - Training complete.
+2026-02-11 07:32:28,041 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-11 07:32:32,453 - cyberbully - INFO - Metrics saved to experiments/distilbert-base-uncased/ieee/prep1_aug1/seed_24677315/metrics.json
+2026-02-11 07:32:32,453 - cyberbully - INFO - Confusion matrix saved to experiments/distilbert-base-uncased/ieee/prep1_aug1/seed_24677315/confusion_matrix.json
+2026-02-11 07:32:32,553 - cyberbully - INFO - Confusion matrix figure saved to experiments/distilbert-base-uncased/ieee/prep1_aug1/seed_24677315/confusion_matrix.pdf
+2026-02-11 07:32:32,553 - cyberbully - INFO - Accuracy: 0.8347
+2026-02-11 07:32:32,553 - cyberbully - INFO - Weighted F1: 0.8353
+2026-02-11 07:32:32,553 - cyberbully - INFO - Micro F1: 0.8347
+2026-02-11 07:32:32,554 - cyberbully - INFO - Inference time: 0.14 seconds
+2026-02-11 07:32:32,554 - cyberbully - INFO - Energy consumption: 0.000006 kWh
+2026-02-11 07:32:32,554 - cyberbully - INFO - ============================================================
+2026-02-11 07:32:32,554 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/distilbert-base-uncased/ieee/prep1_aug1/seed_24677315
+2026-02-11 07:32:32,554 - cyberbully - INFO - ============================================================

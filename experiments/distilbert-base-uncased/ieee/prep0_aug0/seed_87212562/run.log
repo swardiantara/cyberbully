@@ -1,0 +1,45 @@
+2026-02-11 07:22:25,329 - cyberbully - INFO - ============================================================
+2026-02-11 07:22:25,329 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-11 07:22:25,329 - cyberbully - INFO - ============================================================
+2026-02-11 07:22:25,329 - cyberbully - INFO - Configuration:
+2026-02-11 07:22:25,329 - cyberbully - INFO -   model          : distilbert-base-uncased
+2026-02-11 07:22:25,329 - cyberbully - INFO -   dataset        : ieee
+2026-02-11 07:22:25,329 - cyberbully - INFO -   preprocess     : False
+2026-02-11 07:22:25,329 - cyberbully - INFO -   augment        : False
+2026-02-11 07:22:25,329 - cyberbully - INFO -   compute_attribution: False
+2026-02-11 07:22:25,329 - cyberbully - INFO -   seed           : 87212562
+2026-02-11 07:22:25,329 - cyberbully - INFO -   epochs         : 5
+2026-02-11 07:22:25,329 - cyberbully - INFO -   batch_size     : 16
+2026-02-11 07:22:25,329 - cyberbully - INFO -   lr             : 2e-05
+2026-02-11 07:22:25,329 - cyberbully - INFO -   max_length     : 128
+2026-02-11 07:22:25,329 - cyberbully - INFO -   output_dir     : experiments
+2026-02-11 07:22:25,329 - cyberbully - INFO -   data_dir       : dataset
+2026-02-11 07:22:25,329 - cyberbully - INFO -   overwrite      : False
+2026-02-11 07:22:25,329 - cyberbully - INFO -   device         : cuda
+2026-02-11 07:22:25,329 - cyberbully - INFO -   output_dir     : experiments/distilbert-base-uncased/ieee/prep0_aug0/seed_87212562
+2026-02-11 07:22:25,329 - cyberbully - INFO - ============================================================
+2026-02-11 07:22:25,329 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-11 07:22:25,329 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-11 07:22:25,335 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-11 07:22:25,336 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-11 07:22:25,338 - cyberbully - INFO - Split sizes — train: 1348, val: 338, test: 422
+2026-02-11 07:22:25,338 - cyberbully - INFO - Number of classes: 5
+2026-02-11 07:22:25,338 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-11 07:22:25,338 - cyberbully - INFO - Loading model 'distilbert-base-uncased' with 5 labels
+2026-02-11 07:22:25,968 - cyberbully - INFO - Step 3: Tokenizing datasets...
+2026-02-11 07:22:26,005 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-02-11 07:22:26,005 - cyberbully - INFO - Step 4: Training...
+2026-02-11 07:22:26,216 - cyberbully - INFO - Starting training...
+2026-02-11 07:22:40,623 - cyberbully - INFO - Training complete.
+2026-02-11 07:22:40,623 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-11 07:22:45,029 - cyberbully - INFO - Metrics saved to experiments/distilbert-base-uncased/ieee/prep0_aug0/seed_87212562/metrics.json
+2026-02-11 07:22:45,029 - cyberbully - INFO - Confusion matrix saved to experiments/distilbert-base-uncased/ieee/prep0_aug0/seed_87212562/confusion_matrix.json
+2026-02-11 07:22:45,129 - cyberbully - INFO - Confusion matrix figure saved to experiments/distilbert-base-uncased/ieee/prep0_aug0/seed_87212562/confusion_matrix.pdf
+2026-02-11 07:22:45,129 - cyberbully - INFO - Accuracy: 0.8270
+2026-02-11 07:22:45,130 - cyberbully - INFO - Weighted F1: 0.8280
+2026-02-11 07:22:45,130 - cyberbully - INFO - Micro F1: 0.8270
+2026-02-11 07:22:45,130 - cyberbully - INFO - Inference time: 0.17 seconds
+2026-02-11 07:22:45,130 - cyberbully - INFO - Energy consumption: 0.000009 kWh
+2026-02-11 07:22:45,130 - cyberbully - INFO - ============================================================
+2026-02-11 07:22:45,130 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/distilbert-base-uncased/ieee/prep0_aug0/seed_87212562
+2026-02-11 07:22:45,130 - cyberbully - INFO - ============================================================
