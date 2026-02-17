@@ -1,0 +1,45 @@
+2026-02-17 15:31:17,457 - cyberbully - INFO - ============================================================
+2026-02-17 15:31:17,457 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-17 15:31:17,457 - cyberbully - INFO - ============================================================
+2026-02-17 15:31:17,458 - cyberbully - INFO - Configuration:
+2026-02-17 15:31:17,458 - cyberbully - INFO -   model          : Twitter/twhin-bert-base
+2026-02-17 15:31:17,458 - cyberbully - INFO -   dataset        : ieee
+2026-02-17 15:31:17,458 - cyberbully - INFO -   preprocess     : False
+2026-02-17 15:31:17,458 - cyberbully - INFO -   augment        : False
+2026-02-17 15:31:17,458 - cyberbully - INFO -   compute_attribution: False
+2026-02-17 15:31:17,458 - cyberbully - INFO -   seed           : 99511865
+2026-02-17 15:31:17,458 - cyberbully - INFO -   epochs         : 5
+2026-02-17 15:31:17,458 - cyberbully - INFO -   batch_size     : 16
+2026-02-17 15:31:17,458 - cyberbully - INFO -   lr             : 2e-05
+2026-02-17 15:31:17,458 - cyberbully - INFO -   max_length     : 128
+2026-02-17 15:31:17,458 - cyberbully - INFO -   output_dir     : experiments/domain
+2026-02-17 15:31:17,458 - cyberbully - INFO -   data_dir       : dataset
+2026-02-17 15:31:17,458 - cyberbully - INFO -   overwrite      : False
+2026-02-17 15:31:17,458 - cyberbully - INFO -   device         : cuda
+2026-02-17 15:31:17,458 - cyberbully - INFO -   output_dir     : experiments/domain/Twitter_twhin-bert-base/ieee/prep0_aug0/seed_99511865
+2026-02-17 15:31:17,458 - cyberbully - INFO - ============================================================
+2026-02-17 15:31:17,458 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-17 15:31:17,458 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-17 15:31:17,464 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-17 15:31:17,464 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-17 15:31:17,466 - cyberbully - INFO - Split sizes — train: 1348, val: 338, test: 422
+2026-02-17 15:31:17,466 - cyberbully - INFO - Number of classes: 5
+2026-02-17 15:31:17,467 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-17 15:31:17,467 - cyberbully - INFO - Loading model 'Twitter/twhin-bert-base' with 5 labels
+2026-02-17 15:31:18,759 - cyberbully - INFO - Step 3: Tokenizing datasets...
+2026-02-17 15:31:18,797 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-02-17 15:31:18,797 - cyberbully - INFO - Step 4: Training...
+2026-02-17 15:31:19,090 - cyberbully - INFO - Starting training...
+2026-02-17 15:31:56,010 - cyberbully - INFO - Training complete.
+2026-02-17 15:31:56,010 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-17 15:32:00,656 - cyberbully - INFO - Metrics saved to experiments/domain/Twitter_twhin-bert-base/ieee/prep0_aug0/seed_99511865/metrics.json
+2026-02-17 15:32:00,656 - cyberbully - INFO - Confusion matrix saved to experiments/domain/Twitter_twhin-bert-base/ieee/prep0_aug0/seed_99511865/confusion_matrix.json
+2026-02-17 15:32:00,757 - cyberbully - INFO - Confusion matrix figure saved to experiments/domain/Twitter_twhin-bert-base/ieee/prep0_aug0/seed_99511865/confusion_matrix.pdf
+2026-02-17 15:32:00,757 - cyberbully - INFO - Accuracy: 0.8578
+2026-02-17 15:32:00,757 - cyberbully - INFO - Weighted F1: 0.8600
+2026-02-17 15:32:00,757 - cyberbully - INFO - Micro F1: 0.8578
+2026-02-17 15:32:00,757 - cyberbully - INFO - Inference time: 0.34 seconds
+2026-02-17 15:32:00,757 - cyberbully - INFO - Energy consumption: 0.000022 kWh
+2026-02-17 15:32:00,757 - cyberbully - INFO - ============================================================
+2026-02-17 15:32:00,757 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/domain/Twitter_twhin-bert-base/ieee/prep0_aug0/seed_99511865
+2026-02-17 15:32:00,757 - cyberbully - INFO - ============================================================

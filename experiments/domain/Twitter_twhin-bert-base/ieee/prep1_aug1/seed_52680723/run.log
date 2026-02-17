@@ -1,0 +1,32 @@
+2026-02-17 15:51:40,073 - cyberbully - INFO - ============================================================
+2026-02-17 15:51:40,073 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-17 15:51:40,073 - cyberbully - INFO - ============================================================
+2026-02-17 15:51:40,073 - cyberbully - INFO - Configuration:
+2026-02-17 15:51:40,073 - cyberbully - INFO -   model          : Twitter/twhin-bert-base
+2026-02-17 15:51:40,073 - cyberbully - INFO -   dataset        : ieee
+2026-02-17 15:51:40,073 - cyberbully - INFO -   preprocess     : True
+2026-02-17 15:51:40,073 - cyberbully - INFO -   augment        : True
+2026-02-17 15:51:40,073 - cyberbully - INFO -   compute_attribution: False
+2026-02-17 15:51:40,073 - cyberbully - INFO -   seed           : 52680723
+2026-02-17 15:51:40,073 - cyberbully - INFO -   epochs         : 5
+2026-02-17 15:51:40,073 - cyberbully - INFO -   batch_size     : 16
+2026-02-17 15:51:40,073 - cyberbully - INFO -   lr             : 2e-05
+2026-02-17 15:51:40,073 - cyberbully - INFO -   max_length     : 128
+2026-02-17 15:51:40,073 - cyberbully - INFO -   output_dir     : experiments/domain
+2026-02-17 15:51:40,073 - cyberbully - INFO -   data_dir       : dataset
+2026-02-17 15:51:40,073 - cyberbully - INFO -   overwrite      : False
+2026-02-17 15:51:40,073 - cyberbully - INFO -   device         : cuda
+2026-02-17 15:51:40,073 - cyberbully - INFO -   output_dir     : experiments/domain/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_52680723
+2026-02-17 15:51:40,073 - cyberbully - INFO - ============================================================
+2026-02-17 15:51:40,073 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-17 15:51:40,073 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-17 15:51:40,079 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-17 15:51:40,079 - cyberbully - INFO - Applying text preprocessing...
+2026-02-17 15:51:43,193 - cyberbully - INFO - After preprocessing: 1814 samples remain
+2026-02-17 15:51:43,194 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-17 15:51:43,196 - cyberbully - INFO - Split sizes — train: 1160, val: 291, test: 363
+2026-02-17 15:51:43,196 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-02-17 15:51:43,197 - cyberbully - INFO - After oversampling — class distribution: {0: 287, 1: 287, 2: 287, 3: 287, 4: 287}
+2026-02-17 15:51:43,197 - cyberbully - INFO - Number of classes: 5
+2026-02-17 15:51:43,197 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-17 15:51:43,197 - cyberbully - INFO - Loading model 'Twitter/twhin-bert-base' with 5 labels
