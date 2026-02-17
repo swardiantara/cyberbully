@@ -58,22 +58,25 @@ def get_embedding_layer(model, model_name: str) -> nn.Module:
     """Return the word embedding layer for a given model architecture.
 
     This is the layer that Captum's LayerIntegratedGradients targets.
+    Uses model.config.model_type to reliably detect the architecture,
+    regardless of the model's HuggingFace hub name.
     """
-    name_lower = model_name.lower()
+    model_type = getattr(model.config, "model_type", "").lower()
 
-    if "distilbert" in name_lower:
+    if model_type == "distilbert":
         return model.distilbert.embeddings.word_embeddings
-    elif "roberta" in name_lower:
+    elif model_type in ("roberta", "bertweet"):
         return model.roberta.embeddings.word_embeddings
-    elif "bert" in name_lower:
+    elif model_type == "bert":
         return model.bert.embeddings.word_embeddings
-    elif "xlnet" in name_lower:
+    elif model_type == "xlnet":
         return model.transformer.word_embedding
-    elif "gpt2" in name_lower:
+    elif model_type == "gpt2":
         return model.transformer.wte
     else:
         raise ValueError(
-            f"Unknown model architecture '{model_name}'. "
+            f"Unknown model architecture: model_type='{model_type}' "
+            f"(from '{model_name}'). "
             "Cannot determine embedding layer. "
-            "Supported: bert, distilbert, roberta, xlnet, gpt2."
+            "Supported model_types: bert, distilbert, roberta, bertweet, xlnet, gpt2."
         )
