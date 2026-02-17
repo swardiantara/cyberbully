@@ -8,8 +8,8 @@ import torch
 from utils import set_seed, get_device, get_output_dir, setup_logging
 from data import prepare_data
 from model import load_model_and_tokenizer
+from contrastive import check_model_exists, parse_custom_model_path, contrastive_finetune
 from train import (
-    tokenize_dataset,
     CyberbullyDataset,
     get_training_args,
     train_model,
@@ -89,14 +89,22 @@ def parse_args():
     parser.add_argument(
         "--output_dir",
         type=str,
-        default="experiments",
-        help="Base output directory (default: experiments)",
+        default="grid-search",
+        help="Base output directory (default: grid-search)",
     )
     parser.add_argument(
         "--data_dir",
         type=str,
         default="Datasets",
         help="Directory containing dataset CSV files (default: Datasets)",
+    )
+    parser.add_argument(
+        "--sbert",
+        action="store_true",
+        default=False,
+        help="Use SentenceTransformer-based pipeline (SBERTClassifier). "
+        "For custom models (org/dataset-base), triggers contrastive "
+        "fine-tuning if the model does not exist on HuggingFace.",
     )
     parser.add_argument(
         "--overwrite",
@@ -136,20 +144,11 @@ def main():
         )
         sys.exit(0)
 
-    # Save run configuration
-    config_path = os.path.join(output_dir, "config.json")
-    with open(config_path, "w", encoding="utf-8") as f:
-        config = vars(args).copy()
-        config["device"] = device
-        config["output_dir_resolved"] = output_dir
-        json.dump(config, f, indent=2)
-
     # --- Data preparation ---
     logger.info("Step 1: Preparing data...")
     train_df, val_df, test_df, label2id, id2label = prepare_data(
         dataset_name=args.dataset,
         data_dir=args.data_dir,
-        seed=args.seed,
         preprocess=args.preprocess,
         augment=args.augment,
     )
@@ -157,27 +156,61 @@ def main():
     num_labels = len(label2id)
     logger.info("Number of classes: %d", num_labels)
 
+    # Save run configuration with dataset statistics
+    def class_distribution(df):
+        counts = df["label"].value_counts().sort_index()
+        return {id2label[int(k)]: int(v) for k, v in counts.items()}
+
+    config_path = os.path.join(output_dir, "config.json")
+    with open(config_path, "w", encoding="utf-8") as f:
+        config = vars(args).copy()
+        config["device"] = device
+        config["output_dir_resolved"] = output_dir
+        config["dataset_statistics"] = {
+            "num_classes": num_labels,
+            "label_mapping": label2id,
+            "train": {
+                "num_samples": len(train_df),
+                "class_distribution": class_distribution(train_df),
+            },
+            "val": {
+                "num_samples": len(val_df),
+                "class_distribution": class_distribution(val_df),
+            },
+            "test": {
+                "num_samples": len(test_df),
+                "class_distribution": class_distribution(test_df),
+            },
+        }
+        json.dump(config, f, indent=2)
+
+    # --- Contrastive fine-tuning (SBERT custom models only) ---
+    if args.sbert and str(args.model).startswith("swardiantara"):
+        if not check_model_exists(args.model):
+            _, base_model = parse_custom_model_path(args.model)
+            logger.info(
+                "Step 1b: Contrastive fine-tuning '%s' -> '%s'",
+                base_model, args.model,
+            )
+            contrastive_finetune(base_model, train_df, args.model, args.seed)
+
     # --- Model loading ---
     logger.info("Step 2: Loading model and tokenizer...")
     model, tokenizer = load_model_and_tokenizer(
-        args.model, num_labels, id2label, label2id,
+        args.model, num_labels, id2label, label2id, sbert=args.sbert,
     )
 
-    # --- Tokenization ---
-    logger.info("Step 3: Tokenizing datasets...")
-    train_encodings = tokenize_dataset(
-        train_df["text"].tolist(), tokenizer, args.max_length,
+    # --- Dataset creation (tokenization happens inside the Dataset) ---
+    logger.info("Step 3: Creating datasets...")
+    train_dataset = CyberbullyDataset(
+        train_df["text"].tolist(), train_df["label"].tolist(), tokenizer, args.max_length,
     )
-    val_encodings = tokenize_dataset(
-        val_df["text"].tolist(), tokenizer, args.max_length,
+    val_dataset = CyberbullyDataset(
+        val_df["text"].tolist(), val_df["label"].tolist(), tokenizer, args.max_length,
     )
-    test_encodings = tokenize_dataset(
-        test_df["text"].tolist(), tokenizer, args.max_length,
+    test_dataset = CyberbullyDataset(
+        test_df["text"].tolist(), test_df["label"].tolist(), tokenizer, args.max_length,
     )
-
-    train_dataset = CyberbullyDataset(train_encodings, train_df["label"].tolist())
-    val_dataset = CyberbullyDataset(val_encodings, val_df["label"].tolist())
-    test_dataset = CyberbullyDataset(test_encodings, test_df["label"].tolist())
 
     logger.info(
         "Dataset sizes — train: %d, val: %d, test: %d",

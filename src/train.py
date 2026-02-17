@@ -9,34 +9,28 @@ logger = logging.getLogger("cyberbully")
 
 
 class CyberbullyDataset(torch.utils.data.Dataset):
-    """PyTorch Dataset wrapping tokenized encodings and integer labels."""
+    """PyTorch Dataset that tokenizes raw texts on initialization."""
 
-    def __init__(self, encodings, labels):
-        self.encodings = encodings
+    def __init__(self, texts, labels, tokenizer, max_length: int):
         self.labels = labels
+        self.encodings = tokenizer(
+            list(texts),
+            truncation=True,
+            padding="max_length",
+            max_length=max_length,
+            return_attention_mask=True,
+        )
 
     def __getitem__(self, idx):
-        item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
-        item["labels"] = torch.tensor(self.labels[idx], dtype=torch.long)
+        item = {
+            "input_ids": torch.tensor(self.encodings["input_ids"][idx]),
+            "attention_mask": torch.tensor(self.encodings["attention_mask"][idx]),
+            "labels": torch.tensor(self.labels[idx], dtype=torch.long),
+        }
         return item
 
     def __len__(self):
         return len(self.labels)
-
-
-def tokenize_dataset(texts, tokenizer, max_length: int) -> dict:
-    """Tokenize a list of texts using the given tokenizer."""
-    encodings = tokenizer(
-        list(texts),
-        truncation=True,
-        padding="max_length",
-        max_length=max_length,
-        return_attention_mask=True,
-    )
-    return {
-        "input_ids": encodings["input_ids"],
-        "attention_mask": encodings["attention_mask"],
-    }
 
 
 def compute_metrics_fn(eval_pred):

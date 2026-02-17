@@ -16,11 +16,18 @@ set -euo pipefail
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "bert-base-uncased"
-    "distilbert-base-uncased"
-    "gpt2"
-    "xlnet-base-cased"
-    "roberta-base"
+    "all-MiniLM-L6-v2"
+    "all-MiniLM-L12-v2"
+    "all-mpnet-base-v2"
+    "swardiantara/ieee-all-MiniLM-L6-v2"
+    "swardiantara/kaggle-all-MiniLM-L6-v2"
+    "swardiantara/tweeteval-all-MiniLM-L6-v2"
+    "swardiantara/ieee-all-MiniLM-L12-v2"
+    "swardiantara/kaggle-all-MiniLM-L12-v2"
+    "swardiantara/tweeteval-all-MiniLM-L12-v2"
+    "swardiantara/ieee-all-mpnet-base-v2"
+    "swardiantara/kaggle-all-mpnet-base-v2"
+    "swardiantara/tweeteval-all-mpnet-base-v2"
 )
 
 DATASETS=(
@@ -36,7 +43,7 @@ LR=2e-5
 MAX_LENGTH=128
 
 # Directories
-OUTPUT_DIR="grid-search"
+OUTPUT_DIR="sbert-model"
 DATA_DIR="dataset"
 
 # --- Run experiments ---
@@ -92,6 +99,7 @@ for model in "${MODELS[@]}"; do
                     if python src/main.py \
                         --model "${model}" \
                         --dataset "${dataset}" \
+                        --sbert \
                         ${prep_flag} \
                         ${aug_flag} \
                         --seed "${seed}" \

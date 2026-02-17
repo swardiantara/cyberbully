@@ -35,7 +35,7 @@ def get_output_dir(
     prep_flag = "prep1" if preprocess else "prep0"
     aug_flag = "aug1" if augment else "aug0"
     dir_name = os.path.join(model_short, dataset_name, f"{prep_flag}_{aug_flag}", f"seed_{seed}")
-    output_dir = os.path.join(base_dir, dir_name)
+    output_dir = os.path.join("experiments", base_dir, dir_name)
     os.makedirs(output_dir, exist_ok=True)
     return output_dir
 

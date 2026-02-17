@@ -80,7 +80,7 @@ def encode_labels(df: pd.DataFrame):
 
 def split_data(
     df: pd.DataFrame,
-    seed: int,
+    seed: int = 2042, # similar to the reference paper
     test_size: float = 0.2,
     val_size: float = 0.2,
 ):
@@ -130,7 +130,7 @@ def augment_training_data(train_df: pd.DataFrame) -> pd.DataFrame:
 def prepare_data(
     dataset_name: str,
     data_dir: str,
-    seed: int,
+    seed: int = 2042,
     preprocess: bool = False,
     augment: bool = False,
 ):

@@ -34,7 +34,7 @@ LR=2e-5
 MAX_LENGTH=128
 
 # Directories
-OUTPUT_DIR="experiments/domain"
+OUTPUT_DIR="domain-model"
 DATA_DIR="dataset"
 
 # --- Run experiments ---
