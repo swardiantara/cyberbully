@@ -1,0 +1,46 @@
+2026-02-17 18:53:49,890 - cyberbully - INFO - ============================================================
+2026-02-17 18:53:49,890 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-17 18:53:49,890 - cyberbully - INFO - ============================================================
+2026-02-17 18:53:49,890 - cyberbully - INFO - Configuration:
+2026-02-17 18:53:49,890 - cyberbully - INFO -   model          : Twitter/twhin-bert-base
+2026-02-17 18:53:49,890 - cyberbully - INFO -   dataset        : kaggle
+2026-02-17 18:53:49,890 - cyberbully - INFO -   preprocess     : False
+2026-02-17 18:53:49,890 - cyberbully - INFO -   augment        : False
+2026-02-17 18:53:49,890 - cyberbully - INFO -   compute_attribution: False
+2026-02-17 18:53:49,890 - cyberbully - INFO -   seed           : 90995999
+2026-02-17 18:53:49,890 - cyberbully - INFO -   epochs         : 5
+2026-02-17 18:53:49,890 - cyberbully - INFO -   batch_size     : 16
+2026-02-17 18:53:49,890 - cyberbully - INFO -   lr             : 2e-05
+2026-02-17 18:53:49,890 - cyberbully - INFO -   max_length     : 128
+2026-02-17 18:53:49,890 - cyberbully - INFO -   output_dir     : domain-model
+2026-02-17 18:53:49,890 - cyberbully - INFO -   data_dir       : dataset
+2026-02-17 18:53:49,890 - cyberbully - INFO -   sbert          : False
+2026-02-17 18:53:49,890 - cyberbully - INFO -   overwrite      : False
+2026-02-17 18:53:49,890 - cyberbully - INFO -   device         : cuda
+2026-02-17 18:53:49,890 - cyberbully - INFO -   output_dir     : experiments/domain-model/Twitter_twhin-bert-base/kaggle/prep0_aug0/seed_90995999
+2026-02-17 18:53:49,890 - cyberbully - INFO - ============================================================
+2026-02-17 18:53:49,890 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-17 18:53:49,890 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-17 18:53:49,950 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-17 18:53:49,953 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-17 18:53:49,965 - cyberbully - INFO - Split sizes — train: 30499, val: 7625, test: 9532
+2026-02-17 18:53:49,966 - cyberbully - INFO - Number of classes: 6
+2026-02-17 18:53:49,967 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-17 18:53:49,967 - cyberbully - INFO - Loading model 'Twitter/twhin-bert-base' with 6 labels (sbert=False)
+2026-02-17 18:53:51,295 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-17 18:53:52,082 - cyberbully - INFO - Dataset sizes — train: 30499, val: 7625, test: 9532
+2026-02-17 18:53:52,082 - cyberbully - INFO - Step 4: Training...
+2026-02-17 18:53:52,372 - cyberbully - INFO - Starting training...
+2026-02-17 19:07:48,904 - cyberbully - INFO - Training complete.
+2026-02-17 19:07:48,904 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-17 19:08:01,483 - cyberbully - INFO - Metrics saved to experiments/domain-model/Twitter_twhin-bert-base/kaggle/prep0_aug0/seed_90995999/metrics.json
+2026-02-17 19:08:01,483 - cyberbully - INFO - Confusion matrix saved to experiments/domain-model/Twitter_twhin-bert-base/kaggle/prep0_aug0/seed_90995999/confusion_matrix.json
+2026-02-17 19:08:01,595 - cyberbully - INFO - Confusion matrix figure saved to experiments/domain-model/Twitter_twhin-bert-base/kaggle/prep0_aug0/seed_90995999/confusion_matrix.pdf
+2026-02-17 19:08:01,595 - cyberbully - INFO - Accuracy: 0.8768
+2026-02-17 19:08:01,595 - cyberbully - INFO - Weighted F1: 0.8755
+2026-02-17 19:08:01,595 - cyberbully - INFO - Micro F1: 0.8768
+2026-02-17 19:08:01,595 - cyberbully - INFO - Inference time: 7.88 seconds
+2026-02-17 19:08:01,595 - cyberbully - INFO - Energy consumption: 0.000474 kWh
+2026-02-17 19:08:01,595 - cyberbully - INFO - ============================================================
+2026-02-17 19:08:01,595 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/domain-model/Twitter_twhin-bert-base/kaggle/prep0_aug0/seed_90995999
+2026-02-17 19:08:01,595 - cyberbully - INFO - ============================================================

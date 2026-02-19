@@ -1,0 +1,46 @@
+2026-02-19 07:26:49,301 - cyberbully - INFO - ============================================================
+2026-02-19 07:26:49,301 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-19 07:26:49,301 - cyberbully - INFO - ============================================================
+2026-02-19 07:26:49,301 - cyberbully - INFO - Configuration:
+2026-02-19 07:26:49,301 - cyberbully - INFO -   model          : sarkerlab/SocBERT-base
+2026-02-19 07:26:49,301 - cyberbully - INFO -   dataset        : kaggle
+2026-02-19 07:26:49,301 - cyberbully - INFO -   preprocess     : False
+2026-02-19 07:26:49,301 - cyberbully - INFO -   augment        : False
+2026-02-19 07:26:49,301 - cyberbully - INFO -   compute_attribution: False
+2026-02-19 07:26:49,301 - cyberbully - INFO -   seed           : 67351593
+2026-02-19 07:26:49,301 - cyberbully - INFO -   epochs         : 5
+2026-02-19 07:26:49,301 - cyberbully - INFO -   batch_size     : 16
+2026-02-19 07:26:49,301 - cyberbully - INFO -   lr             : 2e-05
+2026-02-19 07:26:49,301 - cyberbully - INFO -   max_length     : 128
+2026-02-19 07:26:49,301 - cyberbully - INFO -   output_dir     : domain-model
+2026-02-19 07:26:49,301 - cyberbully - INFO -   data_dir       : dataset
+2026-02-19 07:26:49,301 - cyberbully - INFO -   sbert          : False
+2026-02-19 07:26:49,301 - cyberbully - INFO -   overwrite      : False
+2026-02-19 07:26:49,301 - cyberbully - INFO -   device         : cuda
+2026-02-19 07:26:49,301 - cyberbully - INFO -   output_dir     : experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep0_aug0/seed_67351593
+2026-02-19 07:26:49,301 - cyberbully - INFO - ============================================================
+2026-02-19 07:26:49,301 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-19 07:26:49,301 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-19 07:26:49,362 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-19 07:26:49,364 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-19 07:26:49,377 - cyberbully - INFO - Split sizes — train: 30499, val: 7625, test: 9532
+2026-02-19 07:26:49,378 - cyberbully - INFO - Number of classes: 6
+2026-02-19 07:26:49,379 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-19 07:26:49,379 - cyberbully - INFO - Loading model 'sarkerlab/SocBERT-base' with 6 labels (sbert=False)
+2026-02-19 07:26:50,531 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-19 07:26:51,275 - cyberbully - INFO - Dataset sizes — train: 30499, val: 7625, test: 9532
+2026-02-19 07:26:51,275 - cyberbully - INFO - Step 4: Training...
+2026-02-19 07:26:51,500 - cyberbully - INFO - Starting training...
+2026-02-19 07:37:15,064 - cyberbully - INFO - Training complete.
+2026-02-19 07:37:15,064 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-19 07:37:26,523 - cyberbully - INFO - Metrics saved to experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep0_aug0/seed_67351593/metrics.json
+2026-02-19 07:37:26,523 - cyberbully - INFO - Confusion matrix saved to experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep0_aug0/seed_67351593/confusion_matrix.json
+2026-02-19 07:37:26,634 - cyberbully - INFO - Confusion matrix figure saved to experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep0_aug0/seed_67351593/confusion_matrix.pdf
+2026-02-19 07:37:26,634 - cyberbully - INFO - Accuracy: 0.8524
+2026-02-19 07:37:26,634 - cyberbully - INFO - Weighted F1: 0.8510
+2026-02-19 07:37:26,634 - cyberbully - INFO - Micro F1: 0.8524
+2026-02-19 07:37:26,634 - cyberbully - INFO - Inference time: 7.17 seconds
+2026-02-19 07:37:26,634 - cyberbully - INFO - Energy consumption: 0.000446 kWh
+2026-02-19 07:37:26,635 - cyberbully - INFO - ============================================================
+2026-02-19 07:37:26,635 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep0_aug0/seed_67351593
+2026-02-19 07:37:26,635 - cyberbully - INFO - ============================================================
