@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 #
-# run_all.sh — Automate all experiment configurations
+# run_sbert.sh — SBERT experiment suite (base + contrastive fine-tuned models)
 #
-# Loops over: models × datasets × preprocess (on/off) × augment (on/off) × seeds
-# Total: 5 models × 3 datasets × 2 × 2 × 10 seeds = 600 runs
+# Valid model-dataset pairs:
+#   - 3 base SBERT models × 3 datasets          =  9 pairs
+#   - 9 custom fine-tuned models × 1 dataset each =  9 pairs  (enforced below)
+#   - Total pairs: 18 × 4 scenarios × 10 seeds  = 720 runs
 #
 # Usage:
-#   chmod +x scripts/run_all.sh
-#   bash scripts/run_all.sh
+#   chmod +x scripts/run_sbert.sh
+#   bash scripts/run_sbert.sh
 #
 
 set -euo pipefail
@@ -46,14 +48,32 @@ MAX_LENGTH=128
 OUTPUT_DIR="sbert-model"
 DATA_DIR="dataset"
 
-# --- Run experiments ---
+# --- Helper: return the matched dataset for a custom model, or empty string ---
+get_custom_dataset() {
+    local model="$1"
+    if [[ "${model}" == swardiantara/* ]]; then
+        local repo="${model#swardiantara/}"
+        for ds in "ieee" "kaggle" "tweeteval"; do
+            if [[ "${repo}" == ${ds}-* ]]; then
+                echo "${ds}"
+                return
+            fi
+        done
+    fi
+    echo ""
+}
+
+# --- Count valid runs ---
 total=0
 completed=0
 failed=0
 
-# Count total runs
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
+        custom_ds=$(get_custom_dataset "${model}")
+        if [[ -n "${custom_ds}" && "${custom_ds}" != "${dataset}" ]]; then
+            continue  # Custom model must match its fine-tuning dataset
+        fi
         for preprocess in 0 1; do
             for augment in 0 1; do
                 for seed in "${SEEDS[@]}"; do
@@ -65,23 +85,28 @@ for model in "${MODELS[@]}"; do
 done
 
 echo "============================================================"
-echo "Cyberbullying Detection — Full Experiment Suite"
+echo "Cyberbullying Detection — SBERT Experiment Suite"
 echo "============================================================"
 echo "Total experiment runs: ${total}"
+echo "  (18 model-dataset pairs × 4 scenarios × 10 seeds)"
 echo "Models: ${MODELS[*]}"
 echo "Datasets: ${DATASETS[*]}"
 echo "Seeds: ${SEEDS[*]}"
 echo "============================================================"
 echo ""
 
+# --- Run experiments ---
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
+        custom_ds=$(get_custom_dataset "${model}")
+        if [[ -n "${custom_ds}" && "${custom_ds}" != "${dataset}" ]]; then
+            continue  # Skip: custom model does not match this dataset
+        fi
         for preprocess in 0 1; do
             for augment in 0 1; do
                 for seed in "${SEEDS[@]}"; do
                     run_id=$((completed + failed + 1))
 
-                    # Build flag arguments
                     prep_flag=""
                     if [ "${preprocess}" -eq 1 ]; then
                         prep_flag="--preprocess"
