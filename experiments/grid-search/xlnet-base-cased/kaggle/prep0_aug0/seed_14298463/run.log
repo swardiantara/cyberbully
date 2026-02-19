@@ -1,0 +1,46 @@
+2026-02-19 02:23:41,958 - cyberbully - INFO - ============================================================
+2026-02-19 02:23:41,959 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-19 02:23:41,959 - cyberbully - INFO - ============================================================
+2026-02-19 02:23:41,959 - cyberbully - INFO - Configuration:
+2026-02-19 02:23:41,959 - cyberbully - INFO -   model          : xlnet-base-cased
+2026-02-19 02:23:41,959 - cyberbully - INFO -   dataset        : kaggle
+2026-02-19 02:23:41,959 - cyberbully - INFO -   preprocess     : False
+2026-02-19 02:23:41,959 - cyberbully - INFO -   augment        : False
+2026-02-19 02:23:41,959 - cyberbully - INFO -   compute_attribution: False
+2026-02-19 02:23:41,959 - cyberbully - INFO -   seed           : 14298463
+2026-02-19 02:23:41,959 - cyberbully - INFO -   epochs         : 5
+2026-02-19 02:23:41,959 - cyberbully - INFO -   batch_size     : 16
+2026-02-19 02:23:41,959 - cyberbully - INFO -   lr             : 2e-05
+2026-02-19 02:23:41,959 - cyberbully - INFO -   max_length     : 128
+2026-02-19 02:23:41,959 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-19 02:23:41,959 - cyberbully - INFO -   data_dir       : dataset
+2026-02-19 02:23:41,959 - cyberbully - INFO -   sbert          : False
+2026-02-19 02:23:41,959 - cyberbully - INFO -   overwrite      : False
+2026-02-19 02:23:41,959 - cyberbully - INFO -   device         : cuda
+2026-02-19 02:23:41,959 - cyberbully - INFO -   output_dir     : experiments/grid-search/xlnet-base-cased/kaggle/prep0_aug0/seed_14298463
+2026-02-19 02:23:41,959 - cyberbully - INFO - ============================================================
+2026-02-19 02:23:41,959 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-19 02:23:41,959 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-19 02:23:42,018 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-19 02:23:42,021 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-19 02:23:42,034 - cyberbully - INFO - Split sizes — train: 30499, val: 7625, test: 9532
+2026-02-19 02:23:42,034 - cyberbully - INFO - Number of classes: 6
+2026-02-19 02:23:42,035 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-19 02:23:42,035 - cyberbully - INFO - Loading model 'xlnet-base-cased' with 6 labels (sbert=False)
+2026-02-19 02:23:43,968 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-19 02:23:44,779 - cyberbully - INFO - Dataset sizes — train: 30499, val: 7625, test: 9532
+2026-02-19 02:23:44,779 - cyberbully - INFO - Step 4: Training...
+2026-02-19 02:23:44,902 - cyberbully - INFO - Starting training...
+2026-02-19 02:32:54,418 - cyberbully - INFO - Training complete.
+2026-02-19 02:32:54,418 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-19 02:33:06,250 - cyberbully - INFO - Metrics saved to experiments/grid-search/xlnet-base-cased/kaggle/prep0_aug0/seed_14298463/metrics.json
+2026-02-19 02:33:06,250 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/xlnet-base-cased/kaggle/prep0_aug0/seed_14298463/confusion_matrix.json
+2026-02-19 02:33:06,366 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/xlnet-base-cased/kaggle/prep0_aug0/seed_14298463/confusion_matrix.pdf
+2026-02-19 02:33:06,366 - cyberbully - INFO - Accuracy: 0.8631
+2026-02-19 02:33:06,367 - cyberbully - INFO - Weighted F1: 0.8617
+2026-02-19 02:33:06,367 - cyberbully - INFO - Micro F1: 0.8631
+2026-02-19 02:33:06,367 - cyberbully - INFO - Inference time: 7.59 seconds
+2026-02-19 02:33:06,367 - cyberbully - INFO - Energy consumption: 0.000442 kWh
+2026-02-19 02:33:06,367 - cyberbully - INFO - ============================================================
+2026-02-19 02:33:06,367 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/xlnet-base-cased/kaggle/prep0_aug0/seed_14298463
+2026-02-19 02:33:06,367 - cyberbully - INFO - ============================================================

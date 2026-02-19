@@ -1,0 +1,48 @@
+2026-02-19 13:48:13,308 - cyberbully - INFO - ============================================================
+2026-02-19 13:48:13,308 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-19 13:48:13,308 - cyberbully - INFO - ============================================================
+2026-02-19 13:48:13,308 - cyberbully - INFO - Configuration:
+2026-02-19 13:48:13,308 - cyberbully - INFO -   model          : xlnet-base-cased
+2026-02-19 13:48:13,308 - cyberbully - INFO -   dataset        : tweeteval
+2026-02-19 13:48:13,308 - cyberbully - INFO -   preprocess     : True
+2026-02-19 13:48:13,308 - cyberbully - INFO -   augment        : False
+2026-02-19 13:48:13,308 - cyberbully - INFO -   compute_attribution: False
+2026-02-19 13:48:13,308 - cyberbully - INFO -   seed           : 70681460
+2026-02-19 13:48:13,308 - cyberbully - INFO -   epochs         : 5
+2026-02-19 13:48:13,308 - cyberbully - INFO -   batch_size     : 16
+2026-02-19 13:48:13,308 - cyberbully - INFO -   lr             : 2e-05
+2026-02-19 13:48:13,308 - cyberbully - INFO -   max_length     : 128
+2026-02-19 13:48:13,308 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-19 13:48:13,308 - cyberbully - INFO -   data_dir       : dataset
+2026-02-19 13:48:13,309 - cyberbully - INFO -   sbert          : False
+2026-02-19 13:48:13,309 - cyberbully - INFO -   overwrite      : False
+2026-02-19 13:48:13,309 - cyberbully - INFO -   device         : cuda
+2026-02-19 13:48:13,309 - cyberbully - INFO -   output_dir     : experiments/grid-search/xlnet-base-cased/tweeteval/prep1_aug0/seed_70681460
+2026-02-19 13:48:13,309 - cyberbully - INFO - ============================================================
+2026-02-19 13:48:13,309 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-19 13:48:13,309 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
+2026-02-19 13:48:13,385 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
+2026-02-19 13:48:13,386 - cyberbully - INFO - Applying text preprocessing...
+2026-02-19 13:49:11,852 - cyberbully - INFO - After preprocessing: 47404 samples remain
+2026-02-19 13:49:11,854 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-02-19 13:49:11,867 - cyberbully - INFO - Split sizes — train: 30338, val: 7585, test: 9481
+2026-02-19 13:49:11,868 - cyberbully - INFO - Number of classes: 5
+2026-02-19 13:49:11,868 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-19 13:49:11,869 - cyberbully - INFO - Loading model 'xlnet-base-cased' with 5 labels (sbert=False)
+2026-02-19 13:49:13,739 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-19 13:49:14,548 - cyberbully - INFO - Dataset sizes — train: 30338, val: 7585, test: 9481
+2026-02-19 13:49:14,548 - cyberbully - INFO - Step 4: Training...
+2026-02-19 13:49:14,678 - cyberbully - INFO - Starting training...
+2026-02-19 13:58:21,942 - cyberbully - INFO - Training complete.
+2026-02-19 13:58:21,942 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-19 13:58:34,698 - cyberbully - INFO - Metrics saved to experiments/grid-search/xlnet-base-cased/tweeteval/prep1_aug0/seed_70681460/metrics.json
+2026-02-19 13:58:34,698 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/xlnet-base-cased/tweeteval/prep1_aug0/seed_70681460/confusion_matrix.json
+2026-02-19 13:58:34,803 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/xlnet-base-cased/tweeteval/prep1_aug0/seed_70681460/confusion_matrix.pdf
+2026-02-19 13:58:34,803 - cyberbully - INFO - Accuracy: 0.9387
+2026-02-19 13:58:34,803 - cyberbully - INFO - Weighted F1: 0.9389
+2026-02-19 13:58:34,803 - cyberbully - INFO - Micro F1: 0.9387
+2026-02-19 13:58:34,803 - cyberbully - INFO - Inference time: 7.74 seconds
+2026-02-19 13:58:34,803 - cyberbully - INFO - Energy consumption: 0.000437 kWh
+2026-02-19 13:58:34,803 - cyberbully - INFO - ============================================================
+2026-02-19 13:58:34,803 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/xlnet-base-cased/tweeteval/prep1_aug0/seed_70681460
+2026-02-19 13:58:34,803 - cyberbully - INFO - ============================================================

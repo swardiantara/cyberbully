@@ -1,0 +1,47 @@
+2026-02-18 11:14:27,284 - cyberbully - INFO - ============================================================
+2026-02-18 11:14:27,284 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-18 11:14:27,284 - cyberbully - INFO - ============================================================
+2026-02-18 11:14:27,284 - cyberbully - INFO - Configuration:
+2026-02-18 11:14:27,284 - cyberbully - INFO -   model          : gpt2
+2026-02-18 11:14:27,284 - cyberbully - INFO -   dataset        : ieee
+2026-02-18 11:14:27,284 - cyberbully - INFO -   preprocess     : False
+2026-02-18 11:14:27,284 - cyberbully - INFO -   augment        : False
+2026-02-18 11:14:27,284 - cyberbully - INFO -   compute_attribution: False
+2026-02-18 11:14:27,284 - cyberbully - INFO -   seed           : 14298463
+2026-02-18 11:14:27,284 - cyberbully - INFO -   epochs         : 5
+2026-02-18 11:14:27,284 - cyberbully - INFO -   batch_size     : 16
+2026-02-18 11:14:27,284 - cyberbully - INFO -   lr             : 2e-05
+2026-02-18 11:14:27,284 - cyberbully - INFO -   max_length     : 128
+2026-02-18 11:14:27,284 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-18 11:14:27,284 - cyberbully - INFO -   data_dir       : dataset
+2026-02-18 11:14:27,285 - cyberbully - INFO -   sbert          : False
+2026-02-18 11:14:27,285 - cyberbully - INFO -   overwrite      : False
+2026-02-18 11:14:27,285 - cyberbully - INFO -   device         : cuda
+2026-02-18 11:14:27,285 - cyberbully - INFO -   output_dir     : experiments/grid-search/gpt2/ieee/prep0_aug0/seed_14298463
+2026-02-18 11:14:27,285 - cyberbully - INFO - ============================================================
+2026-02-18 11:14:27,285 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-18 11:14:27,285 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-18 11:14:27,290 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-18 11:14:27,291 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-18 11:14:27,293 - cyberbully - INFO - Split sizes — train: 1348, val: 338, test: 422
+2026-02-18 11:14:27,293 - cyberbully - INFO - Number of classes: 5
+2026-02-18 11:14:27,294 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-18 11:14:27,294 - cyberbully - INFO - Loading model 'gpt2' with 5 labels (sbert=False)
+2026-02-18 11:14:28,238 - cyberbully - INFO - Set pad_token to eos_token ('<|endoftext|>') for model 'gpt2'
+2026-02-18 11:14:28,238 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-18 11:14:28,262 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-02-18 11:14:28,262 - cyberbully - INFO - Step 4: Training...
+2026-02-18 11:14:29,145 - cyberbully - INFO - Starting training...
+2026-02-18 11:14:54,452 - cyberbully - INFO - Training complete.
+2026-02-18 11:14:54,452 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-18 11:14:59,412 - cyberbully - INFO - Metrics saved to experiments/grid-search/gpt2/ieee/prep0_aug0/seed_14298463/metrics.json
+2026-02-18 11:14:59,412 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/gpt2/ieee/prep0_aug0/seed_14298463/confusion_matrix.json
+2026-02-18 11:14:59,519 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/gpt2/ieee/prep0_aug0/seed_14298463/confusion_matrix.pdf
+2026-02-18 11:14:59,520 - cyberbully - INFO - Accuracy: 0.7512
+2026-02-18 11:14:59,520 - cyberbully - INFO - Weighted F1: 0.7532
+2026-02-18 11:14:59,520 - cyberbully - INFO - Micro F1: 0.7512
+2026-02-18 11:14:59,520 - cyberbully - INFO - Inference time: 0.41 seconds
+2026-02-18 11:14:59,520 - cyberbully - INFO - Energy consumption: 0.000017 kWh
+2026-02-18 11:14:59,520 - cyberbully - INFO - ============================================================
+2026-02-18 11:14:59,520 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/gpt2/ieee/prep0_aug0/seed_14298463
+2026-02-18 11:14:59,520 - cyberbully - INFO - ============================================================

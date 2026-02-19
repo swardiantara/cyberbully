@@ -1,0 +1,47 @@
+2026-02-18 12:56:13,007 - cyberbully - INFO - ============================================================
+2026-02-18 12:56:13,007 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-18 12:56:13,007 - cyberbully - INFO - ============================================================
+2026-02-18 12:56:13,007 - cyberbully - INFO - Configuration:
+2026-02-18 12:56:13,007 - cyberbully - INFO -   model          : gpt2
+2026-02-18 12:56:13,007 - cyberbully - INFO -   dataset        : kaggle
+2026-02-18 12:56:13,007 - cyberbully - INFO -   preprocess     : False
+2026-02-18 12:56:13,007 - cyberbully - INFO -   augment        : False
+2026-02-18 12:56:13,007 - cyberbully - INFO -   compute_attribution: False
+2026-02-18 12:56:13,007 - cyberbully - INFO -   seed           : 90995999
+2026-02-18 12:56:13,007 - cyberbully - INFO -   epochs         : 5
+2026-02-18 12:56:13,007 - cyberbully - INFO -   batch_size     : 16
+2026-02-18 12:56:13,007 - cyberbully - INFO -   lr             : 2e-05
+2026-02-18 12:56:13,007 - cyberbully - INFO -   max_length     : 128
+2026-02-18 12:56:13,007 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-18 12:56:13,007 - cyberbully - INFO -   data_dir       : dataset
+2026-02-18 12:56:13,007 - cyberbully - INFO -   sbert          : False
+2026-02-18 12:56:13,007 - cyberbully - INFO -   overwrite      : False
+2026-02-18 12:56:13,007 - cyberbully - INFO -   device         : cuda
+2026-02-18 12:56:13,007 - cyberbully - INFO -   output_dir     : experiments/grid-search/gpt2/kaggle/prep0_aug0/seed_90995999
+2026-02-18 12:56:13,007 - cyberbully - INFO - ============================================================
+2026-02-18 12:56:13,007 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-18 12:56:13,007 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-18 12:56:13,067 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-18 12:56:13,070 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-18 12:56:13,083 - cyberbully - INFO - Split sizes — train: 30499, val: 7625, test: 9532
+2026-02-18 12:56:13,084 - cyberbully - INFO - Number of classes: 6
+2026-02-18 12:56:13,085 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-18 12:56:13,085 - cyberbully - INFO - Loading model 'gpt2' with 6 labels (sbert=False)
+2026-02-18 12:56:13,781 - cyberbully - INFO - Set pad_token to eos_token ('<|endoftext|>') for model 'gpt2'
+2026-02-18 12:56:13,781 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-18 12:56:14,565 - cyberbully - INFO - Dataset sizes — train: 30499, val: 7625, test: 9532
+2026-02-18 12:56:14,566 - cyberbully - INFO - Step 4: Training...
+2026-02-18 12:56:14,697 - cyberbully - INFO - Starting training...
+2026-02-18 13:05:37,071 - cyberbully - INFO - Training complete.
+2026-02-18 13:05:37,071 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-18 13:05:50,393 - cyberbully - INFO - Metrics saved to experiments/grid-search/gpt2/kaggle/prep0_aug0/seed_90995999/metrics.json
+2026-02-18 13:05:50,393 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/gpt2/kaggle/prep0_aug0/seed_90995999/confusion_matrix.json
+2026-02-18 13:05:50,511 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/gpt2/kaggle/prep0_aug0/seed_90995999/confusion_matrix.pdf
+2026-02-18 13:05:50,511 - cyberbully - INFO - Accuracy: 0.8674
+2026-02-18 13:05:50,511 - cyberbully - INFO - Weighted F1: 0.8661
+2026-02-18 13:05:50,511 - cyberbully - INFO - Micro F1: 0.8674
+2026-02-18 13:05:50,511 - cyberbully - INFO - Inference time: 9.01 seconds
+2026-02-18 13:05:50,511 - cyberbully - INFO - Energy consumption: 0.000461 kWh
+2026-02-18 13:05:50,511 - cyberbully - INFO - ============================================================
+2026-02-18 13:05:50,511 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/gpt2/kaggle/prep0_aug0/seed_90995999
+2026-02-18 13:05:50,511 - cyberbully - INFO - ============================================================

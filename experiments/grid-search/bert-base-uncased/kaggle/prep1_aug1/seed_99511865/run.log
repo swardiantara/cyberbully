@@ -1,0 +1,50 @@
+2026-02-17 21:52:12,711 - cyberbully - INFO - ============================================================
+2026-02-17 21:52:12,711 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-17 21:52:12,711 - cyberbully - INFO - ============================================================
+2026-02-17 21:52:12,711 - cyberbully - INFO - Configuration:
+2026-02-17 21:52:12,711 - cyberbully - INFO -   model          : bert-base-uncased
+2026-02-17 21:52:12,711 - cyberbully - INFO -   dataset        : kaggle
+2026-02-17 21:52:12,711 - cyberbully - INFO -   preprocess     : True
+2026-02-17 21:52:12,711 - cyberbully - INFO -   augment        : True
+2026-02-17 21:52:12,711 - cyberbully - INFO -   compute_attribution: False
+2026-02-17 21:52:12,711 - cyberbully - INFO -   seed           : 99511865
+2026-02-17 21:52:12,711 - cyberbully - INFO -   epochs         : 5
+2026-02-17 21:52:12,711 - cyberbully - INFO -   batch_size     : 16
+2026-02-17 21:52:12,711 - cyberbully - INFO -   lr             : 2e-05
+2026-02-17 21:52:12,711 - cyberbully - INFO -   max_length     : 128
+2026-02-17 21:52:12,711 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-17 21:52:12,711 - cyberbully - INFO -   data_dir       : dataset
+2026-02-17 21:52:12,711 - cyberbully - INFO -   sbert          : False
+2026-02-17 21:52:12,711 - cyberbully - INFO -   overwrite      : False
+2026-02-17 21:52:12,711 - cyberbully - INFO -   device         : cuda
+2026-02-17 21:52:12,711 - cyberbully - INFO -   output_dir     : experiments/grid-search/bert-base-uncased/kaggle/prep1_aug1/seed_99511865
+2026-02-17 21:52:12,711 - cyberbully - INFO - ============================================================
+2026-02-17 21:52:12,711 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-17 21:52:12,711 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-17 21:52:12,771 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-17 21:52:12,771 - cyberbully - INFO - Applying text preprocessing...
+2026-02-17 21:53:07,927 - cyberbully - INFO - After preprocessing: 41411 samples remain
+2026-02-17 21:53:07,930 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-17 21:53:07,941 - cyberbully - INFO - Split sizes — train: 26502, val: 6626, test: 8283
+2026-02-17 21:53:07,941 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-02-17 21:53:07,947 - cyberbully - INFO - After oversampling — class distribution: {0: 5068, 1: 5068, 2: 5068, 3: 5068, 4: 5068, 5: 5068}
+2026-02-17 21:53:07,948 - cyberbully - INFO - Number of classes: 6
+2026-02-17 21:53:07,949 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-17 21:53:07,949 - cyberbully - INFO - Loading model 'bert-base-uncased' with 6 labels (sbert=False)
+2026-02-17 21:53:08,772 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-17 21:53:09,509 - cyberbully - INFO - Dataset sizes — train: 30408, val: 6626, test: 8283
+2026-02-17 21:53:09,509 - cyberbully - INFO - Step 4: Training...
+2026-02-17 21:53:09,631 - cyberbully - INFO - Starting training...
+2026-02-17 22:00:09,488 - cyberbully - INFO - Training complete.
+2026-02-17 22:00:09,488 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-17 22:00:17,993 - cyberbully - INFO - Metrics saved to experiments/grid-search/bert-base-uncased/kaggle/prep1_aug1/seed_99511865/metrics.json
+2026-02-17 22:00:17,993 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/bert-base-uncased/kaggle/prep1_aug1/seed_99511865/confusion_matrix.json
+2026-02-17 22:00:18,110 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/bert-base-uncased/kaggle/prep1_aug1/seed_99511865/confusion_matrix.pdf
+2026-02-17 22:00:18,110 - cyberbully - INFO - Accuracy: 0.8649
+2026-02-17 22:00:18,110 - cyberbully - INFO - Weighted F1: 0.8652
+2026-02-17 22:00:18,110 - cyberbully - INFO - Micro F1: 0.8649
+2026-02-17 22:00:18,110 - cyberbully - INFO - Inference time: 3.47 seconds
+2026-02-17 22:00:18,110 - cyberbully - INFO - Energy consumption: 0.000198 kWh
+2026-02-17 22:00:18,110 - cyberbully - INFO - ============================================================
+2026-02-17 22:00:18,110 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/bert-base-uncased/kaggle/prep1_aug1/seed_99511865
+2026-02-17 22:00:18,110 - cyberbully - INFO - ============================================================

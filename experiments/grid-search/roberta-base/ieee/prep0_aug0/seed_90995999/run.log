@@ -1,0 +1,46 @@
+2026-02-19 17:02:43,287 - cyberbully - INFO - ============================================================
+2026-02-19 17:02:43,287 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-19 17:02:43,287 - cyberbully - INFO - ============================================================
+2026-02-19 17:02:43,287 - cyberbully - INFO - Configuration:
+2026-02-19 17:02:43,287 - cyberbully - INFO -   model          : roberta-base
+2026-02-19 17:02:43,287 - cyberbully - INFO -   dataset        : ieee
+2026-02-19 17:02:43,287 - cyberbully - INFO -   preprocess     : False
+2026-02-19 17:02:43,287 - cyberbully - INFO -   augment        : False
+2026-02-19 17:02:43,287 - cyberbully - INFO -   compute_attribution: False
+2026-02-19 17:02:43,287 - cyberbully - INFO -   seed           : 90995999
+2026-02-19 17:02:43,287 - cyberbully - INFO -   epochs         : 5
+2026-02-19 17:02:43,287 - cyberbully - INFO -   batch_size     : 16
+2026-02-19 17:02:43,287 - cyberbully - INFO -   lr             : 2e-05
+2026-02-19 17:02:43,287 - cyberbully - INFO -   max_length     : 128
+2026-02-19 17:02:43,288 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-19 17:02:43,288 - cyberbully - INFO -   data_dir       : dataset
+2026-02-19 17:02:43,288 - cyberbully - INFO -   sbert          : False
+2026-02-19 17:02:43,288 - cyberbully - INFO -   overwrite      : False
+2026-02-19 17:02:43,288 - cyberbully - INFO -   device         : cuda
+2026-02-19 17:02:43,288 - cyberbully - INFO -   output_dir     : experiments/grid-search/roberta-base/ieee/prep0_aug0/seed_90995999
+2026-02-19 17:02:43,288 - cyberbully - INFO - ============================================================
+2026-02-19 17:02:43,288 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-19 17:02:43,288 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-19 17:02:43,293 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-19 17:02:43,294 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-19 17:02:43,296 - cyberbully - INFO - Split sizes — train: 1348, val: 338, test: 422
+2026-02-19 17:02:43,296 - cyberbully - INFO - Number of classes: 5
+2026-02-19 17:02:43,297 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-19 17:02:43,297 - cyberbully - INFO - Loading model 'roberta-base' with 5 labels (sbert=False)
+2026-02-19 17:02:43,991 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-19 17:02:44,014 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-02-19 17:02:44,015 - cyberbully - INFO - Step 4: Training...
+2026-02-19 17:02:44,385 - cyberbully - INFO - Starting training...
+2026-02-19 17:03:09,363 - cyberbully - INFO - Training complete.
+2026-02-19 17:03:09,363 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-19 17:03:13,781 - cyberbully - INFO - Metrics saved to experiments/grid-search/roberta-base/ieee/prep0_aug0/seed_90995999/metrics.json
+2026-02-19 17:03:13,781 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/roberta-base/ieee/prep0_aug0/seed_90995999/confusion_matrix.json
+2026-02-19 17:03:13,888 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/roberta-base/ieee/prep0_aug0/seed_90995999/confusion_matrix.pdf
+2026-02-19 17:03:13,888 - cyberbully - INFO - Accuracy: 0.8531
+2026-02-19 17:03:13,888 - cyberbully - INFO - Weighted F1: 0.8535
+2026-02-19 17:03:13,888 - cyberbully - INFO - Micro F1: 0.8531
+2026-02-19 17:03:13,888 - cyberbully - INFO - Inference time: 0.18 seconds
+2026-02-19 17:03:13,888 - cyberbully - INFO - Energy consumption: 0.000010 kWh
+2026-02-19 17:03:13,888 - cyberbully - INFO - ============================================================
+2026-02-19 17:03:13,888 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/roberta-base/ieee/prep0_aug0/seed_90995999
+2026-02-19 17:03:13,888 - cyberbully - INFO - ============================================================

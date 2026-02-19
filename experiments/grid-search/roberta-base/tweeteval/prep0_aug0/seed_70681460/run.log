@@ -1,0 +1,46 @@
+2026-02-19 23:44:13,435 - cyberbully - INFO - ============================================================
+2026-02-19 23:44:13,435 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-19 23:44:13,435 - cyberbully - INFO - ============================================================
+2026-02-19 23:44:13,435 - cyberbully - INFO - Configuration:
+2026-02-19 23:44:13,435 - cyberbully - INFO -   model          : roberta-base
+2026-02-19 23:44:13,435 - cyberbully - INFO -   dataset        : tweeteval
+2026-02-19 23:44:13,435 - cyberbully - INFO -   preprocess     : False
+2026-02-19 23:44:13,435 - cyberbully - INFO -   augment        : False
+2026-02-19 23:44:13,435 - cyberbully - INFO -   compute_attribution: False
+2026-02-19 23:44:13,435 - cyberbully - INFO -   seed           : 70681460
+2026-02-19 23:44:13,435 - cyberbully - INFO -   epochs         : 5
+2026-02-19 23:44:13,435 - cyberbully - INFO -   batch_size     : 16
+2026-02-19 23:44:13,435 - cyberbully - INFO -   lr             : 2e-05
+2026-02-19 23:44:13,435 - cyberbully - INFO -   max_length     : 128
+2026-02-19 23:44:13,435 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-19 23:44:13,435 - cyberbully - INFO -   data_dir       : dataset
+2026-02-19 23:44:13,435 - cyberbully - INFO -   sbert          : False
+2026-02-19 23:44:13,435 - cyberbully - INFO -   overwrite      : False
+2026-02-19 23:44:13,435 - cyberbully - INFO -   device         : cuda
+2026-02-19 23:44:13,435 - cyberbully - INFO -   output_dir     : experiments/grid-search/roberta-base/tweeteval/prep0_aug0/seed_70681460
+2026-02-19 23:44:13,435 - cyberbully - INFO - ============================================================
+2026-02-19 23:44:13,435 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-19 23:44:13,435 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
+2026-02-19 23:44:13,509 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
+2026-02-19 23:44:13,511 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-02-19 23:44:13,525 - cyberbully - INFO - Split sizes — train: 32485, val: 8122, test: 10152
+2026-02-19 23:44:13,525 - cyberbully - INFO - Number of classes: 5
+2026-02-19 23:44:13,526 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-19 23:44:13,526 - cyberbully - INFO - Loading model 'roberta-base' with 5 labels (sbert=False)
+2026-02-19 23:44:14,214 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-19 23:44:14,958 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
+2026-02-19 23:44:14,958 - cyberbully - INFO - Step 4: Training...
+2026-02-19 23:44:15,093 - cyberbully - INFO - Starting training...
+2026-02-19 23:52:07,907 - cyberbully - INFO - Training complete.
+2026-02-19 23:52:07,907 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-19 23:52:17,104 - cyberbully - INFO - Metrics saved to experiments/grid-search/roberta-base/tweeteval/prep0_aug0/seed_70681460/metrics.json
+2026-02-19 23:52:17,104 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/roberta-base/tweeteval/prep0_aug0/seed_70681460/confusion_matrix.json
+2026-02-19 23:52:17,209 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/roberta-base/tweeteval/prep0_aug0/seed_70681460/confusion_matrix.pdf
+2026-02-19 23:52:17,209 - cyberbully - INFO - Accuracy: 0.9749
+2026-02-19 23:52:17,209 - cyberbully - INFO - Weighted F1: 0.9749
+2026-02-19 23:52:17,209 - cyberbully - INFO - Micro F1: 0.9749
+2026-02-19 23:52:17,209 - cyberbully - INFO - Inference time: 4.19 seconds
+2026-02-19 23:52:17,209 - cyberbully - INFO - Energy consumption: 0.000233 kWh
+2026-02-19 23:52:17,209 - cyberbully - INFO - ============================================================
+2026-02-19 23:52:17,209 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/roberta-base/tweeteval/prep0_aug0/seed_70681460
+2026-02-19 23:52:17,209 - cyberbully - INFO - ============================================================

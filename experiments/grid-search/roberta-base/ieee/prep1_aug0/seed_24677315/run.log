@@ -1,0 +1,48 @@
+2026-02-19 17:10:23,359 - cyberbully - INFO - ============================================================
+2026-02-19 17:10:23,359 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-19 17:10:23,359 - cyberbully - INFO - ============================================================
+2026-02-19 17:10:23,359 - cyberbully - INFO - Configuration:
+2026-02-19 17:10:23,359 - cyberbully - INFO -   model          : roberta-base
+2026-02-19 17:10:23,359 - cyberbully - INFO -   dataset        : ieee
+2026-02-19 17:10:23,359 - cyberbully - INFO -   preprocess     : True
+2026-02-19 17:10:23,359 - cyberbully - INFO -   augment        : False
+2026-02-19 17:10:23,359 - cyberbully - INFO -   compute_attribution: False
+2026-02-19 17:10:23,359 - cyberbully - INFO -   seed           : 24677315
+2026-02-19 17:10:23,359 - cyberbully - INFO -   epochs         : 5
+2026-02-19 17:10:23,359 - cyberbully - INFO -   batch_size     : 16
+2026-02-19 17:10:23,359 - cyberbully - INFO -   lr             : 2e-05
+2026-02-19 17:10:23,359 - cyberbully - INFO -   max_length     : 128
+2026-02-19 17:10:23,359 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-19 17:10:23,359 - cyberbully - INFO -   data_dir       : dataset
+2026-02-19 17:10:23,359 - cyberbully - INFO -   sbert          : False
+2026-02-19 17:10:23,359 - cyberbully - INFO -   overwrite      : False
+2026-02-19 17:10:23,359 - cyberbully - INFO -   device         : cuda
+2026-02-19 17:10:23,359 - cyberbully - INFO -   output_dir     : experiments/grid-search/roberta-base/ieee/prep1_aug0/seed_24677315
+2026-02-19 17:10:23,359 - cyberbully - INFO - ============================================================
+2026-02-19 17:10:23,359 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-19 17:10:23,359 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-19 17:10:23,365 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-19 17:10:23,365 - cyberbully - INFO - Applying text preprocessing...
+2026-02-19 17:10:26,611 - cyberbully - INFO - After preprocessing: 1815 samples remain
+2026-02-19 17:10:26,612 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-19 17:10:26,614 - cyberbully - INFO - Split sizes — train: 1161, val: 291, test: 363
+2026-02-19 17:10:26,614 - cyberbully - INFO - Number of classes: 5
+2026-02-19 17:10:26,615 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-19 17:10:26,615 - cyberbully - INFO - Loading model 'roberta-base' with 5 labels (sbert=False)
+2026-02-19 17:10:27,262 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-19 17:10:27,275 - cyberbully - INFO - Dataset sizes — train: 1161, val: 291, test: 363
+2026-02-19 17:10:27,275 - cyberbully - INFO - Step 4: Training...
+2026-02-19 17:10:27,392 - cyberbully - INFO - Starting training...
+2026-02-19 17:10:48,697 - cyberbully - INFO - Training complete.
+2026-02-19 17:10:48,697 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-19 17:10:53,060 - cyberbully - INFO - Metrics saved to experiments/grid-search/roberta-base/ieee/prep1_aug0/seed_24677315/metrics.json
+2026-02-19 17:10:53,061 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/roberta-base/ieee/prep1_aug0/seed_24677315/confusion_matrix.json
+2026-02-19 17:10:53,168 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/roberta-base/ieee/prep1_aug0/seed_24677315/confusion_matrix.pdf
+2026-02-19 17:10:53,169 - cyberbully - INFO - Accuracy: 0.8512
+2026-02-19 17:10:53,169 - cyberbully - INFO - Weighted F1: 0.8514
+2026-02-19 17:10:53,169 - cyberbully - INFO - Micro F1: 0.8512
+2026-02-19 17:10:53,169 - cyberbully - INFO - Inference time: 0.16 seconds
+2026-02-19 17:10:53,169 - cyberbully - INFO - Energy consumption: 0.000006 kWh
+2026-02-19 17:10:53,169 - cyberbully - INFO - ============================================================
+2026-02-19 17:10:53,169 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/roberta-base/ieee/prep1_aug0/seed_24677315
+2026-02-19 17:10:53,169 - cyberbully - INFO - ============================================================
