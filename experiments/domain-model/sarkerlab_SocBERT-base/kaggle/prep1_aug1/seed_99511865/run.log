@@ -1,0 +1,50 @@
+2026-02-19 13:31:32,462 - cyberbully - INFO - ============================================================
+2026-02-19 13:31:32,462 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-19 13:31:32,462 - cyberbully - INFO - ============================================================
+2026-02-19 13:31:32,462 - cyberbully - INFO - Configuration:
+2026-02-19 13:31:32,462 - cyberbully - INFO -   model          : sarkerlab/SocBERT-base
+2026-02-19 13:31:32,463 - cyberbully - INFO -   dataset        : kaggle
+2026-02-19 13:31:32,463 - cyberbully - INFO -   preprocess     : True
+2026-02-19 13:31:32,463 - cyberbully - INFO -   augment        : True
+2026-02-19 13:31:32,463 - cyberbully - INFO -   compute_attribution: False
+2026-02-19 13:31:32,463 - cyberbully - INFO -   seed           : 99511865
+2026-02-19 13:31:32,463 - cyberbully - INFO -   epochs         : 5
+2026-02-19 13:31:32,463 - cyberbully - INFO -   batch_size     : 16
+2026-02-19 13:31:32,463 - cyberbully - INFO -   lr             : 2e-05
+2026-02-19 13:31:32,463 - cyberbully - INFO -   max_length     : 128
+2026-02-19 13:31:32,463 - cyberbully - INFO -   output_dir     : domain-model
+2026-02-19 13:31:32,463 - cyberbully - INFO -   data_dir       : dataset
+2026-02-19 13:31:32,463 - cyberbully - INFO -   sbert          : False
+2026-02-19 13:31:32,463 - cyberbully - INFO -   overwrite      : False
+2026-02-19 13:31:32,463 - cyberbully - INFO -   device         : cuda
+2026-02-19 13:31:32,463 - cyberbully - INFO -   output_dir     : experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep1_aug1/seed_99511865
+2026-02-19 13:31:32,463 - cyberbully - INFO - ============================================================
+2026-02-19 13:31:32,463 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-19 13:31:32,463 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-19 13:31:32,523 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-19 13:31:32,523 - cyberbully - INFO - Applying text preprocessing...
+2026-02-19 13:32:25,399 - cyberbully - INFO - After preprocessing: 41391 samples remain
+2026-02-19 13:32:25,401 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-19 13:32:25,412 - cyberbully - INFO - Split sizes — train: 26489, val: 6623, test: 8279
+2026-02-19 13:32:25,412 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-02-19 13:32:25,418 - cyberbully - INFO - After oversampling — class distribution: {0: 5065, 1: 5065, 2: 5065, 3: 5065, 4: 5065, 5: 5065}
+2026-02-19 13:32:25,419 - cyberbully - INFO - Number of classes: 6
+2026-02-19 13:32:25,420 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-19 13:32:25,420 - cyberbully - INFO - Loading model 'sarkerlab/SocBERT-base' with 6 labels (sbert=False)
+2026-02-19 13:32:26,742 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-19 13:32:27,318 - cyberbully - INFO - Dataset sizes — train: 30390, val: 6623, test: 8279
+2026-02-19 13:32:27,318 - cyberbully - INFO - Step 4: Training...
+2026-02-19 13:32:27,590 - cyberbully - INFO - Starting training...
+2026-02-19 13:42:40,205 - cyberbully - INFO - Training complete.
+2026-02-19 13:42:40,205 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-19 13:42:50,739 - cyberbully - INFO - Metrics saved to experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep1_aug1/seed_99511865/metrics.json
+2026-02-19 13:42:50,739 - cyberbully - INFO - Confusion matrix saved to experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep1_aug1/seed_99511865/confusion_matrix.json
+2026-02-19 13:42:50,850 - cyberbully - INFO - Confusion matrix figure saved to experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep1_aug1/seed_99511865/confusion_matrix.pdf
+2026-02-19 13:42:50,851 - cyberbully - INFO - Accuracy: 0.8676
+2026-02-19 13:42:50,851 - cyberbully - INFO - Weighted F1: 0.8668
+2026-02-19 13:42:50,851 - cyberbully - INFO - Micro F1: 0.8676
+2026-02-19 13:42:50,851 - cyberbully - INFO - Inference time: 6.22 seconds
+2026-02-19 13:42:50,851 - cyberbully - INFO - Energy consumption: 0.000383 kWh
+2026-02-19 13:42:50,851 - cyberbully - INFO - ============================================================
+2026-02-19 13:42:50,851 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/domain-model/sarkerlab_SocBERT-base/kaggle/prep1_aug1/seed_99511865
+2026-02-19 13:42:50,851 - cyberbully - INFO - ============================================================
