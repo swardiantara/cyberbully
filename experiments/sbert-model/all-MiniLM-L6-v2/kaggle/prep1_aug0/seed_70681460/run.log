@@ -1,0 +1,49 @@
+2026-02-20 07:53:04,972 - cyberbully - INFO - ============================================================
+2026-02-20 07:53:04,972 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-20 07:53:04,972 - cyberbully - INFO - ============================================================
+2026-02-20 07:53:04,972 - cyberbully - INFO - Configuration:
+2026-02-20 07:53:04,972 - cyberbully - INFO -   model          : all-MiniLM-L6-v2
+2026-02-20 07:53:04,972 - cyberbully - INFO -   dataset        : kaggle
+2026-02-20 07:53:04,972 - cyberbully - INFO -   preprocess     : True
+2026-02-20 07:53:04,972 - cyberbully - INFO -   augment        : False
+2026-02-20 07:53:04,972 - cyberbully - INFO -   compute_attribution: False
+2026-02-20 07:53:04,972 - cyberbully - INFO -   seed           : 70681460
+2026-02-20 07:53:04,972 - cyberbully - INFO -   epochs         : 5
+2026-02-20 07:53:04,972 - cyberbully - INFO -   batch_size     : 16
+2026-02-20 07:53:04,972 - cyberbully - INFO -   lr             : 2e-05
+2026-02-20 07:53:04,972 - cyberbully - INFO -   max_length     : 128
+2026-02-20 07:53:04,972 - cyberbully - INFO -   output_dir     : sbert-model
+2026-02-20 07:53:04,972 - cyberbully - INFO -   data_dir       : dataset
+2026-02-20 07:53:04,972 - cyberbully - INFO -   sbert          : True
+2026-02-20 07:53:04,972 - cyberbully - INFO -   overwrite      : False
+2026-02-20 07:53:04,972 - cyberbully - INFO -   device         : cuda
+2026-02-20 07:53:04,972 - cyberbully - INFO -   output_dir     : experiments/sbert-model/all-MiniLM-L6-v2/kaggle/prep1_aug0/seed_70681460
+2026-02-20 07:53:04,972 - cyberbully - INFO - ============================================================
+2026-02-20 07:53:04,972 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-20 07:53:04,972 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-20 07:53:05,029 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-20 07:53:05,030 - cyberbully - INFO - Applying text preprocessing...
+2026-02-20 07:53:58,842 - cyberbully - INFO - After preprocessing: 41402 samples remain
+2026-02-20 07:53:58,844 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-20 07:53:58,856 - cyberbully - INFO - Split sizes — train: 26496, val: 6625, test: 8281
+2026-02-20 07:53:58,856 - cyberbully - INFO - Number of classes: 6
+2026-02-20 07:53:58,857 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-20 07:53:58,857 - cyberbully - INFO - Loading model 'all-MiniLM-L6-v2' with 6 labels (sbert=True)
+2026-02-20 07:54:01,383 - cyberbully - INFO - SBERTClassifier: embedding_dim=384, hidden=256, num_labels=6
+2026-02-20 07:54:01,690 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-20 07:54:02,551 - cyberbully - INFO - Dataset sizes — train: 26496, val: 6625, test: 8281
+2026-02-20 07:54:02,552 - cyberbully - INFO - Step 4: Training...
+2026-02-20 07:54:02,596 - cyberbully - INFO - Starting training...
+2026-02-20 07:56:12,400 - cyberbully - INFO - Training complete.
+2026-02-20 07:56:12,400 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-20 07:56:18,318 - cyberbully - INFO - Metrics saved to experiments/sbert-model/all-MiniLM-L6-v2/kaggle/prep1_aug0/seed_70681460/metrics.json
+2026-02-20 07:56:18,318 - cyberbully - INFO - Confusion matrix saved to experiments/sbert-model/all-MiniLM-L6-v2/kaggle/prep1_aug0/seed_70681460/confusion_matrix.json
+2026-02-20 07:56:18,429 - cyberbully - INFO - Confusion matrix figure saved to experiments/sbert-model/all-MiniLM-L6-v2/kaggle/prep1_aug0/seed_70681460/confusion_matrix.pdf
+2026-02-20 07:56:18,430 - cyberbully - INFO - Accuracy: 0.8673
+2026-02-20 07:56:18,430 - cyberbully - INFO - Weighted F1: 0.8666
+2026-02-20 07:56:18,430 - cyberbully - INFO - Micro F1: 0.8673
+2026-02-20 07:56:18,430 - cyberbully - INFO - Inference time: 1.60 seconds
+2026-02-20 07:56:18,430 - cyberbully - INFO - Energy consumption: 0.000094 kWh
+2026-02-20 07:56:18,430 - cyberbully - INFO - ============================================================
+2026-02-20 07:56:18,430 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/sbert-model/all-MiniLM-L6-v2/kaggle/prep1_aug0/seed_70681460
+2026-02-20 07:56:18,430 - cyberbully - INFO - ============================================================

@@ -1,0 +1,22 @@
+2026-02-21 15:13:33,429 - cyberbully - INFO - ============================================================
+2026-02-21 15:13:33,429 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-21 15:13:33,429 - cyberbully - INFO - ============================================================
+2026-02-21 15:13:33,429 - cyberbully - INFO - Configuration:
+2026-02-21 15:13:33,429 - cyberbully - INFO -   model          : all-MiniLM-L6-v2
+2026-02-21 15:13:33,429 - cyberbully - INFO -   dataset        : ieee
+2026-02-21 15:13:33,429 - cyberbully - INFO -   preprocess     : False
+2026-02-21 15:13:33,429 - cyberbully - INFO -   augment        : False
+2026-02-21 15:13:33,429 - cyberbully - INFO -   compute_attribution: False
+2026-02-21 15:13:33,429 - cyberbully - INFO -   seed           : 43782163
+2026-02-21 15:13:33,429 - cyberbully - INFO -   epochs         : 5
+2026-02-21 15:13:33,429 - cyberbully - INFO -   batch_size     : 16
+2026-02-21 15:13:33,429 - cyberbully - INFO -   lr             : 2e-05
+2026-02-21 15:13:33,429 - cyberbully - INFO -   max_length     : 128
+2026-02-21 15:13:33,429 - cyberbully - INFO -   output_dir     : sbert-model
+2026-02-21 15:13:33,429 - cyberbully - INFO -   data_dir       : dataset
+2026-02-21 15:13:33,429 - cyberbully - INFO -   sbert          : True
+2026-02-21 15:13:33,429 - cyberbully - INFO -   overwrite      : False
+2026-02-21 15:13:33,429 - cyberbully - INFO -   device         : cuda
+2026-02-21 15:13:33,429 - cyberbully - INFO -   output_dir     : experiments/sbert-model/all-MiniLM-L6-v2/ieee/prep0_aug0/seed_43782163
+2026-02-21 15:13:33,430 - cyberbully - INFO - ============================================================
+2026-02-21 15:13:33,430 - cyberbully - INFO - This experiment has been completed before. Skipped!
