@@ -96,7 +96,6 @@ def contrastive_finetune(
         warmup_steps=warmup_steps,
         optimizer_params={"lr": 2e-5},
         show_progress_bar=True,
-        seed=seed,
     )
 
     logger.info("Contrastive fine-tuning complete. Pushing to '%s'...", push_model_path)
