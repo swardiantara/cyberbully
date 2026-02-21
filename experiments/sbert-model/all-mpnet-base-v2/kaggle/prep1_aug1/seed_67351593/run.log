@@ -1,0 +1,51 @@
+2026-02-21 01:13:17,946 - cyberbully - INFO - ============================================================
+2026-02-21 01:13:17,946 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-21 01:13:17,946 - cyberbully - INFO - ============================================================
+2026-02-21 01:13:17,946 - cyberbully - INFO - Configuration:
+2026-02-21 01:13:17,946 - cyberbully - INFO -   model          : all-mpnet-base-v2
+2026-02-21 01:13:17,946 - cyberbully - INFO -   dataset        : kaggle
+2026-02-21 01:13:17,946 - cyberbully - INFO -   preprocess     : True
+2026-02-21 01:13:17,946 - cyberbully - INFO -   augment        : True
+2026-02-21 01:13:17,946 - cyberbully - INFO -   compute_attribution: False
+2026-02-21 01:13:17,946 - cyberbully - INFO -   seed           : 67351593
+2026-02-21 01:13:17,946 - cyberbully - INFO -   epochs         : 5
+2026-02-21 01:13:17,946 - cyberbully - INFO -   batch_size     : 16
+2026-02-21 01:13:17,946 - cyberbully - INFO -   lr             : 2e-05
+2026-02-21 01:13:17,946 - cyberbully - INFO -   max_length     : 128
+2026-02-21 01:13:17,946 - cyberbully - INFO -   output_dir     : sbert-model
+2026-02-21 01:13:17,946 - cyberbully - INFO -   data_dir       : dataset
+2026-02-21 01:13:17,946 - cyberbully - INFO -   sbert          : True
+2026-02-21 01:13:17,946 - cyberbully - INFO -   overwrite      : False
+2026-02-21 01:13:17,946 - cyberbully - INFO -   device         : cuda
+2026-02-21 01:13:17,946 - cyberbully - INFO -   output_dir     : experiments/sbert-model/all-mpnet-base-v2/kaggle/prep1_aug1/seed_67351593
+2026-02-21 01:13:17,946 - cyberbully - INFO - ============================================================
+2026-02-21 01:13:17,946 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-21 01:13:17,946 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-21 01:13:18,006 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-21 01:13:18,006 - cyberbully - INFO - Applying text preprocessing...
+2026-02-21 01:14:11,461 - cyberbully - INFO - After preprocessing: 41396 samples remain
+2026-02-21 01:14:11,463 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-21 01:14:11,475 - cyberbully - INFO - Split sizes — train: 26492, val: 6624, test: 8280
+2026-02-21 01:14:11,475 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-02-21 01:14:11,481 - cyberbully - INFO - After oversampling — class distribution: {0: 5066, 1: 5066, 2: 5066, 3: 5066, 4: 5066, 5: 5066}
+2026-02-21 01:14:11,481 - cyberbully - INFO - Number of classes: 6
+2026-02-21 01:14:11,482 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-21 01:14:11,482 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 6 labels (sbert=True)
+2026-02-21 01:14:14,198 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, num_labels=6
+2026-02-21 01:14:14,503 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-21 01:14:15,072 - cyberbully - INFO - Dataset sizes — train: 30396, val: 6624, test: 8280
+2026-02-21 01:14:15,073 - cyberbully - INFO - Step 4: Training...
+2026-02-21 01:14:15,116 - cyberbully - INFO - Starting training...
+2026-02-21 01:24:10,713 - cyberbully - INFO - Training complete.
+2026-02-21 01:24:10,714 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-21 01:24:22,207 - cyberbully - INFO - Metrics saved to experiments/sbert-model/all-mpnet-base-v2/kaggle/prep1_aug1/seed_67351593/metrics.json
+2026-02-21 01:24:22,207 - cyberbully - INFO - Confusion matrix saved to experiments/sbert-model/all-mpnet-base-v2/kaggle/prep1_aug1/seed_67351593/confusion_matrix.json
+2026-02-21 01:24:22,319 - cyberbully - INFO - Confusion matrix figure saved to experiments/sbert-model/all-mpnet-base-v2/kaggle/prep1_aug1/seed_67351593/confusion_matrix.pdf
+2026-02-21 01:24:22,319 - cyberbully - INFO - Accuracy: 0.8758
+2026-02-21 01:24:22,319 - cyberbully - INFO - Weighted F1: 0.8753
+2026-02-21 01:24:22,319 - cyberbully - INFO - Micro F1: 0.8758
+2026-02-21 01:24:22,320 - cyberbully - INFO - Inference time: 6.66 seconds
+2026-02-21 01:24:22,320 - cyberbully - INFO - Energy consumption: 0.000436 kWh
+2026-02-21 01:24:22,320 - cyberbully - INFO - ============================================================
+2026-02-21 01:24:22,320 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/sbert-model/all-mpnet-base-v2/kaggle/prep1_aug1/seed_67351593
+2026-02-21 01:24:22,320 - cyberbully - INFO - ============================================================
