@@ -18,18 +18,18 @@ set -euo pipefail
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    # "all-MiniLM-L6-v2"
-    # "all-MiniLM-L12-v2"
-    # "all-mpnet-base-v2"
-    "swardiantara/ieee-all-MiniLM-L6-v2"
-    "swardiantara/kaggle-all-MiniLM-L6-v2"
-    "swardiantara/tweeteval-all-MiniLM-L6-v2"
-    "swardiantara/ieee-all-MiniLM-L12-v2"
-    "swardiantara/kaggle-all-MiniLM-L12-v2"
-    "swardiantara/tweeteval-all-MiniLM-L12-v2"
-    "swardiantara/ieee-all-mpnet-base-v2"
-    "swardiantara/kaggle-all-mpnet-base-v2"
-    "swardiantara/tweeteval-all-mpnet-base-v2"
+    "all-MiniLM-L6-v2"
+    "all-MiniLM-L12-v2"
+    "all-mpnet-base-v2"
+    # "swardiantara/ieee-all-MiniLM-L6-v2"
+    # "swardiantara/kaggle-all-MiniLM-L6-v2"
+    # "swardiantara/tweeteval-all-MiniLM-L6-v2"
+    # "swardiantara/ieee-all-MiniLM-L12-v2"
+    # "swardiantara/kaggle-all-MiniLM-L12-v2"
+    # "swardiantara/tweeteval-all-MiniLM-L12-v2"
+    # "swardiantara/ieee-all-mpnet-base-v2"
+    # "swardiantara/kaggle-all-mpnet-base-v2"
+    # "swardiantara/tweeteval-all-mpnet-base-v2"
 )
 
 DATASETS=(
@@ -39,9 +39,9 @@ DATASETS=(
 )
 
 # Training hyperparameters
-EPOCHS=5
-BATCH_SIZE=16
-LR=2e-5
+EPOCHS=10
+BATCH_SIZE=32
+LR=5e-5
 MAX_LENGTH=128
 
 # Directories
@@ -115,6 +115,14 @@ for model in "${MODELS[@]}"; do
                     aug_flag=""
                     if [ "${augment}" -eq 1 ]; then
                         aug_flag="--augment"
+                    fi
+
+                    # Skip if already completed
+                    model_short="${model//\//_}"
+                    OUTDIR="experiments/${OUTPUT_DIR}/${model_short}/${dataset}/prep${preprocess}_aug${augment}/seed_${seed}"
+                    if [ -f "${OUTDIR}/metrics.json" ]; then
+                        echo "[${run_id}/${total}] SKIP (complete): ${model} / ${dataset} / prep${preprocess}_aug${augment} / seed_${seed}"
+                        continue
                     fi
 
                     echo "------------------------------------------------------------"

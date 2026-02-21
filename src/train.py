@@ -63,7 +63,7 @@ def get_training_args(
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
         learning_rate=lr,
-        weight_decay=0.01,
+        weight_decay=1e-8,
         warmup_ratio=0.1,
         evaluation_strategy="epoch",
         save_strategy="no",
