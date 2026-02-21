@@ -13,7 +13,8 @@
 set -euo pipefail
 
 # --- Configuration ---
-SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
+SEEDS=( 14298463 )
+# 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 
 
 MODELS=(
     "bert-base-uncased"
@@ -22,6 +23,12 @@ MODELS=(
     "xlnet-base-cased"
     "roberta-base"
     "mobilebert-uncased"
+    "Twitter/twhin-bert-base"
+    "vinai/bertweet-base"
+    "sarkerlab/SocBERT-base"
+    "all-MiniLM-L6-v2"
+    "all-MiniLM-L12-v2"
+    "all-mpnet-base-v2"
 )
 
 DATASETS=(
@@ -70,8 +77,8 @@ echo ""
 
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
-        for preprocess in 0 1; do
-            for augment in 0 1; do
+        for preprocess in 0; do
+            for augment in 0; do
                 for seed in "${SEEDS[@]}"; do
                     run_id=$((completed + failed + 1))
 

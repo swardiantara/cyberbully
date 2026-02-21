@@ -1,4 +1,7 @@
+import glob
 import logging
+import os
+import shutil
 
 import numpy as np
 import torch
@@ -66,7 +69,9 @@ def get_training_args(
         weight_decay=1e-8,
         warmup_ratio=0.1,
         evaluation_strategy="epoch",
-        save_strategy="no",
+        load_best_model_at_end=True,
+        save_strategy="epoch",
+        metric_for_best_model="f1_weighted",
         logging_steps=50,
         seed=seed,
         fp16=torch.cuda.is_available(),
@@ -94,5 +99,15 @@ def train_model(
     logger.info("Starting training...")
     trainer.train()
     logger.info("Training complete.")
+
+    # Remove checkpoint directories saved during training — the best model is
+    # already loaded into trainer.model, so these are no longer needed.
+    checkpoint_dirs = glob.glob(
+        os.path.join(training_args.output_dir, "checkpoint-*")
+    )
+    for ckpt in checkpoint_dirs:
+        if os.path.isdir(ckpt):
+            shutil.rmtree(ckpt)
+            logger.info("Removed checkpoint: %s", ckpt)
 
     return trainer
