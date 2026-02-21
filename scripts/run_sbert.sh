@@ -18,9 +18,9 @@ set -euo pipefail
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "all-MiniLM-L6-v2"
-    "all-MiniLM-L12-v2"
-    "all-mpnet-base-v2"
+    # "all-MiniLM-L6-v2"
+    # "all-MiniLM-L12-v2"
+    # "all-mpnet-base-v2"
     "swardiantara/ieee-all-MiniLM-L6-v2"
     "swardiantara/kaggle-all-MiniLM-L6-v2"
     "swardiantara/tweeteval-all-MiniLM-L6-v2"
