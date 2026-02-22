@@ -13,20 +13,19 @@
 set -euo pipefail
 
 # --- Configuration ---
-SEEDS=( 14298463 )
-# 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 
+SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
+    "roberta-base"
+    "vinai/bertweet-base"
+    "mobilebert-uncased"
     "bert-base-uncased"
+    "Twitter/twhin-bert-base"
+    "all-MiniLM-L6-v2"
+    "xlnet-base-cased"
+    "sarkerlab/SocBERT-base"
     "distilbert-base-uncased"
     "gpt2"
-    "xlnet-base-cased"
-    "roberta-base"
-    "mobilebert-uncased"
-    "Twitter/twhin-bert-base"
-    "vinai/bertweet-base"
-    "sarkerlab/SocBERT-base"
-    "all-MiniLM-L6-v2"
     "all-MiniLM-L12-v2"
     "all-mpnet-base-v2"
 )
