@@ -18,7 +18,7 @@ SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 
 MODELS=(
     "roberta-base"
     "vinai/bertweet-base"
-    "mobilebert-uncased"
+    "google/mobilebert-uncased"
     "bert-base-uncased"
     "Twitter/twhin-bert-base"
     "all-MiniLM-L6-v2"
