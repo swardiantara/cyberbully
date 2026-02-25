@@ -118,12 +118,6 @@ def parse_args():
 def main():
     args = parse_args()
 
-    if str(args.model).startswith("all"):
-        args.sbert = True
-        logger.info(
-            "Model '%s' detected as SBERT-based. Using SBERTClassifier pipeline.",
-            args.model,
-        )
     # --- Setup ---
     set_seed(args.seed)
     device = get_device()
@@ -133,6 +127,12 @@ def main():
     )
     logger = setup_logging(output_dir)
 
+    if str(args.model).startswith("all"):
+        args.sbert = True
+        logger.info(
+            "Model '%s' detected as SBERT-based. Using SBERTClassifier pipeline.",
+            args.model,
+        )
     logger.info("=" * 60)
     logger.info("Cyberbullying Detection Pipeline")
     logger.info("=" * 60)
