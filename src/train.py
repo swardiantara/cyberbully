@@ -58,8 +58,10 @@ def get_training_args(
     batch_size: int,
     lr: float,
     seed: int,
+    fp16: bool = True,
 ) -> TrainingArguments:
     """Create HuggingFace TrainingArguments with sensible defaults."""
+    use_fp16 = fp16 and torch.cuda.is_available()
     return TrainingArguments(
         output_dir=output_dir,
         num_train_epochs=epochs,
@@ -74,7 +76,7 @@ def get_training_args(
         metric_for_best_model="f1_weighted",
         logging_steps=50,
         seed=seed,
-        fp16=torch.cuda.is_available(),
+        fp16=use_fp16,
         report_to="none",
     )
 

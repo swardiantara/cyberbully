@@ -206,6 +206,15 @@ def main():
         args.model, num_labels, id2label, label2id, sbert=args.sbert,
     )
 
+    # MobileBERT's inverted-bottleneck layers produce activations that overflow
+    # float16, causing NaN loss. Disable fp16 for this architecture.
+    model_type = getattr(model.config, "model_type", "").lower()
+    use_fp16 = model_type != "mobilebert"
+    if not use_fp16:
+        logger.warning(
+            "FP16 disabled for model_type='%s' (known fp16 instability).", model_type
+        )
+
     # --- Dataset creation (tokenization happens inside the Dataset) ---
     logger.info("Step 3: Creating datasets...")
     train_dataset = CyberbullyDataset(
@@ -231,6 +240,7 @@ def main():
         batch_size=args.batch_size,
         lr=args.lr,
         seed=args.seed,
+        fp16=use_fp16,
     )
     trainer = train_model(model, tokenizer, train_dataset, val_dataset, training_args)
 
