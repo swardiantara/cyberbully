@@ -1,0 +1,58 @@
+2026-02-26 01:17:32,937 - cyberbully - INFO - Model 'all-MiniLM-L12-v2' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-02-26 01:17:32,938 - cyberbully - INFO - ============================================================
+2026-02-26 01:17:32,938 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-26 01:17:32,938 - cyberbully - INFO - ============================================================
+2026-02-26 01:17:32,938 - cyberbully - INFO - Configuration:
+2026-02-26 01:17:32,938 - cyberbully - INFO -   model          : all-MiniLM-L12-v2
+2026-02-26 01:17:32,938 - cyberbully - INFO -   dataset        : tweeteval
+2026-02-26 01:17:32,938 - cyberbully - INFO -   preprocess     : False
+2026-02-26 01:17:32,938 - cyberbully - INFO -   augment        : False
+2026-02-26 01:17:32,938 - cyberbully - INFO -   compute_attribution: False
+2026-02-26 01:17:32,938 - cyberbully - INFO -   seed           : 90995999
+2026-02-26 01:17:32,938 - cyberbully - INFO -   epochs         : 10
+2026-02-26 01:17:32,938 - cyberbully - INFO -   batch_size     : 32
+2026-02-26 01:17:32,938 - cyberbully - INFO -   lr             : 5e-05
+2026-02-26 01:17:32,938 - cyberbully - INFO -   max_length     : 128
+2026-02-26 01:17:32,938 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-26 01:17:32,938 - cyberbully - INFO -   data_dir       : dataset
+2026-02-26 01:17:32,938 - cyberbully - INFO -   sbert          : True
+2026-02-26 01:17:32,938 - cyberbully - INFO -   overwrite      : False
+2026-02-26 01:17:32,938 - cyberbully - INFO -   device         : cuda
+2026-02-26 01:17:32,938 - cyberbully - INFO -   output_dir     : experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999
+2026-02-26 01:17:32,938 - cyberbully - INFO - ============================================================
+2026-02-26 01:17:32,938 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-26 01:17:32,938 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
+2026-02-26 01:17:33,010 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
+2026-02-26 01:17:33,013 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-02-26 01:17:33,026 - cyberbully - INFO - Split sizes — train: 32485, val: 8122, test: 10152
+2026-02-26 01:17:33,026 - cyberbully - INFO - Number of classes: 5
+2026-02-26 01:17:33,028 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-26 01:17:33,028 - cyberbully - INFO - Loading model 'all-MiniLM-L12-v2' with 5 labels (sbert=True)
+2026-02-26 01:17:35,657 - cyberbully - INFO - SBERTClassifier: embedding_dim=384, hidden=256, num_labels=5
+2026-02-26 01:17:35,963 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-26 01:17:36,975 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
+2026-02-26 01:17:36,975 - cyberbully - INFO - Step 4: Training...
+2026-02-26 01:17:37,022 - cyberbully - INFO - Starting training...
+2026-02-26 01:25:07,351 - cyberbully - INFO - Training complete.
+2026-02-26 01:25:07,381 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-3048
+2026-02-26 01:25:07,401 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-7112
+2026-02-26 01:25:07,422 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-9144
+2026-02-26 01:25:07,452 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-1016
+2026-02-26 01:25:07,482 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-2032
+2026-02-26 01:25:07,506 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-10160
+2026-02-26 01:25:07,527 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-6096
+2026-02-26 01:25:07,550 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-5080
+2026-02-26 01:25:07,570 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-8128
+2026-02-26 01:25:07,594 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/checkpoint-4064
+2026-02-26 01:25:07,594 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-26 01:25:15,935 - cyberbully - INFO - Metrics saved to experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/metrics.json
+2026-02-26 01:25:15,935 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/confusion_matrix.json
+2026-02-26 01:25:16,037 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999/confusion_matrix.pdf
+2026-02-26 01:25:16,037 - cyberbully - INFO - Accuracy: 0.9708
+2026-02-26 01:25:16,037 - cyberbully - INFO - Weighted F1: 0.9709
+2026-02-26 01:25:16,037 - cyberbully - INFO - Micro F1: 0.9708
+2026-02-26 01:25:16,038 - cyberbully - INFO - Inference time: 3.60 seconds
+2026-02-26 01:25:16,038 - cyberbully - INFO - Energy consumption: 0.000225 kWh
+2026-02-26 01:25:16,038 - cyberbully - INFO - ============================================================
+2026-02-26 01:25:16,038 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/all-MiniLM-L12-v2/tweeteval/prep0_aug0/seed_90995999
+2026-02-26 01:25:16,038 - cyberbully - INFO - ============================================================
