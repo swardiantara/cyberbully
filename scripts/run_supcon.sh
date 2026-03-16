@@ -76,7 +76,7 @@ BASELINE_OUTPUT_DIR="supcon-baseline"
 
 # SupCon: larger effective batch for pair diversity (batch × accum = 256)
 SUPCON_BATCH_SIZE=32
-SUPCON_GRAD_ACCUM=4
+SUPCON_GRAD_ACCUM=1
 SUPCON_OUTPUT_DIR="supcon-grid"
 SUPCON_WEIGHT=0.1
 PROJ_DIM=128
