@@ -109,12 +109,18 @@ class SupConTrainer(Trainer):
 
         ce_loss = outputs.loss
 
-        # proj_features: [bsz, proj_dim], already L2-normalized by SupConClassifier
-        # SupConLoss expects [bsz, n_views, dim] — add the single-view dimension
-        proj_features = outputs.proj_features.unsqueeze(1)  # [bsz, 1, proj_dim]
-        supcon_loss = self._supcon_criterion(proj_features, labels)
-
-        total_loss = ce_loss + supcon_loss
+        # SupCon loss is a training-only regulariser.  During evaluation the
+        # Trainer also calls compute_loss (inside prediction_step), where rare
+        # classes may appear only once in the batch → mask.sum(1) == 0 →
+        # 0/0 = NaN.  Restrict SupCon to training batches only.
+        if model.training:
+            # proj_features: [bsz, proj_dim], already L2-normalised
+            # SupConLoss expects [bsz, n_views, dim] — add the single-view dim
+            proj_features = outputs.proj_features.unsqueeze(1)  # [bsz, 1, proj_dim]
+            supcon_loss = self._supcon_criterion(proj_features, labels)
+            total_loss = ce_loss + supcon_loss
+        else:
+            total_loss = ce_loss
 
         return (total_loss, outputs) if return_outputs else total_loss
 

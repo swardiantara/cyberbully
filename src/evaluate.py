@@ -7,6 +7,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+import plotly.express as px
 import seaborn as sns
 import torch
 from codecarbon import EmissionsTracker
@@ -179,13 +181,18 @@ def plot_projection_tsne(
     id2label: dict,
     device: str,
     output_dir: str,
+    texts: list = None,
     batch_size: int = 64,
     perplexity: float = 30.0,
     n_iter: int = 1000,
     random_state: int = 42,
 ):
-    """Extract projection-head embeddings from the model and plot them in 2D
-    via t-SNE, saved as a PDF alongside the other output artifacts.
+    """Extract projection-head embeddings, reduce to 2D with t-SNE, and save:
+
+    - projection_tsne.pdf  — static figure (matplotlib/seaborn)
+    - projection_tsne.html — interactive figure (Plotly); each point shows the
+      original input text, true label, predicted label, and correctness on
+      hover, enabling error analysis of misclassified samples.
 
     Only meaningful when the model is a SupConClassifier whose forward()
     returns proj_features.
@@ -197,6 +204,7 @@ def plot_projection_tsne(
 
     all_proj = []
     all_labels = []
+    all_preds = []
 
     with torch.no_grad():
         for batch in dataloader:
@@ -207,9 +215,12 @@ def plot_projection_tsne(
             outputs = model(input_ids=input_ids, attention_mask=attention_mask)
             all_proj.append(outputs.proj_features.cpu().numpy())
             all_labels.extend(labels.numpy().tolist())
+            preds = torch.argmax(outputs.logits, dim=-1).cpu().numpy().tolist()
+            all_preds.extend(preds)
 
     proj_matrix = np.concatenate(all_proj, axis=0)   # (N, proj_dim)
     labels_arr = np.array(all_labels)
+    preds_arr = np.array(all_preds)
 
     logger.info(
         "Running t-SNE on %d samples with proj_dim=%d, perplexity=%.1f...",
@@ -224,11 +235,11 @@ def plot_projection_tsne(
     )
     embeddings_2d = tsne.fit_transform(proj_matrix)   # (N, 2)
 
-    # --- Plot ---
     label_names = [id2label[i] for i in sorted(id2label.keys())]
     num_classes = len(label_names)
-    palette = sns.color_palette("tab10", n_colors=num_classes)
 
+    # --- Static PDF (matplotlib) ---
+    palette = sns.color_palette("tab10", n_colors=num_classes)
     fig, ax = plt.subplots(figsize=(8, 6))
     for class_idx, class_name in enumerate(label_names):
         mask = labels_arr == class_idx
@@ -241,14 +252,61 @@ def plot_projection_tsne(
             alpha=0.7,
             linewidths=0,
         )
-
-    ax.set_title("Projection Embeddings — t-SNE", fontsize=14)
     ax.set_xlabel("t-SNE Dimension 1", fontsize=11)
     ax.set_ylabel("t-SNE Dimension 2", fontsize=11)
-    ax.legend(title="Class", bbox_to_anchor=(1.01, 1), loc="upper left", fontsize=9)
+    ax.legend(title="Class", loc="best", fontsize=9)
     plt.tight_layout()
-
-    tsne_path = os.path.join(output_dir, "projection_tsne.pdf")
-    fig.savefig(tsne_path, format="pdf", bbox_inches="tight")
+    pdf_path = os.path.join(output_dir, "projection_tsne.pdf")
+    fig.savefig(pdf_path, format="pdf", bbox_inches="tight")
     plt.close(fig)
-    logger.info("t-SNE projection plot saved to %s", tsne_path)
+    logger.info("t-SNE static plot saved to %s", pdf_path)
+
+    # --- Interactive HTML (Plotly) ---
+    true_label_names = [id2label[i] for i in labels_arr]
+    pred_label_names = [id2label[i] for i in preds_arr]
+    correct = ["correct" if p == l else "wrong" for p, l in zip(preds_arr, labels_arr)]
+
+    # Truncate long texts for the hover tooltip
+    MAX_HOVER_CHARS = 300
+    if texts is not None:
+        hover_texts = [
+            t[:MAX_HOVER_CHARS] + "…" if len(t) > MAX_HOVER_CHARS else t
+            for t in texts
+        ]
+    else:
+        hover_texts = ["(text not provided)"] * len(labels_arr)
+
+    hover_df = pd.DataFrame({
+        "x": embeddings_2d[:, 0],
+        "y": embeddings_2d[:, 1],
+        "true_label": true_label_names,
+        "predicted": pred_label_names,
+        "result": correct,
+        "text": hover_texts,
+    })
+
+    plotly_fig = px.scatter(
+        hover_df,
+        x="x",
+        y="y",
+        color="true_label",
+        symbol="result",
+        symbol_map={"correct": "circle", "wrong": "x"},
+        hover_data={"x": False, "y": False, "predicted": True, "result": True, "text": True},
+        title="Projection Embeddings — t-SNE",
+        labels={
+            "x": "t-SNE Dimension 1",
+            "y": "t-SNE Dimension 2",
+            "true_label": "True Label",
+        },
+        color_discrete_sequence=px.colors.qualitative.T10,
+    )
+    plotly_fig.update_traces(marker=dict(size=6, opacity=0.8))
+    plotly_fig.update_layout(
+        legend_title_text="True Label",
+        hoverlabel=dict(font_size=12, namelength=-1),
+    )
+
+    html_path = os.path.join(output_dir, "projection_tsne.html")
+    plotly_fig.write_html(html_path)
+    logger.info("t-SNE interactive plot saved to %s", html_path)

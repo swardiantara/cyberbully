@@ -290,6 +290,7 @@ def main():
             id2label=id2label,
             device=device,
             output_dir=output_dir,
+            texts=test_df["text"].tolist(),
         )
 
     # --- Integrated Gradients Attribution ---
