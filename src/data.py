@@ -117,6 +117,19 @@ def augment_training_data(train_df: pd.DataFrame) -> pd.DataFrame:
 # Split persistence helpers
 # ---------------------------------------------------------------------------
 
+def load_raw_test_texts(data_dir: str, dataset_name: str) -> list:
+    """Return the original (pre-preprocessing) test texts from the saved split.
+
+    Reads directly from the on-disk test.csv, which is written before any
+    preprocessing is applied, so the texts are always in their raw form.
+    Returns None if the split files do not exist yet.
+    """
+    split_dir = _split_dir(data_dir, dataset_name)
+    test_path = os.path.join(split_dir, "test.csv")
+    if not os.path.exists(test_path):
+        return None
+    return pd.read_csv(test_path)["text"].tolist()
+
 def _split_dir(data_dir: str, dataset_name: str) -> str:
     return os.path.join(data_dir, dataset_name)
 

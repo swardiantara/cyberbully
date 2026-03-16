@@ -4,7 +4,7 @@ import os
 import sys
 
 from utils import set_seed, get_device, get_output_dir, setup_logging
-from data import prepare_data
+from data import prepare_data, load_raw_test_texts
 from model import load_model_and_tokenizer
 from train import (
     CyberbullyDataset,
@@ -185,6 +185,11 @@ def main():
         augment=args.augment,
     )
 
+    # Raw (pre-preprocessing) test texts — always from the saved split CSV so
+    # they are never affected by the --preprocess flag.
+    original_test_texts = load_raw_test_texts(args.data_dir, args.dataset)
+    cleansed_test_texts = test_df["text"].tolist()
+
     num_labels = len(label2id)
     logger.info("Number of classes: %d", num_labels)
 
@@ -279,6 +284,8 @@ def main():
         id2label=id2label,
         device=device,
         output_dir=output_dir,
+        original_texts=original_test_texts,
+        cleansed_texts=cleansed_test_texts,
     )
 
     # --- SupCon projection t-SNE ---

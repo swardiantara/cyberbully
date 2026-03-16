@@ -31,8 +31,15 @@ def evaluate_model(
     id2label: dict,
     device: str,
     output_dir: str,
+    original_texts: list = None,
+    cleansed_texts: list = None,
 ):
     """Evaluate the model on the test set and export metrics to JSON.
+
+    When original_texts and cleansed_texts are provided, also saves
+    predictions.json — one record per sample with the original text, cleansed
+    text, true label, predicted label, correctness flag, and per-class
+    probabilities.  Useful for error analysis and preprocessing verification.
 
     Returns:
         all_preds: list of predicted label indices
@@ -143,6 +150,29 @@ def evaluate_model(
     with open(cm_path, "w", encoding="utf-8") as f:
         json.dump(cm_dict, f, indent=2, ensure_ascii=False)
     logger.info("Confusion matrix saved to %s", cm_path)
+
+    # --- Per-sample predictions dump ---
+    if original_texts is not None or cleansed_texts is not None:
+        orig = original_texts or cleansed_texts
+        clean = cleansed_texts or original_texts
+        records = []
+        for i, (true_idx, pred_idx) in enumerate(zip(all_labels, all_preds)):
+            records.append({
+                "id": i,
+                "original_text": orig[i] if orig else None,
+                "cleansed_text": clean[i] if clean else None,
+                "true_label": id2label[true_idx],
+                "predicted_label": id2label[pred_idx],
+                "correct": bool(true_idx == pred_idx),
+                "probabilities": {
+                    id2label[j]: round(float(all_probs[i, j]), 6)
+                    for j in range(len(id2label))
+                },
+            })
+        preds_path = os.path.join(output_dir, "predictions.json")
+        with open(preds_path, "w", encoding="utf-8") as f:
+            json.dump(records, f, indent=2, ensure_ascii=False)
+        logger.info("Per-sample predictions saved to %s", preds_path)
 
     # --- Confusion matrix PDF figure ---
     fig, ax = plt.subplots(figsize=(max(7, num_classes + 2), max(6, num_classes + 1)))
