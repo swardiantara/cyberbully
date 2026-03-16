@@ -1,0 +1,26 @@
+2026-03-16 20:14:29,101 - cyberbully - INFO - ============================================================
+2026-03-16 20:14:29,101 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-16 20:14:29,101 - cyberbully - INFO - ============================================================
+2026-03-16 20:14:29,101 - cyberbully - INFO - Configuration:
+2026-03-16 20:14:29,101 - cyberbully - INFO -   model          : roberta-base
+2026-03-16 20:14:29,101 - cyberbully - INFO -   dataset        : ieee
+2026-03-16 20:14:29,101 - cyberbully - INFO -   preprocess     : True
+2026-03-16 20:14:29,101 - cyberbully - INFO -   augment        : False
+2026-03-16 20:14:29,101 - cyberbully - INFO -   compute_attribution: False
+2026-03-16 20:14:29,101 - cyberbully - INFO -   seed           : 67351593
+2026-03-16 20:14:29,101 - cyberbully - INFO -   epochs         : 10
+2026-03-16 20:14:29,101 - cyberbully - INFO -   batch_size     : 32
+2026-03-16 20:14:29,101 - cyberbully - INFO -   lr             : 5e-05
+2026-03-16 20:14:29,101 - cyberbully - INFO -   max_length     : 128
+2026-03-16 20:14:29,101 - cyberbully - INFO -   output_dir     : supcon-grid
+2026-03-16 20:14:29,101 - cyberbully - INFO -   data_dir       : dataset
+2026-03-16 20:14:29,101 - cyberbully - INFO -   sbert          : False
+2026-03-16 20:14:29,101 - cyberbully - INFO -   supcon         : True
+2026-03-16 20:14:29,101 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-16 20:14:29,101 - cyberbully - INFO -   proj_dim       : 128
+2026-03-16 20:14:29,101 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-16 20:14:29,101 - cyberbully - INFO -   overwrite      : False
+2026-03-16 20:14:29,101 - cyberbully - INFO -   device         : cuda
+2026-03-16 20:14:29,101 - cyberbully - INFO -   output_dir     : experiments/supcon-grid/roberta-base/ieee/prep1_aug0/seed_67351593
+2026-03-16 20:14:29,101 - cyberbully - INFO - ============================================================
+2026-03-16 20:14:29,101 - cyberbully - INFO - This experiment has been completed before. Skipped!
