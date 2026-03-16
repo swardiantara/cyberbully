@@ -1,187 +1,153 @@
 import re
-import string
-
-import nltk
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from langdetect import detect, LangDetectException
+import unicodedata
+import emoji
 import contractions
 import pandas as pd
 
-# Ensure required NLTK data is available
-nltk.download("stopwords", quiet=True)
-nltk.download("wordnet", quiet=True)
-nltk.download("punkt", quiet=True)
-nltk.download("punkt_tab", quiet=True)
+class SocialMediaPreprocessor:
+    def __init__(self, lowercase=False):
+        self.lowercase = lowercase
 
-_stop_words = set(stopwords.words("english"))
-_lemmatizer = WordNetLemmatizer()
+        # slang dictionary
+        self.slang_dict = {
+            "kys": "kill yourself",
+            "wtf": "what the fuck",
+            "idk": "i do not know",
+            "imo": "in my opinion",
+            "lmao": "laughing my ass off",
+            "lol": "laughing out loud",
+            "omg": "oh my god",
+            "stfu": "shut the fuck up",
+            "smh": "shaking my head",
+            "btw": "by the way",
+            "ur": "your",
+            "u": "you"
+        }
 
+        # common profanity obfuscations
+        self.profanity_patterns = {
+            r"f[\W_]*u[\W_]*c[\W_]*k": "fuck",
+            r"s[\W_]*h[\W_]*i[\W_]*t": "shit",
+            r"b[\W_]*i[\W_]*t[\W_]*c[\W_]*h": "bitch",
+            r"a[\W_]*s[\W_]*s": "ass",
+            r"d[\W_]*i[\W_]*c[\W_]*k": "dick",
+            r"f[\W_]*a[\W_]*g": "fag"
+        }
 
-def strip_emoji(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    emoji_pattern = re.compile(
-        "[\U0001F600-\U0001F64F"
-        "\U0001F300-\U0001F5FF"
-        "\U0001F680-\U0001F6FF"
-        "\U0001F700-\U0001F77F"
-        "\U0001F780-\U0001F7FF"
-        "\U0001F800-\U0001F8FF"
-        "\U0001F900-\U0001F9FF"
-        "\U0001FA00-\U0001FA6F"
-        "\U0001FA70-\U0001FAFF"
-        "\U00002702-\U000027B0"
-        "\U000024C2-\U0001F251"
-        "]+",
-        flags=re.UNICODE,
-    )
-    return emoji_pattern.sub(r"", text)
+        # leetspeak substitutions
+        self.leet_map = {
+            "0": "o",
+            "1": "i",
+            "3": "e",
+            "4": "a",
+            "5": "s",
+            "7": "t",
+            "@": "a",
+            "$": "s"
+        }
 
+        self.url_pattern = re.compile(r"https?://\S+|www\.\S+")
+        self.mention_pattern = re.compile(r"@\w+")
+        self.hashtag_pattern = re.compile(r"#(\w+)")
+        self.repeat_pattern = re.compile(r"(.)\1{2,}")
+        self.whitespace_pattern = re.compile(r"\s+")
+        self.leet_token_pattern = re.compile(r"[a-zA-Z]*[0-9@$]+[a-zA-Z]+")
 
-def strip_all_entities(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    text = re.sub(r"\r|\n", " ", text.lower())
-    text = re.sub(r"(?:\@|https?\://)\S+", "", text)
-    text = re.sub(r"[^\x00-\x7f]", "", text)
-    table = str.maketrans("", "", string.punctuation)
-    text = text.translate(table)
-    text = " ".join(word for word in text.split() if word not in _stop_words)
-    return text
+    def normalize_unicode(self, text):
+        return unicodedata.normalize("NFKC", text)
 
+    def replace_urls(self, text):
+        return self.url_pattern.sub("<URL>", text)
 
-def clean_hashtags(tweet: str) -> str:
-    if not isinstance(tweet, str):
-        tweet = str(tweet)
-    new_tweet = re.sub(r"(\s+#[\w-]+)+\s*$", "", tweet).strip()
-    new_tweet = re.sub(r"#([\w-]+)", r"\1", new_tweet).strip()
-    return new_tweet
+    def replace_mentions(self, text):
+        return self.mention_pattern.sub("<USER>", text)
 
+    def normalize_hashtags(self, text):
+        return self.hashtag_pattern.sub(r"\1", text)
 
-def filter_chars(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    return " ".join(
-        "" if ("$" in word) or ("&" in word) else word for word in text.split()
-    )
+    def convert_emojis(self, text):
+        return emoji.demojize(text, delimiters=(" ", " "))
 
+    def expand_contractions(self, text):
+        return contractions.fix(text)
 
-def remove_mult_spaces(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    return re.sub(r"\s\s+", " ", text)
+    def normalize_repeated_chars(self, text):
+        return self.repeat_pattern.sub(r"\1\1", text)
 
+    def normalize_slang(self, text):
+        words = text.split()
+        normalized = []
+        for word in words:
+            key = word.lower()
+            if key in self.slang_dict:
+                normalized.append(self.slang_dict[key])
+            else:
+                normalized.append(word)
+        return " ".join(normalized)
 
-def filter_non_english(text: str) -> str:
-    try:
-        lang = detect(text)
-    except LangDetectException:
-        lang = "unknown"
-    return text if lang == "en" else ""
+    def normalize_leetspeak(self, text):
 
+        tokens = text.split()
+        normalized_tokens = []
 
-def expand_contractions_text(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    return contractions.fix(text)
+        for token in tokens:
 
+            # skip pure numbers
+            if token.isdigit():
+                normalized_tokens.append(token)
+                continue
 
-def remove_numbers(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    return re.sub(r"\d+", "", text)
+            # only normalize suspicious tokens
+            if self.leet_token_pattern.search(token):
 
+                new_token = token
+                for k, v in self.leet_map.items():
+                    new_token = new_token.replace(k, v)
 
-def lemmatize(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    words = word_tokenize(text)
-    lemmatized_words = [_lemmatizer.lemmatize(word) for word in words]
-    return " ".join(lemmatized_words)
+                normalized_tokens.append(new_token)
 
+            else:
+                normalized_tokens.append(token)
 
-def remove_short_words(text: str, min_len: int = 2) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    words = text.split()
-    long_words = [word for word in words if len(word) >= min_len]
-    return " ".join(long_words)
+        return " ".join(normalized_tokens)
 
+    def normalize_profanity(self, text):
+        for pattern, replacement in self.profanity_patterns.items():
+            text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+        return text
 
-def replace_elongated_words(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    regex_pattern = r"\b(\w+)((\w)\3{2,})(\w*)\b"
-    return re.sub(regex_pattern, r"\1\3\4", text)
+    def normalize_whitespace(self, text):
+        return self.whitespace_pattern.sub(" ", text).strip()
 
+    def preprocess(self, text):
 
-def remove_repeated_punctuation(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    return re.sub(r"[\?\.\!]+(?=[\?\.\!])", "", text)
+        text = self.normalize_unicode(text)
+        text = self.replace_urls(text)
+        text = self.replace_mentions(text)
+        text = self.normalize_hashtags(text)
+        text = self.convert_emojis(text)
 
+        text = self.expand_contractions(text)
+        text = self.normalize_slang(text)
 
-def remove_extra_whitespace(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    return " ".join(text.split())
+        text = self.normalize_leetspeak(text)
+        text = self.normalize_profanity(text)
 
+        text = self.normalize_repeated_chars(text)
 
-def remove_url_shorteners(text: str) -> str:
-    if not isinstance(text, str):
-        text = str(text)
-    return re.sub(
-        r"(?:http[s]?://)?(?:www\.)?(?:bit\.ly|goo\.gl|t\.co|tinyurl\.com|"
-        r"tr\.im|is\.gd|cli\.gs|u\.nu|url\.ie|tiny\.cc|alturl\.com|ow\.ly|"
-        r"bit\.do|adoro\.to)\S+",
-        "",
-        text,
-    )
+        if self.lowercase:
+            text = text.lower()
 
+        text = self.normalize_whitespace(text)
 
-def remove_spaces_tweets(tweet: str) -> str:
-    if not isinstance(tweet, str):
-        tweet = str(tweet)
-    return tweet.strip()
-
-
-def remove_short_tweets(tweet: str, min_words: int = 3) -> str:
-    if not isinstance(tweet, str):
-        tweet = str(tweet)
-    words = tweet.split()
-    return tweet if len(words) >= min_words else ""
-
-
-def clean_tweet(tweet: str) -> str:
-    """Apply the full text cleaning pipeline to a single tweet."""
-    if not isinstance(tweet, str):
-        tweet = str(tweet)
-    tweet = strip_emoji(tweet)
-    tweet = expand_contractions_text(tweet)
-    tweet = filter_non_english(tweet)
-    tweet = strip_all_entities(tweet)
-    tweet = clean_hashtags(tweet)
-    tweet = filter_chars(tweet)
-    tweet = remove_mult_spaces(tweet)
-    tweet = remove_numbers(tweet)
-    tweet = lemmatize(tweet)
-    tweet = remove_short_words(tweet)
-    tweet = replace_elongated_words(tweet)
-    tweet = remove_repeated_punctuation(tweet)
-    tweet = remove_extra_whitespace(tweet)
-    tweet = remove_url_shorteners(tweet)
-    tweet = remove_spaces_tweets(tweet)
-    tweet = remove_short_tweets(tweet)
-    tweet = " ".join(tweet.split())
-    return tweet
-
-
+        return text
+    
+    
 def preprocess_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """Apply cleaning to the 'text' column, drop empty rows and duplicates."""
+    clean_tweet = SocialMediaPreprocessor(lowercase=False).preprocess
     df = df.copy()
     df["text"] = df["text"].apply(clean_tweet)
-    df = df[df["text"].str.strip().astype(bool)].reset_index(drop=True)
-    df = df.drop_duplicates(subset=["text"]).reset_index(drop=True)
+    # df = df[df["text"].str.strip().astype(bool)].reset_index(drop=True)
+    # df = df.drop_duplicates(subset=["text"]).reset_index(drop=True)
     return df

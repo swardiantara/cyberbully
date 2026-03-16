@@ -183,6 +183,7 @@ run_scenario() {
                             --max_length "${MAX_LENGTH}" \
                             --output_dir "${output_dir}" \
                             --data_dir "${DATA_DIR}" \
+                            --preprocess \\
                             ${extra_flags}; then
                             completed=$((completed + 1))
                             echo "[${label}][${run_id}/${runs_per_scenario}] COMPLETED"
