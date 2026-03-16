@@ -118,6 +118,22 @@ class SupConTrainer(Trainer):
 
         return (total_loss, outputs) if return_outputs else total_loss
 
+    def prediction_step(self, model, inputs, prediction_loss_only, ignore_keys=None):
+        """Exclude proj_features from collected predictions.
+
+        The Trainer gathers ALL non-loss tensor fields of the model output and
+        passes them as eval_pred.predictions to compute_metrics_fn.
+        With SupConClassifierOutput that means (logits, proj_features) — a
+        tuple of arrays with incompatible second dimensions — causing numpy's
+        inhomogeneous-shape error.  Marking proj_features as ignored ensures
+        only the classification logits reach compute_metrics_fn.
+        """
+        if ignore_keys is None:
+            ignore_keys = ["proj_features"]
+        elif "proj_features" not in ignore_keys:
+            ignore_keys = list(ignore_keys) + ["proj_features"]
+        return super().prediction_step(model, inputs, prediction_loss_only, ignore_keys=ignore_keys)
+
 
 def train_model(
     model,
