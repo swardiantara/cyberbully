@@ -1,10 +1,11 @@
-import os
+import json
 import logging
+import os
 
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import RandomOverSampler
+from sklearn.model_selection import train_test_split
 
 from preprocessing import preprocess_dataframe
 
@@ -65,22 +66,9 @@ def load_dataset(dataset_name: str, data_dir: str) -> pd.DataFrame:
     return df
 
 
-def encode_labels(df: pd.DataFrame):
-    """Encode string labels to integers. Returns df, label2id, id2label."""
-    unique_labels = sorted(df["label"].unique().tolist())
-    label2id = {label: idx for idx, label in enumerate(unique_labels)}
-    id2label = {idx: label for label, idx in label2id.items()}
-
-    df = df.copy()
-    df["label"] = df["label"].map(label2id).astype(int)
-
-    logger.info("Label mapping: %s", label2id)
-    return df, label2id, id2label
-
-
 def split_data(
     df: pd.DataFrame,
-    seed: int = 2042, # similar to the reference paper
+    seed: int = 2042,  # similar to the reference paper
     test_size: float = 0.2,
     val_size: float = 0.2,
 ):
@@ -101,9 +89,7 @@ def split_data(
 
     logger.info(
         "Split sizes — train: %d, val: %d, test: %d",
-        len(train_df),
-        len(val_df),
-        len(test_df),
+        len(train_df), len(val_df), len(test_df),
     )
     return train_df, val_df, test_df
 
@@ -127,23 +113,102 @@ def augment_training_data(train_df: pd.DataFrame) -> pd.DataFrame:
     return augmented_df
 
 
+# ---------------------------------------------------------------------------
+# Split persistence helpers
+# ---------------------------------------------------------------------------
+
+def _split_dir(data_dir: str, dataset_name: str) -> str:
+    return os.path.join(data_dir, dataset_name)
+
+
+def _splits_exist(data_dir: str, dataset_name: str) -> bool:
+    split_dir = _split_dir(data_dir, dataset_name)
+    return all(
+        os.path.exists(os.path.join(split_dir, fname))
+        for fname in ["train.csv", "val.csv", "test.csv", "label_mapping.json"]
+    )
+
+
+def _save_splits(
+    data_dir: str,
+    dataset_name: str,
+    train_df: pd.DataFrame,
+    val_df: pd.DataFrame,
+    test_df: pd.DataFrame,
+    label2id: dict,
+):
+    split_dir = _split_dir(data_dir, dataset_name)
+    os.makedirs(split_dir, exist_ok=True)
+    for name, df in [("train", train_df), ("val", val_df), ("test", test_df)]:
+        df.to_csv(os.path.join(split_dir, f"{name}.csv"), index=False)
+    with open(os.path.join(split_dir, "label_mapping.json"), "w", encoding="utf-8") as f:
+        json.dump(label2id, f, indent=2)
+    logger.info("Saved raw splits to %s", split_dir)
+
+
+def _load_splits(data_dir: str, dataset_name: str):
+    split_dir = _split_dir(data_dir, dataset_name)
+    train_df = pd.read_csv(os.path.join(split_dir, "train.csv"))
+    val_df = pd.read_csv(os.path.join(split_dir, "val.csv"))
+    test_df = pd.read_csv(os.path.join(split_dir, "test.csv"))
+    with open(os.path.join(split_dir, "label_mapping.json"), encoding="utf-8") as f:
+        label2id = json.load(f)
+    logger.info(
+        "Loaded pre-split data from %s — train: %d, val: %d, test: %d",
+        split_dir, len(train_df), len(val_df), len(test_df),
+    )
+    return train_df, val_df, test_df, label2id
+
+
+# ---------------------------------------------------------------------------
+# Main pipeline
+# ---------------------------------------------------------------------------
+
 def prepare_data(
     dataset_name: str,
     data_dir: str,
-    seed: int = 2042,
     preprocess: bool = False,
     augment: bool = False,
 ):
-    """Full data preparation pipeline: load, preprocess, encode, split, augment."""
-    df = load_dataset(dataset_name, data_dir)
+    """Full data preparation pipeline.
 
+    On the first run, the raw dataset is loaded, split stratified by label,
+    and saved to {data_dir}/{dataset_name}/{{train,val,test}}.csv along with
+    label_mapping.json.  Subsequent runs reuse these fixed splits, ensuring
+    every experiment operates on identical train/val/test sets regardless of
+    preprocessing or augmentation settings.
+
+    Preprocessing (optional) is applied to each split independently after
+    loading, so the split boundaries are always determined on raw text.
+    """
+    if _splits_exist(data_dir, dataset_name):
+        train_df, val_df, test_df, label2id = _load_splits(data_dir, dataset_name)
+    else:
+        logger.info("No pre-split data found. Splitting and saving for future runs...")
+        df = load_dataset(dataset_name, data_dir)
+        unique_labels = sorted(df["label"].unique().tolist())
+        label2id = {label: idx for idx, label in enumerate(unique_labels)}
+        train_df, val_df, test_df = split_data(df)
+        _save_splits(data_dir, dataset_name, train_df, val_df, test_df, label2id)
+
+    id2label = {idx: label for label, idx in label2id.items()}
+    logger.info("Label mapping: %s", label2id)
+
+    # Preprocessing is applied per-split to avoid data leakage and to preserve
+    # the original distribution used for splitting.
     if preprocess:
-        logger.info("Applying text preprocessing...")
-        df = preprocess_dataframe(df)
-        logger.info("After preprocessing: %d samples remain", len(df))
+        logger.info("Applying text preprocessing per split...")
+        train_df = preprocess_dataframe(train_df)
+        val_df = preprocess_dataframe(val_df)
+        test_df = preprocess_dataframe(test_df)
+        logger.info(
+            "After preprocessing — train: %d, val: %d, test: %d",
+            len(train_df), len(val_df), len(test_df),
+        )
 
-    df, label2id, id2label = encode_labels(df)
-    train_df, val_df, test_df = split_data(df, seed)
+    # Encode string labels to integers using the saved mapping
+    for df in (train_df, val_df, test_df):
+        df["label"] = df["label"].map(label2id).astype(int)
 
     if augment:
         logger.info("Applying training data augmentation (oversampling)...")

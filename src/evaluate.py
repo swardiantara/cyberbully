@@ -10,6 +10,7 @@ import numpy as np
 import seaborn as sns
 import torch
 from codecarbon import EmissionsTracker
+from sklearn.manifold import TSNE
 from sklearn.metrics import (
     accuracy_score,
     classification_report,
@@ -170,3 +171,84 @@ def evaluate_model(
     logger.info("Energy consumption: %.6f kWh", metrics["energy_kwh"])
 
     return all_preds, all_labels, all_probs
+
+
+def plot_projection_tsne(
+    model,
+    dataset,
+    id2label: dict,
+    device: str,
+    output_dir: str,
+    batch_size: int = 64,
+    perplexity: float = 30.0,
+    n_iter: int = 1000,
+    random_state: int = 42,
+):
+    """Extract projection-head embeddings from the model and plot them in 2D
+    via t-SNE, saved as a PDF alongside the other output artifacts.
+
+    Only meaningful when the model is a SupConClassifier whose forward()
+    returns proj_features.
+    """
+    model.eval()
+    model.to(device)
+
+    dataloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size)
+
+    all_proj = []
+    all_labels = []
+
+    with torch.no_grad():
+        for batch in dataloader:
+            input_ids = batch["input_ids"].to(device)
+            attention_mask = batch["attention_mask"].to(device)
+            labels = batch["labels"]
+
+            outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+            all_proj.append(outputs.proj_features.cpu().numpy())
+            all_labels.extend(labels.numpy().tolist())
+
+    proj_matrix = np.concatenate(all_proj, axis=0)   # (N, proj_dim)
+    labels_arr = np.array(all_labels)
+
+    logger.info(
+        "Running t-SNE on %d samples with proj_dim=%d, perplexity=%.1f...",
+        len(labels_arr), proj_matrix.shape[1], perplexity,
+    )
+
+    tsne = TSNE(
+        n_components=2,
+        perplexity=perplexity,
+        n_iter=n_iter,
+        random_state=random_state,
+    )
+    embeddings_2d = tsne.fit_transform(proj_matrix)   # (N, 2)
+
+    # --- Plot ---
+    label_names = [id2label[i] for i in sorted(id2label.keys())]
+    num_classes = len(label_names)
+    palette = sns.color_palette("tab10", n_colors=num_classes)
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    for class_idx, class_name in enumerate(label_names):
+        mask = labels_arr == class_idx
+        ax.scatter(
+            embeddings_2d[mask, 0],
+            embeddings_2d[mask, 1],
+            label=class_name,
+            color=palette[class_idx],
+            s=12,
+            alpha=0.7,
+            linewidths=0,
+        )
+
+    ax.set_title("Projection Embeddings — t-SNE", fontsize=14)
+    ax.set_xlabel("t-SNE Dimension 1", fontsize=11)
+    ax.set_ylabel("t-SNE Dimension 2", fontsize=11)
+    ax.legend(title="Class", bbox_to_anchor=(1.01, 1), loc="upper left", fontsize=9)
+    plt.tight_layout()
+
+    tsne_path = os.path.join(output_dir, "projection_tsne.pdf")
+    fig.savefig(tsne_path, format="pdf", bbox_inches="tight")
+    plt.close(fig)
+    logger.info("t-SNE projection plot saved to %s", tsne_path)

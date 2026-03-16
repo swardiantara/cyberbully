@@ -1,12 +1,110 @@
 import logging
+from dataclasses import dataclass
+from typing import Optional
 
 import torch
 import torch.nn as nn
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
+import torch.nn.functional as F
+from transformers import AutoModel, AutoModelForSequenceClassification, AutoTokenizer
 from transformers.modeling_outputs import SequenceClassifierOutput
 
 logger = logging.getLogger("cyberbully")
 
+
+# ---------------------------------------------------------------------------
+# Custom output for SupCon models
+# ---------------------------------------------------------------------------
+
+@dataclass
+class SupConClassifierOutput(SequenceClassifierOutput):
+    """Extends SequenceClassifierOutput to carry L2-normalized projection features
+    used by SupConLoss alongside the standard CE logits."""
+    proj_features: Optional[torch.Tensor] = None
+
+
+# ---------------------------------------------------------------------------
+# SupCon model: transformer + projection head + classifier head
+# ---------------------------------------------------------------------------
+
+class SupConClassifier(nn.Module):
+    """Transformer backbone with a projection head (SupCon) and a classification
+    head (CE), both operating on the same mean-pooled representation.
+
+    The projection head output is L2-normalized in forward(), ready for
+    SupConLoss. The classification head produces raw logits for CrossEntropy.
+    """
+
+    def __init__(
+        self,
+        model_name: str,
+        num_labels: int,
+        id2label: dict,
+        label2id: dict,
+        proj_dim: int = 128,
+    ):
+        super().__init__()
+        self.transformer = AutoModel.from_pretrained(model_name)
+        hidden_size = self.transformer.config.hidden_size
+
+        # Classification head
+        self.classifier = nn.Sequential(
+            nn.Dropout(0.1),
+            nn.Linear(hidden_size, num_labels),
+        )
+
+        # Projection head: 2-layer MLP as in Khosla et al. (2020)
+        self.projector = nn.Sequential(
+            nn.Linear(hidden_size, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, proj_dim),
+        )
+
+        # Expose config for HF Trainer compatibility
+        self.config = self.transformer.config
+        self.config.num_labels = num_labels
+        self.config.id2label = id2label
+        self.config.label2id = label2id
+
+        logger.info(
+            "SupConClassifier: hidden_size=%d, proj_dim=%d, num_labels=%d",
+            hidden_size, proj_dim, num_labels,
+        )
+
+    def _mean_pool(self, last_hidden_state: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
+        mask_expanded = attention_mask.unsqueeze(-1).expand(last_hidden_state.size()).float()
+        return (
+            torch.sum(last_hidden_state * mask_expanded, dim=1)
+            / torch.clamp(mask_expanded.sum(dim=1), min=1e-9)
+        )
+
+    def forward(self, input_ids, attention_mask, labels=None):
+        outputs = self.transformer(input_ids=input_ids, attention_mask=attention_mask)
+        pooled = self._mean_pool(outputs.last_hidden_state, attention_mask)
+
+        logits = self.classifier(pooled)
+        proj_features = F.normalize(self.projector(pooled), dim=-1)
+
+        ce_loss = None
+        if labels is not None:
+            ce_loss = nn.CrossEntropyLoss()(logits, labels)
+
+        return SupConClassifierOutput(loss=ce_loss, logits=logits, proj_features=proj_features)
+
+    def get_embedding_layer(self) -> nn.Module:
+        """Return the word embedding layer for Captum attribution."""
+        model_type = getattr(self.transformer.config, "model_type", "").lower()
+        if model_type == "xlnet":
+            return self.transformer.word_embedding
+        elif model_type == "gpt2":
+            return self.transformer.wte
+        else:
+            # Covers bert, roberta, distilbert, mobilebert, mpnet, etc.
+            return self.transformer.embeddings.word_embeddings
+
+
+# ---------------------------------------------------------------------------
+# SBERT-based classifier
+# ---------------------------------------------------------------------------
 
 class SBERTClassifier(nn.Module):
     """Classification model using a SentenceTransformer as the backbone.
@@ -67,6 +165,10 @@ class SBERTClassifier(nn.Module):
         return self.transformer.embeddings.word_embeddings
 
 
+# ---------------------------------------------------------------------------
+# Model loading
+# ---------------------------------------------------------------------------
+
 def _resolve_sbert_path(model_name: str) -> str:
     """Resolve an SBERT model name to its full HuggingFace Hub path."""
     if "/" not in model_name:
@@ -80,14 +182,28 @@ def load_model_and_tokenizer(
     id2label: dict,
     label2id: dict,
     sbert: bool = False,
+    supcon: bool = False,
+    proj_dim: int = 128,
 ):
-    """Load a HuggingFace model and tokenizer with proper configuration."""
-    logger.info("Loading model '%s' with %d labels (sbert=%s)", model_name, num_labels, sbert)
+    """Load a HuggingFace model and tokenizer with proper configuration.
+
+    When supcon=True, loads SupConClassifier (AutoModel + projection head +
+    classifier head) to enable the combined CE + SupCon training objective.
+    When sbert=True, loads SBERTClassifier (SentenceTransformer backbone).
+    When neither flag is set, loads AutoModelForSequenceClassification.
+    """
+    logger.info(
+        "Loading model '%s' with %d labels (sbert=%s, supcon=%s)",
+        model_name, num_labels, sbert, supcon,
+    )
 
     if sbert:
         hf_path = _resolve_sbert_path(model_name)
         model = SBERTClassifier(hf_path, num_labels, id2label, label2id)
         tokenizer = AutoTokenizer.from_pretrained(hf_path)
+    elif supcon:
+        model = SupConClassifier(model_name, num_labels, id2label, label2id, proj_dim=proj_dim)
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
     else:
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForSequenceClassification.from_pretrained(
@@ -110,6 +226,10 @@ def load_model_and_tokenizer(
 
     return model, tokenizer
 
+
+# ---------------------------------------------------------------------------
+# Captum helpers
+# ---------------------------------------------------------------------------
 
 class ModelWrapper(nn.Module):
     """Wrapper around a HuggingFace model for Captum compatibility.
@@ -134,7 +254,7 @@ def get_embedding_layer(model, model_name: str) -> nn.Module:
     Uses model.config.model_type to reliably detect the architecture,
     regardless of the model's HuggingFace hub name.
     """
-    # SBERTClassifier provides its own method
+    # SBERTClassifier and SupConClassifier provide their own method
     if hasattr(model, "get_embedding_layer"):
         return model.get_embedding_layer()
 

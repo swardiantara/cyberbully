@@ -3,18 +3,15 @@ import json
 import os
 import sys
 
-import torch
-
 from utils import set_seed, get_device, get_output_dir, setup_logging
 from data import prepare_data
 from model import load_model_and_tokenizer
-from contrastive import check_model_exists, parse_custom_model_path, contrastive_finetune
 from train import (
     CyberbullyDataset,
     get_training_args,
     train_model,
 )
-from evaluate import evaluate_model
+from evaluate import evaluate_model, plot_projection_tsne
 from attribution import compute_attributions
 
 
@@ -107,6 +104,35 @@ def parse_args():
         "fine-tuning if the model does not exist on HuggingFace.",
     )
     parser.add_argument(
+        "--supcon",
+        action="store_true",
+        default=False,
+        help="Add a projection head and train with SupCon auxiliary loss "
+        "(Khosla et al., 2020) alongside the standard CE loss.",
+    )
+    parser.add_argument(
+        "--supcon_weight",
+        type=float,
+        default=0.1,
+        help="Weight (λ) for the SupCon auxiliary loss: L = L_CE + λ·L_SupCon "
+        "(default: 0.1). Only used when --supcon is set.",
+    )
+    parser.add_argument(
+        "--proj_dim",
+        type=int,
+        default=128,
+        help="Output dimensionality of the projection head used for SupCon "
+        "(default: 128). Only used when --supcon is set.",
+    )
+    parser.add_argument(
+        "--grad_accum_steps",
+        type=int,
+        default=1,
+        help="Gradient accumulation steps — effective batch size = "
+        "batch_size × grad_accum_steps (default: 1). "
+        "Increase when using SupCon to simulate a larger batch.",
+    )
+    parser.add_argument(
         "--overwrite",
         action="store_true",
         default=False,
@@ -190,20 +216,14 @@ def main():
         }
         json.dump(config, f, indent=2)
 
-    # --- Contrastive fine-tuning (SBERT custom models only) ---
-    if args.sbert and str(args.model).startswith("swardiantara"):
-        if not check_model_exists(args.model):
-            _, base_model = parse_custom_model_path(args.model)
-            logger.info(
-                "Step 1b: Contrastive fine-tuning '%s' -> '%s'",
-                base_model, args.model,
-            )
-            contrastive_finetune(base_model, train_df, args.model, args.seed)
 
     # --- Model loading ---
     logger.info("Step 2: Loading model and tokenizer...")
     model, tokenizer = load_model_and_tokenizer(
-        args.model, num_labels, id2label, label2id, sbert=args.sbert,
+        args.model, num_labels, id2label, label2id,
+        sbert=args.sbert,
+        supcon=args.supcon,
+        proj_dim=args.proj_dim,
     )
 
     # MobileBERT's inverted-bottleneck layers produce activations that overflow
@@ -241,21 +261,36 @@ def main():
         lr=args.lr,
         seed=args.seed,
         fp16=use_fp16,
+        grad_accum_steps=args.grad_accum_steps,
     )
-    trainer = train_model(model, tokenizer, train_dataset, val_dataset, training_args)
+    trainer = train_model(
+        model, tokenizer, train_dataset, val_dataset, training_args,
+        supcon_weight=args.supcon_weight if args.supcon else 0.0,
+    )
 
     # Use the best model from training
     model = trainer.model
 
     # --- Evaluation ---
     logger.info("Step 5: Evaluating on test set...")
-    all_preds, all_labels, all_probs = evaluate_model(
+    evaluate_model(
         model=model,
         test_dataset=test_dataset,
         id2label=id2label,
         device=device,
         output_dir=output_dir,
     )
+
+    # --- SupCon projection t-SNE ---
+    if args.supcon:
+        logger.info("Step 5b: Plotting t-SNE of projection embeddings...")
+        plot_projection_tsne(
+            model=model,
+            dataset=test_dataset,
+            id2label=id2label,
+            device=device,
+            output_dir=output_dir,
+        )
 
     # --- Integrated Gradients Attribution ---
     if args.compute_attribution:
