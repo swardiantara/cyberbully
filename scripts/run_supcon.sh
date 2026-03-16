@@ -28,7 +28,7 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 # Toggle scenarios
 # ---------------------------------------------------------------------------
-RUN_BASELINE=1   # set to 0 to skip the CE-only baseline
+RUN_BASELINE=0   # set to 0 to skip the CE-only baseline
 RUN_SUPCON=1     # set to 0 to skip the SupCon scenario
 
 # ---------------------------------------------------------------------------
