@@ -100,8 +100,8 @@ class SupConTrainer(Trainer):
 
     def __init__(self, *args, supcon_weight: float = 0.1, **kwargs):
         super().__init__(*args, **kwargs)
-        self._supcon_criterion = SupConLoss()
-        self._supcon_weight = supcon_weight
+        self._supcon_criterion = SupConLoss(loss_scaling_factor=supcon_weight)
+        # self._supcon_weight = supcon_weight
 
     def compute_loss(self, model, inputs, return_outputs=False, **_):
         labels = inputs.get("labels")
@@ -114,7 +114,7 @@ class SupConTrainer(Trainer):
         proj_features = outputs.proj_features.unsqueeze(1)  # [bsz, 1, proj_dim]
         supcon_loss = self._supcon_criterion(proj_features, labels)
 
-        total_loss = ce_loss + self._supcon_weight * supcon_loss
+        total_loss = ce_loss + supcon_loss
 
         return (total_loss, outputs) if return_outputs else total_loss
 
