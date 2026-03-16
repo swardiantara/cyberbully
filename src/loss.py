@@ -98,9 +98,16 @@ class SupConLoss(nn.Module):
         log_prob = logits - torch.log(exp_logits.sum(1, keepdim=True) + 1e-6)
         
         # compute mean of log-likelihood over positive
-        mean_log_prob_pos = (mask * log_prob).sum(1) / mask.sum(1)
+        # clamp denominator to 1 to avoid 0/0 when a sample has no positive
+        # peers in the batch (e.g. a rare class that appears only once).
+        # numerator is also 0 in that case, so those samples contribute 0 loss
+        # and are effectively excluded from the mean.
+        pos_per_sample = mask.sum(1)
+        mean_log_prob_pos = (mask * log_prob).sum(1) / pos_per_sample.clamp(min=1)
 
-        # loss
+        # loss — average only over samples that had at least one positive peer
         loss = - (self.temperature / self.base_temperature) * mean_log_prob_pos
-        loss = loss.view(anchor_count, batch_size).mean()
+        valid = (pos_per_sample > 0).view(anchor_count, batch_size)
+        loss = loss.view(anchor_count, batch_size)
+        loss = (loss * valid).sum() / valid.sum().clamp(min=1)
         return self.scaling_factor * loss
