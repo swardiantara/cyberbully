@@ -60,7 +60,8 @@ DATASETS=(
 # ---------------------------------------------------------------------------
 # Seeds (shared with run_all.sh for cross-script comparability)
 # ---------------------------------------------------------------------------
-SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
+SEEDS=( 14298463 24677315 37622020 43782163 52680723 )
+# 67351593 70681460 87212562 90995999 99511865 )
 
 # ---------------------------------------------------------------------------
 # Shared hyperparameters
@@ -73,7 +74,7 @@ DATA_DIR="dataset"
 # Baseline: no contrastive loss, standard batch
 BASELINE_BATCH_SIZE=32
 BASELINE_GRAD_ACCUM=1
-BASELINE_OUTPUT_DIR="supcon-baseline"
+BASELINE_OUTPUT_DIR="baseline-light"
 
 # SupCon: larger effective batch for pair diversity (batch × accum = 256)
 SUPCON_BATCH_SIZE=32

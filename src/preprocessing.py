@@ -57,10 +57,10 @@ class SocialMediaPreprocessor:
         return unicodedata.normalize("NFKC", text)
 
     def replace_urls(self, text):
-        return self.url_pattern.sub("<URL>", text)
+        return self.url_pattern.sub("", text)
 
     def replace_mentions(self, text):
-        return self.mention_pattern.sub("<USER>", text)
+        return self.mention_pattern.sub("", text)
 
     def normalize_hashtags(self, text):
         return self.hashtag_pattern.sub(r"\1", text)
@@ -122,16 +122,16 @@ class SocialMediaPreprocessor:
     def preprocess(self, text):
 
         text = self.normalize_unicode(text)
-        text = self.replace_urls(text)
-        text = self.replace_mentions(text)
+        text = self.replace_urls(text)          # now remove
+        text = self.replace_mentions(text)      # now remove
         text = self.normalize_hashtags(text)
         text = self.convert_emojis(text)
 
         text = self.expand_contractions(text)
-        text = self.normalize_slang(text)
+        # text = self.normalize_slang(text)
 
-        text = self.normalize_leetspeak(text)
-        text = self.normalize_profanity(text)
+        # text = self.normalize_leetspeak(text)
+        # text = self.normalize_profanity(text)
 
         text = self.normalize_repeated_chars(text)
 
