@@ -28,8 +28,8 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 # Toggle scenarios
 # ---------------------------------------------------------------------------
-RUN_BASELINE=1   # set to 0 to skip the CE-only baseline
-RUN_SUPCON=0     # set to 0 to skip the SupCon scenario
+RUN_BASELINE=0   # set to 0 to skip the CE-only baseline
+RUN_SUPCON=1     # set to 0 to skip the SupCon scenario
 
 # ---------------------------------------------------------------------------
 # Models (non-SBERT standard transformers only)
@@ -77,9 +77,9 @@ BASELINE_GRAD_ACCUM=1
 BASELINE_OUTPUT_DIR="baseline-light"
 
 # SupCon: larger effective batch for pair diversity (batch × accum = 256)
-SUPCON_BATCH_SIZE=32
+SUPCON_BATCH_SIZE=64
 SUPCON_GRAD_ACCUM=1
-SUPCON_OUTPUT_DIR="supcon-grid"
+SUPCON_OUTPUT_DIR="supcon-light-64"
 SUPCON_WEIGHT=0.1
 PROJ_DIM=128
 
