@@ -28,18 +28,19 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 # Toggle scenarios
 # ---------------------------------------------------------------------------
-RUN_BASELINE=0   # set to 0 to skip the CE-only baseline
-RUN_SUPCON=1     # set to 0 to skip the SupCon scenario
+RUN_BASELINE=1   # set to 0 to skip the CE-only baseline
+RUN_SUPCON=0     # set to 0 to skip the SupCon scenario
 
 # ---------------------------------------------------------------------------
 # Models (non-SBERT standard transformers only)
 # ---------------------------------------------------------------------------
 MODELS=(
+    "Twitter/twhin-bert-base"
     "roberta-base"
+    "all-mpnet-base-v2"
     # "bert-base-uncased"
     # "distilbert-base-uncased"
     # "google/mobilebert-uncased"
-    # "vinai/bertweet-base"
 )
 
 # ---------------------------------------------------------------------------
