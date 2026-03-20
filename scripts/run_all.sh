@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 #
-# run_all.sh — Automate all experiment configurations
+# run_all.sh — Baseline (CE-only) experiment suite
 #
 # Loops over: models × datasets × preprocess (on/off) × augment (on/off) × seeds
-# Total: 5 models × 3 datasets × 2 × 2 × 10 seeds = 600 runs
+# Total: 14 models × 3 datasets × 2 × 2 × 10 seeds = 1680 runs
+#
+# No SupCon — use run_supcon.sh for the SupCon auxiliary-loss experiments.
 #
 # Usage:
 #   chmod +x scripts/run_all.sh
@@ -16,6 +18,8 @@ set -euo pipefail
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
+    "bert-base-cased"           # cased variant — investigate case sensitivity
+    "distilbert-base-cased"     # cased variant — investigate case sensitivity
     "roberta-base"
     "vinai/bertweet-base"
     "google/mobilebert-uncased"
@@ -76,8 +80,8 @@ echo ""
 
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
-        for preprocess in 0; do
-            for augment in 0; do
+        for preprocess in 0 1; do
+            for augment in 0 1; do
                 for seed in "${SEEDS[@]}"; do
                     run_id=$((completed + failed + 1))
 
