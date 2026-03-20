@@ -112,9 +112,20 @@ class SBERTClassifier(nn.Module):
     Extracts the underlying transformer from a SentenceTransformer model,
     applies mean pooling, and feeds the pooled embedding through a
     Linear-ReLU-Dropout-Linear classification head.
+
+    When proj_dim is set, a 2-layer MLP projection head (as in Khosla et al.,
+    2020) is added on the pooled representation and the model returns
+    SupConClassifierOutput so it can be used with SupConTrainer.
     """
 
-    def __init__(self, model_name: str, num_labels: int, id2label: dict, label2id: dict):
+    def __init__(
+        self,
+        model_name: str,
+        num_labels: int,
+        id2label: dict,
+        label2id: dict,
+        proj_dim: Optional[int] = None,
+    ):
         super().__init__()
         from sentence_transformers import SentenceTransformer
 
@@ -129,6 +140,15 @@ class SBERTClassifier(nn.Module):
             nn.Linear(256, num_labels),
         )
 
+        # Optional projection head for SupCon auxiliary loss
+        self.projector = None
+        if proj_dim is not None:
+            self.projector = nn.Sequential(
+                nn.Linear(embedding_dim, embedding_dim),
+                nn.ReLU(),
+                nn.Linear(embedding_dim, proj_dim),
+            )
+
         # Expose config for HF Trainer compatibility
         self.config = self.transformer.config
         self.config.num_labels = num_labels
@@ -136,8 +156,8 @@ class SBERTClassifier(nn.Module):
         self.config.label2id = label2id
 
         logger.info(
-            "SBERTClassifier: embedding_dim=%d, hidden=256, num_labels=%d",
-            embedding_dim, num_labels,
+            "SBERTClassifier: embedding_dim=%d, hidden=256, proj_dim=%s, num_labels=%d",
+            embedding_dim, proj_dim, num_labels,
         )
 
     def forward(self, input_ids, attention_mask, labels=None):
@@ -157,6 +177,10 @@ class SBERTClassifier(nn.Module):
         loss = None
         if labels is not None:
             loss = nn.CrossEntropyLoss()(logits, labels)
+
+        if self.projector is not None:
+            proj_features = F.normalize(self.projector(pooled), dim=-1)
+            return SupConClassifierOutput(loss=loss, logits=logits, proj_features=proj_features)
 
         return SequenceClassifierOutput(loss=loss, logits=logits)
 
@@ -199,7 +223,10 @@ def load_model_and_tokenizer(
 
     if sbert:
         hf_path = _resolve_sbert_path(model_name)
-        model = SBERTClassifier(hf_path, num_labels, id2label, label2id)
+        model = SBERTClassifier(
+            hf_path, num_labels, id2label, label2id,
+            proj_dim=proj_dim if supcon else None,
+        )
         tokenizer = AutoTokenizer.from_pretrained(hf_path)
     elif supcon:
         model = SupConClassifier(model_name, num_labels, id2label, label2id, proj_dim=proj_dim)
