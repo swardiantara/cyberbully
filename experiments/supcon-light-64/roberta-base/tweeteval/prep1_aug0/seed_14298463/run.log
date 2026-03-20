@@ -1,0 +1,26 @@
+2026-03-19 19:13:32,911 - cyberbully - INFO - ============================================================
+2026-03-19 19:13:32,911 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-19 19:13:32,911 - cyberbully - INFO - ============================================================
+2026-03-19 19:13:32,911 - cyberbully - INFO - Configuration:
+2026-03-19 19:13:32,911 - cyberbully - INFO -   model          : roberta-base
+2026-03-19 19:13:32,911 - cyberbully - INFO -   dataset        : tweeteval
+2026-03-19 19:13:32,911 - cyberbully - INFO -   preprocess     : True
+2026-03-19 19:13:32,911 - cyberbully - INFO -   augment        : False
+2026-03-19 19:13:32,911 - cyberbully - INFO -   compute_attribution: False
+2026-03-19 19:13:32,911 - cyberbully - INFO -   seed           : 14298463
+2026-03-19 19:13:32,911 - cyberbully - INFO -   epochs         : 10
+2026-03-19 19:13:32,911 - cyberbully - INFO -   batch_size     : 64
+2026-03-19 19:13:32,911 - cyberbully - INFO -   lr             : 5e-05
+2026-03-19 19:13:32,911 - cyberbully - INFO -   max_length     : 128
+2026-03-19 19:13:32,911 - cyberbully - INFO -   output_dir     : supcon-light-64
+2026-03-19 19:13:32,911 - cyberbully - INFO -   data_dir       : dataset
+2026-03-19 19:13:32,911 - cyberbully - INFO -   sbert          : False
+2026-03-19 19:13:32,911 - cyberbully - INFO -   supcon         : True
+2026-03-19 19:13:32,912 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-19 19:13:32,912 - cyberbully - INFO -   proj_dim       : 128
+2026-03-19 19:13:32,912 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-19 19:13:32,912 - cyberbully - INFO -   overwrite      : False
+2026-03-19 19:13:32,912 - cyberbully - INFO -   device         : cuda
+2026-03-19 19:13:32,912 - cyberbully - INFO -   output_dir     : experiments/supcon-light-64/roberta-base/tweeteval/prep1_aug0/seed_14298463
+2026-03-19 19:13:32,912 - cyberbully - INFO - ============================================================
+2026-03-19 19:13:32,912 - cyberbully - INFO - This experiment has been completed before. Skipped!
