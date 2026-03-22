@@ -1,0 +1,66 @@
+{
+  "model": "albert/albert-base-v2",
+  "dataset": "kaggle",
+  "preprocess": true,
+  "augment": false,
+  "compute_attribution": false,
+  "seed": 67351593,
+  "epochs": 10,
+  "batch_size": 32,
+  "lr": 5e-05,
+  "max_length": 128,
+  "output_dir": "grid-search",
+  "data_dir": "dataset",
+  "sbert": false,
+  "supcon": false,
+  "supcon_weight": 0.1,
+  "proj_dim": 128,
+  "grad_accum_steps": 1,
+  "overwrite": false,
+  "device": "cuda",
+  "output_dir_resolved": "experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_67351593",
+  "dataset_statistics": {
+    "num_classes": 6,
+    "label_mapping": {
+      "age": 0,
+      "ethnicity": 1,
+      "gender": 2,
+      "not_cyberbullying": 3,
+      "other_cyberbullying": 4,
+      "religion": 5
+    },
+    "train": {
+      "num_samples": 26854,
+      "class_distribution": {
+        "age": 5016,
+        "ethnicity": 4755,
+        "gender": 4696,
+        "not_cyberbullying": 3642,
+        "other_cyberbullying": 3673,
+        "religion": 5072
+      }
+    },
+    "val": {
+      "num_samples": 6838,
+      "class_distribution": {
+        "age": 1259,
+        "ethnicity": 1209,
+        "gender": 1185,
+        "not_cyberbullying": 939,
+        "other_cyberbullying": 974,
+        "religion": 1272
+      }
+    },
+    "test": {
+      "num_samples": 8549,
+      "class_distribution": {
+        "age": 1577,
+        "ethnicity": 1488,
+        "gender": 1468,
+        "not_cyberbullying": 1211,
+        "other_cyberbullying": 1213,
+        "religion": 1592
+      }
+    }
+  }
+}
