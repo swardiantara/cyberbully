@@ -1,0 +1,56 @@
+2026-02-25 16:29:23,837 - cyberbully - INFO - ============================================================
+2026-02-25 16:29:23,837 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-25 16:29:23,837 - cyberbully - INFO - ============================================================
+2026-02-25 16:29:23,837 - cyberbully - INFO - Configuration:
+2026-02-25 16:29:23,837 - cyberbully - INFO -   model          : google/mobilebert-uncased
+2026-02-25 16:29:23,837 - cyberbully - INFO -   dataset        : kaggle
+2026-02-25 16:29:23,837 - cyberbully - INFO -   preprocess     : False
+2026-02-25 16:29:23,837 - cyberbully - INFO -   augment        : False
+2026-02-25 16:29:23,837 - cyberbully - INFO -   compute_attribution: False
+2026-02-25 16:29:23,837 - cyberbully - INFO -   seed           : 24677315
+2026-02-25 16:29:23,837 - cyberbully - INFO -   epochs         : 10
+2026-02-25 16:29:23,837 - cyberbully - INFO -   batch_size     : 32
+2026-02-25 16:29:23,837 - cyberbully - INFO -   lr             : 5e-05
+2026-02-25 16:29:23,837 - cyberbully - INFO -   max_length     : 128
+2026-02-25 16:29:23,837 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-25 16:29:23,837 - cyberbully - INFO -   data_dir       : dataset
+2026-02-25 16:29:23,837 - cyberbully - INFO -   sbert          : False
+2026-02-25 16:29:23,837 - cyberbully - INFO -   overwrite      : False
+2026-02-25 16:29:23,837 - cyberbully - INFO -   device         : cuda
+2026-02-25 16:29:23,837 - cyberbully - INFO -   output_dir     : experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315
+2026-02-25 16:29:23,837 - cyberbully - INFO - ============================================================
+2026-02-25 16:29:23,838 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-25 16:29:23,838 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-25 16:29:23,898 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-25 16:29:23,901 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-25 16:29:23,914 - cyberbully - INFO - Split sizes — train: 30499, val: 7625, test: 9532
+2026-02-25 16:29:23,914 - cyberbully - INFO - Number of classes: 6
+2026-02-25 16:29:23,915 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-25 16:29:23,915 - cyberbully - INFO - Loading model 'google/mobilebert-uncased' with 6 labels (sbert=False)
+2026-02-25 16:29:26,022 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-25 16:29:26,984 - cyberbully - INFO - Dataset sizes — train: 30499, val: 7625, test: 9532
+2026-02-25 16:29:26,984 - cyberbully - INFO - Step 4: Training...
+2026-02-25 16:29:27,188 - cyberbully - INFO - Starting training...
+2026-02-25 16:41:56,054 - cyberbully - INFO - Training complete.
+2026-02-25 16:41:56,061 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-954
+2026-02-25 16:41:56,069 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-1908
+2026-02-25 16:41:56,077 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-2862
+2026-02-25 16:41:56,085 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-7632
+2026-02-25 16:41:56,092 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-5724
+2026-02-25 16:41:56,099 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-4770
+2026-02-25 16:41:56,108 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-9540
+2026-02-25 16:41:56,115 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-6678
+2026-02-25 16:41:56,123 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-8586
+2026-02-25 16:41:56,130 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/checkpoint-3816
+2026-02-25 16:41:56,130 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-25 16:42:06,495 - cyberbully - INFO - Metrics saved to experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/metrics.json
+2026-02-25 16:42:06,495 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/confusion_matrix.json
+2026-02-25 16:42:06,606 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315/confusion_matrix.pdf
+2026-02-25 16:42:06,606 - cyberbully - INFO - Accuracy: 0.1676
+2026-02-25 16:42:06,606 - cyberbully - INFO - Weighted F1: 0.0481
+2026-02-25 16:42:06,606 - cyberbully - INFO - Micro F1: 0.1676
+2026-02-25 16:42:06,606 - cyberbully - INFO - Inference time: 5.93 seconds
+2026-02-25 16:42:06,606 - cyberbully - INFO - Energy consumption: 0.000337 kWh
+2026-02-25 16:42:06,606 - cyberbully - INFO - ============================================================
+2026-02-25 16:42:06,606 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/google_mobilebert-uncased/kaggle/prep0_aug0/seed_24677315
+2026-02-25 16:42:06,606 - cyberbully - INFO - ============================================================
