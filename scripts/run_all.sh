@@ -18,8 +18,8 @@ set -euo pipefail
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "google/mobilebert-uncased"
-    # "all-distilroberta-v1"
+    # "google/mobilebert-uncased"
+    "all-distilroberta-v1"
     # "GroNLP/hateBERT"
     # "albert/albert-base-v2"
     # "bert-base-cased"           # cased variant — investigate case sensitivity
