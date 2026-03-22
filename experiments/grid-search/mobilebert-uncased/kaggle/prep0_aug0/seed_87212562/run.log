@@ -1,0 +1,29 @@
+2026-02-23 04:57:29,559 - cyberbully - INFO - ============================================================
+2026-02-23 04:57:29,559 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-23 04:57:29,559 - cyberbully - INFO - ============================================================
+2026-02-23 04:57:29,559 - cyberbully - INFO - Configuration:
+2026-02-23 04:57:29,559 - cyberbully - INFO -   model          : mobilebert-uncased
+2026-02-23 04:57:29,559 - cyberbully - INFO -   dataset        : kaggle
+2026-02-23 04:57:29,559 - cyberbully - INFO -   preprocess     : False
+2026-02-23 04:57:29,559 - cyberbully - INFO -   augment        : False
+2026-02-23 04:57:29,559 - cyberbully - INFO -   compute_attribution: False
+2026-02-23 04:57:29,559 - cyberbully - INFO -   seed           : 87212562
+2026-02-23 04:57:29,559 - cyberbully - INFO -   epochs         : 10
+2026-02-23 04:57:29,559 - cyberbully - INFO -   batch_size     : 32
+2026-02-23 04:57:29,559 - cyberbully - INFO -   lr             : 5e-05
+2026-02-23 04:57:29,559 - cyberbully - INFO -   max_length     : 128
+2026-02-23 04:57:29,559 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-23 04:57:29,559 - cyberbully - INFO -   data_dir       : dataset
+2026-02-23 04:57:29,559 - cyberbully - INFO -   sbert          : False
+2026-02-23 04:57:29,559 - cyberbully - INFO -   overwrite      : False
+2026-02-23 04:57:29,559 - cyberbully - INFO -   device         : cuda
+2026-02-23 04:57:29,559 - cyberbully - INFO -   output_dir     : experiments/grid-search/mobilebert-uncased/kaggle/prep0_aug0/seed_87212562
+2026-02-23 04:57:29,559 - cyberbully - INFO - ============================================================
+2026-02-23 04:57:29,559 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-23 04:57:29,559 - cyberbully - INFO - Loading dataset 'kaggle' from dataset/Kaggle.csv
+2026-02-23 04:57:29,618 - cyberbully - INFO - Loaded 47656 samples with 6 classes: ['age', 'ethnicity', 'gender', 'not_cyberbullying', 'other_cyberbullying', 'religion']
+2026-02-23 04:57:29,620 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-02-23 04:57:29,632 - cyberbully - INFO - Split sizes — train: 30499, val: 7625, test: 9532
+2026-02-23 04:57:29,633 - cyberbully - INFO - Number of classes: 6
+2026-02-23 04:57:29,634 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-23 04:57:29,634 - cyberbully - INFO - Loading model 'mobilebert-uncased' with 6 labels (sbert=False)

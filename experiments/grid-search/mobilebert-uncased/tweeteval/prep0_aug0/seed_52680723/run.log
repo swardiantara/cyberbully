@@ -1,0 +1,29 @@
+2026-02-23 04:57:51,377 - cyberbully - INFO - ============================================================
+2026-02-23 04:57:51,377 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-23 04:57:51,377 - cyberbully - INFO - ============================================================
+2026-02-23 04:57:51,377 - cyberbully - INFO - Configuration:
+2026-02-23 04:57:51,377 - cyberbully - INFO -   model          : mobilebert-uncased
+2026-02-23 04:57:51,377 - cyberbully - INFO -   dataset        : tweeteval
+2026-02-23 04:57:51,377 - cyberbully - INFO -   preprocess     : False
+2026-02-23 04:57:51,377 - cyberbully - INFO -   augment        : False
+2026-02-23 04:57:51,377 - cyberbully - INFO -   compute_attribution: False
+2026-02-23 04:57:51,377 - cyberbully - INFO -   seed           : 52680723
+2026-02-23 04:57:51,377 - cyberbully - INFO -   epochs         : 10
+2026-02-23 04:57:51,377 - cyberbully - INFO -   batch_size     : 32
+2026-02-23 04:57:51,377 - cyberbully - INFO -   lr             : 5e-05
+2026-02-23 04:57:51,377 - cyberbully - INFO -   max_length     : 128
+2026-02-23 04:57:51,377 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-23 04:57:51,377 - cyberbully - INFO -   data_dir       : dataset
+2026-02-23 04:57:51,377 - cyberbully - INFO -   sbert          : False
+2026-02-23 04:57:51,377 - cyberbully - INFO -   overwrite      : False
+2026-02-23 04:57:51,377 - cyberbully - INFO -   device         : cuda
+2026-02-23 04:57:51,377 - cyberbully - INFO -   output_dir     : experiments/grid-search/mobilebert-uncased/tweeteval/prep0_aug0/seed_52680723
+2026-02-23 04:57:51,377 - cyberbully - INFO - ============================================================
+2026-02-23 04:57:51,377 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-23 04:57:51,377 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
+2026-02-23 04:57:51,450 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
+2026-02-23 04:57:51,452 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-02-23 04:57:51,465 - cyberbully - INFO - Split sizes — train: 32485, val: 8122, test: 10152
+2026-02-23 04:57:51,465 - cyberbully - INFO - Number of classes: 5
+2026-02-23 04:57:51,467 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-23 04:57:51,467 - cyberbully - INFO - Loading model 'mobilebert-uncased' with 5 labels (sbert=False)

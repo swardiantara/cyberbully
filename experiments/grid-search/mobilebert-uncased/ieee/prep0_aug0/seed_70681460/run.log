@@ -1,0 +1,29 @@
+2026-02-23 04:56:55,369 - cyberbully - INFO - ============================================================
+2026-02-23 04:56:55,369 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-23 04:56:55,369 - cyberbully - INFO - ============================================================
+2026-02-23 04:56:55,369 - cyberbully - INFO - Configuration:
+2026-02-23 04:56:55,369 - cyberbully - INFO -   model          : mobilebert-uncased
+2026-02-23 04:56:55,369 - cyberbully - INFO -   dataset        : ieee
+2026-02-23 04:56:55,369 - cyberbully - INFO -   preprocess     : False
+2026-02-23 04:56:55,369 - cyberbully - INFO -   augment        : False
+2026-02-23 04:56:55,369 - cyberbully - INFO -   compute_attribution: False
+2026-02-23 04:56:55,369 - cyberbully - INFO -   seed           : 70681460
+2026-02-23 04:56:55,369 - cyberbully - INFO -   epochs         : 10
+2026-02-23 04:56:55,369 - cyberbully - INFO -   batch_size     : 32
+2026-02-23 04:56:55,369 - cyberbully - INFO -   lr             : 5e-05
+2026-02-23 04:56:55,369 - cyberbully - INFO -   max_length     : 128
+2026-02-23 04:56:55,369 - cyberbully - INFO -   output_dir     : grid-search
+2026-02-23 04:56:55,369 - cyberbully - INFO -   data_dir       : dataset
+2026-02-23 04:56:55,369 - cyberbully - INFO -   sbert          : False
+2026-02-23 04:56:55,369 - cyberbully - INFO -   overwrite      : False
+2026-02-23 04:56:55,369 - cyberbully - INFO -   device         : cuda
+2026-02-23 04:56:55,369 - cyberbully - INFO -   output_dir     : experiments/grid-search/mobilebert-uncased/ieee/prep0_aug0/seed_70681460
+2026-02-23 04:56:55,369 - cyberbully - INFO - ============================================================
+2026-02-23 04:56:55,369 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-23 04:56:55,369 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-23 04:56:55,376 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-23 04:56:55,376 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-23 04:56:55,378 - cyberbully - INFO - Split sizes — train: 1348, val: 338, test: 422
+2026-02-23 04:56:55,378 - cyberbully - INFO - Number of classes: 5
+2026-02-23 04:56:55,380 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-23 04:56:55,380 - cyberbully - INFO - Loading model 'mobilebert-uncased' with 5 labels (sbert=False)
