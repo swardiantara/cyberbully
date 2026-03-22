@@ -1,0 +1,61 @@
+2026-03-21 05:58:01,112 - cyberbully - INFO - ============================================================
+2026-03-21 05:58:01,112 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-21 05:58:01,112 - cyberbully - INFO - ============================================================
+2026-03-21 05:58:01,112 - cyberbully - INFO - Configuration:
+2026-03-21 05:58:01,112 - cyberbully - INFO -   model          : GroNLP/hateBERT
+2026-03-21 05:58:01,112 - cyberbully - INFO -   dataset        : tweeteval
+2026-03-21 05:58:01,112 - cyberbully - INFO -   preprocess     : True
+2026-03-21 05:58:01,112 - cyberbully - INFO -   augment        : False
+2026-03-21 05:58:01,112 - cyberbully - INFO -   compute_attribution: False
+2026-03-21 05:58:01,112 - cyberbully - INFO -   seed           : 14298463
+2026-03-21 05:58:01,112 - cyberbully - INFO -   epochs         : 10
+2026-03-21 05:58:01,112 - cyberbully - INFO -   batch_size     : 32
+2026-03-21 05:58:01,112 - cyberbully - INFO -   lr             : 5e-05
+2026-03-21 05:58:01,112 - cyberbully - INFO -   max_length     : 128
+2026-03-21 05:58:01,112 - cyberbully - INFO -   output_dir     : grid-search
+2026-03-21 05:58:01,112 - cyberbully - INFO -   data_dir       : dataset
+2026-03-21 05:58:01,112 - cyberbully - INFO -   sbert          : False
+2026-03-21 05:58:01,112 - cyberbully - INFO -   supcon         : False
+2026-03-21 05:58:01,112 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-21 05:58:01,112 - cyberbully - INFO -   proj_dim       : 128
+2026-03-21 05:58:01,112 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-21 05:58:01,112 - cyberbully - INFO -   overwrite      : False
+2026-03-21 05:58:01,112 - cyberbully - INFO -   device         : cuda
+2026-03-21 05:58:01,112 - cyberbully - INFO -   output_dir     : experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463
+2026-03-21 05:58:01,112 - cyberbully - INFO - ============================================================
+2026-03-21 05:58:01,112 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-21 05:58:01,162 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-03-21 05:58:01,162 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-03-21 05:58:01,162 - cyberbully - INFO - Applying text preprocessing per split...
+2026-03-21 05:58:58,941 - cyberbully - INFO - After preprocessing — train: 30362, val: 7612, test: 9459
+2026-03-21 05:58:58,953 - cyberbully - INFO - Number of classes: 5
+2026-03-21 05:58:58,954 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-21 05:58:58,954 - cyberbully - INFO - Loading model 'GroNLP/hateBERT' with 5 labels (sbert=False, supcon=False)
+2026-03-21 05:58:59,662 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-21 05:59:00,439 - cyberbully - INFO - Dataset sizes — train: 30362, val: 7612, test: 9459
+2026-03-21 05:59:00,439 - cyberbully - INFO - Step 4: Training...
+2026-03-21 05:59:00,564 - cyberbully - INFO - Starting training...
+2026-03-21 06:09:50,407 - cyberbully - INFO - Training complete.
+2026-03-21 06:09:50,487 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-4745
+2026-03-21 06:09:50,564 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-9490
+2026-03-21 06:09:50,641 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-7592
+2026-03-21 06:09:50,719 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-6643
+2026-03-21 06:09:50,799 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-3796
+2026-03-21 06:09:50,883 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-2847
+2026-03-21 06:09:50,967 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-1898
+2026-03-21 06:09:51,045 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-5694
+2026-03-21 06:09:51,121 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-8541
+2026-03-21 06:09:51,209 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/checkpoint-949
+2026-03-21 06:09:51,209 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-21 06:10:00,451 - cyberbully - INFO - Metrics saved to experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/metrics.json
+2026-03-21 06:10:00,451 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/confusion_matrix.json
+2026-03-21 06:10:00,550 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/predictions.json
+2026-03-21 06:10:00,657 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463/confusion_matrix.pdf
+2026-03-21 06:10:00,657 - cyberbully - INFO - Accuracy: 0.9465
+2026-03-21 06:10:00,657 - cyberbully - INFO - Weighted F1: 0.9467
+2026-03-21 06:10:00,657 - cyberbully - INFO - Micro F1: 0.9465
+2026-03-21 06:10:00,657 - cyberbully - INFO - Inference time: 4.02 seconds
+2026-03-21 06:10:00,657 - cyberbully - INFO - Energy consumption: 0.000219 kWh
+2026-03-21 06:10:00,659 - cyberbully - INFO - ============================================================
+2026-03-21 06:10:00,659 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug0/seed_14298463
+2026-03-21 06:10:00,659 - cyberbully - INFO - ============================================================

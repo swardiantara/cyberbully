@@ -1,0 +1,59 @@
+2026-03-20 18:19:10,204 - cyberbully - INFO - ============================================================
+2026-03-20 18:19:10,204 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-20 18:19:10,204 - cyberbully - INFO - ============================================================
+2026-03-20 18:19:10,204 - cyberbully - INFO - Configuration:
+2026-03-20 18:19:10,204 - cyberbully - INFO -   model          : GroNLP/hateBERT
+2026-03-20 18:19:10,204 - cyberbully - INFO -   dataset        : kaggle
+2026-03-20 18:19:10,204 - cyberbully - INFO -   preprocess     : False
+2026-03-20 18:19:10,204 - cyberbully - INFO -   augment        : False
+2026-03-20 18:19:10,204 - cyberbully - INFO -   compute_attribution: False
+2026-03-20 18:19:10,204 - cyberbully - INFO -   seed           : 43782163
+2026-03-20 18:19:10,204 - cyberbully - INFO -   epochs         : 10
+2026-03-20 18:19:10,204 - cyberbully - INFO -   batch_size     : 32
+2026-03-20 18:19:10,204 - cyberbully - INFO -   lr             : 5e-05
+2026-03-20 18:19:10,204 - cyberbully - INFO -   max_length     : 128
+2026-03-20 18:19:10,204 - cyberbully - INFO -   output_dir     : grid-search
+2026-03-20 18:19:10,204 - cyberbully - INFO -   data_dir       : dataset
+2026-03-20 18:19:10,204 - cyberbully - INFO -   sbert          : False
+2026-03-20 18:19:10,204 - cyberbully - INFO -   supcon         : False
+2026-03-20 18:19:10,204 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-20 18:19:10,204 - cyberbully - INFO -   proj_dim       : 128
+2026-03-20 18:19:10,204 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-20 18:19:10,204 - cyberbully - INFO -   overwrite      : False
+2026-03-20 18:19:10,204 - cyberbully - INFO -   device         : cuda
+2026-03-20 18:19:10,204 - cyberbully - INFO -   output_dir     : experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163
+2026-03-20 18:19:10,204 - cyberbully - INFO - ============================================================
+2026-03-20 18:19:10,204 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-20 18:19:10,258 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 30499, val: 7625, test: 9532
+2026-03-20 18:19:10,258 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-03-20 18:19:10,270 - cyberbully - INFO - Number of classes: 6
+2026-03-20 18:19:10,271 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-20 18:19:10,271 - cyberbully - INFO - Loading model 'GroNLP/hateBERT' with 6 labels (sbert=False, supcon=False)
+2026-03-20 18:19:10,993 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-20 18:19:11,762 - cyberbully - INFO - Dataset sizes — train: 30499, val: 7625, test: 9532
+2026-03-20 18:19:11,762 - cyberbully - INFO - Step 4: Training...
+2026-03-20 18:19:11,876 - cyberbully - INFO - Starting training...
+2026-03-20 18:30:18,902 - cyberbully - INFO - Training complete.
+2026-03-20 18:30:18,985 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-1908
+2026-03-20 18:30:19,065 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-4770
+2026-03-20 18:30:19,144 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-9540
+2026-03-20 18:30:19,227 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-2862
+2026-03-20 18:30:19,307 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-7632
+2026-03-20 18:30:19,387 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-3816
+2026-03-20 18:30:19,468 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-5724
+2026-03-20 18:30:19,554 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-954
+2026-03-20 18:30:19,634 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-8586
+2026-03-20 18:30:19,713 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/checkpoint-6678
+2026-03-20 18:30:19,713 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-20 18:30:29,205 - cyberbully - INFO - Metrics saved to experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/metrics.json
+2026-03-20 18:30:29,205 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/confusion_matrix.json
+2026-03-20 18:30:29,318 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/predictions.json
+2026-03-20 18:30:29,443 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163/confusion_matrix.pdf
+2026-03-20 18:30:29,443 - cyberbully - INFO - Accuracy: 0.8710
+2026-03-20 18:30:29,443 - cyberbully - INFO - Weighted F1: 0.8680
+2026-03-20 18:30:29,443 - cyberbully - INFO - Micro F1: 0.8710
+2026-03-20 18:30:29,443 - cyberbully - INFO - Inference time: 4.25 seconds
+2026-03-20 18:30:29,443 - cyberbully - INFO - Energy consumption: 0.000226 kWh
+2026-03-20 18:30:29,445 - cyberbully - INFO - ============================================================
+2026-03-20 18:30:29,445 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/GroNLP_hateBERT/kaggle/prep0_aug0/seed_43782163
+2026-03-20 18:30:29,445 - cyberbully - INFO - ============================================================
