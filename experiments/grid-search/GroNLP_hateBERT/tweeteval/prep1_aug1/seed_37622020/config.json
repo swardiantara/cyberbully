@@ -1,0 +1,62 @@
+{
+  "model": "GroNLP/hateBERT",
+  "dataset": "tweeteval",
+  "preprocess": true,
+  "augment": true,
+  "compute_attribution": false,
+  "seed": 37622020,
+  "epochs": 10,
+  "batch_size": 32,
+  "lr": 5e-05,
+  "max_length": 128,
+  "output_dir": "grid-search",
+  "data_dir": "dataset",
+  "sbert": false,
+  "supcon": false,
+  "supcon_weight": 0.1,
+  "proj_dim": 128,
+  "grad_accum_steps": 1,
+  "overwrite": false,
+  "device": "cuda",
+  "output_dir_resolved": "experiments/grid-search/GroNLP_hateBERT/tweeteval/prep1_aug1/seed_37622020",
+  "dataset_statistics": {
+    "num_classes": 5,
+    "label_mapping": {
+      "emotion": 0,
+      "hate": 1,
+      "offensive": 2,
+      "religion": 3,
+      "spiritual": 4
+    },
+    "train": {
+      "num_samples": 38815,
+      "class_distribution": {
+        "emotion": 7763,
+        "hate": 7763,
+        "offensive": 7763,
+        "religion": 7763,
+        "spiritual": 7763
+      }
+    },
+    "val": {
+      "num_samples": 7612,
+      "class_distribution": {
+        "emotion": 743,
+        "hate": 1953,
+        "offensive": 1924,
+        "religion": 1616,
+        "spiritual": 1376
+      }
+    },
+    "test": {
+      "num_samples": 9469,
+      "class_distribution": {
+        "emotion": 940,
+        "hate": 2414,
+        "offensive": 2365,
+        "religion": 2038,
+        "spiritual": 1712
+      }
+    }
+  }
+}

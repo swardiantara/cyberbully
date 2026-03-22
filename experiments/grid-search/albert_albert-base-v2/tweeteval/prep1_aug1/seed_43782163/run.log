@@ -1,0 +1,63 @@
+2026-03-22 06:21:34,728 - cyberbully - INFO - ============================================================
+2026-03-22 06:21:34,728 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-22 06:21:34,728 - cyberbully - INFO - ============================================================
+2026-03-22 06:21:34,728 - cyberbully - INFO - Configuration:
+2026-03-22 06:21:34,728 - cyberbully - INFO -   model          : albert/albert-base-v2
+2026-03-22 06:21:34,728 - cyberbully - INFO -   dataset        : tweeteval
+2026-03-22 06:21:34,728 - cyberbully - INFO -   preprocess     : True
+2026-03-22 06:21:34,728 - cyberbully - INFO -   augment        : True
+2026-03-22 06:21:34,728 - cyberbully - INFO -   compute_attribution: False
+2026-03-22 06:21:34,728 - cyberbully - INFO -   seed           : 43782163
+2026-03-22 06:21:34,728 - cyberbully - INFO -   epochs         : 10
+2026-03-22 06:21:34,728 - cyberbully - INFO -   batch_size     : 32
+2026-03-22 06:21:34,728 - cyberbully - INFO -   lr             : 5e-05
+2026-03-22 06:21:34,729 - cyberbully - INFO -   max_length     : 128
+2026-03-22 06:21:34,729 - cyberbully - INFO -   output_dir     : grid-search
+2026-03-22 06:21:34,729 - cyberbully - INFO -   data_dir       : dataset
+2026-03-22 06:21:34,729 - cyberbully - INFO -   sbert          : False
+2026-03-22 06:21:34,729 - cyberbully - INFO -   supcon         : False
+2026-03-22 06:21:34,729 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-22 06:21:34,729 - cyberbully - INFO -   proj_dim       : 128
+2026-03-22 06:21:34,729 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-22 06:21:34,729 - cyberbully - INFO -   overwrite      : False
+2026-03-22 06:21:34,729 - cyberbully - INFO -   device         : cuda
+2026-03-22 06:21:34,729 - cyberbully - INFO -   output_dir     : experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163
+2026-03-22 06:21:34,729 - cyberbully - INFO - ============================================================
+2026-03-22 06:21:34,729 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-22 06:21:34,779 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-03-22 06:21:34,779 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-03-22 06:21:34,779 - cyberbully - INFO - Applying text preprocessing per split...
+2026-03-22 06:22:32,979 - cyberbully - INFO - After preprocessing — train: 30381, val: 7613, test: 9463
+2026-03-22 06:22:32,981 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-03-22 06:22:32,986 - cyberbully - INFO - After oversampling — class distribution: {0: 7769, 1: 7769, 2: 7769, 3: 7769, 4: 7769}
+2026-03-22 06:22:32,996 - cyberbully - INFO - Number of classes: 5
+2026-03-22 06:22:32,997 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-22 06:22:32,997 - cyberbully - INFO - Loading model 'albert/albert-base-v2' with 5 labels (sbert=False, supcon=False)
+2026-03-22 06:22:33,844 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-22 06:22:34,818 - cyberbully - INFO - Dataset sizes — train: 38845, val: 7613, test: 9463
+2026-03-22 06:22:34,818 - cyberbully - INFO - Step 4: Training...
+2026-03-22 06:22:34,876 - cyberbully - INFO - Starting training...
+2026-03-22 06:40:21,673 - cyberbully - INFO - Training complete.
+2026-03-22 06:40:21,682 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-10926
+2026-03-22 06:40:21,692 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-9712
+2026-03-22 06:40:21,702 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-2428
+2026-03-22 06:40:21,713 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-1214
+2026-03-22 06:40:21,766 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-12140
+2026-03-22 06:40:21,776 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-3642
+2026-03-22 06:40:21,786 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-6070
+2026-03-22 06:40:21,796 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-7284
+2026-03-22 06:40:21,806 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-8498
+2026-03-22 06:40:21,816 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/checkpoint-4856
+2026-03-22 06:40:21,816 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-22 06:40:35,339 - cyberbully - INFO - Metrics saved to experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/metrics.json
+2026-03-22 06:40:35,339 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/confusion_matrix.json
+2026-03-22 06:40:35,434 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/predictions.json
+2026-03-22 06:40:35,539 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163/confusion_matrix.pdf
+2026-03-22 06:40:35,539 - cyberbully - INFO - Accuracy: 0.9412
+2026-03-22 06:40:35,539 - cyberbully - INFO - Weighted F1: 0.9413
+2026-03-22 06:40:35,539 - cyberbully - INFO - Micro F1: 0.9412
+2026-03-22 06:40:35,539 - cyberbully - INFO - Inference time: 8.29 seconds
+2026-03-22 06:40:35,539 - cyberbully - INFO - Energy consumption: 0.000413 kWh
+2026-03-22 06:40:35,541 - cyberbully - INFO - ============================================================
+2026-03-22 06:40:35,541 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/albert_albert-base-v2/tweeteval/prep1_aug1/seed_43782163
+2026-03-22 06:40:35,541 - cyberbully - INFO - ============================================================
