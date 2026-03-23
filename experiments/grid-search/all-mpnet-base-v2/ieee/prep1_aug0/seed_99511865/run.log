@@ -1,0 +1,49 @@
+2026-02-20 18:59:48,757 - cyberbully - INFO - ============================================================
+2026-02-20 18:59:48,757 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-20 18:59:48,757 - cyberbully - INFO - ============================================================
+2026-02-20 18:59:48,757 - cyberbully - INFO - Configuration:
+2026-02-20 18:59:48,757 - cyberbully - INFO -   model          : all-mpnet-base-v2
+2026-02-20 18:59:48,757 - cyberbully - INFO -   dataset        : ieee
+2026-02-20 18:59:48,757 - cyberbully - INFO -   preprocess     : True
+2026-02-20 18:59:48,757 - cyberbully - INFO -   augment        : False
+2026-02-20 18:59:48,757 - cyberbully - INFO -   compute_attribution: False
+2026-02-20 18:59:48,757 - cyberbully - INFO -   seed           : 99511865
+2026-02-20 18:59:48,757 - cyberbully - INFO -   epochs         : 5
+2026-02-20 18:59:48,757 - cyberbully - INFO -   batch_size     : 16
+2026-02-20 18:59:48,757 - cyberbully - INFO -   lr             : 2e-05
+2026-02-20 18:59:48,757 - cyberbully - INFO -   max_length     : 128
+2026-02-20 18:59:48,757 - cyberbully - INFO -   output_dir     : sbert-model
+2026-02-20 18:59:48,757 - cyberbully - INFO -   data_dir       : dataset
+2026-02-20 18:59:48,757 - cyberbully - INFO -   sbert          : True
+2026-02-20 18:59:48,757 - cyberbully - INFO -   overwrite      : False
+2026-02-20 18:59:48,757 - cyberbully - INFO -   device         : cuda
+2026-02-20 18:59:48,757 - cyberbully - INFO -   output_dir     : experiments/sbert-model/all-mpnet-base-v2/ieee/prep1_aug0/seed_99511865
+2026-02-20 18:59:48,757 - cyberbully - INFO - ============================================================
+2026-02-20 18:59:48,757 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-20 18:59:48,757 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
+2026-02-20 18:59:48,764 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
+2026-02-20 18:59:48,764 - cyberbully - INFO - Applying text preprocessing...
+2026-02-20 18:59:51,844 - cyberbully - INFO - After preprocessing: 1812 samples remain
+2026-02-20 18:59:51,845 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-02-20 18:59:51,847 - cyberbully - INFO - Split sizes — train: 1159, val: 290, test: 363
+2026-02-20 18:59:51,847 - cyberbully - INFO - Number of classes: 5
+2026-02-20 18:59:51,847 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-20 18:59:51,847 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 5 labels (sbert=True)
+2026-02-20 18:59:54,483 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, num_labels=5
+2026-02-20 18:59:54,774 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-20 18:59:54,802 - cyberbully - INFO - Dataset sizes — train: 1159, val: 290, test: 363
+2026-02-20 18:59:54,803 - cyberbully - INFO - Step 4: Training...
+2026-02-20 18:59:54,859 - cyberbully - INFO - Starting training...
+2026-02-20 19:00:18,041 - cyberbully - INFO - Training complete.
+2026-02-20 19:00:18,041 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-20 19:00:22,573 - cyberbully - INFO - Metrics saved to experiments/sbert-model/all-mpnet-base-v2/ieee/prep1_aug0/seed_99511865/metrics.json
+2026-02-20 19:00:22,573 - cyberbully - INFO - Confusion matrix saved to experiments/sbert-model/all-mpnet-base-v2/ieee/prep1_aug0/seed_99511865/confusion_matrix.json
+2026-02-20 19:00:22,674 - cyberbully - INFO - Confusion matrix figure saved to experiments/sbert-model/all-mpnet-base-v2/ieee/prep1_aug0/seed_99511865/confusion_matrix.pdf
+2026-02-20 19:00:22,674 - cyberbully - INFO - Accuracy: 0.8402
+2026-02-20 19:00:22,674 - cyberbully - INFO - Weighted F1: 0.8410
+2026-02-20 19:00:22,674 - cyberbully - INFO - Micro F1: 0.8402
+2026-02-20 19:00:22,674 - cyberbully - INFO - Inference time: 0.29 seconds
+2026-02-20 19:00:22,674 - cyberbully - INFO - Energy consumption: 0.000017 kWh
+2026-02-20 19:00:22,675 - cyberbully - INFO - ============================================================
+2026-02-20 19:00:22,675 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/sbert-model/all-mpnet-base-v2/ieee/prep1_aug0/seed_99511865
+2026-02-20 19:00:22,675 - cyberbully - INFO - ============================================================

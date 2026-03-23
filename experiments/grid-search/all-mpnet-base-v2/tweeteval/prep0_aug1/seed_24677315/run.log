@@ -1,0 +1,49 @@
+2026-02-21 04:15:11,693 - cyberbully - INFO - ============================================================
+2026-02-21 04:15:11,694 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-21 04:15:11,694 - cyberbully - INFO - ============================================================
+2026-02-21 04:15:11,694 - cyberbully - INFO - Configuration:
+2026-02-21 04:15:11,694 - cyberbully - INFO -   model          : all-mpnet-base-v2
+2026-02-21 04:15:11,694 - cyberbully - INFO -   dataset        : tweeteval
+2026-02-21 04:15:11,694 - cyberbully - INFO -   preprocess     : False
+2026-02-21 04:15:11,694 - cyberbully - INFO -   augment        : True
+2026-02-21 04:15:11,694 - cyberbully - INFO -   compute_attribution: False
+2026-02-21 04:15:11,694 - cyberbully - INFO -   seed           : 24677315
+2026-02-21 04:15:11,694 - cyberbully - INFO -   epochs         : 5
+2026-02-21 04:15:11,694 - cyberbully - INFO -   batch_size     : 16
+2026-02-21 04:15:11,694 - cyberbully - INFO -   lr             : 2e-05
+2026-02-21 04:15:11,694 - cyberbully - INFO -   max_length     : 128
+2026-02-21 04:15:11,694 - cyberbully - INFO -   output_dir     : sbert-model
+2026-02-21 04:15:11,694 - cyberbully - INFO -   data_dir       : dataset
+2026-02-21 04:15:11,694 - cyberbully - INFO -   sbert          : True
+2026-02-21 04:15:11,694 - cyberbully - INFO -   overwrite      : False
+2026-02-21 04:15:11,694 - cyberbully - INFO -   device         : cuda
+2026-02-21 04:15:11,694 - cyberbully - INFO -   output_dir     : experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep0_aug1/seed_24677315
+2026-02-21 04:15:11,694 - cyberbully - INFO - ============================================================
+2026-02-21 04:15:11,694 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-21 04:15:11,694 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
+2026-02-21 04:15:11,765 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
+2026-02-21 04:15:11,767 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-02-21 04:15:11,780 - cyberbully - INFO - Split sizes — train: 32485, val: 8122, test: 10152
+2026-02-21 04:15:11,781 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-02-21 04:15:11,788 - cyberbully - INFO - After oversampling — class distribution: {0: 8985, 1: 8985, 2: 8985, 3: 8985, 4: 8985}
+2026-02-21 04:15:11,788 - cyberbully - INFO - Number of classes: 5
+2026-02-21 04:15:11,791 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-21 04:15:11,791 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 5 labels (sbert=True)
+2026-02-21 04:15:14,428 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, num_labels=5
+2026-02-21 04:15:14,736 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-21 04:15:15,707 - cyberbully - INFO - Dataset sizes — train: 44925, val: 8122, test: 10152
+2026-02-21 04:15:15,707 - cyberbully - INFO - Step 4: Training...
+2026-02-21 04:15:15,760 - cyberbully - INFO - Starting training...
+2026-02-21 04:29:54,424 - cyberbully - INFO - Training complete.
+2026-02-21 04:29:54,425 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-21 04:30:06,995 - cyberbully - INFO - Metrics saved to experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep0_aug1/seed_24677315/metrics.json
+2026-02-21 04:30:06,995 - cyberbully - INFO - Confusion matrix saved to experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep0_aug1/seed_24677315/confusion_matrix.json
+2026-02-21 04:30:07,097 - cyberbully - INFO - Confusion matrix figure saved to experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep0_aug1/seed_24677315/confusion_matrix.pdf
+2026-02-21 04:30:07,097 - cyberbully - INFO - Accuracy: 0.9712
+2026-02-21 04:30:07,097 - cyberbully - INFO - Weighted F1: 0.9712
+2026-02-21 04:30:07,097 - cyberbully - INFO - Micro F1: 0.9712
+2026-02-21 04:30:07,097 - cyberbully - INFO - Inference time: 8.23 seconds
+2026-02-21 04:30:07,097 - cyberbully - INFO - Energy consumption: 0.000536 kWh
+2026-02-21 04:30:07,097 - cyberbully - INFO - ============================================================
+2026-02-21 04:30:07,098 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep0_aug1/seed_24677315
+2026-02-21 04:30:07,098 - cyberbully - INFO - ============================================================

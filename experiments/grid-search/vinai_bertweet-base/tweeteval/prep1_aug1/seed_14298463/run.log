@@ -1,0 +1,50 @@
+2026-02-19 03:46:49,749 - cyberbully - INFO - ============================================================
+2026-02-19 03:46:49,749 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-02-19 03:46:49,749 - cyberbully - INFO - ============================================================
+2026-02-19 03:46:49,749 - cyberbully - INFO - Configuration:
+2026-02-19 03:46:49,749 - cyberbully - INFO -   model          : vinai/bertweet-base
+2026-02-19 03:46:49,749 - cyberbully - INFO -   dataset        : tweeteval
+2026-02-19 03:46:49,749 - cyberbully - INFO -   preprocess     : True
+2026-02-19 03:46:49,749 - cyberbully - INFO -   augment        : True
+2026-02-19 03:46:49,749 - cyberbully - INFO -   compute_attribution: False
+2026-02-19 03:46:49,749 - cyberbully - INFO -   seed           : 14298463
+2026-02-19 03:46:49,749 - cyberbully - INFO -   epochs         : 5
+2026-02-19 03:46:49,749 - cyberbully - INFO -   batch_size     : 16
+2026-02-19 03:46:49,749 - cyberbully - INFO -   lr             : 2e-05
+2026-02-19 03:46:49,749 - cyberbully - INFO -   max_length     : 128
+2026-02-19 03:46:49,749 - cyberbully - INFO -   output_dir     : domain-model
+2026-02-19 03:46:49,749 - cyberbully - INFO -   data_dir       : dataset
+2026-02-19 03:46:49,749 - cyberbully - INFO -   sbert          : False
+2026-02-19 03:46:49,749 - cyberbully - INFO -   overwrite      : False
+2026-02-19 03:46:49,749 - cyberbully - INFO -   device         : cuda
+2026-02-19 03:46:49,749 - cyberbully - INFO -   output_dir     : experiments/domain-model/vinai_bertweet-base/tweeteval/prep1_aug1/seed_14298463
+2026-02-19 03:46:49,749 - cyberbully - INFO - ============================================================
+2026-02-19 03:46:49,749 - cyberbully - INFO - Step 1: Preparing data...
+2026-02-19 03:46:49,749 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
+2026-02-19 03:46:49,824 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
+2026-02-19 03:46:49,824 - cyberbully - INFO - Applying text preprocessing...
+2026-02-19 03:47:44,393 - cyberbully - INFO - After preprocessing: 47368 samples remain
+2026-02-19 03:47:44,395 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-02-19 03:47:44,408 - cyberbully - INFO - Split sizes — train: 30315, val: 7579, test: 9474
+2026-02-19 03:47:44,408 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-02-19 03:47:44,415 - cyberbully - INFO - After oversampling — class distribution: {0: 7746, 1: 7746, 2: 7746, 3: 7746, 4: 7746}
+2026-02-19 03:47:44,416 - cyberbully - INFO - Number of classes: 5
+2026-02-19 03:47:44,417 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-02-19 03:47:44,417 - cyberbully - INFO - Loading model 'vinai/bertweet-base' with 5 labels (sbert=False)
+2026-02-19 03:47:46,642 - cyberbully - INFO - Step 3: Creating datasets...
+2026-02-19 03:47:49,902 - cyberbully - INFO - Dataset sizes — train: 38730, val: 7579, test: 9474
+2026-02-19 03:47:49,902 - cyberbully - INFO - Step 4: Training...
+2026-02-19 03:47:50,159 - cyberbully - INFO - Starting training...
+2026-02-19 04:00:32,400 - cyberbully - INFO - Training complete.
+2026-02-19 04:00:32,400 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-02-19 04:00:43,805 - cyberbully - INFO - Metrics saved to experiments/domain-model/vinai_bertweet-base/tweeteval/prep1_aug1/seed_14298463/metrics.json
+2026-02-19 04:00:43,805 - cyberbully - INFO - Confusion matrix saved to experiments/domain-model/vinai_bertweet-base/tweeteval/prep1_aug1/seed_14298463/confusion_matrix.json
+2026-02-19 04:00:43,903 - cyberbully - INFO - Confusion matrix figure saved to experiments/domain-model/vinai_bertweet-base/tweeteval/prep1_aug1/seed_14298463/confusion_matrix.pdf
+2026-02-19 04:00:43,903 - cyberbully - INFO - Accuracy: 0.9470
+2026-02-19 04:00:43,903 - cyberbully - INFO - Weighted F1: 0.9468
+2026-02-19 04:00:43,903 - cyberbully - INFO - Micro F1: 0.9470
+2026-02-19 04:00:43,903 - cyberbully - INFO - Inference time: 7.10 seconds
+2026-02-19 04:00:43,903 - cyberbully - INFO - Energy consumption: 0.000440 kWh
+2026-02-19 04:00:43,903 - cyberbully - INFO - ============================================================
+2026-02-19 04:00:43,903 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/domain-model/vinai_bertweet-base/tweeteval/prep1_aug1/seed_14298463
+2026-02-19 04:00:43,903 - cyberbully - INFO - ============================================================
