@@ -51,6 +51,9 @@ def load_dataset(dataset_name: str, data_dir: str) -> pd.DataFrame:
     )
     df = df[["text", "label"]].copy()
 
+    if dataset_name == "kaggle":
+        df = df[df["label"] != "not_cyberbullying"]  # Drop 'not_cyberbullying' rows
+
     # Drop rows with missing text or label
     df = df.dropna(subset=["text", "label"]).reset_index(drop=True)
 
