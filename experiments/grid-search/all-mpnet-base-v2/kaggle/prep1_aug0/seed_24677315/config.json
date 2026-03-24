@@ -1,0 +1,62 @@
+{
+  "model": "all-mpnet-base-v2",
+  "dataset": "kaggle",
+  "preprocess": true,
+  "augment": false,
+  "compute_attribution": false,
+  "seed": 24677315,
+  "epochs": 10,
+  "batch_size": 32,
+  "lr": 5e-05,
+  "max_length": 128,
+  "output_dir": "grid-search",
+  "data_dir": "dataset",
+  "sbert": true,
+  "supcon": false,
+  "supcon_weight": 0.1,
+  "proj_dim": 128,
+  "grad_accum_steps": 1,
+  "overwrite": false,
+  "device": "cuda",
+  "output_dir_resolved": "experiments/grid-search/all-mpnet-base-v2/kaggle/prep1_aug0/seed_24677315",
+  "dataset_statistics": {
+    "num_classes": 5,
+    "label_mapping": {
+      "age": 0,
+      "ethnicity": 1,
+      "gender": 2,
+      "other_cyberbullying": 3,
+      "religion": 4
+    },
+    "train": {
+      "num_samples": 23541,
+      "class_distribution": {
+        "age": 5013,
+        "ethnicity": 4771,
+        "gender": 4707,
+        "other_cyberbullying": 3984,
+        "religion": 5066
+      }
+    },
+    "val": {
+      "num_samples": 5982,
+      "class_distribution": {
+        "age": 1261,
+        "ethnicity": 1216,
+        "gender": 1209,
+        "other_cyberbullying": 1021,
+        "religion": 1275
+      }
+    },
+    "test": {
+      "num_samples": 7412,
+      "class_distribution": {
+        "age": 1576,
+        "ethnicity": 1495,
+        "gender": 1488,
+        "other_cyberbullying": 1262,
+        "religion": 1591
+      }
+    }
+  }
+}

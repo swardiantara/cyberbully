@@ -1,0 +1,61 @@
+2026-03-24 02:19:06,857 - cyberbully - INFO - ============================================================
+2026-03-24 02:19:06,857 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-24 02:19:06,857 - cyberbully - INFO - ============================================================
+2026-03-24 02:19:06,857 - cyberbully - INFO - Configuration:
+2026-03-24 02:19:06,857 - cyberbully - INFO -   model          : distilbert-base-cased
+2026-03-24 02:19:06,857 - cyberbully - INFO -   dataset        : kaggle
+2026-03-24 02:19:06,857 - cyberbully - INFO -   preprocess     : False
+2026-03-24 02:19:06,857 - cyberbully - INFO -   augment        : True
+2026-03-24 02:19:06,857 - cyberbully - INFO -   compute_attribution: False
+2026-03-24 02:19:06,857 - cyberbully - INFO -   seed           : 87212562
+2026-03-24 02:19:06,857 - cyberbully - INFO -   epochs         : 10
+2026-03-24 02:19:06,857 - cyberbully - INFO -   batch_size     : 32
+2026-03-24 02:19:06,857 - cyberbully - INFO -   lr             : 5e-05
+2026-03-24 02:19:06,857 - cyberbully - INFO -   max_length     : 128
+2026-03-24 02:19:06,857 - cyberbully - INFO -   output_dir     : grid-search
+2026-03-24 02:19:06,857 - cyberbully - INFO -   data_dir       : dataset
+2026-03-24 02:19:06,857 - cyberbully - INFO -   sbert          : False
+2026-03-24 02:19:06,857 - cyberbully - INFO -   supcon         : False
+2026-03-24 02:19:06,857 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-24 02:19:06,857 - cyberbully - INFO -   proj_dim       : 128
+2026-03-24 02:19:06,857 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-24 02:19:06,857 - cyberbully - INFO -   overwrite      : False
+2026-03-24 02:19:06,857 - cyberbully - INFO -   device         : cuda
+2026-03-24 02:19:06,857 - cyberbully - INFO -   output_dir     : experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562
+2026-03-24 02:19:06,857 - cyberbully - INFO - ============================================================
+2026-03-24 02:19:06,857 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-24 02:19:06,906 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-03-24 02:19:06,906 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-03-24 02:19:06,908 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-03-24 02:19:06,913 - cyberbully - INFO - After oversampling — class distribution: {0: 5123, 1: 5123, 2: 5123, 3: 5123, 4: 5123}
+2026-03-24 02:19:06,923 - cyberbully - INFO - Number of classes: 5
+2026-03-24 02:19:06,924 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-24 02:19:06,924 - cyberbully - INFO - Loading model 'distilbert-base-cased' with 5 labels (sbert=False, supcon=False)
+2026-03-24 02:19:07,600 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-24 02:19:08,220 - cyberbully - INFO - Dataset sizes — train: 25615, val: 6401, test: 8002
+2026-03-24 02:19:08,220 - cyberbully - INFO - Step 4: Training...
+2026-03-24 02:19:08,418 - cyberbully - INFO - Starting training...
+2026-03-24 02:25:42,073 - cyberbully - INFO - Training complete.
+2026-03-24 02:25:42,111 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-5607
+2026-03-24 02:25:42,157 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-8010
+2026-03-24 02:25:42,195 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-6408
+2026-03-24 02:25:42,235 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-1602
+2026-03-24 02:25:42,274 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-3204
+2026-03-24 02:25:42,312 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-7209
+2026-03-24 02:25:42,353 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-4005
+2026-03-24 02:25:42,391 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-4806
+2026-03-24 02:25:42,432 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-801
+2026-03-24 02:25:42,471 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/checkpoint-2403
+2026-03-24 02:25:42,471 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-24 02:25:49,773 - cyberbully - INFO - Metrics saved to experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/metrics.json
+2026-03-24 02:25:49,773 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/confusion_matrix.json
+2026-03-24 02:25:49,851 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/predictions.json
+2026-03-24 02:25:49,952 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562/confusion_matrix.pdf
+2026-03-24 02:25:49,952 - cyberbully - INFO - Accuracy: 0.9559
+2026-03-24 02:25:49,952 - cyberbully - INFO - Weighted F1: 0.9560
+2026-03-24 02:25:49,952 - cyberbully - INFO - Micro F1: 0.9559
+2026-03-24 02:25:49,952 - cyberbully - INFO - Inference time: 3.00 seconds
+2026-03-24 02:25:49,952 - cyberbully - INFO - Energy consumption: 0.000202 kWh
+2026-03-24 02:25:49,954 - cyberbully - INFO - ============================================================
+2026-03-24 02:25:49,954 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/distilbert-base-cased/kaggle/prep0_aug1/seed_87212562
+2026-03-24 02:25:49,954 - cyberbully - INFO - ============================================================

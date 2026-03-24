@@ -1,0 +1,63 @@
+2026-03-23 19:05:16,347 - cyberbully - INFO - Model 'all-mpnet-base-v2' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-03-23 19:05:16,347 - cyberbully - INFO - ============================================================
+2026-03-23 19:05:16,347 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-23 19:05:16,347 - cyberbully - INFO - ============================================================
+2026-03-23 19:05:16,347 - cyberbully - INFO - Configuration:
+2026-03-23 19:05:16,347 - cyberbully - INFO -   model          : all-mpnet-base-v2
+2026-03-23 19:05:16,347 - cyberbully - INFO -   dataset        : kaggle
+2026-03-23 19:05:16,347 - cyberbully - INFO -   preprocess     : False
+2026-03-23 19:05:16,347 - cyberbully - INFO -   augment        : True
+2026-03-23 19:05:16,347 - cyberbully - INFO -   compute_attribution: False
+2026-03-23 19:05:16,347 - cyberbully - INFO -   seed           : 70681460
+2026-03-23 19:05:16,347 - cyberbully - INFO -   epochs         : 10
+2026-03-23 19:05:16,347 - cyberbully - INFO -   batch_size     : 32
+2026-03-23 19:05:16,347 - cyberbully - INFO -   lr             : 5e-05
+2026-03-23 19:05:16,347 - cyberbully - INFO -   max_length     : 128
+2026-03-23 19:05:16,347 - cyberbully - INFO -   output_dir     : grid-search
+2026-03-23 19:05:16,347 - cyberbully - INFO -   data_dir       : dataset
+2026-03-23 19:05:16,347 - cyberbully - INFO -   sbert          : True
+2026-03-23 19:05:16,347 - cyberbully - INFO -   supcon         : False
+2026-03-23 19:05:16,347 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-23 19:05:16,347 - cyberbully - INFO -   proj_dim       : 128
+2026-03-23 19:05:16,347 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-23 19:05:16,347 - cyberbully - INFO -   overwrite      : False
+2026-03-23 19:05:16,347 - cyberbully - INFO -   device         : cuda
+2026-03-23 19:05:16,347 - cyberbully - INFO -   output_dir     : experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460
+2026-03-23 19:05:16,347 - cyberbully - INFO - ============================================================
+2026-03-23 19:05:16,347 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-23 19:05:16,396 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-03-23 19:05:16,396 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-03-23 19:05:16,398 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-03-23 19:05:16,402 - cyberbully - INFO - After oversampling — class distribution: {0: 5123, 1: 5123, 2: 5123, 3: 5123, 4: 5123}
+2026-03-23 19:05:16,412 - cyberbully - INFO - Number of classes: 5
+2026-03-23 19:05:16,413 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-23 19:05:16,413 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 5 labels (sbert=True, supcon=False)
+2026-03-23 19:05:19,197 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, proj_dim=None, num_labels=5
+2026-03-23 19:05:19,517 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-23 19:05:20,136 - cyberbully - INFO - Dataset sizes — train: 25615, val: 6401, test: 8002
+2026-03-23 19:05:20,136 - cyberbully - INFO - Step 4: Training...
+2026-03-23 19:05:20,187 - cyberbully - INFO - Starting training...
+2026-03-23 19:18:14,899 - cyberbully - INFO - Training complete.
+2026-03-23 19:18:14,961 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-5607
+2026-03-23 19:18:15,035 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-8010
+2026-03-23 19:18:15,097 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-6408
+2026-03-23 19:18:15,163 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-1602
+2026-03-23 19:18:15,227 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-3204
+2026-03-23 19:18:15,290 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-7209
+2026-03-23 19:18:15,353 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-4005
+2026-03-23 19:18:15,418 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-4806
+2026-03-23 19:18:15,484 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-801
+2026-03-23 19:18:15,547 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/checkpoint-2403
+2026-03-23 19:18:15,548 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-23 19:18:26,072 - cyberbully - INFO - Metrics saved to experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/metrics.json
+2026-03-23 19:18:26,072 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/confusion_matrix.json
+2026-03-23 19:18:26,150 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/predictions.json
+2026-03-23 19:18:26,251 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460/confusion_matrix.pdf
+2026-03-23 19:18:26,251 - cyberbully - INFO - Accuracy: 0.9560
+2026-03-23 19:18:26,251 - cyberbully - INFO - Weighted F1: 0.9560
+2026-03-23 19:18:26,251 - cyberbully - INFO - Micro F1: 0.9560
+2026-03-23 19:18:26,251 - cyberbully - INFO - Inference time: 6.26 seconds
+2026-03-23 19:18:26,251 - cyberbully - INFO - Energy consumption: 0.000440 kWh
+2026-03-23 19:18:26,253 - cyberbully - INFO - ============================================================
+2026-03-23 19:18:26,253 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/all-mpnet-base-v2/kaggle/prep0_aug1/seed_70681460
+2026-03-23 19:18:26,253 - cyberbully - INFO - ============================================================
