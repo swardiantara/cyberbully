@@ -35,19 +35,21 @@ RUN_SUPCON=1     # set to 0 to skip the SupCon scenario
 # Models (non-SBERT standard transformers only)
 # ---------------------------------------------------------------------------
 MODELS=(
-    "Twitter/twhin-bert-base"
     "roberta-base"
-    "all-mpnet-base-v2"
-    # "bert-base-uncased"
+    "bert-base-cased"           # cased variant — investigate case sensitivity
+    "Twitter/twhin-bert-base"
+    "vinai/bertweet-base"
+    # "all-distilroberta-v1"
+    # "all-mpnet-base-v2"
+    # "distilbert-base-cased"     # cased variant — investigate case sensitivity
     # "distilbert-base-uncased"
-    # "google/mobilebert-uncased"
 )
 
 # ---------------------------------------------------------------------------
 # Datasets
 # ---------------------------------------------------------------------------
 DATASETS=(
-    "ieee"
+    # "ieee"
     "kaggle"
     "tweeteval"
     # Planned — uncomment as datasets become available:
@@ -60,8 +62,8 @@ DATASETS=(
 # ---------------------------------------------------------------------------
 # Seeds (shared with run_all.sh for cross-script comparability)
 # ---------------------------------------------------------------------------
-SEEDS=( 14298463 24677315 37622020 43782163 52680723 )
-# 67351593 70681460 87212562 90995999 99511865 )
+SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
+#  )
 
 # ---------------------------------------------------------------------------
 # Shared hyperparameters
@@ -77,9 +79,9 @@ BASELINE_GRAD_ACCUM=1
 BASELINE_OUTPUT_DIR="baseline-light"
 
 # SupCon: larger effective batch for pair diversity (batch × accum = 256)
-SUPCON_BATCH_SIZE=64
+SUPCON_BATCH_SIZE=128
 SUPCON_GRAD_ACCUM=1
-SUPCON_OUTPUT_DIR="supcon-light-64"
+SUPCON_OUTPUT_DIR="supcon-grid"
 SUPCON_WEIGHT=0.1
 PROJ_DIM=128
 
