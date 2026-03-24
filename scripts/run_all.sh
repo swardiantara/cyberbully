@@ -18,18 +18,18 @@ set -euo pipefail
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "roberta-base"
-    "bert-base-cased"           # cased variant — investigate case sensitivity
-    "Twitter/twhin-bert-base"
-    "vinai/bertweet-base"
+    # "roberta-base"
+    # "bert-base-cased"           # cased variant — investigate case sensitivity
+    # "Twitter/twhin-bert-base"
+    # "vinai/bertweet-base"
     # "all-distilroberta-v1"
     # "all-mpnet-base-v2"
     # "distilbert-base-cased"     # cased variant — investigate case sensitivity
     # "distilbert-base-uncased"
-    # "gpt2"
-    # "xlnet-base-cased"
-    # "GroNLP/hateBERT"
-    # "albert/albert-base-v2"
+    "gpt2"                      # ww-pc
+    "xlnet-base-cased"
+    "GroNLP/hateBERT"
+    "albert/albert-base-v2"     # ww-pc
     # "bert-base-uncased"
     # "all-MiniLM-L6-v2"
     # "sarkerlab/SocBERT-base"
