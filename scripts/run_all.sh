@@ -30,11 +30,11 @@ MODELS=(
     # "xlnet-base-cased"
     # "GroNLP/hateBERT"
     # "albert/albert-base-v2"     # ww-pc
-    # "mobilebert-uncased"   # PC-AJK
-    "bert-base-uncased"           # PC-AJK
-    "all-MiniLM-L6-v2"
-    "sarkerlab/SocBERT-base"
-    "all-MiniLM-L12-v2"
+    "google/mobilebert-uncased"   # PC-AJK
+    # "bert-base-uncased"           # PC-AJK
+    # "all-MiniLM-L6-v2"
+    # "sarkerlab/SocBERT-base"
+    # "all-MiniLM-L12-v2"
 )
 
 DATASETS=(
