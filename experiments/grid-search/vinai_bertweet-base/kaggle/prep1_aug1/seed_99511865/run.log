@@ -1,0 +1,63 @@
+2026-03-22 12:01:33,951 - cyberbully - INFO - ============================================================
+2026-03-22 12:01:33,951 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-22 12:01:33,951 - cyberbully - INFO - ============================================================
+2026-03-22 12:01:33,951 - cyberbully - INFO - Configuration:
+2026-03-22 12:01:33,951 - cyberbully - INFO -   model          : vinai/bertweet-base
+2026-03-22 12:01:33,951 - cyberbully - INFO -   dataset        : kaggle
+2026-03-22 12:01:33,952 - cyberbully - INFO -   preprocess     : True
+2026-03-22 12:01:33,952 - cyberbully - INFO -   augment        : True
+2026-03-22 12:01:33,952 - cyberbully - INFO -   compute_attribution: False
+2026-03-22 12:01:33,952 - cyberbully - INFO -   seed           : 99511865
+2026-03-22 12:01:33,952 - cyberbully - INFO -   epochs         : 10
+2026-03-22 12:01:33,952 - cyberbully - INFO -   batch_size     : 32
+2026-03-22 12:01:33,952 - cyberbully - INFO -   lr             : 5e-05
+2026-03-22 12:01:33,952 - cyberbully - INFO -   max_length     : 128
+2026-03-22 12:01:33,952 - cyberbully - INFO -   output_dir     : grid-search
+2026-03-22 12:01:33,952 - cyberbully - INFO -   data_dir       : dataset
+2026-03-22 12:01:33,952 - cyberbully - INFO -   sbert          : False
+2026-03-22 12:01:33,952 - cyberbully - INFO -   supcon         : False
+2026-03-22 12:01:33,952 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-22 12:01:33,952 - cyberbully - INFO -   proj_dim       : 128
+2026-03-22 12:01:33,952 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-22 12:01:33,952 - cyberbully - INFO -   overwrite      : False
+2026-03-22 12:01:33,952 - cyberbully - INFO -   device         : cuda
+2026-03-22 12:01:33,952 - cyberbully - INFO -   output_dir     : experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865
+2026-03-22 12:01:33,952 - cyberbully - INFO - ============================================================
+2026-03-22 12:01:33,952 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-22 12:01:34,004 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 30499, val: 7625, test: 9532
+2026-03-22 12:01:34,004 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'not_cyberbullying': 3, 'other_cyberbullying': 4, 'religion': 5}
+2026-03-22 12:01:34,004 - cyberbully - INFO - Applying text preprocessing per split...
+2026-03-22 12:02:27,089 - cyberbully - INFO - After preprocessing — train: 26872, val: 6838, test: 8550
+2026-03-22 12:02:27,091 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-03-22 12:02:27,096 - cyberbully - INFO - After oversampling — class distribution: {0: 5070, 1: 5070, 2: 5070, 3: 5070, 4: 5070, 5: 5070}
+2026-03-22 12:02:27,106 - cyberbully - INFO - Number of classes: 6
+2026-03-22 12:02:27,107 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-22 12:02:27,107 - cyberbully - INFO - Loading model 'vinai/bertweet-base' with 6 labels (sbert=False, supcon=False)
+2026-03-22 12:02:29,333 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-22 12:02:31,189 - cyberbully - INFO - Dataset sizes — train: 30420, val: 6838, test: 8550
+2026-03-22 12:02:31,189 - cyberbully - INFO - Step 4: Training...
+2026-03-22 12:02:31,437 - cyberbully - INFO - Starting training...
+2026-03-22 12:17:51,264 - cyberbully - INFO - Training complete.
+2026-03-22 12:17:51,356 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-9510
+2026-03-22 12:17:51,438 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-951
+2026-03-22 12:17:51,516 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-3804
+2026-03-22 12:17:51,593 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-6657
+2026-03-22 12:17:51,670 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-4755
+2026-03-22 12:17:51,748 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-7608
+2026-03-22 12:17:51,825 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-5706
+2026-03-22 12:17:51,903 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-2853
+2026-03-22 12:17:51,980 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-8559
+2026-03-22 12:17:52,060 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/checkpoint-1902
+2026-03-22 12:17:52,060 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-22 12:18:02,747 - cyberbully - INFO - Metrics saved to experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/metrics.json
+2026-03-22 12:18:02,747 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/confusion_matrix.json
+2026-03-22 12:18:02,833 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/predictions.json
+2026-03-22 12:18:02,944 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865/confusion_matrix.pdf
+2026-03-22 12:18:02,944 - cyberbully - INFO - Accuracy: 0.8718
+2026-03-22 12:18:02,944 - cyberbully - INFO - Weighted F1: 0.8716
+2026-03-22 12:18:02,944 - cyberbully - INFO - Micro F1: 0.8718
+2026-03-22 12:18:02,944 - cyberbully - INFO - Inference time: 6.37 seconds
+2026-03-22 12:18:02,944 - cyberbully - INFO - Energy consumption: 0.000403 kWh
+2026-03-22 12:18:02,945 - cyberbully - INFO - ============================================================
+2026-03-22 12:18:02,945 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/vinai_bertweet-base/kaggle/prep1_aug1/seed_99511865
+2026-03-22 12:18:02,945 - cyberbully - INFO - ============================================================
