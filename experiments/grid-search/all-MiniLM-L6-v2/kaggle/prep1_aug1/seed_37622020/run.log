@@ -1,0 +1,65 @@
+2026-03-25 04:18:17,520 - cyberbully - INFO - Model 'all-MiniLM-L6-v2' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-03-25 04:18:17,520 - cyberbully - INFO - ============================================================
+2026-03-25 04:18:17,520 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-25 04:18:17,520 - cyberbully - INFO - ============================================================
+2026-03-25 04:18:17,520 - cyberbully - INFO - Configuration:
+2026-03-25 04:18:17,521 - cyberbully - INFO -   model          : all-MiniLM-L6-v2
+2026-03-25 04:18:17,521 - cyberbully - INFO -   dataset        : kaggle
+2026-03-25 04:18:17,521 - cyberbully - INFO -   preprocess     : True
+2026-03-25 04:18:17,521 - cyberbully - INFO -   augment        : True
+2026-03-25 04:18:17,521 - cyberbully - INFO -   compute_attribution: False
+2026-03-25 04:18:17,521 - cyberbully - INFO -   seed           : 37622020
+2026-03-25 04:18:17,521 - cyberbully - INFO -   epochs         : 10
+2026-03-25 04:18:17,521 - cyberbully - INFO -   batch_size     : 32
+2026-03-25 04:18:17,521 - cyberbully - INFO -   lr             : 5e-05
+2026-03-25 04:18:17,521 - cyberbully - INFO -   max_length     : 128
+2026-03-25 04:18:17,521 - cyberbully - INFO -   output_dir     : grid-search
+2026-03-25 04:18:17,521 - cyberbully - INFO -   data_dir       : dataset
+2026-03-25 04:18:17,521 - cyberbully - INFO -   sbert          : True
+2026-03-25 04:18:17,521 - cyberbully - INFO -   supcon         : False
+2026-03-25 04:18:17,521 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-25 04:18:17,521 - cyberbully - INFO -   proj_dim       : 128
+2026-03-25 04:18:17,521 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-25 04:18:17,521 - cyberbully - INFO -   overwrite      : False
+2026-03-25 04:18:17,521 - cyberbully - INFO -   device         : cuda
+2026-03-25 04:18:17,521 - cyberbully - INFO -   output_dir     : experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020
+2026-03-25 04:18:17,521 - cyberbully - INFO - ============================================================
+2026-03-25 04:18:17,521 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-25 04:18:17,570 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-03-25 04:18:17,570 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-03-25 04:18:17,570 - cyberbully - INFO - Applying text preprocessing per split...
+2026-03-25 04:19:00,593 - cyberbully - INFO - After preprocessing — train: 23558, val: 5979, test: 7411
+2026-03-25 04:19:00,595 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-03-25 04:19:00,599 - cyberbully - INFO - After oversampling — class distribution: {0: 5067, 1: 5067, 2: 5067, 3: 5067, 4: 5067}
+2026-03-25 04:19:00,609 - cyberbully - INFO - Number of classes: 5
+2026-03-25 04:19:00,610 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-25 04:19:00,611 - cyberbully - INFO - Loading model 'all-MiniLM-L6-v2' with 5 labels (sbert=True, supcon=False)
+2026-03-25 04:19:03,449 - cyberbully - INFO - SBERTClassifier: embedding_dim=384, hidden=256, proj_dim=None, num_labels=5
+2026-03-25 04:19:03,768 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-25 04:19:04,372 - cyberbully - INFO - Dataset sizes — train: 25335, val: 5979, test: 7411
+2026-03-25 04:19:04,372 - cyberbully - INFO - Step 4: Training...
+2026-03-25 04:19:04,416 - cyberbully - INFO - Starting training...
+2026-03-25 04:22:13,117 - cyberbully - INFO - Training complete.
+2026-03-25 04:22:13,131 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-3960
+2026-03-25 04:22:13,145 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-1584
+2026-03-25 04:22:13,160 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-792
+2026-03-25 04:22:13,174 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-3168
+2026-03-25 04:22:13,190 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-7920
+2026-03-25 04:22:13,203 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-6336
+2026-03-25 04:22:13,219 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-7128
+2026-03-25 04:22:13,234 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-2376
+2026-03-25 04:22:13,247 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-5544
+2026-03-25 04:22:13,261 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/checkpoint-4752
+2026-03-25 04:22:13,261 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-25 04:22:18,905 - cyberbully - INFO - Metrics saved to experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/metrics.json
+2026-03-25 04:22:18,905 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/confusion_matrix.json
+2026-03-25 04:22:18,975 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/predictions.json
+2026-03-25 04:22:19,077 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020/confusion_matrix.pdf
+2026-03-25 04:22:19,077 - cyberbully - INFO - Accuracy: 0.9512
+2026-03-25 04:22:19,077 - cyberbully - INFO - Weighted F1: 0.9512
+2026-03-25 04:22:19,077 - cyberbully - INFO - Micro F1: 0.9512
+2026-03-25 04:22:19,077 - cyberbully - INFO - Inference time: 1.39 seconds
+2026-03-25 04:22:19,077 - cyberbully - INFO - Energy consumption: 0.000099 kWh
+2026-03-25 04:22:19,078 - cyberbully - INFO - ============================================================
+2026-03-25 04:22:19,078 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/all-MiniLM-L6-v2/kaggle/prep1_aug1/seed_37622020
+2026-03-25 04:22:19,078 - cyberbully - INFO - ============================================================
