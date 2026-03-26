@@ -42,14 +42,14 @@ MODELS=(
     # "all-distilroberta-v1"
     # "all-mpnet-base-v2"
     # "distilbert-base-cased"     # cased variant — investigate case sensitivity
-    # "distilbert-base-uncased"
+    # "albert/albert-base-v2"     # ww-pc
 )
 
 # ---------------------------------------------------------------------------
 # Datasets
 # ---------------------------------------------------------------------------
 DATASETS=(
-    # "ieee"
+    "ieee"
     "kaggle"
     "tweeteval"
     # Planned — uncomment as datasets become available:
@@ -79,7 +79,7 @@ BASELINE_GRAD_ACCUM=1
 BASELINE_OUTPUT_DIR="baseline-light"
 
 # SupCon: larger effective batch for pair diversity (batch × accum = 256)
-SUPCON_BATCH_SIZE=128
+SUPCON_BATCH_SIZE=64
 SUPCON_GRAD_ACCUM=1
 SUPCON_OUTPUT_DIR="supcon-grid"
 SUPCON_WEIGHT=0.1
@@ -91,8 +91,8 @@ PROJ_DIM=128
 runs_per_scenario=0
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
-        for preprocess in 0 1; do
-            for augment in 0 1; do
+        for preprocess in 0; do
+            for augment in 0; do
                 for seed in "${SEEDS[@]}"; do
                     runs_per_scenario=$((runs_per_scenario + 1))
                 done
