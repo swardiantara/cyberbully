@@ -20,45 +20,41 @@
   "device": "cuda",
   "output_dir_resolved": "experiments/grid-search/vinai_bertweet-base/kaggle/prep0_aug1/seed_87212562",
   "dataset_statistics": {
-    "num_classes": 6,
+    "num_classes": 5,
     "label_mapping": {
       "age": 0,
       "ethnicity": 1,
       "gender": 2,
-      "not_cyberbullying": 3,
-      "other_cyberbullying": 4,
-      "religion": 5
+      "other_cyberbullying": 3,
+      "religion": 4
     },
     "train": {
-      "num_samples": 30708,
+      "num_samples": 25615,
       "class_distribution": {
-        "age": 5118,
-        "ethnicity": 5118,
-        "gender": 5118,
-        "not_cyberbullying": 5118,
-        "other_cyberbullying": 5118,
-        "religion": 5118
+        "age": 5123,
+        "ethnicity": 5123,
+        "gender": 5123,
+        "other_cyberbullying": 5123,
+        "religion": 5123
       }
     },
     "val": {
-      "num_samples": 7625,
+      "num_samples": 6401,
       "class_distribution": {
-        "age": 1279,
-        "ethnicity": 1273,
-        "gender": 1272,
-        "not_cyberbullying": 1270,
-        "other_cyberbullying": 1252,
-        "religion": 1279
+        "age": 1280,
+        "ethnicity": 1280,
+        "gender": 1281,
+        "other_cyberbullying": 1280,
+        "religion": 1280
       }
     },
     "test": {
-      "num_samples": 9532,
+      "num_samples": 8002,
       "class_distribution": {
-        "age": 1598,
-        "ethnicity": 1592,
-        "gender": 1590,
-        "not_cyberbullying": 1587,
-        "other_cyberbullying": 1565,
+        "age": 1600,
+        "ethnicity": 1600,
+        "gender": 1601,
+        "other_cyberbullying": 1601,
         "religion": 1600
       }
     }
