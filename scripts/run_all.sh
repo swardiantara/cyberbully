@@ -22,7 +22,7 @@ MODELS=(
     # "roberta-base"
     # "bert-base-cased"           # cased variant — investigate case sensitivity
     # "Twitter/twhin-bert-base"
-    # "vinai/bertweet-base"
+    "vinai/bertweet-base"
     # "all-distilroberta-v1"
     # "distilbert-base-cased"     # cased variant — investigate case sensitivity
     # "distilbert-base-uncased"
@@ -30,7 +30,7 @@ MODELS=(
     # "xlnet-base-cased"
     # "GroNLP/hateBERT"
     # "albert/albert-base-v2"     # ww-pc
-    "google/mobilebert-uncased"   # PC-AJK
+    # "google/mobilebert-uncased"   # PC-AJK
     # "bert-base-uncased"           # PC-AJK
     # "all-MiniLM-L6-v2"
     # "sarkerlab/SocBERT-base"
