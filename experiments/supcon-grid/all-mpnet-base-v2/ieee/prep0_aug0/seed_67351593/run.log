@@ -1,0 +1,61 @@
+2026-03-27 02:59:47,305 - cyberbully - INFO - Model 'all-mpnet-base-v2' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-03-27 02:59:47,305 - cyberbully - INFO - ============================================================
+2026-03-27 02:59:47,305 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-27 02:59:47,305 - cyberbully - INFO - ============================================================
+2026-03-27 02:59:47,305 - cyberbully - INFO - Configuration:
+2026-03-27 02:59:47,305 - cyberbully - INFO -   model          : all-mpnet-base-v2
+2026-03-27 02:59:47,305 - cyberbully - INFO -   dataset        : ieee
+2026-03-27 02:59:47,305 - cyberbully - INFO -   preprocess     : False
+2026-03-27 02:59:47,305 - cyberbully - INFO -   augment        : False
+2026-03-27 02:59:47,305 - cyberbully - INFO -   compute_attribution: False
+2026-03-27 02:59:47,305 - cyberbully - INFO -   seed           : 67351593
+2026-03-27 02:59:47,305 - cyberbully - INFO -   epochs         : 10
+2026-03-27 02:59:47,305 - cyberbully - INFO -   batch_size     : 64
+2026-03-27 02:59:47,305 - cyberbully - INFO -   lr             : 5e-05
+2026-03-27 02:59:47,305 - cyberbully - INFO -   max_length     : 128
+2026-03-27 02:59:47,305 - cyberbully - INFO -   output_dir     : supcon-grid
+2026-03-27 02:59:47,305 - cyberbully - INFO -   data_dir       : dataset
+2026-03-27 02:59:47,305 - cyberbully - INFO -   sbert          : True
+2026-03-27 02:59:47,305 - cyberbully - INFO -   supcon         : False
+2026-03-27 02:59:47,305 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-27 02:59:47,305 - cyberbully - INFO -   proj_dim       : 128
+2026-03-27 02:59:47,305 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-27 02:59:47,305 - cyberbully - INFO -   overwrite      : False
+2026-03-27 02:59:47,305 - cyberbully - INFO -   device         : cuda
+2026-03-27 02:59:47,306 - cyberbully - INFO -   output_dir     : experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593
+2026-03-27 02:59:47,306 - cyberbully - INFO - ============================================================
+2026-03-27 02:59:47,306 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-27 02:59:47,309 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-03-27 02:59:47,309 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-03-27 02:59:47,311 - cyberbully - INFO - Number of classes: 5
+2026-03-27 02:59:47,312 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-27 02:59:47,312 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 5 labels (sbert=True, supcon=False)
+2026-03-27 02:59:51,088 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, proj_dim=None, num_labels=5
+2026-03-27 02:59:51,394 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-27 02:59:51,415 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-03-27 02:59:51,415 - cyberbully - INFO - Step 4: Training...
+2026-03-27 02:59:51,419 - cyberbully - INFO - Starting training...
+2026-03-27 03:02:04,384 - cyberbully - INFO - Training complete.
+2026-03-27 03:02:04,466 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-110
+2026-03-27 03:02:04,547 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-154
+2026-03-27 03:02:04,624 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-220
+2026-03-27 03:02:04,702 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-88
+2026-03-27 03:02:04,782 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-44
+2026-03-27 03:02:04,865 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-176
+2026-03-27 03:02:04,951 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-22
+2026-03-27 03:02:05,031 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-66
+2026-03-27 03:02:05,111 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-132
+2026-03-27 03:02:05,198 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/checkpoint-198
+2026-03-27 03:02:05,198 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-27 03:02:09,645 - cyberbully - INFO - Metrics saved to experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/metrics.json
+2026-03-27 03:02:09,645 - cyberbully - INFO - Confusion matrix saved to experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/confusion_matrix.json
+2026-03-27 03:02:09,650 - cyberbully - INFO - Per-sample predictions saved to experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/predictions.json
+2026-03-27 03:02:09,755 - cyberbully - INFO - Confusion matrix figure saved to experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593/confusion_matrix.pdf
+2026-03-27 03:02:09,755 - cyberbully - INFO - Accuracy: 0.8483
+2026-03-27 03:02:09,755 - cyberbully - INFO - Weighted F1: 0.8490
+2026-03-27 03:02:09,755 - cyberbully - INFO - Micro F1: 0.8483
+2026-03-27 03:02:09,755 - cyberbully - INFO - Inference time: 0.23 seconds
+2026-03-27 03:02:09,755 - cyberbully - INFO - Energy consumption: 0.000010 kWh
+2026-03-27 03:02:09,755 - cyberbully - INFO - ============================================================
+2026-03-27 03:02:09,755 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/supcon-grid/all-mpnet-base-v2/ieee/prep0_aug0/seed_67351593
+2026-03-27 03:02:09,755 - cyberbully - INFO - ============================================================

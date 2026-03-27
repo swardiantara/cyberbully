@@ -1,0 +1,61 @@
+2026-03-27 04:47:45,978 - cyberbully - INFO - Model 'all-mpnet-base-v2' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-03-27 04:47:45,978 - cyberbully - INFO - ============================================================
+2026-03-27 04:47:45,978 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-27 04:47:45,978 - cyberbully - INFO - ============================================================
+2026-03-27 04:47:45,978 - cyberbully - INFO - Configuration:
+2026-03-27 04:47:45,978 - cyberbully - INFO -   model          : all-mpnet-base-v2
+2026-03-27 04:47:45,978 - cyberbully - INFO -   dataset        : tweeteval
+2026-03-27 04:47:45,978 - cyberbully - INFO -   preprocess     : False
+2026-03-27 04:47:45,978 - cyberbully - INFO -   augment        : False
+2026-03-27 04:47:45,978 - cyberbully - INFO -   compute_attribution: False
+2026-03-27 04:47:45,978 - cyberbully - INFO -   seed           : 14298463
+2026-03-27 04:47:45,978 - cyberbully - INFO -   epochs         : 10
+2026-03-27 04:47:45,978 - cyberbully - INFO -   batch_size     : 64
+2026-03-27 04:47:45,978 - cyberbully - INFO -   lr             : 5e-05
+2026-03-27 04:47:45,978 - cyberbully - INFO -   max_length     : 128
+2026-03-27 04:47:45,978 - cyberbully - INFO -   output_dir     : supcon-grid
+2026-03-27 04:47:45,978 - cyberbully - INFO -   data_dir       : dataset
+2026-03-27 04:47:45,978 - cyberbully - INFO -   sbert          : True
+2026-03-27 04:47:45,978 - cyberbully - INFO -   supcon         : False
+2026-03-27 04:47:45,978 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-27 04:47:45,979 - cyberbully - INFO -   proj_dim       : 128
+2026-03-27 04:47:45,979 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-27 04:47:45,979 - cyberbully - INFO -   overwrite      : False
+2026-03-27 04:47:45,979 - cyberbully - INFO -   device         : cuda
+2026-03-27 04:47:45,979 - cyberbully - INFO -   output_dir     : experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463
+2026-03-27 04:47:45,979 - cyberbully - INFO - ============================================================
+2026-03-27 04:47:45,979 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-27 04:47:46,027 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-03-27 04:47:46,027 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-03-27 04:47:46,038 - cyberbully - INFO - Number of classes: 5
+2026-03-27 04:47:46,039 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-27 04:47:46,039 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 5 labels (sbert=True, supcon=False)
+2026-03-27 04:47:49,355 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, proj_dim=None, num_labels=5
+2026-03-27 04:47:49,654 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-27 04:47:50,353 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
+2026-03-27 04:47:50,353 - cyberbully - INFO - Step 4: Training...
+2026-03-27 04:47:50,357 - cyberbully - INFO - Starting training...
+2026-03-27 04:59:35,176 - cyberbully - INFO - Training complete.
+2026-03-27 04:59:35,254 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-2032
+2026-03-27 04:59:35,331 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-3048
+2026-03-27 04:59:35,407 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-5080
+2026-03-27 04:59:35,484 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-2540
+2026-03-27 04:59:35,560 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-3556
+2026-03-27 04:59:35,636 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-4064
+2026-03-27 04:59:35,715 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-1524
+2026-03-27 04:59:35,790 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-4572
+2026-03-27 04:59:35,868 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-1016
+2026-03-27 04:59:35,950 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/checkpoint-508
+2026-03-27 04:59:35,950 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-27 04:59:45,397 - cyberbully - INFO - Metrics saved to experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/metrics.json
+2026-03-27 04:59:45,397 - cyberbully - INFO - Confusion matrix saved to experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/confusion_matrix.json
+2026-03-27 04:59:45,498 - cyberbully - INFO - Per-sample predictions saved to experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/predictions.json
+2026-03-27 04:59:45,602 - cyberbully - INFO - Confusion matrix figure saved to experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463/confusion_matrix.pdf
+2026-03-27 04:59:45,602 - cyberbully - INFO - Accuracy: 0.9720
+2026-03-27 04:59:45,602 - cyberbully - INFO - Weighted F1: 0.9720
+2026-03-27 04:59:45,602 - cyberbully - INFO - Micro F1: 0.9720
+2026-03-27 04:59:45,602 - cyberbully - INFO - Inference time: 5.18 seconds
+2026-03-27 04:59:45,602 - cyberbully - INFO - Energy consumption: 0.000324 kWh
+2026-03-27 04:59:45,604 - cyberbully - INFO - ============================================================
+2026-03-27 04:59:45,604 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/supcon-grid/all-mpnet-base-v2/tweeteval/prep0_aug0/seed_14298463
+2026-03-27 04:59:45,604 - cyberbully - INFO - ============================================================
