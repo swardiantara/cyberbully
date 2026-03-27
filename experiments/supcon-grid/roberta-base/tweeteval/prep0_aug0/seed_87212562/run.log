@@ -1,0 +1,59 @@
+2026-03-27 04:32:26,523 - cyberbully - INFO - ============================================================
+2026-03-27 04:32:26,523 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-27 04:32:26,523 - cyberbully - INFO - ============================================================
+2026-03-27 04:32:26,523 - cyberbully - INFO - Configuration:
+2026-03-27 04:32:26,523 - cyberbully - INFO -   model          : roberta-base
+2026-03-27 04:32:26,524 - cyberbully - INFO -   dataset        : tweeteval
+2026-03-27 04:32:26,524 - cyberbully - INFO -   preprocess     : False
+2026-03-27 04:32:26,524 - cyberbully - INFO -   augment        : False
+2026-03-27 04:32:26,524 - cyberbully - INFO -   compute_attribution: False
+2026-03-27 04:32:26,524 - cyberbully - INFO -   seed           : 87212562
+2026-03-27 04:32:26,524 - cyberbully - INFO -   epochs         : 10
+2026-03-27 04:32:26,524 - cyberbully - INFO -   batch_size     : 64
+2026-03-27 04:32:26,524 - cyberbully - INFO -   lr             : 5e-05
+2026-03-27 04:32:26,524 - cyberbully - INFO -   max_length     : 128
+2026-03-27 04:32:26,524 - cyberbully - INFO -   output_dir     : supcon-grid
+2026-03-27 04:32:26,524 - cyberbully - INFO -   data_dir       : dataset
+2026-03-27 04:32:26,524 - cyberbully - INFO -   sbert          : False
+2026-03-27 04:32:26,524 - cyberbully - INFO -   supcon         : False
+2026-03-27 04:32:26,524 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-27 04:32:26,524 - cyberbully - INFO -   proj_dim       : 128
+2026-03-27 04:32:26,524 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-27 04:32:26,524 - cyberbully - INFO -   overwrite      : False
+2026-03-27 04:32:26,524 - cyberbully - INFO -   device         : cuda
+2026-03-27 04:32:26,524 - cyberbully - INFO -   output_dir     : experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562
+2026-03-27 04:32:26,524 - cyberbully - INFO - ============================================================
+2026-03-27 04:32:26,524 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-27 04:32:26,572 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-03-27 04:32:26,572 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-03-27 04:32:26,584 - cyberbully - INFO - Number of classes: 5
+2026-03-27 04:32:26,585 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-27 04:32:26,585 - cyberbully - INFO - Loading model 'roberta-base' with 5 labels (sbert=False, supcon=False)
+2026-03-27 04:32:27,347 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-27 04:32:28,243 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
+2026-03-27 04:32:28,243 - cyberbully - INFO - Step 4: Training...
+2026-03-27 04:32:28,481 - cyberbully - INFO - Starting training...
+2026-03-27 04:46:29,276 - cyberbully - INFO - Training complete.
+2026-03-27 04:46:29,349 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-1524
+2026-03-27 04:46:29,422 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-3048
+2026-03-27 04:46:29,496 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-1016
+2026-03-27 04:46:29,569 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-2032
+2026-03-27 04:46:29,641 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-4572
+2026-03-27 04:46:29,713 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-3556
+2026-03-27 04:46:29,798 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-5080
+2026-03-27 04:46:29,873 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-508
+2026-03-27 04:46:29,946 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-2540
+2026-03-27 04:46:30,018 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/checkpoint-4064
+2026-03-27 04:46:30,018 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-27 04:46:41,884 - cyberbully - INFO - Metrics saved to experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/metrics.json
+2026-03-27 04:46:41,884 - cyberbully - INFO - Confusion matrix saved to experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/confusion_matrix.json
+2026-03-27 04:46:41,983 - cyberbully - INFO - Per-sample predictions saved to experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/predictions.json
+2026-03-27 04:46:42,083 - cyberbully - INFO - Confusion matrix figure saved to experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562/confusion_matrix.pdf
+2026-03-27 04:46:42,083 - cyberbully - INFO - Accuracy: 0.9776
+2026-03-27 04:46:42,083 - cyberbully - INFO - Weighted F1: 0.9776
+2026-03-27 04:46:42,083 - cyberbully - INFO - Micro F1: 0.9776
+2026-03-27 04:46:42,083 - cyberbully - INFO - Inference time: 7.55 seconds
+2026-03-27 04:46:42,083 - cyberbully - INFO - Energy consumption: 0.000492 kWh
+2026-03-27 04:46:42,085 - cyberbully - INFO - ============================================================
+2026-03-27 04:46:42,085 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/supcon-grid/roberta-base/tweeteval/prep0_aug0/seed_87212562
+2026-03-27 04:46:42,085 - cyberbully - INFO - ============================================================
