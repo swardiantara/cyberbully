@@ -1,0 +1,59 @@
+2026-03-27 08:20:06,178 - cyberbully - INFO - ============================================================
+2026-03-27 08:20:06,178 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-03-27 08:20:06,179 - cyberbully - INFO - ============================================================
+2026-03-27 08:20:06,179 - cyberbully - INFO - Configuration:
+2026-03-27 08:20:06,179 - cyberbully - INFO -   model          : distilbert-base-cased
+2026-03-27 08:20:06,179 - cyberbully - INFO -   dataset        : tweeteval
+2026-03-27 08:20:06,179 - cyberbully - INFO -   preprocess     : False
+2026-03-27 08:20:06,179 - cyberbully - INFO -   augment        : False
+2026-03-27 08:20:06,179 - cyberbully - INFO -   compute_attribution: False
+2026-03-27 08:20:06,179 - cyberbully - INFO -   seed           : 67351593
+2026-03-27 08:20:06,179 - cyberbully - INFO -   epochs         : 10
+2026-03-27 08:20:06,179 - cyberbully - INFO -   batch_size     : 64
+2026-03-27 08:20:06,179 - cyberbully - INFO -   lr             : 5e-05
+2026-03-27 08:20:06,179 - cyberbully - INFO -   max_length     : 128
+2026-03-27 08:20:06,179 - cyberbully - INFO -   output_dir     : supcon-grid
+2026-03-27 08:20:06,179 - cyberbully - INFO -   data_dir       : dataset
+2026-03-27 08:20:06,179 - cyberbully - INFO -   sbert          : False
+2026-03-27 08:20:06,179 - cyberbully - INFO -   supcon         : False
+2026-03-27 08:20:06,179 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-03-27 08:20:06,179 - cyberbully - INFO -   proj_dim       : 128
+2026-03-27 08:20:06,179 - cyberbully - INFO -   grad_accum_steps: 1
+2026-03-27 08:20:06,179 - cyberbully - INFO -   overwrite      : False
+2026-03-27 08:20:06,179 - cyberbully - INFO -   device         : cuda
+2026-03-27 08:20:06,179 - cyberbully - INFO -   output_dir     : experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593
+2026-03-27 08:20:06,179 - cyberbully - INFO - ============================================================
+2026-03-27 08:20:06,179 - cyberbully - INFO - Step 1: Preparing data...
+2026-03-27 08:20:06,228 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-03-27 08:20:06,228 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-03-27 08:20:06,239 - cyberbully - INFO - Number of classes: 5
+2026-03-27 08:20:06,241 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-03-27 08:20:06,241 - cyberbully - INFO - Loading model 'distilbert-base-cased' with 5 labels (sbert=False, supcon=False)
+2026-03-27 08:20:06,887 - cyberbully - INFO - Step 3: Creating datasets...
+2026-03-27 08:20:07,566 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
+2026-03-27 08:20:07,566 - cyberbully - INFO - Step 4: Training...
+2026-03-27 08:20:07,669 - cyberbully - INFO - Starting training...
+2026-03-27 08:26:04,933 - cyberbully - INFO - Training complete.
+2026-03-27 08:26:04,982 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-2032
+2026-03-27 08:26:05,029 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-3048
+2026-03-27 08:26:05,076 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-5080
+2026-03-27 08:26:05,124 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-2540
+2026-03-27 08:26:05,171 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-3556
+2026-03-27 08:26:05,219 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-4064
+2026-03-27 08:26:05,267 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-1524
+2026-03-27 08:26:05,314 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-4572
+2026-03-27 08:26:05,364 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-1016
+2026-03-27 08:26:05,415 - cyberbully - INFO - Removed checkpoint: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/checkpoint-508
+2026-03-27 08:26:05,415 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-03-27 08:26:12,193 - cyberbully - INFO - Metrics saved to experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/metrics.json
+2026-03-27 08:26:12,193 - cyberbully - INFO - Confusion matrix saved to experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/confusion_matrix.json
+2026-03-27 08:26:12,294 - cyberbully - INFO - Per-sample predictions saved to experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/predictions.json
+2026-03-27 08:26:12,397 - cyberbully - INFO - Confusion matrix figure saved to experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593/confusion_matrix.pdf
+2026-03-27 08:26:12,397 - cyberbully - INFO - Accuracy: 0.9698
+2026-03-27 08:26:12,397 - cyberbully - INFO - Weighted F1: 0.9697
+2026-03-27 08:26:12,397 - cyberbully - INFO - Micro F1: 0.9698
+2026-03-27 08:26:12,397 - cyberbully - INFO - Inference time: 2.54 seconds
+2026-03-27 08:26:12,397 - cyberbully - INFO - Energy consumption: 0.000142 kWh
+2026-03-27 08:26:12,399 - cyberbully - INFO - ============================================================
+2026-03-27 08:26:12,399 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/supcon-grid/distilbert-base-cased/tweeteval/prep0_aug0/seed_67351593
+2026-03-27 08:26:12,399 - cyberbully - INFO - ============================================================
