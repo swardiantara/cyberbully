@@ -35,14 +35,14 @@ RUN_SUPCON=1     # set to 0 to skip the SupCon scenario
 # Models (non-SBERT standard transformers only)
 # ---------------------------------------------------------------------------
 MODELS=(
-    "roberta-base"
-    "bert-base-cased"           # cased variant — investigate case sensitivity
-    "Twitter/twhin-bert-base"
-    "vinai/bertweet-base"
-    # "all-distilroberta-v1"
-    # "all-mpnet-base-v2"
-    # "distilbert-base-cased"     # cased variant — investigate case sensitivity
-    # "albert/albert-base-v2"     # ww-pc
+    # "roberta-base"
+    # "bert-base-cased"           # cased variant — investigate case sensitivity
+    # "Twitter/twhin-bert-base"
+    # "vinai/bertweet-base"
+    "all-distilroberta-v1"
+    "all-mpnet-base-v2"
+    "distilbert-base-cased"     # cased variant — investigate case sensitivity
+    "albert/albert-base-v2"     # ww-pc
 )
 
 # ---------------------------------------------------------------------------
@@ -187,7 +187,7 @@ run_scenario() {
                             --max_length "${MAX_LENGTH}" \
                             --output_dir "${output_dir}" \
                             --data_dir "${DATA_DIR}" \
-                            # --preprocess \
+                            
                             ${extra_flags}; then
                             completed=$((completed + 1))
                             echo "[${label}][${run_id}/${runs_per_scenario}] COMPLETED"
