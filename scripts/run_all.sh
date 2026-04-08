@@ -18,7 +18,7 @@ set -euo pipefail
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "answerdotai/ModernBERT-base",
+    "answerdotai/ModernBERT-base"
     "chandar-lab/NeoBERT"
     # "all-mpnet-base-v2"
     # "roberta-base"
