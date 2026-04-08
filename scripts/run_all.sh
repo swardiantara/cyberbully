@@ -15,11 +15,13 @@
 set -euo pipefail
 
 # --- Configuration ---
-SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
+SEEDS=( 14298463 ) 
+# 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "answerdotai/ModernBERT-base"
-    "chandar-lab/NeoBERT"
+    "google/mobilebert-uncased"   # PC-AJK
+    # "answerdotai/ModernBERT-base"
+    # "chandar-lab/NeoBERT"
     # "all-mpnet-base-v2"
     # "roberta-base"
     # "bert-base-cased"           # cased variant — investigate case sensitivity
@@ -32,7 +34,6 @@ MODELS=(
     # "xlnet-base-cased"
     # "GroNLP/hateBERT"
     # "albert/albert-base-v2"     # ww-pc
-    # "google/mobilebert-uncased"   # PC-AJK
     # "bert-base-uncased"           # PC-AJK
     # "all-MiniLM-L6-v2"
     # "sarkerlab/SocBERT-base"
@@ -41,8 +42,8 @@ MODELS=(
 
 DATASETS=(
     "ieee"
-    "kaggle"
     "tweeteval"
+    "kaggle"
 )
 
 # Training hyperparameters
