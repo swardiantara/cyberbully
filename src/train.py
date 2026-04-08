@@ -79,7 +79,7 @@ def get_training_args(
         learning_rate=lr,
         weight_decay=1e-8,
         warmup_ratio=0.1,
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         load_best_model_at_end=True,
         save_strategy="epoch",
         metric_for_best_model="f1_weighted",
