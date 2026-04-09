@@ -43,7 +43,7 @@ class SupConClassifier(nn.Module):
         proj_dim: int = 128,
     ):
         super().__init__()
-        self.transformer = AutoModel.from_pretrained(model_name)
+        self.transformer = AutoModel.from_pretrained(model_name, trust_remote_code=True)
         hidden_size = self.transformer.config.hidden_size
 
         # Classification head
@@ -227,17 +227,18 @@ def load_model_and_tokenizer(
             hf_path, num_labels, id2label, label2id,
             proj_dim=proj_dim if supcon else None,
         )
-        tokenizer = AutoTokenizer.from_pretrained(hf_path)
+        tokenizer = AutoTokenizer.from_pretrained(hf_path, trust_remote_code=True)
     elif supcon:
         model = SupConClassifier(model_name, num_labels, id2label, label2id, proj_dim=proj_dim)
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     else:
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
         model = AutoModelForSequenceClassification.from_pretrained(
             model_name,
             num_labels=num_labels,
             id2label=id2label,
             label2id=label2id,
+            trust_remote_code=True
         )
 
     # GPT-2 has no pad token by default — use eos_token
