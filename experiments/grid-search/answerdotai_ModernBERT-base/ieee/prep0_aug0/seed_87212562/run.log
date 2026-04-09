@@ -1,0 +1,59 @@
+2026-04-08 16:22:51,805 - cyberbully - INFO - ============================================================
+2026-04-08 16:22:51,805 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-08 16:22:51,805 - cyberbully - INFO - ============================================================
+2026-04-08 16:22:51,805 - cyberbully - INFO - Configuration:
+2026-04-08 16:22:51,805 - cyberbully - INFO -   model          : answerdotai/ModernBERT-base
+2026-04-08 16:22:51,805 - cyberbully - INFO -   dataset        : ieee
+2026-04-08 16:22:51,805 - cyberbully - INFO -   preprocess     : False
+2026-04-08 16:22:51,805 - cyberbully - INFO -   augment        : False
+2026-04-08 16:22:51,805 - cyberbully - INFO -   compute_attribution: False
+2026-04-08 16:22:51,805 - cyberbully - INFO -   seed           : 87212562
+2026-04-08 16:22:51,805 - cyberbully - INFO -   epochs         : 10
+2026-04-08 16:22:51,805 - cyberbully - INFO -   batch_size     : 32
+2026-04-08 16:22:51,805 - cyberbully - INFO -   lr             : 5e-05
+2026-04-08 16:22:51,805 - cyberbully - INFO -   max_length     : 128
+2026-04-08 16:22:51,806 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-08 16:22:51,806 - cyberbully - INFO -   data_dir       : dataset
+2026-04-08 16:22:51,806 - cyberbully - INFO -   sbert          : False
+2026-04-08 16:22:51,806 - cyberbully - INFO -   supcon         : False
+2026-04-08 16:22:51,806 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-08 16:22:51,806 - cyberbully - INFO -   proj_dim       : 128
+2026-04-08 16:22:51,806 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-08 16:22:51,806 - cyberbully - INFO -   overwrite      : False
+2026-04-08 16:22:51,806 - cyberbully - INFO -   device         : cuda
+2026-04-08 16:22:51,806 - cyberbully - INFO -   output_dir     : experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562
+2026-04-08 16:22:51,806 - cyberbully - INFO - ============================================================
+2026-04-08 16:22:51,806 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-08 16:22:51,809 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-04-08 16:22:51,809 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-04-08 16:22:51,811 - cyberbully - INFO - Number of classes: 5
+2026-04-08 16:22:51,812 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-08 16:22:51,812 - cyberbully - INFO - Loading model 'answerdotai/ModernBERT-base' with 5 labels (sbert=False, supcon=False)
+2026-04-08 16:22:53,478 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-08 16:22:53,512 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-04-08 16:22:53,512 - cyberbully - INFO - Step 4: Training...
+2026-04-08 16:22:53,745 - cyberbully - INFO - Starting training...
+2026-04-08 16:24:26,081 - cyberbully - INFO - Training complete.
+2026-04-08 16:24:26,173 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-172
+2026-04-08 16:24:26,269 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-258
+2026-04-08 16:24:26,369 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-387
+2026-04-08 16:24:27,212 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-43
+2026-04-08 16:24:27,313 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-430
+2026-04-08 16:24:27,406 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-301
+2026-04-08 16:24:27,500 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-344
+2026-04-08 16:24:27,587 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-129
+2026-04-08 16:24:27,677 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-215
+2026-04-08 16:24:27,916 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/checkpoint-86
+2026-04-08 16:24:27,916 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-08 16:24:34,440 - cyberbully - INFO - Metrics saved to experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/metrics.json
+2026-04-08 16:24:34,440 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/confusion_matrix.json
+2026-04-08 16:24:34,445 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/predictions.json
+2026-04-08 16:24:34,544 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562/confusion_matrix.pdf
+2026-04-08 16:24:34,544 - cyberbully - INFO - Accuracy: 0.8199
+2026-04-08 16:24:34,544 - cyberbully - INFO - Weighted F1: 0.8214
+2026-04-08 16:24:34,544 - cyberbully - INFO - Micro F1: 0.8199
+2026-04-08 16:24:34,544 - cyberbully - INFO - Inference time: 0.41 seconds
+2026-04-08 16:24:34,544 - cyberbully - INFO - Energy consumption: 0.000042 kWh
+2026-04-08 16:24:34,545 - cyberbully - INFO - ============================================================
+2026-04-08 16:24:34,545 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/answerdotai_ModernBERT-base/ieee/prep0_aug0/seed_87212562
+2026-04-08 16:24:34,545 - cyberbully - INFO - ============================================================

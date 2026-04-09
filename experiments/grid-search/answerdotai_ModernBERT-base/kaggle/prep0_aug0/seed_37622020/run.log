@@ -1,0 +1,59 @@
+2026-04-08 17:54:38,960 - cyberbully - INFO - ============================================================
+2026-04-08 17:54:38,960 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-08 17:54:38,960 - cyberbully - INFO - ============================================================
+2026-04-08 17:54:38,960 - cyberbully - INFO - Configuration:
+2026-04-08 17:54:38,960 - cyberbully - INFO -   model          : answerdotai/ModernBERT-base
+2026-04-08 17:54:38,960 - cyberbully - INFO -   dataset        : kaggle
+2026-04-08 17:54:38,960 - cyberbully - INFO -   preprocess     : False
+2026-04-08 17:54:38,960 - cyberbully - INFO -   augment        : False
+2026-04-08 17:54:38,960 - cyberbully - INFO -   compute_attribution: False
+2026-04-08 17:54:38,960 - cyberbully - INFO -   seed           : 37622020
+2026-04-08 17:54:38,960 - cyberbully - INFO -   epochs         : 10
+2026-04-08 17:54:38,960 - cyberbully - INFO -   batch_size     : 32
+2026-04-08 17:54:38,960 - cyberbully - INFO -   lr             : 5e-05
+2026-04-08 17:54:38,961 - cyberbully - INFO -   max_length     : 128
+2026-04-08 17:54:38,961 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-08 17:54:38,961 - cyberbully - INFO -   data_dir       : dataset
+2026-04-08 17:54:38,961 - cyberbully - INFO -   sbert          : False
+2026-04-08 17:54:38,961 - cyberbully - INFO -   supcon         : False
+2026-04-08 17:54:38,961 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-08 17:54:38,961 - cyberbully - INFO -   proj_dim       : 128
+2026-04-08 17:54:38,961 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-08 17:54:38,961 - cyberbully - INFO -   overwrite      : False
+2026-04-08 17:54:38,961 - cyberbully - INFO -   device         : cuda
+2026-04-08 17:54:38,961 - cyberbully - INFO -   output_dir     : experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020
+2026-04-08 17:54:38,961 - cyberbully - INFO - ============================================================
+2026-04-08 17:54:38,961 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-08 17:54:39,006 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-04-08 17:54:39,006 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-04-08 17:54:39,016 - cyberbully - INFO - Number of classes: 5
+2026-04-08 17:54:39,017 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-08 17:54:39,017 - cyberbully - INFO - Loading model 'answerdotai/ModernBERT-base' with 5 labels (sbert=False, supcon=False)
+2026-04-08 17:54:40,590 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-08 17:54:41,432 - cyberbully - INFO - Dataset sizes — train: 25604, val: 6401, test: 8002
+2026-04-08 17:54:41,432 - cyberbully - INFO - Step 4: Training...
+2026-04-08 17:54:41,643 - cyberbully - INFO - Starting training...
+2026-04-08 18:10:57,453 - cyberbully - INFO - Training complete.
+2026-04-08 18:10:57,534 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-5607
+2026-04-08 18:10:57,631 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-8010
+2026-04-08 18:10:57,714 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-6408
+2026-04-08 18:10:57,797 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-1602
+2026-04-08 18:10:57,879 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-3204
+2026-04-08 18:10:57,962 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-7209
+2026-04-08 18:10:58,044 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-4005
+2026-04-08 18:10:58,126 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-4806
+2026-04-08 18:10:58,210 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-801
+2026-04-08 18:10:58,292 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/checkpoint-2403
+2026-04-08 18:10:58,292 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-08 18:11:12,281 - cyberbully - INFO - Metrics saved to experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/metrics.json
+2026-04-08 18:11:12,281 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/confusion_matrix.json
+2026-04-08 18:11:12,359 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/predictions.json
+2026-04-08 18:11:12,461 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020/confusion_matrix.pdf
+2026-04-08 18:11:12,461 - cyberbully - INFO - Accuracy: 0.9544
+2026-04-08 18:11:12,461 - cyberbully - INFO - Weighted F1: 0.9547
+2026-04-08 18:11:12,461 - cyberbully - INFO - Micro F1: 0.9544
+2026-04-08 18:11:12,461 - cyberbully - INFO - Inference time: 7.80 seconds
+2026-04-08 18:11:12,461 - cyberbully - INFO - Energy consumption: 0.000460 kWh
+2026-04-08 18:11:12,462 - cyberbully - INFO - ============================================================
+2026-04-08 18:11:12,463 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep0_aug0/seed_37622020
+2026-04-08 18:11:12,463 - cyberbully - INFO - ============================================================
