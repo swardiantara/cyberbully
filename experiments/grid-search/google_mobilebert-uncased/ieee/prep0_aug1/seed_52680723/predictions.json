@@ -10,8 +10,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 2e-06,
+      "Slut Shaming": 0.999998
     }
   },
   {
@@ -97,11 +97,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 1e-06,
-      "Doxing": 1.1e-05,
-      "Revenge Porn": 0.002187,
-      "Sexual Harassment": 0.000999,
-      "Slut Shaming": 0.996803
+      "Cyberstalking": 2e-05,
+      "Doxing": 0.000681,
+      "Revenge Porn": 0.001534,
+      "Sexual Harassment": 0.021671,
+      "Slut Shaming": 0.976093
     }
   },
   {
@@ -112,11 +112,11 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.007729,
-      "Doxing": 0.991712,
-      "Revenge Porn": 0.000395,
-      "Sexual Harassment": 0.000158,
-      "Slut Shaming": 6e-06
+      "Cyberstalking": 0.010895,
+      "Doxing": 0.987259,
+      "Revenge Porn": 0.000332,
+      "Sexual Harassment": 0.001493,
+      "Slut Shaming": 2.1e-05
     }
   },
   {
@@ -144,9 +144,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.999999,
+      "Revenge Porn": 1.0,
       "Sexual Harassment": 0.0,
-      "Slut Shaming": 1e-06
+      "Slut Shaming": 0.0
     }
   },
   {
@@ -158,10 +158,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Doxing": 2e-06,
+      "Revenge Porn": 2e-06,
+      "Sexual Harassment": 2e-06,
+      "Slut Shaming": 0.999994
     }
   },
   {
@@ -172,10 +172,10 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.963741,
-      "Doxing": 3.7e-05,
-      "Revenge Porn": 0.000101,
-      "Sexual Harassment": 0.03612,
+      "Cyberstalking": 0.999826,
+      "Doxing": 0.000116,
+      "Revenge Porn": 3e-06,
+      "Sexual Harassment": 5.6e-05,
       "Slut Shaming": 0.0
     }
   },
@@ -199,14 +199,14 @@
     "original_text": "Eve Barlow= legendary coward. \nDeleted her post about Deppâs interview when faced with comments pointing out Heardââ¦ https://t.co/t81gNmrRcg",
     "cleansed_text": "Eve Barlow= legendary coward. \nDeleted her post about Deppâs interview when faced with comments pointing out Heardââ¦ https://t.co/t81gNmrRcg",
     "true_label": "Doxing",
-    "predicted_label": "Revenge Porn",
+    "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.070645,
-      "Doxing": 0.001078,
-      "Revenge Porn": 0.883283,
-      "Sexual Harassment": 0.044974,
-      "Slut Shaming": 2e-05
+      "Cyberstalking": 0.003583,
+      "Doxing": 0.001526,
+      "Revenge Porn": 0.088093,
+      "Sexual Harassment": 0.90677,
+      "Slut Shaming": 2.9e-05
     }
   },
   {
@@ -218,8 +218,8 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 1.0,
+      "Doxing": 1e-06,
+      "Revenge Porn": 0.999999,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
@@ -235,8 +235,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 4.3e-05,
+      "Slut Shaming": 0.999956
     }
   },
   {
@@ -307,11 +307,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000147,
-      "Doxing": 0.004321,
-      "Revenge Porn": 0.922046,
-      "Sexual Harassment": 0.065247,
-      "Slut Shaming": 0.008239
+      "Cyberstalking": 0.080284,
+      "Doxing": 0.00416,
+      "Revenge Porn": 0.7328,
+      "Sexual Harassment": 0.171483,
+      "Slut Shaming": 0.011273
     }
   },
   {
@@ -334,14 +334,14 @@
     "original_text": "Oh! Someone just said they had their bath together, still she could have said whatever she had to say without justiâ¦ https://t.co/iYYmCck5cI",
     "cleansed_text": "Oh! Someone just said they had their bath together, still she could have said whatever she had to say without justiâ¦ https://t.co/iYYmCck5cI",
     "true_label": "Slut Shaming",
-    "predicted_label": "Sexual Harassment",
-    "correct": false,
+    "predicted_label": "Slut Shaming",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.009678,
-      "Doxing": 0.022208,
-      "Revenge Porn": 0.372609,
-      "Sexual Harassment": 0.579477,
-      "Slut Shaming": 0.016028
+      "Cyberstalking": 0.000122,
+      "Doxing": 0.001064,
+      "Revenge Porn": 0.00147,
+      "Sexual Harassment": 0.127309,
+      "Slut Shaming": 0.870036
     }
   },
   {
@@ -367,11 +367,11 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999237,
-      "Doxing": 5.2e-05,
-      "Revenge Porn": 0.000204,
-      "Sexual Harassment": 0.000507,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.988947,
+      "Doxing": 0.007359,
+      "Revenge Porn": 0.003605,
+      "Sexual Harassment": 8.6e-05,
+      "Slut Shaming": 3e-06
     }
   },
   {
@@ -382,11 +382,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 1.0,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 1.9e-05,
+      "Doxing": 1e-06,
+      "Revenge Porn": 3e-06,
+      "Sexual Harassment": 0.999976,
+      "Slut Shaming": 2e-06
     }
   },
   {
@@ -397,10 +397,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 3e-06,
+      "Cyberstalking": 2e-06,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.999997,
+      "Sexual Harassment": 0.999998,
       "Slut Shaming": 0.0
     }
   },
@@ -424,14 +424,14 @@
     "original_text": "@SoatokDhole Also worth noting that any pedo looking for victims is gonna look at the furry fandom, which has issueâ¦ https://t.co/3EuD3TUlH3",
     "cleansed_text": "@SoatokDhole Also worth noting that any pedo looking for victims is gonna look at the furry fandom, which has issueâ¦ https://t.co/3EuD3TUlH3",
     "true_label": "Doxing",
-    "predicted_label": "Revenge Porn",
+    "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.007839,
-      "Doxing": 0.000488,
-      "Revenge Porn": 0.777084,
-      "Sexual Harassment": 0.214582,
-      "Slut Shaming": 7e-06
+      "Cyberstalking": 4e-06,
+      "Doxing": 4e-06,
+      "Revenge Porn": 0.000165,
+      "Sexual Harassment": 0.999774,
+      "Slut Shaming": 5.3e-05
     }
   },
   {
@@ -442,8 +442,8 @@
     "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 1e-06,
-      "Doxing": 0.999999,
+      "Cyberstalking": 0.0,
+      "Doxing": 1.0,
       "Revenge Porn": 0.0,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
@@ -457,11 +457,11 @@
     "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 9.7e-05,
-      "Doxing": 0.999901,
-      "Revenge Porn": 2e-06,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.005345,
+      "Doxing": 0.994509,
+      "Revenge Porn": 0.000134,
+      "Sexual Harassment": 9e-06,
+      "Slut Shaming": 3e-06
     }
   },
   {
@@ -474,8 +474,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.999998,
-      "Sexual Harassment": 2e-06,
+      "Revenge Porn": 1.0,
+      "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
   },
@@ -580,8 +580,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 2e-06,
+      "Slut Shaming": 0.999998
     }
   },
   {
@@ -622,11 +622,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.001432,
-      "Doxing": 8e-06,
-      "Revenge Porn": 0.001831,
-      "Sexual Harassment": 0.87712,
-      "Slut Shaming": 0.119609
+      "Cyberstalking": 2e-05,
+      "Doxing": 2.1e-05,
+      "Revenge Porn": 0.000268,
+      "Sexual Harassment": 0.830758,
+      "Slut Shaming": 0.168933
     }
   },
   {
@@ -638,8 +638,8 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.999995,
-      "Revenge Porn": 5e-06,
+      "Doxing": 0.999999,
+      "Revenge Porn": 1e-06,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
@@ -649,14 +649,14 @@
     "original_text": "@Hafymo I canât even start explaining what Iâm hearing but in a few words, Angels two aunties, Maria &amp; Jackie as boâ¦ https://t.co/1uqG98pbcb",
     "cleansed_text": "@Hafymo I canât even start explaining what Iâm hearing but in a few words, Angels two aunties, Maria &amp; Jackie as boâ¦ https://t.co/1uqG98pbcb",
     "true_label": "Slut Shaming",
-    "predicted_label": "Sexual Harassment",
-    "correct": false,
+    "predicted_label": "Slut Shaming",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.001657,
-      "Doxing": 2.7e-05,
-      "Revenge Porn": 0.006666,
-      "Sexual Harassment": 0.955456,
-      "Slut Shaming": 0.036194
+      "Cyberstalking": 0.000246,
+      "Doxing": 0.000652,
+      "Revenge Porn": 0.003374,
+      "Sexual Harassment": 0.253242,
+      "Slut Shaming": 0.742484
     }
   },
   {
@@ -670,8 +670,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 3e-06,
+      "Slut Shaming": 0.999997
     }
   },
   {
@@ -709,14 +709,14 @@
     "original_text": "@Paulasmyth13 @RondaCosgrove @JRubinBlogger @NoGOPigs @YahooNews just to be very clear, I looked at her profile. Shâ¦ https://t.co/RvxprGk8hU",
     "cleansed_text": "@Paulasmyth13 @RondaCosgrove @JRubinBlogger @NoGOPigs @YahooNews just to be very clear, I looked at her profile. Shâ¦ https://t.co/RvxprGk8hU",
     "true_label": "Cyberstalking",
-    "predicted_label": "Doxing",
-    "correct": false,
+    "predicted_label": "Cyberstalking",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.001966,
-      "Doxing": 0.776154,
-      "Revenge Porn": 0.219142,
-      "Sexual Harassment": 0.002665,
-      "Slut Shaming": 7.3e-05
+      "Cyberstalking": 0.999668,
+      "Doxing": 0.000327,
+      "Revenge Porn": 3e-06,
+      "Sexual Harassment": 2e-06,
+      "Slut Shaming": 0.0
     }
   },
   {
@@ -728,10 +728,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 1.0,
+      "Doxing": 4.5e-05,
+      "Revenge Porn": 0.999944,
       "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.0
+      "Slut Shaming": 1.1e-05
     }
   },
   {
@@ -775,8 +775,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 1e-05,
+      "Slut Shaming": 0.999989
     }
   },
   {
@@ -802,11 +802,11 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.531653,
-      "Doxing": 0.01358,
-      "Revenge Porn": 0.390383,
-      "Sexual Harassment": 0.064363,
-      "Slut Shaming": 2.1e-05
+      "Cyberstalking": 0.675203,
+      "Doxing": 0.096514,
+      "Revenge Porn": 0.013609,
+      "Sexual Harassment": 0.214596,
+      "Slut Shaming": 7.7e-05
     }
   },
   {
@@ -817,11 +817,11 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.00521,
-      "Doxing": 0.479098,
-      "Revenge Porn": 0.47332,
-      "Sexual Harassment": 0.025331,
-      "Slut Shaming": 0.017041
+      "Cyberstalking": 0.000237,
+      "Doxing": 0.934173,
+      "Revenge Porn": 0.064772,
+      "Sexual Harassment": 0.000109,
+      "Slut Shaming": 0.000709
     }
   },
   {
@@ -832,11 +832,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.0,
-      "Doxing": 1e-06,
-      "Revenge Porn": 9e-06,
-      "Sexual Harassment": 0.99999,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.000442,
+      "Doxing": 2.8e-05,
+      "Revenge Porn": 0.000203,
+      "Sexual Harassment": 0.999156,
+      "Slut Shaming": 0.000171
     }
   },
   {
@@ -849,8 +849,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.999998,
-      "Sexual Harassment": 1e-06,
+      "Revenge Porn": 1.0,
+      "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
   },
@@ -862,10 +862,10 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.994021,
-      "Doxing": 0.004845,
-      "Revenge Porn": 0.000976,
-      "Sexual Harassment": 0.000159,
+      "Cyberstalking": 0.998791,
+      "Doxing": 0.000146,
+      "Revenge Porn": 8e-06,
+      "Sexual Harassment": 0.001055,
       "Slut Shaming": 0.0
     }
   },
@@ -877,10 +877,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 4.1e-05,
+      "Cyberstalking": 7e-06,
       "Doxing": 0.0,
-      "Revenge Porn": 4e-06,
-      "Sexual Harassment": 0.999955,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 0.999993,
       "Slut Shaming": 0.0
     }
   },
@@ -953,10 +953,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Doxing": 8e-06,
+      "Revenge Porn": 2e-06,
+      "Sexual Harassment": 1.1e-05,
+      "Slut Shaming": 0.999979
     }
   },
   {
@@ -967,11 +967,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.002336,
-      "Doxing": 0.000137,
-      "Revenge Porn": 0.000284,
-      "Sexual Harassment": 0.997243,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.000196,
+      "Doxing": 7.2e-05,
+      "Revenge Porn": 0.006107,
+      "Sexual Harassment": 0.993604,
+      "Slut Shaming": 2.1e-05
     }
   },
   {
@@ -1044,9 +1044,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 2e-06,
-      "Slut Shaming": 0.999997
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 0.0,
+      "Slut Shaming": 1.0
     }
   },
   {
@@ -1072,10 +1072,10 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 6.5e-05,
-      "Doxing": 2e-06,
-      "Revenge Porn": 0.999929,
-      "Sexual Harassment": 4e-06,
+      "Cyberstalking": 4.3e-05,
+      "Doxing": 1.4e-05,
+      "Revenge Porn": 0.999933,
+      "Sexual Harassment": 1e-05,
       "Slut Shaming": 0.0
     }
   },
@@ -1087,11 +1087,11 @@
     "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.228634,
-      "Doxing": 0.373223,
-      "Revenge Porn": 0.258791,
-      "Sexual Harassment": 0.110983,
-      "Slut Shaming": 0.028369
+      "Cyberstalking": 0.32231,
+      "Doxing": 0.348774,
+      "Revenge Porn": 0.282574,
+      "Sexual Harassment": 0.028561,
+      "Slut Shaming": 0.017781
     }
   },
   {
@@ -1117,11 +1117,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 1e-06,
-      "Doxing": 1e-06,
-      "Revenge Porn": 5e-06,
-      "Sexual Harassment": 0.999994,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 1.6e-05,
+      "Doxing": 4.6e-05,
+      "Revenge Porn": 6.6e-05,
+      "Sexual Harassment": 0.99987,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -1129,14 +1129,14 @@
     "original_text": "@Man_O_War_Speak @dungeontheory @RollingBones81 It's working though. \nThey're getting a small following online of câ¦ https://t.co/QEjZ9hnmeJ",
     "cleansed_text": "@Man_O_War_Speak @dungeontheory @RollingBones81 It's working though. \nThey're getting a small following online of câ¦ https://t.co/QEjZ9hnmeJ",
     "true_label": "Doxing",
-    "predicted_label": "Revenge Porn",
-    "correct": false,
+    "predicted_label": "Doxing",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.008187,
-      "Doxing": 0.121482,
-      "Revenge Porn": 0.870072,
-      "Sexual Harassment": 0.000258,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.000801,
+      "Doxing": 0.763865,
+      "Revenge Porn": 0.235195,
+      "Sexual Harassment": 0.000122,
+      "Slut Shaming": 1.8e-05
     }
   },
   {
@@ -1159,14 +1159,14 @@
     "original_text": "@xielycaine @STRAWB3RRYMOO So, both at fault. Naturally. But in court, rapists is a criminal person. I don't don'tâ¦ https://t.co/5lf5XQF7H9",
     "cleansed_text": "@xielycaine @STRAWB3RRYMOO So, both at fault. Naturally. But in court, rapists is a criminal person. I don't don'tâ¦ https://t.co/5lf5XQF7H9",
     "true_label": "Sexual Harassment",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.941276,
-      "Doxing": 0.000413,
-      "Revenge Porn": 0.050305,
-      "Sexual Harassment": 0.008005,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.001087,
+      "Doxing": 0.000796,
+      "Revenge Porn": 0.957583,
+      "Sexual Harassment": 0.033357,
+      "Slut Shaming": 0.007177
     }
   },
   {
@@ -1195,8 +1195,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999999
     }
   },
   {
@@ -1207,11 +1207,11 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.000387,
-      "Doxing": 0.000156,
-      "Revenge Porn": 0.998677,
-      "Sexual Harassment": 0.000558,
-      "Slut Shaming": 0.000222
+      "Cyberstalking": 0.000278,
+      "Doxing": 0.000471,
+      "Revenge Porn": 0.991215,
+      "Sexual Harassment": 0.001501,
+      "Slut Shaming": 0.006535
     }
   },
   {
@@ -1219,14 +1219,14 @@
     "original_text": "I see my oomfs interact with them and I gotta say something please block @/sharkbratt theyâre my ex who has been cyâ¦ https://t.co/ieEVj2B6Km",
     "cleansed_text": "I see my oomfs interact with them and I gotta say something please block @/sharkbratt theyâre my ex who has been cyâ¦ https://t.co/ieEVj2B6Km",
     "true_label": "Cyberstalking",
-    "predicted_label": "Revenge Porn",
-    "correct": false,
+    "predicted_label": "Cyberstalking",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.006295,
-      "Doxing": 0.027271,
-      "Revenge Porn": 0.944087,
-      "Sexual Harassment": 0.005901,
-      "Slut Shaming": 0.016445
+      "Cyberstalking": 0.707727,
+      "Doxing": 0.094048,
+      "Revenge Porn": 0.178537,
+      "Sexual Harassment": 0.018604,
+      "Slut Shaming": 0.001084
     }
   },
   {
@@ -1237,8 +1237,8 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 1e-06,
-      "Doxing": 0.0,
+      "Cyberstalking": 0.0,
+      "Doxing": 1e-06,
       "Revenge Porn": 0.999999,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
@@ -1267,11 +1267,11 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.0,
-      "Doxing": 1.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 7e-06,
+      "Doxing": 0.999986,
+      "Revenge Porn": 5e-06,
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -1282,11 +1282,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 1e-06,
-      "Doxing": 2e-05,
-      "Revenge Porn": 0.11153,
-      "Sexual Harassment": 0.00089,
-      "Slut Shaming": 0.887559
+      "Cyberstalking": 0.0,
+      "Doxing": 0.0,
+      "Revenge Porn": 1.1e-05,
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999987
     }
   },
   {
@@ -1297,11 +1297,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.019483,
-      "Doxing": 0.184455,
-      "Revenge Porn": 0.108791,
-      "Sexual Harassment": 0.686999,
-      "Slut Shaming": 0.000272
+      "Cyberstalking": 0.033292,
+      "Doxing": 0.086088,
+      "Revenge Porn": 0.107108,
+      "Sexual Harassment": 0.772735,
+      "Slut Shaming": 0.000777
     }
   },
   {
@@ -1312,11 +1312,11 @@
     "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 3.8e-05,
-      "Doxing": 0.050937,
-      "Revenge Porn": 0.057547,
-      "Sexual Harassment": 0.002887,
-      "Slut Shaming": 0.888591
+      "Cyberstalking": 0.00014,
+      "Doxing": 0.093756,
+      "Revenge Porn": 0.017552,
+      "Sexual Harassment": 0.00222,
+      "Slut Shaming": 0.886332
     }
   },
   {
@@ -1342,11 +1342,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 5e-06,
-      "Doxing": 0.000288,
-      "Revenge Porn": 0.002717,
-      "Sexual Harassment": 5.9e-05,
-      "Slut Shaming": 0.996932
+      "Cyberstalking": 2.2e-05,
+      "Doxing": 0.009256,
+      "Revenge Porn": 0.02492,
+      "Sexual Harassment": 0.001049,
+      "Slut Shaming": 0.964753
     }
   },
   {
@@ -1359,9 +1359,9 @@
     "probabilities": {
       "Cyberstalking": 1e-06,
       "Doxing": 0.0,
-      "Revenge Porn": 0.001053,
-      "Sexual Harassment": 0.998945,
-      "Slut Shaming": 1e-06
+      "Revenge Porn": 0.000135,
+      "Sexual Harassment": 0.999821,
+      "Slut Shaming": 4.4e-05
     }
   },
   {
@@ -1375,8 +1375,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 7e-06,
+      "Slut Shaming": 0.999993
     }
   },
   {
@@ -1390,7 +1390,7 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 2e-06,
-      "Sexual Harassment": 0.999998,
+      "Sexual Harassment": 0.999997,
       "Slut Shaming": 0.0
     }
   },
@@ -1414,14 +1414,14 @@
     "original_text": "My dear I don't know the discussion or what was said cos I'm not watching. I'm seeing tweets with different opinionâ¦ https://t.co/BAhhXoGQCb",
     "cleansed_text": "My dear I don't know the discussion or what was said cos I'm not watching. I'm seeing tweets with different opinionâ¦ https://t.co/BAhhXoGQCb",
     "true_label": "Slut Shaming",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.617054,
-      "Doxing": 3e-05,
-      "Revenge Porn": 0.003872,
-      "Sexual Harassment": 0.379045,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.044197,
+      "Doxing": 0.001205,
+      "Revenge Porn": 0.063676,
+      "Sexual Harassment": 0.832069,
+      "Slut Shaming": 0.058852
     }
   },
   {
@@ -1448,8 +1448,8 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 1.0,
+      "Doxing": 2e-06,
+      "Revenge Porn": 0.999998,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
@@ -1477,11 +1477,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 4.1e-05,
-      "Doxing": 0.0,
-      "Revenge Porn": 3e-05,
-      "Sexual Harassment": 0.999928,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 1.6e-05,
+      "Doxing": 7e-06,
+      "Revenge Porn": 0.000167,
+      "Sexual Harassment": 0.999219,
+      "Slut Shaming": 0.000591
     }
   },
   {
@@ -1492,11 +1492,11 @@
     "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000321,
-      "Doxing": 0.913743,
-      "Revenge Porn": 0.052438,
-      "Sexual Harassment": 0.001428,
-      "Slut Shaming": 0.03207
+      "Cyberstalking": 0.000794,
+      "Doxing": 0.602,
+      "Revenge Porn": 0.390936,
+      "Sexual Harassment": 0.00049,
+      "Slut Shaming": 0.005779
     }
   },
   {
@@ -1508,10 +1508,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 9e-06,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.99999
+      "Doxing": 1e-06,
+      "Revenge Porn": 2e-06,
+      "Sexual Harassment": 2.7e-05,
+      "Slut Shaming": 0.99997
     }
   },
   {
@@ -1555,8 +1555,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.999999
+      "Sexual Harassment": 0.0,
+      "Slut Shaming": 1.0
     }
   },
   {
@@ -1582,11 +1582,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.00018,
-      "Doxing": 0.001175,
-      "Revenge Porn": 0.003597,
-      "Sexual Harassment": 0.055109,
-      "Slut Shaming": 0.939938
+      "Cyberstalking": 0.002964,
+      "Doxing": 0.00058,
+      "Revenge Porn": 0.001541,
+      "Sexual Harassment": 0.104478,
+      "Slut Shaming": 0.890438
     }
   },
   {
@@ -1597,11 +1597,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000214,
-      "Doxing": 7.4e-05,
-      "Revenge Porn": 0.998139,
-      "Sexual Harassment": 0.001506,
-      "Slut Shaming": 6.8e-05
+      "Cyberstalking": 0.000255,
+      "Doxing": 0.000122,
+      "Revenge Porn": 0.68043,
+      "Sexual Harassment": 0.318338,
+      "Slut Shaming": 0.000855
     }
   },
   {
@@ -1657,10 +1657,10 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 2.2e-05,
-      "Doxing": 9.6e-05,
-      "Revenge Porn": 0.999878,
-      "Sexual Harassment": 4e-06,
+      "Cyberstalking": 3e-06,
+      "Doxing": 3.3e-05,
+      "Revenge Porn": 0.999959,
+      "Sexual Harassment": 5e-06,
       "Slut Shaming": 0.0
     }
   },
@@ -1672,10 +1672,10 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.996153,
-      "Doxing": 2.2e-05,
-      "Revenge Porn": 4e-06,
-      "Sexual Harassment": 0.003821,
+      "Cyberstalking": 0.501582,
+      "Doxing": 0.000761,
+      "Revenge Porn": 8.6e-05,
+      "Sexual Harassment": 0.497572,
       "Slut Shaming": 0.0
     }
   },
@@ -1687,10 +1687,10 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 1.5e-05,
-      "Doxing": 0.999985,
+      "Cyberstalking": 7.7e-05,
+      "Doxing": 0.999913,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
+      "Sexual Harassment": 9e-06,
       "Slut Shaming": 0.0
     }
   },
@@ -1702,11 +1702,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.006161,
-      "Doxing": 5.1e-05,
-      "Revenge Porn": 0.001559,
-      "Sexual Harassment": 0.992229,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.00022,
+      "Doxing": 4e-06,
+      "Revenge Porn": 0.000425,
+      "Sexual Harassment": 0.99935,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -1749,8 +1749,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.999995,
-      "Sexual Harassment": 5e-06,
+      "Revenge Porn": 1.0,
+      "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
   },
@@ -1779,8 +1779,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.999998,
-      "Sexual Harassment": 2e-06,
+      "Revenge Porn": 1.0,
+      "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
   },
@@ -1793,10 +1793,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 9e-06,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.99999
+      "Doxing": 6e-06,
+      "Revenge Porn": 8e-06,
+      "Sexual Harassment": 3.2e-05,
+      "Slut Shaming": 0.999954
     }
   },
   {
@@ -1870,7 +1870,7 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.999999,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -1885,8 +1885,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.999999
+      "Sexual Harassment": 1.3e-05,
+      "Slut Shaming": 0.999986
     }
   },
   {
@@ -1942,11 +1942,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000225,
-      "Doxing": 5e-05,
-      "Revenge Porn": 0.001265,
-      "Sexual Harassment": 0.998419,
-      "Slut Shaming": 4.1e-05
+      "Cyberstalking": 0.000238,
+      "Doxing": 4.3e-05,
+      "Revenge Porn": 0.000784,
+      "Sexual Harassment": 0.998742,
+      "Slut Shaming": 0.000194
     }
   },
   {
@@ -1960,8 +1960,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999999
     }
   },
   {
@@ -1987,11 +1987,11 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.000768,
-      "Doxing": 0.000182,
-      "Revenge Porn": 0.9985,
-      "Sexual Harassment": 0.000505,
-      "Slut Shaming": 4.6e-05
+      "Cyberstalking": 0.00145,
+      "Doxing": 0.001208,
+      "Revenge Porn": 0.994043,
+      "Sexual Harassment": 0.001016,
+      "Slut Shaming": 0.002283
     }
   },
   {
@@ -2032,11 +2032,11 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.003209,
-      "Doxing": 0.99679,
+      "Cyberstalking": 0.167547,
+      "Doxing": 0.832428,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.0
+      "Sexual Harassment": 2.4e-05,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -2064,9 +2064,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
+      "Revenge Porn": 0.0,
       "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.999999
+      "Slut Shaming": 1.0
     }
   },
   {
@@ -2077,11 +2077,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000128,
-      "Doxing": 0.011458,
-      "Revenge Porn": 0.982854,
-      "Sexual Harassment": 0.00436,
-      "Slut Shaming": 0.001199
+      "Cyberstalking": 0.000834,
+      "Doxing": 0.019572,
+      "Revenge Porn": 0.977182,
+      "Sexual Harassment": 0.000678,
+      "Slut Shaming": 0.001733
     }
   },
   {
@@ -2104,14 +2104,14 @@
     "original_text": "MY NAME IS TULLEY JAE WAHREN PLEASE FUCK THE SHIT OUT OF ME IâM SO HORNY FOR YOU â ya know thereâs being assertiveâ¦ https://t.co/XwdrNFHhch",
     "cleansed_text": "MY NAME IS TULLEY JAE WAHREN PLEASE FUCK THE SHIT OUT OF ME IâM SO HORNY FOR YOU â ya know thereâs being assertiveâ¦ https://t.co/XwdrNFHhch",
     "true_label": "Sexual Harassment",
-    "predicted_label": "Revenge Porn",
+    "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.002428,
-      "Doxing": 0.000119,
-      "Revenge Porn": 0.936673,
-      "Sexual Harassment": 0.016059,
-      "Slut Shaming": 0.044721
+      "Cyberstalking": 6e-06,
+      "Doxing": 1.5e-05,
+      "Revenge Porn": 0.000261,
+      "Sexual Harassment": 0.000229,
+      "Slut Shaming": 0.99949
     }
   },
   {
@@ -2137,11 +2137,11 @@
     "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000893,
-      "Doxing": 0.000433,
-      "Revenge Porn": 0.009772,
-      "Sexual Harassment": 0.233004,
-      "Slut Shaming": 0.755898
+      "Cyberstalking": 4e-06,
+      "Doxing": 1.6e-05,
+      "Revenge Porn": 0.000749,
+      "Sexual Harassment": 0.000238,
+      "Slut Shaming": 0.998993
     }
   },
   {
@@ -2154,8 +2154,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999999,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -2167,11 +2167,11 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 4e-05,
-      "Doxing": 0.006097,
-      "Revenge Porn": 0.989983,
-      "Sexual Harassment": 0.000382,
-      "Slut Shaming": 0.003498
+      "Cyberstalking": 0.016496,
+      "Doxing": 0.014009,
+      "Revenge Porn": 0.949295,
+      "Sexual Harassment": 0.001405,
+      "Slut Shaming": 0.018795
     }
   },
   {
@@ -2179,14 +2179,14 @@
     "original_text": "@CathyYoung63 @WasOptimist Masking relaxed in June, and there are now unmasked people everywhere in New York.  I seâ¦ https://t.co/1ee6XUHldd",
     "cleansed_text": "@CathyYoung63 @WasOptimist Masking relaxed in June, and there are now unmasked people everywhere in New York.  I seâ¦ https://t.co/1ee6XUHldd",
     "true_label": "Doxing",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.551314,
-      "Doxing": 0.001909,
-      "Revenge Porn": 0.130617,
-      "Sexual Harassment": 0.314662,
-      "Slut Shaming": 0.001498
+      "Cyberstalking": 0.038641,
+      "Doxing": 0.035496,
+      "Revenge Porn": 0.444801,
+      "Sexual Harassment": 0.244234,
+      "Slut Shaming": 0.236828
     }
   },
   {
@@ -2257,11 +2257,11 @@
     "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 1.9e-05,
-      "Doxing": 0.022146,
-      "Revenge Porn": 0.012731,
-      "Sexual Harassment": 0.011854,
-      "Slut Shaming": 0.95325
+      "Cyberstalking": 0.00017,
+      "Doxing": 0.293964,
+      "Revenge Porn": 0.150452,
+      "Sexual Harassment": 0.088503,
+      "Slut Shaming": 0.466911
     }
   },
   {
@@ -2272,10 +2272,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.0,
+      "Cyberstalking": 3e-06,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999999,
+      "Revenge Porn": 2e-06,
+      "Sexual Harassment": 0.999995,
       "Slut Shaming": 0.0
     }
   },
@@ -2287,11 +2287,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 5e-06,
-      "Doxing": 1.7e-05,
-      "Revenge Porn": 0.017271,
-      "Sexual Harassment": 0.978108,
-      "Slut Shaming": 0.004599
+      "Cyberstalking": 2e-06,
+      "Doxing": 1.4e-05,
+      "Revenge Porn": 0.00016,
+      "Sexual Harassment": 0.987625,
+      "Slut Shaming": 0.012199
     }
   },
   {
@@ -2305,8 +2305,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999999
     }
   },
   {
@@ -2362,8 +2362,8 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999999,
-      "Doxing": 1e-06,
+      "Cyberstalking": 0.999997,
+      "Doxing": 3e-06,
       "Revenge Porn": 0.0,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
@@ -2377,11 +2377,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 3.1e-05,
-      "Doxing": 0.000258,
-      "Revenge Porn": 0.037246,
-      "Sexual Harassment": 0.298055,
-      "Slut Shaming": 0.66441
+      "Cyberstalking": 1.8e-05,
+      "Doxing": 0.000436,
+      "Revenge Porn": 0.004518,
+      "Sexual Harassment": 0.350713,
+      "Slut Shaming": 0.644316
     }
   },
   {
@@ -2422,11 +2422,11 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.000128,
-      "Doxing": 0.999478,
-      "Revenge Porn": 0.000394,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.000145,
+      "Doxing": 0.863106,
+      "Revenge Porn": 0.136671,
+      "Sexual Harassment": 1.4e-05,
+      "Slut Shaming": 6.4e-05
     }
   },
   {
@@ -2437,11 +2437,11 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.000179,
-      "Doxing": 0.991621,
-      "Revenge Porn": 0.006646,
-      "Sexual Harassment": 6.9e-05,
-      "Slut Shaming": 0.001486
+      "Cyberstalking": 8e-06,
+      "Doxing": 0.999694,
+      "Revenge Porn": 0.000297,
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -2452,11 +2452,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.244783,
-      "Doxing": 0.000449,
-      "Revenge Porn": 0.001705,
-      "Sexual Harassment": 0.753054,
-      "Slut Shaming": 8e-06
+      "Cyberstalking": 0.004085,
+      "Doxing": 0.000311,
+      "Revenge Porn": 0.072014,
+      "Sexual Harassment": 0.923359,
+      "Slut Shaming": 0.00023
     }
   },
   {
@@ -2467,11 +2467,11 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.000132,
-      "Doxing": 1.5e-05,
-      "Revenge Porn": 0.999598,
-      "Sexual Harassment": 0.000255,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.080794,
+      "Doxing": 0.067446,
+      "Revenge Porn": 0.850247,
+      "Sexual Harassment": 0.001513,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -2509,14 +2509,14 @@
     "original_text": "It's always either the crap journalist who need attention, therefore they stalk J or the kind of people who have 0â¦ https://t.co/OBUugBgHK3",
     "cleansed_text": "It's always either the crap journalist who need attention, therefore they stalk J or the kind of people who have 0â¦ https://t.co/OBUugBgHK3",
     "true_label": "Slut Shaming",
-    "predicted_label": "Sexual Harassment",
+    "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.013757,
-      "Doxing": 0.003447,
-      "Revenge Porn": 0.146272,
-      "Sexual Harassment": 0.836499,
-      "Slut Shaming": 2.5e-05
+      "Cyberstalking": 6.1e-05,
+      "Doxing": 0.000168,
+      "Revenge Porn": 0.884597,
+      "Sexual Harassment": 0.099411,
+      "Slut Shaming": 0.015762
     }
   },
   {
@@ -2542,10 +2542,10 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 5e-06,
-      "Doxing": 0.999993,
-      "Revenge Porn": 2e-06,
-      "Sexual Harassment": 0.0,
+      "Cyberstalking": 0.00057,
+      "Doxing": 0.999406,
+      "Revenge Porn": 1.7e-05,
+      "Sexual Harassment": 7e-06,
       "Slut Shaming": 0.0
     }
   },
@@ -2569,14 +2569,14 @@
     "original_text": "Christopher Cantwell, a New Hampshire resident and radio host who became known after participating in a deadly 2017â¦ https://t.co/amdxo5WQ6A",
     "cleansed_text": "Christopher Cantwell, a New Hampshire resident and radio host who became known after participating in a deadly 2017â¦ https://t.co/amdxo5WQ6A",
     "true_label": "Cyberstalking",
-    "predicted_label": "Cyberstalking",
-    "correct": true,
+    "predicted_label": "Sexual Harassment",
+    "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.971154,
-      "Doxing": 0.00024,
-      "Revenge Porn": 0.0011,
-      "Sexual Harassment": 0.027505,
-      "Slut Shaming": 1e-06
+      "Cyberstalking": 0.052021,
+      "Doxing": 0.004232,
+      "Revenge Porn": 0.006357,
+      "Sexual Harassment": 0.937097,
+      "Slut Shaming": 0.000293
     }
   },
   {
@@ -2599,14 +2599,14 @@
     "original_text": "@VictoriaBreakw1 In a way it's kind of cool that we're getting thru to her enough to scare her like this...she knowâ¦ https://t.co/uWtoHxU70s",
     "cleansed_text": "@VictoriaBreakw1 In a way it's kind of cool that we're getting thru to her enough to scare her like this...she knowâ¦ https://t.co/uWtoHxU70s",
     "true_label": "Doxing",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.372202,
-      "Doxing": 0.212478,
-      "Revenge Porn": 0.356674,
-      "Sexual Harassment": 0.05849,
-      "Slut Shaming": 0.000156
+      "Cyberstalking": 0.05163,
+      "Doxing": 0.415139,
+      "Revenge Porn": 0.011884,
+      "Sexual Harassment": 0.51976,
+      "Slut Shaming": 0.001587
     }
   },
   {
@@ -2617,10 +2617,10 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999986,
-      "Doxing": 2e-06,
-      "Revenge Porn": 3e-06,
-      "Sexual Harassment": 9e-06,
+      "Cyberstalking": 0.999848,
+      "Doxing": 4.4e-05,
+      "Revenge Porn": 9e-06,
+      "Sexual Harassment": 9.9e-05,
       "Slut Shaming": 0.0
     }
   },
@@ -2632,11 +2632,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000236,
-      "Doxing": 0.000139,
-      "Revenge Porn": 0.00216,
-      "Sexual Harassment": 0.992641,
-      "Slut Shaming": 0.004824
+      "Cyberstalking": 6e-06,
+      "Doxing": 1e-06,
+      "Revenge Porn": 1e-06,
+      "Sexual Harassment": 0.999962,
+      "Slut Shaming": 3e-05
     }
   },
   {
@@ -2648,10 +2648,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 1e-06,
-      "Revenge Porn": 2.9e-05,
-      "Sexual Harassment": 0.999969,
-      "Slut Shaming": 0.0
+      "Doxing": 2e-06,
+      "Revenge Porn": 1e-05,
+      "Sexual Harassment": 0.999982,
+      "Slut Shaming": 7e-06
     }
   },
   {
@@ -2662,11 +2662,11 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.938815,
-      "Doxing": 0.056065,
-      "Revenge Porn": 0.000679,
-      "Sexual Harassment": 0.00444,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.789026,
+      "Doxing": 0.047587,
+      "Revenge Porn": 8.1e-05,
+      "Sexual Harassment": 0.163304,
+      "Slut Shaming": 3e-06
     }
   },
   {
@@ -2677,10 +2677,10 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999999,
+      "Cyberstalking": 0.999996,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
+      "Sexual Harassment": 3e-06,
       "Slut Shaming": 0.0
     }
   },
@@ -2693,8 +2693,8 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 1.0,
+      "Doxing": 4e-06,
+      "Revenge Porn": 0.999996,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
@@ -2707,10 +2707,10 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 2e-06,
-      "Doxing": 0.999998,
+      "Cyberstalking": 0.000139,
+      "Doxing": 0.999858,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
+      "Sexual Harassment": 3e-06,
       "Slut Shaming": 0.0
     }
   },
@@ -2725,8 +2725,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999999
     }
   },
   {
@@ -2737,11 +2737,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.035074,
-      "Doxing": 3.7e-05,
-      "Revenge Porn": 0.00041,
-      "Sexual Harassment": 0.964479,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.003292,
+      "Doxing": 1.3e-05,
+      "Revenge Porn": 9.1e-05,
+      "Sexual Harassment": 0.996603,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -2797,11 +2797,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.338836,
-      "Doxing": 0.000555,
-      "Revenge Porn": 0.000292,
-      "Sexual Harassment": 0.660317,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.117269,
+      "Doxing": 2.1e-05,
+      "Revenge Porn": 4e-05,
+      "Sexual Harassment": 0.882669,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -2842,11 +2842,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.0,
-      "Doxing": 1e-06,
-      "Revenge Porn": 0.000317,
-      "Sexual Harassment": 0.00016,
-      "Slut Shaming": 0.999523
+      "Cyberstalking": 1e-06,
+      "Doxing": 3.4e-05,
+      "Revenge Porn": 4.8e-05,
+      "Sexual Harassment": 6.3e-05,
+      "Slut Shaming": 0.999854
     }
   },
   {
@@ -2860,7 +2860,7 @@
       "Cyberstalking": 8e-06,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.999991,
+      "Sexual Harassment": 0.999992,
       "Slut Shaming": 0.0
     }
   },
@@ -2920,8 +2920,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 7e-06,
+      "Slut Shaming": 0.999993
     }
   },
   {
@@ -2948,10 +2948,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 1e-06,
-      "Revenge Porn": 3e-06,
-      "Sexual Harassment": 5e-06,
-      "Slut Shaming": 0.999992
+      "Doxing": 0.0,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 0.0,
+      "Slut Shaming": 1.0
     }
   },
   {
@@ -2962,11 +2962,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.138818,
-      "Doxing": 0.034848,
-      "Revenge Porn": 0.825769,
-      "Sexual Harassment": 0.000561,
-      "Slut Shaming": 3e-06
+      "Cyberstalking": 0.003703,
+      "Doxing": 0.458002,
+      "Revenge Porn": 0.530302,
+      "Sexual Harassment": 0.007762,
+      "Slut Shaming": 0.000232
     }
   },
   {
@@ -2977,10 +2977,10 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.999994,
-      "Doxing": 5e-06,
+      "Cyberstalking": 0.999995,
+      "Doxing": 0.0,
       "Revenge Porn": 1e-06,
-      "Sexual Harassment": 1e-06,
+      "Sexual Harassment": 4e-06,
       "Slut Shaming": 0.0
     }
   },
@@ -3022,11 +3022,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.008925,
-      "Doxing": 9.6e-05,
-      "Revenge Porn": 0.003195,
-      "Sexual Harassment": 0.987741,
-      "Slut Shaming": 4.2e-05
+      "Cyberstalking": 0.000104,
+      "Doxing": 3.1e-05,
+      "Revenge Porn": 8e-05,
+      "Sexual Harassment": 0.999776,
+      "Slut Shaming": 8e-06
     }
   },
   {
@@ -3034,14 +3034,14 @@
     "original_text": "These vaccine cultists actually desperately hope for the unvaccinated to die from Covid, just so that they can be pâ¦ https://t.co/qco8LeWpCe",
     "cleansed_text": "These vaccine cultists actually desperately hope for the unvaccinated to die from Covid, just so that they can be pâ¦ https://t.co/qco8LeWpCe",
     "true_label": "Revenge Porn",
-    "predicted_label": "Doxing",
-    "correct": false,
+    "predicted_label": "Revenge Porn",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.000583,
-      "Doxing": 0.903947,
-      "Revenge Porn": 0.085468,
-      "Sexual Harassment": 0.008283,
-      "Slut Shaming": 0.001719
+      "Cyberstalking": 0.001097,
+      "Doxing": 0.416608,
+      "Revenge Porn": 0.526371,
+      "Sexual Harassment": 0.012996,
+      "Slut Shaming": 0.042928
     }
   },
   {
@@ -3052,11 +3052,11 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.978578,
-      "Doxing": 0.02029,
-      "Revenge Porn": 0.000149,
-      "Sexual Harassment": 0.000981,
-      "Slut Shaming": 2e-06
+      "Cyberstalking": 0.984598,
+      "Doxing": 0.00789,
+      "Revenge Porn": 0.000188,
+      "Sexual Harassment": 0.007323,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -3067,11 +3067,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.408204,
-      "Doxing": 9e-06,
-      "Revenge Porn": 0.001277,
-      "Sexual Harassment": 0.590508,
-      "Slut Shaming": 2e-06
+      "Cyberstalking": 0.000235,
+      "Doxing": 2e-06,
+      "Revenge Porn": 0.000286,
+      "Sexual Harassment": 0.999436,
+      "Slut Shaming": 4.1e-05
     }
   },
   {
@@ -3082,10 +3082,10 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 2e-06,
-      "Doxing": 2e-06,
-      "Revenge Porn": 0.999995,
-      "Sexual Harassment": 1e-06,
+      "Cyberstalking": 0.0,
+      "Doxing": 0.0,
+      "Revenge Porn": 1.0,
+      "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
   },
@@ -3109,14 +3109,14 @@
     "original_text": "@DougCameron51 @BeattieNgiare I think Morrison only gets told things his advisers think he wants to hear. \nSo theyâ¦ https://t.co/1Wtovsk9pc",
     "cleansed_text": "@DougCameron51 @BeattieNgiare I think Morrison only gets told things his advisers think he wants to hear. \nSo theyâ¦ https://t.co/1Wtovsk9pc",
     "true_label": "Sexual Harassment",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.476322,
-      "Doxing": 0.272744,
-      "Revenge Porn": 0.248833,
-      "Sexual Harassment": 0.002101,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.203779,
+      "Doxing": 0.765328,
+      "Revenge Porn": 0.026952,
+      "Sexual Harassment": 0.003882,
+      "Slut Shaming": 6e-05
     }
   },
   {
@@ -3129,9 +3129,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.999999
+      "Revenge Porn": 1e-06,
+      "Sexual Harassment": 1.1e-05,
+      "Slut Shaming": 0.999988
     }
   },
   {
@@ -3139,14 +3139,14 @@
     "original_text": "@ClunkSpider This is my issue with tlou2, the story never reached this high! It's really a big wasted opportunity tâ¦ https://t.co/E6Z7Uvf7Js",
     "cleansed_text": "@ClunkSpider This is my issue with tlou2, the story never reached this high! It's really a big wasted opportunity tâ¦ https://t.co/E6Z7Uvf7Js",
     "true_label": "Revenge Porn",
-    "predicted_label": "Doxing",
+    "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.016909,
-      "Doxing": 0.965346,
-      "Revenge Porn": 0.016207,
-      "Sexual Harassment": 0.001536,
-      "Slut Shaming": 2e-06
+      "Cyberstalking": 0.704685,
+      "Doxing": 0.278705,
+      "Revenge Porn": 0.015351,
+      "Sexual Harassment": 0.001191,
+      "Slut Shaming": 6.8e-05
     }
   },
   {
@@ -3157,11 +3157,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.005702,
-      "Doxing": 0.001109,
-      "Revenge Porn": 0.20701,
-      "Sexual Harassment": 0.491643,
-      "Slut Shaming": 0.294535
+      "Cyberstalking": 0.001049,
+      "Doxing": 0.001184,
+      "Revenge Porn": 0.003399,
+      "Sexual Harassment": 0.593651,
+      "Slut Shaming": 0.400717
     }
   },
   {
@@ -3187,10 +3187,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.024177,
-      "Doxing": 7.6e-05,
-      "Revenge Porn": 1.7e-05,
-      "Sexual Harassment": 0.97573,
+      "Cyberstalking": 0.008064,
+      "Doxing": 8e-06,
+      "Revenge Porn": 1e-05,
+      "Sexual Harassment": 0.991918,
       "Slut Shaming": 0.0
     }
   },
@@ -3202,10 +3202,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.003857,
-      "Doxing": 5e-06,
-      "Revenge Porn": 3.2e-05,
-      "Sexual Harassment": 0.996106,
+      "Cyberstalking": 0.001246,
+      "Doxing": 3.1e-05,
+      "Revenge Porn": 0.000109,
+      "Sexual Harassment": 0.998614,
       "Slut Shaming": 0.0
     }
   },
@@ -3232,11 +3232,11 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 5e-06,
-      "Doxing": 0.000967,
-      "Revenge Porn": 0.987456,
-      "Sexual Harassment": 0.002987,
-      "Slut Shaming": 0.008584
+      "Cyberstalking": 0.000137,
+      "Doxing": 0.002744,
+      "Revenge Porn": 0.877598,
+      "Sexual Harassment": 0.01793,
+      "Slut Shaming": 0.101592
     }
   },
   {
@@ -3250,8 +3250,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999999
     }
   },
   {
@@ -3259,14 +3259,14 @@
     "original_text": "@HuggableHipster Is he local or near by I would file restraining order and if he is not I track down his local counâ¦ https://t.co/X9FfSqjoi9",
     "cleansed_text": "@HuggableHipster Is he local or near by I would file restraining order and if he is not I track down his local counâ¦ https://t.co/X9FfSqjoi9",
     "true_label": "Cyberstalking",
-    "predicted_label": "Slut Shaming",
+    "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000821,
-      "Doxing": 0.002937,
-      "Revenge Porn": 0.055643,
-      "Sexual Harassment": 0.253685,
-      "Slut Shaming": 0.686914
+      "Cyberstalking": 1.8e-05,
+      "Doxing": 4.7e-05,
+      "Revenge Porn": 0.00034,
+      "Sexual Harassment": 0.992174,
+      "Slut Shaming": 0.007422
     }
   },
   {
@@ -3279,8 +3279,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 3e-06,
-      "Sexual Harassment": 0.999997,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -3292,10 +3292,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.011098,
+      "Cyberstalking": 0.014258,
       "Doxing": 1e-06,
-      "Revenge Porn": 1.4e-05,
-      "Sexual Harassment": 0.988887,
+      "Revenge Porn": 8.2e-05,
+      "Sexual Harassment": 0.985659,
       "Slut Shaming": 0.0
     }
   },
@@ -3310,8 +3310,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.999998
+      "Sexual Harassment": 7e-06,
+      "Slut Shaming": 0.999993
     }
   },
   {
@@ -3382,10 +3382,10 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999997,
+      "Cyberstalking": 0.999995,
       "Doxing": 1e-06,
-      "Revenge Porn": 2e-06,
-      "Sexual Harassment": 0.0,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 4e-06,
       "Slut Shaming": 0.0
     }
   },
@@ -3459,8 +3459,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999999,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -3472,11 +3472,11 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.002132,
-      "Doxing": 0.001728,
-      "Revenge Porn": 0.995719,
-      "Sexual Harassment": 0.000378,
-      "Slut Shaming": 4.3e-05
+      "Cyberstalking": 0.00028,
+      "Doxing": 0.000269,
+      "Revenge Porn": 0.832614,
+      "Sexual Harassment": 0.152041,
+      "Slut Shaming": 0.014796
     }
   },
   {
@@ -3489,8 +3489,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 1.0,
+      "Revenge Porn": 3e-06,
+      "Sexual Harassment": 0.999997,
       "Slut Shaming": 0.0
     }
   },
@@ -3499,14 +3499,14 @@
     "original_text": "@MammaFerus @atxOsiris @D_chris91 @thebrandhero Well, your threshold for \"professional\" is set very, very low.\n\nTelâ¦ https://t.co/8DOqFCWrzp",
     "cleansed_text": "@MammaFerus @atxOsiris @D_chris91 @thebrandhero Well, your threshold for \"professional\" is set very, very low.\n\nTelâ¦ https://t.co/8DOqFCWrzp",
     "true_label": "Doxing",
-    "predicted_label": "Doxing",
-    "correct": true,
+    "predicted_label": "Cyberstalking",
+    "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.001143,
-      "Doxing": 0.998804,
-      "Revenge Porn": 3.4e-05,
-      "Sexual Harassment": 1.9e-05,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.588905,
+      "Doxing": 0.408178,
+      "Revenge Porn": 0.00066,
+      "Sexual Harassment": 0.0022,
+      "Slut Shaming": 5.7e-05
     }
   },
   {
@@ -3517,11 +3517,11 @@
     "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 2.3e-05,
-      "Doxing": 0.205871,
-      "Revenge Porn": 0.165834,
-      "Sexual Harassment": 0.008671,
-      "Slut Shaming": 0.619601
+      "Cyberstalking": 3e-05,
+      "Doxing": 0.071379,
+      "Revenge Porn": 0.328439,
+      "Sexual Harassment": 0.002626,
+      "Slut Shaming": 0.597525
     }
   },
   {
@@ -3529,13 +3529,13 @@
     "original_text": "So since @_DavidVsGoliath was murdered off Twitter w/ fake sexual harassment allegations &amp; now we still havenât seeâ¦ https://t.co/FAxVZYzb5B",
     "cleansed_text": "So since @_DavidVsGoliath was murdered off Twitter w/ fake sexual harassment allegations &amp; now we still havenât seeâ¦ https://t.co/FAxVZYzb5B",
     "true_label": "Sexual Harassment",
-    "predicted_label": "Sexual Harassment",
-    "correct": true,
+    "predicted_label": "Cyberstalking",
+    "correct": false,
     "probabilities": {
-      "Cyberstalking": 1e-06,
-      "Doxing": 0.0,
-      "Revenge Porn": 2e-06,
-      "Sexual Harassment": 0.999997,
+      "Cyberstalking": 0.945766,
+      "Doxing": 0.000145,
+      "Revenge Porn": 0.000132,
+      "Sexual Harassment": 0.053957,
       "Slut Shaming": 0.0
     }
   },
@@ -3619,14 +3619,14 @@
     "original_text": "Oh wait I have to put my legal name on GoFundMe...I am terrified to use my real name online as I been victime of reâ¦ https://t.co/ouhVLsZSLX",
     "cleansed_text": "Oh wait I have to put my legal name on GoFundMe...I am terrified to use my real name online as I been victime of reâ¦ https://t.co/ouhVLsZSLX",
     "true_label": "Revenge Porn",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.981152,
-      "Doxing": 0.001485,
-      "Revenge Porn": 0.007701,
-      "Sexual Harassment": 0.009661,
-      "Slut Shaming": 1e-06
+      "Cyberstalking": 0.44282,
+      "Doxing": 0.496482,
+      "Revenge Porn": 0.007015,
+      "Sexual Harassment": 0.052319,
+      "Slut Shaming": 0.001365
     }
   },
   {
@@ -3697,10 +3697,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 1e-06,
+      "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.999999,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -3712,10 +3712,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 1e-06,
+      "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999999,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -3730,8 +3730,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 3e-06,
+      "Slut Shaming": 0.999996
     }
   },
   {
@@ -3742,8 +3742,8 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 1.0,
-      "Doxing": 0.0,
+      "Cyberstalking": 0.999999,
+      "Doxing": 1e-06,
       "Revenge Porn": 0.0,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
@@ -3817,11 +3817,11 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999733,
-      "Doxing": 8.4e-05,
-      "Revenge Porn": 0.000144,
-      "Sexual Harassment": 3.9e-05,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.999736,
+      "Doxing": 6.2e-05,
+      "Revenge Porn": 6.6e-05,
+      "Sexual Harassment": 0.000135,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -3834,9 +3834,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
+      "Revenge Porn": 0.0,
       "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.999999
+      "Slut Shaming": 1.0
     }
   },
   {
@@ -3850,8 +3850,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 4e-06,
+      "Slut Shaming": 0.999996
     }
   },
   {
@@ -3879,8 +3879,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999999,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -3907,11 +3907,11 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.419743,
-      "Doxing": 0.57965,
-      "Revenge Porn": 9e-05,
-      "Sexual Harassment": 0.000455,
-      "Slut Shaming": 6.1e-05
+      "Cyberstalking": 0.010374,
+      "Doxing": 0.930754,
+      "Revenge Porn": 0.002123,
+      "Sexual Harassment": 0.05129,
+      "Slut Shaming": 0.005459
     }
   },
   {
@@ -3919,13 +3919,13 @@
     "original_text": "Itâs harassment and bullying something which @DepSecDef @SecDef @SecArmy apparently take stand on but do nothing abâ¦ https://t.co/iPHmA7xPrt",
     "cleansed_text": "Itâs harassment and bullying something which @DepSecDef @SecDef @SecArmy apparently take stand on but do nothing abâ¦ https://t.co/iPHmA7xPrt",
     "true_label": "Sexual Harassment",
-    "predicted_label": "Cyberstalking",
-    "correct": false,
+    "predicted_label": "Sexual Harassment",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999295,
-      "Doxing": 0.000101,
-      "Revenge Porn": 0.000238,
-      "Sexual Harassment": 0.000366,
+      "Cyberstalking": 0.001263,
+      "Doxing": 7e-06,
+      "Revenge Porn": 0.000537,
+      "Sexual Harassment": 0.998193,
       "Slut Shaming": 0.0
     }
   },
@@ -3934,14 +3934,14 @@
     "original_text": "@GellertDepp Even some of her supporters turned on her over it ð. I also think she is secretly panicking as the revâ¦ https://t.co/CajIv6yYOZ",
     "cleansed_text": "@GellertDepp Even some of her supporters turned on her over it ð. I also think she is secretly panicking as the revâ¦ https://t.co/CajIv6yYOZ",
     "true_label": "Doxing",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.63012,
-      "Doxing": 0.000456,
-      "Revenge Porn": 0.001655,
-      "Sexual Harassment": 0.367766,
-      "Slut Shaming": 4e-06
+      "Cyberstalking": 0.006866,
+      "Doxing": 0.00031,
+      "Revenge Porn": 0.005803,
+      "Sexual Harassment": 0.98218,
+      "Slut Shaming": 0.004842
     }
   },
   {
@@ -3954,8 +3954,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1.0,
-      "Sexual Harassment": 0.0,
+      "Revenge Porn": 0.999999,
+      "Sexual Harassment": 1e-06,
       "Slut Shaming": 0.0
     }
   },
@@ -3964,14 +3964,14 @@
     "original_text": "I'll just say, if you're reading this (and you know what you've tweeted), this is your final warning. Interact withâ¦ https://t.co/TcQdEWjfqp",
     "cleansed_text": "I'll just say, if you're reading this (and you know what you've tweeted), this is your final warning. Interact withâ¦ https://t.co/TcQdEWjfqp",
     "true_label": "Cyberstalking",
-    "predicted_label": "Cyberstalking",
-    "correct": true,
+    "predicted_label": "Doxing",
+    "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.826926,
-      "Doxing": 0.021404,
-      "Revenge Porn": 0.107872,
-      "Sexual Harassment": 0.043798,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.020415,
+      "Doxing": 0.974404,
+      "Revenge Porn": 0.004806,
+      "Sexual Harassment": 0.000371,
+      "Slut Shaming": 4e-06
     }
   },
   {
@@ -3984,9 +3984,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1.1e-05,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.999989
+      "Revenge Porn": 7e-06,
+      "Sexual Harassment": 1.5e-05,
+      "Slut Shaming": 0.999978
     }
   },
   {
@@ -4012,10 +4012,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 9.4e-05,
+      "Cyberstalking": 1e-06,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999905,
+      "Revenge Porn": 2e-06,
+      "Sexual Harassment": 0.999997,
       "Slut Shaming": 0.0
     }
   },
@@ -4027,11 +4027,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.999999
+      "Cyberstalking": 3e-06,
+      "Doxing": 1.2e-05,
+      "Revenge Porn": 3e-06,
+      "Sexual Harassment": 0.000157,
+      "Slut Shaming": 0.999824
     }
   },
   {
@@ -4059,8 +4059,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999999,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -4104,8 +4104,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 2e-06,
-      "Sexual Harassment": 0.999998,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -4117,11 +4117,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 8e-06,
-      "Doxing": 0.044602,
-      "Revenge Porn": 0.951952,
-      "Sexual Harassment": 0.000336,
-      "Slut Shaming": 0.003102
+      "Cyberstalking": 0.000145,
+      "Doxing": 0.028575,
+      "Revenge Porn": 0.970077,
+      "Sexual Harassment": 0.000539,
+      "Slut Shaming": 0.000665
     }
   },
   {
@@ -4163,10 +4163,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.999835,
-      "Revenge Porn": 4.9e-05,
-      "Sexual Harassment": 2e-06,
-      "Slut Shaming": 0.000114
+      "Doxing": 0.999925,
+      "Revenge Porn": 6.1e-05,
+      "Sexual Harassment": 0.0,
+      "Slut Shaming": 1.4e-05
     }
   },
   {
@@ -4177,10 +4177,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 2e-06,
+      "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999996,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -4192,11 +4192,11 @@
     "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.081598,
-      "Doxing": 0.900423,
-      "Revenge Porn": 0.016975,
-      "Sexual Harassment": 0.000991,
-      "Slut Shaming": 1.2e-05
+      "Cyberstalking": 0.018695,
+      "Doxing": 0.93566,
+      "Revenge Porn": 0.045446,
+      "Sexual Harassment": 0.000102,
+      "Slut Shaming": 9.7e-05
     }
   },
   {
@@ -4237,11 +4237,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000238,
-      "Doxing": 0.000294,
-      "Revenge Porn": 0.00171,
-      "Sexual Harassment": 0.997705,
-      "Slut Shaming": 5.3e-05
+      "Cyberstalking": 0.00093,
+      "Doxing": 0.002522,
+      "Revenge Porn": 0.007597,
+      "Sexual Harassment": 0.98874,
+      "Slut Shaming": 0.000211
     }
   },
   {
@@ -4252,11 +4252,11 @@
     "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.0,
-      "Doxing": 0.626596,
-      "Revenge Porn": 0.283666,
-      "Sexual Harassment": 0.008911,
-      "Slut Shaming": 0.080827
+      "Cyberstalking": 1e-06,
+      "Doxing": 0.983045,
+      "Revenge Porn": 0.002097,
+      "Sexual Harassment": 3.9e-05,
+      "Slut Shaming": 0.014819
     }
   },
   {
@@ -4315,8 +4315,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 2e-06,
+      "Slut Shaming": 0.999998
     }
   },
   {
@@ -4372,10 +4372,10 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999994,
-      "Doxing": 1e-06,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 3e-06,
+      "Cyberstalking": 0.999875,
+      "Doxing": 1.8e-05,
+      "Revenge Porn": 2e-06,
+      "Sexual Harassment": 0.000105,
       "Slut Shaming": 0.0
     }
   },
@@ -4419,9 +4419,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.999999
+      "Revenge Porn": 1e-06,
+      "Sexual Harassment": 3.2e-05,
+      "Slut Shaming": 0.999967
     }
   },
   {
@@ -4432,11 +4432,11 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.004437,
-      "Doxing": 0.024285,
-      "Revenge Porn": 0.970396,
-      "Sexual Harassment": 0.000861,
-      "Slut Shaming": 2.2e-05
+      "Cyberstalking": 0.00055,
+      "Doxing": 0.00494,
+      "Revenge Porn": 0.619797,
+      "Sexual Harassment": 0.161694,
+      "Slut Shaming": 0.213019
     }
   },
   {
@@ -4462,11 +4462,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 3e-06,
-      "Doxing": 0.0,
-      "Revenge Porn": 9e-06,
-      "Sexual Harassment": 0.999987,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 1.1e-05,
+      "Doxing": 6e-06,
+      "Revenge Porn": 0.000357,
+      "Sexual Harassment": 0.999624,
+      "Slut Shaming": 3e-06
     }
   },
   {
@@ -4474,14 +4474,14 @@
     "original_text": "@baelolz Urgh! Stop âslut shamingâ please. Your hate account is also sad. ð¤®ð¤®ð¤® https://t.co/q3kEj50s2p",
     "cleansed_text": "@baelolz Urgh! Stop âslut shamingâ please. Your hate account is also sad. ð¤®ð¤®ð¤® https://t.co/q3kEj50s2p",
     "true_label": "Slut Shaming",
-    "predicted_label": "Slut Shaming",
-    "correct": true,
+    "predicted_label": "Revenge Porn",
+    "correct": false,
     "probabilities": {
-      "Cyberstalking": 7e-06,
-      "Doxing": 6.7e-05,
-      "Revenge Porn": 0.188845,
-      "Sexual Harassment": 0.003544,
-      "Slut Shaming": 0.807537
+      "Cyberstalking": 1.8e-05,
+      "Doxing": 5.9e-05,
+      "Revenge Porn": 0.963278,
+      "Sexual Harassment": 0.001719,
+      "Slut Shaming": 0.034926
     }
   },
   {
@@ -4493,10 +4493,10 @@
     "correct": false,
     "probabilities": {
       "Cyberstalking": 5e-06,
-      "Doxing": 0.090322,
-      "Revenge Porn": 0.905783,
-      "Sexual Harassment": 0.000558,
-      "Slut Shaming": 0.003332
+      "Doxing": 0.128025,
+      "Revenge Porn": 0.868496,
+      "Sexual Harassment": 7e-06,
+      "Slut Shaming": 0.003467
     }
   },
   {
@@ -4504,14 +4504,14 @@
     "original_text": "kim w00jin you will never be famous. thats what u get for making fun of and promoting yourself using sexual harassmâ¦ https://t.co/1dBJrrEx73",
     "cleansed_text": "kim w00jin you will never be famous. thats what u get for making fun of and promoting yourself using sexual harassmâ¦ https://t.co/1dBJrrEx73",
     "true_label": "Sexual Harassment",
-    "predicted_label": "Revenge Porn",
-    "correct": false,
+    "predicted_label": "Sexual Harassment",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 2e-06,
-      "Doxing": 1e-06,
-      "Revenge Porn": 0.981388,
-      "Sexual Harassment": 0.01158,
-      "Slut Shaming": 0.007028
+      "Cyberstalking": 0.001028,
+      "Doxing": 4.8e-05,
+      "Revenge Porn": 0.236352,
+      "Sexual Harassment": 0.407234,
+      "Slut Shaming": 0.355338
     }
   },
   {
@@ -4519,14 +4519,14 @@
     "original_text": "@sangriawinebabe @fifthelementtt What Layan did was terrible. Every single thing, but Mariam isnât a hero for gettiâ¦ https://t.co/GikeXo1XgL",
     "cleansed_text": "@sangriawinebabe @fifthelementtt What Layan did was terrible. Every single thing, but Mariam isnât a hero for gettiâ¦ https://t.co/GikeXo1XgL",
     "true_label": "Slut Shaming",
-    "predicted_label": "Sexual Harassment",
-    "correct": false,
+    "predicted_label": "Slut Shaming",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.000266,
-      "Doxing": 6e-06,
-      "Revenge Porn": 0.42685,
-      "Sexual Harassment": 0.518981,
-      "Slut Shaming": 0.053898
+      "Cyberstalking": 0.000565,
+      "Doxing": 2.4e-05,
+      "Revenge Porn": 0.233427,
+      "Sexual Harassment": 0.128141,
+      "Slut Shaming": 0.637843
     }
   },
   {
@@ -4569,9 +4569,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 3e-06,
-      "Revenge Porn": 9.6e-05,
-      "Sexual Harassment": 0.000463,
-      "Slut Shaming": 0.999438
+      "Revenge Porn": 2e-06,
+      "Sexual Harassment": 7.7e-05,
+      "Slut Shaming": 0.999917
     }
   },
   {
@@ -4579,14 +4579,14 @@
     "original_text": "@KioskmanD @SNoseberg @CommieDGurl @TheRalphRetort Remind Ralph Iâm on my 100 acre ranch retired. Only 7 years oldeâ¦ https://t.co/6oigA9ukNY",
     "cleansed_text": "@KioskmanD @SNoseberg @CommieDGurl @TheRalphRetort Remind Ralph Iâm on my 100 acre ranch retired. Only 7 years oldeâ¦ https://t.co/6oigA9ukNY",
     "true_label": "Revenge Porn",
-    "predicted_label": "Cyberstalking",
-    "correct": false,
+    "predicted_label": "Revenge Porn",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.926115,
-      "Doxing": 0.050237,
-      "Revenge Porn": 0.023043,
-      "Sexual Harassment": 0.000603,
-      "Slut Shaming": 2e-06
+      "Cyberstalking": 0.066545,
+      "Doxing": 0.02866,
+      "Revenge Porn": 0.694984,
+      "Sexual Harassment": 0.178896,
+      "Slut Shaming": 0.030916
     }
   },
   {
@@ -4597,11 +4597,11 @@
     "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.004871,
-      "Doxing": 0.009738,
-      "Revenge Porn": 0.445431,
-      "Sexual Harassment": 0.021688,
-      "Slut Shaming": 0.518272
+      "Cyberstalking": 3e-05,
+      "Doxing": 0.001406,
+      "Revenge Porn": 0.039246,
+      "Sexual Harassment": 0.012387,
+      "Slut Shaming": 0.946932
     }
   },
   {
@@ -4612,11 +4612,11 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.817783,
-      "Doxing": 0.019948,
-      "Revenge Porn": 0.135597,
-      "Sexual Harassment": 0.026666,
-      "Slut Shaming": 6e-06
+      "Cyberstalking": 0.511745,
+      "Doxing": 0.02511,
+      "Revenge Porn": 0.087017,
+      "Sexual Harassment": 0.375562,
+      "Slut Shaming": 0.000565
     }
   },
   {
@@ -4630,8 +4630,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 2e-06,
+      "Slut Shaming": 0.999998
     }
   },
   {
@@ -4642,11 +4642,11 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.549713,
-      "Doxing": 0.000356,
-      "Revenge Porn": 0.000178,
-      "Sexual Harassment": 0.449749,
-      "Slut Shaming": 4e-06
+      "Cyberstalking": 0.98763,
+      "Doxing": 5.3e-05,
+      "Revenge Porn": 0.0002,
+      "Sexual Harassment": 0.012116,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -4672,11 +4672,11 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.129299,
-      "Doxing": 0.179703,
-      "Revenge Porn": 0.690424,
-      "Sexual Harassment": 0.000569,
-      "Slut Shaming": 5e-06
+      "Cyberstalking": 0.067683,
+      "Doxing": 0.198485,
+      "Revenge Porn": 0.705225,
+      "Sexual Harassment": 0.028264,
+      "Slut Shaming": 0.000343
     }
   },
   {
@@ -4684,14 +4684,14 @@
     "original_text": "@lydiaaofficial U're an adult at 19,didnt work out has nothing to do with age.if it had turned out well,u won't blaâ¦ https://t.co/BNPETPTrth",
     "cleansed_text": "@lydiaaofficial U're an adult at 19,didnt work out has nothing to do with age.if it had turned out well,u won't blaâ¦ https://t.co/BNPETPTrth",
     "true_label": "Slut Shaming",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.506691,
-      "Doxing": 0.207456,
-      "Revenge Porn": 0.143366,
-      "Sexual Harassment": 0.132738,
-      "Slut Shaming": 0.00975
+      "Cyberstalking": 0.000621,
+      "Doxing": 1.4e-05,
+      "Revenge Porn": 5.6e-05,
+      "Sexual Harassment": 0.99928,
+      "Slut Shaming": 3e-05
     }
   },
   {
@@ -4702,11 +4702,11 @@
     "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 6.3e-05,
-      "Doxing": 0.000206,
-      "Revenge Porn": 0.151604,
-      "Sexual Harassment": 0.000632,
-      "Slut Shaming": 0.847495
+      "Cyberstalking": 1e-06,
+      "Doxing": 5.2e-05,
+      "Revenge Porn": 0.000161,
+      "Sexual Harassment": 0.000844,
+      "Slut Shaming": 0.998942
     }
   },
   {
@@ -4747,11 +4747,11 @@
     "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.015517,
-      "Doxing": 0.000706,
-      "Revenge Porn": 0.269635,
-      "Sexual Harassment": 0.048832,
-      "Slut Shaming": 0.66531
+      "Cyberstalking": 0.002039,
+      "Doxing": 0.000753,
+      "Revenge Porn": 0.399166,
+      "Sexual Harassment": 0.012109,
+      "Slut Shaming": 0.585933
     }
   },
   {
@@ -4759,14 +4759,14 @@
     "original_text": "@SultanOfClout @mollyhc So you think those texts make it ok that Trevor Bauer threatened to brutally beat a woman,â¦ https://t.co/m4iHQCyRWB",
     "cleansed_text": "@SultanOfClout @mollyhc So you think those texts make it ok that Trevor Bauer threatened to brutally beat a woman,â¦ https://t.co/m4iHQCyRWB",
     "true_label": "Revenge Porn",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.61494,
-      "Doxing": 0.000805,
-      "Revenge Porn": 0.024928,
-      "Sexual Harassment": 0.359324,
-      "Slut Shaming": 2e-06
+      "Cyberstalking": 0.006194,
+      "Doxing": 0.000261,
+      "Revenge Porn": 0.001184,
+      "Sexual Harassment": 0.992356,
+      "Slut Shaming": 5e-06
     }
   },
   {
@@ -4777,11 +4777,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.000155,
-      "Doxing": 4e-06,
-      "Revenge Porn": 0.17785,
-      "Sexual Harassment": 0.821944,
-      "Slut Shaming": 4.8e-05
+      "Cyberstalking": 0.016883,
+      "Doxing": 0.000552,
+      "Revenge Porn": 0.002384,
+      "Sexual Harassment": 0.940843,
+      "Slut Shaming": 0.039339
     }
   },
   {
@@ -4807,11 +4807,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.270489,
-      "Doxing": 0.031875,
-      "Revenge Porn": 0.665497,
-      "Sexual Harassment": 0.032103,
-      "Slut Shaming": 3.6e-05
+      "Cyberstalking": 0.125733,
+      "Doxing": 0.255569,
+      "Revenge Porn": 0.4087,
+      "Sexual Harassment": 0.209921,
+      "Slut Shaming": 7.7e-05
     }
   },
   {
@@ -4834,14 +4834,14 @@
     "original_text": "@anxniiii_xD @Ranboosaysstuff I actually just search up this hashtag to find good memes but anyone who is doing itâ¦ https://t.co/cgt73dMa3S",
     "cleansed_text": "@anxniiii_xD @Ranboosaysstuff I actually just search up this hashtag to find good memes but anyone who is doing itâ¦ https://t.co/cgt73dMa3S",
     "true_label": "Doxing",
-    "predicted_label": "Doxing",
-    "correct": true,
+    "predicted_label": "Cyberstalking",
+    "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.348769,
-      "Doxing": 0.645117,
-      "Revenge Porn": 0.005295,
-      "Sexual Harassment": 0.000819,
-      "Slut Shaming": 1e-06
+      "Cyberstalking": 0.9962,
+      "Doxing": 0.003783,
+      "Revenge Porn": 3e-06,
+      "Sexual Harassment": 1.4e-05,
+      "Slut Shaming": 0.0
     }
   },
   {
@@ -4852,11 +4852,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 2.7e-05,
-      "Doxing": 4e-06,
-      "Revenge Porn": 0.023541,
-      "Sexual Harassment": 0.975658,
-      "Slut Shaming": 0.00077
+      "Cyberstalking": 0.000583,
+      "Doxing": 0.000104,
+      "Revenge Porn": 0.001654,
+      "Sexual Harassment": 0.946204,
+      "Slut Shaming": 0.051454
     }
   },
   {
@@ -4867,11 +4867,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.128719,
-      "Doxing": 0.000113,
-      "Revenge Porn": 0.003147,
-      "Sexual Harassment": 0.867975,
-      "Slut Shaming": 4.6e-05
+      "Cyberstalking": 0.000239,
+      "Doxing": 1.1e-05,
+      "Revenge Porn": 1e-05,
+      "Sexual Harassment": 0.999733,
+      "Slut Shaming": 7e-06
     }
   },
   {
@@ -4882,11 +4882,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 3.4e-05,
-      "Doxing": 0.039285,
-      "Revenge Porn": 0.960341,
-      "Sexual Harassment": 0.0003,
-      "Slut Shaming": 4e-05
+      "Cyberstalking": 3.1e-05,
+      "Doxing": 0.126487,
+      "Revenge Porn": 0.871628,
+      "Sexual Harassment": 0.000465,
+      "Slut Shaming": 0.001389
     }
   },
   {
@@ -4898,8 +4898,8 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 1.0,
-      "Revenge Porn": 0.0,
+      "Doxing": 0.999999,
+      "Revenge Porn": 1e-06,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
@@ -4914,9 +4914,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
+      "Revenge Porn": 0.0,
       "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.999999
+      "Slut Shaming": 1.0
     }
   },
   {
@@ -4954,14 +4954,14 @@
     "original_text": "@JDHutchinson3 @KellyLMagic1 @woacbofficial @NatetheLawyer And you are right, both KJ &amp; Steve are controversial, diâ¦ https://t.co/AIKX4Yj3vO",
     "cleansed_text": "@JDHutchinson3 @KellyLMagic1 @woacbofficial @NatetheLawyer And you are right, both KJ &amp; Steve are controversial, diâ¦ https://t.co/AIKX4Yj3vO",
     "true_label": "Cyberstalking",
-    "predicted_label": "Doxing",
+    "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.182927,
-      "Doxing": 0.619877,
-      "Revenge Porn": 0.187365,
-      "Sexual Harassment": 0.008251,
-      "Slut Shaming": 0.00158
+      "Cyberstalking": 0.208538,
+      "Doxing": 0.060118,
+      "Revenge Porn": 0.694345,
+      "Sexual Harassment": 0.028156,
+      "Slut Shaming": 0.008843
     }
   },
   {
@@ -4972,11 +4972,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.012661,
-      "Doxing": 0.071094,
-      "Revenge Porn": 0.019706,
-      "Sexual Harassment": 0.895996,
-      "Slut Shaming": 0.000543
+      "Cyberstalking": 0.040135,
+      "Doxing": 0.338234,
+      "Revenge Porn": 0.18549,
+      "Sexual Harassment": 0.399435,
+      "Slut Shaming": 0.036706
     }
   },
   {
@@ -4999,14 +4999,14 @@
     "original_text": "@Charlotte97Lin exactly harry waa getting mad at the smallest things and tessa was no saint either all the \"i'm notâ¦ https://t.co/HlyrBUdNir",
     "cleansed_text": "@Charlotte97Lin exactly harry waa getting mad at the smallest things and tessa was no saint either all the \"i'm notâ¦ https://t.co/HlyrBUdNir",
     "true_label": "Slut Shaming",
-    "predicted_label": "Revenge Porn",
-    "correct": false,
+    "predicted_label": "Slut Shaming",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.0001,
-      "Doxing": 0.000393,
-      "Revenge Porn": 0.523822,
-      "Sexual Harassment": 0.023508,
-      "Slut Shaming": 0.452177
+      "Cyberstalking": 7.1e-05,
+      "Doxing": 0.000472,
+      "Revenge Porn": 0.381623,
+      "Sexual Harassment": 0.001978,
+      "Slut Shaming": 0.615856
     }
   },
   {
@@ -5019,9 +5019,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Revenge Porn": 1e-06,
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999999
     }
   },
   {
@@ -5050,8 +5050,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 3e-06,
+      "Slut Shaming": 0.999997
     }
   },
   {
@@ -5059,14 +5059,14 @@
     "original_text": "@stellarmind1010 @AggressivelyPa1 I think a lot of people donât even know that Naughty Dog was accused of sexual haâ¦ https://t.co/p8gwqQ6h67",
     "cleansed_text": "@stellarmind1010 @AggressivelyPa1 I think a lot of people donât even know that Naughty Dog was accused of sexual haâ¦ https://t.co/p8gwqQ6h67",
     "true_label": "Sexual Harassment",
-    "predicted_label": "Revenge Porn",
+    "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 2.6e-05,
-      "Doxing": 2e-06,
-      "Revenge Porn": 0.535889,
-      "Sexual Harassment": 0.463965,
-      "Slut Shaming": 0.000118
+      "Cyberstalking": 1.7e-05,
+      "Doxing": 7.2e-05,
+      "Revenge Porn": 0.1582,
+      "Sexual Harassment": 0.052967,
+      "Slut Shaming": 0.788743
     }
   },
   {
@@ -5077,11 +5077,11 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.046085,
-      "Doxing": 0.731474,
-      "Revenge Porn": 0.218165,
-      "Sexual Harassment": 0.00427,
-      "Slut Shaming": 7e-06
+      "Cyberstalking": 0.202087,
+      "Doxing": 0.76215,
+      "Revenge Porn": 0.028101,
+      "Sexual Harassment": 0.007563,
+      "Slut Shaming": 9.9e-05
     }
   },
   {
@@ -5092,11 +5092,11 @@
     "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 8.1e-05,
-      "Doxing": 0.884552,
-      "Revenge Porn": 0.006876,
-      "Sexual Harassment": 0.000821,
-      "Slut Shaming": 0.107671
+      "Cyberstalking": 0.000237,
+      "Doxing": 0.929902,
+      "Revenge Porn": 0.059387,
+      "Sexual Harassment": 0.000317,
+      "Slut Shaming": 0.010158
     }
   },
   {
@@ -5107,10 +5107,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.000279,
-      "Doxing": 1e-06,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999719,
+      "Cyberstalking": 1e-06,
+      "Doxing": 0.0,
+      "Revenge Porn": 2e-06,
+      "Sexual Harassment": 0.999996,
       "Slut Shaming": 0.0
     }
   },
@@ -5122,11 +5122,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.070928,
-      "Doxing": 0.30918,
-      "Revenge Porn": 0.597967,
-      "Sexual Harassment": 0.021542,
-      "Slut Shaming": 0.000383
+      "Cyberstalking": 0.003893,
+      "Doxing": 0.114325,
+      "Revenge Porn": 0.878515,
+      "Sexual Harassment": 0.002338,
+      "Slut Shaming": 0.000929
     }
   },
   {
@@ -5134,14 +5134,14 @@
     "original_text": "Panel asks Home Ministry #India to add cyber porn, blackmail, stalking/bullying (particularly against women and chiâ¦ https://t.co/5OoWdR9K8r",
     "cleansed_text": "Panel asks Home Ministry #India to add cyber porn, blackmail, stalking/bullying (particularly against women and chiâ¦ https://t.co/5OoWdR9K8r",
     "true_label": "Cyberstalking",
-    "predicted_label": "Cyberstalking",
-    "correct": true,
+    "predicted_label": "Revenge Porn",
+    "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.947128,
-      "Doxing": 2e-06,
-      "Revenge Porn": 0.05256,
-      "Sexual Harassment": 0.00031,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.078516,
+      "Doxing": 2.3e-05,
+      "Revenge Porn": 0.907222,
+      "Sexual Harassment": 0.014238,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -5155,8 +5155,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 3e-06,
+      "Slut Shaming": 0.999996
     }
   },
   {
@@ -5167,10 +5167,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.020473,
+      "Cyberstalking": 4e-06,
       "Doxing": 1e-06,
-      "Revenge Porn": 1.1e-05,
-      "Sexual Harassment": 0.979515,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 0.999995,
       "Slut Shaming": 0.0
     }
   },
@@ -5179,14 +5179,14 @@
     "original_text": "@audhinafh *sigh* i'm not trying despise the victim horrible experience\n\nmasa kudu olimpiade penderitaan dulu ... dâ¦ https://t.co/JSrtNlT3Nj",
     "cleansed_text": "@audhinafh *sigh* i'm not trying despise the victim horrible experience\n\nmasa kudu olimpiade penderitaan dulu ... dâ¦ https://t.co/JSrtNlT3Nj",
     "true_label": "Sexual Harassment",
-    "predicted_label": "Cyberstalking",
+    "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.801531,
-      "Doxing": 0.00056,
-      "Revenge Porn": 0.052945,
-      "Sexual Harassment": 0.144875,
-      "Slut Shaming": 8.9e-05
+      "Cyberstalking": 0.000129,
+      "Doxing": 4.8e-05,
+      "Revenge Porn": 0.941037,
+      "Sexual Harassment": 0.011357,
+      "Slut Shaming": 0.04743
     }
   },
   {
@@ -5209,14 +5209,14 @@
     "original_text": "and then u say to these kids like donât do xyz and suddenly youâre a misogynist ?? shut up man. teenage girls shoulâ¦ https://t.co/MSPfe0G3R4",
     "cleansed_text": "and then u say to these kids like donât do xyz and suddenly youâre a misogynist ?? shut up man. teenage girls shoulâ¦ https://t.co/MSPfe0G3R4",
     "true_label": "Slut Shaming",
-    "predicted_label": "Revenge Porn",
-    "correct": false,
+    "predicted_label": "Slut Shaming",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 6e-06,
-      "Doxing": 1.1e-05,
-      "Revenge Porn": 0.992296,
-      "Sexual Harassment": 0.005161,
-      "Slut Shaming": 0.002526
+      "Cyberstalking": 1e-06,
+      "Doxing": 2e-05,
+      "Revenge Porn": 0.005702,
+      "Sexual Harassment": 0.000129,
+      "Slut Shaming": 0.994148
     }
   },
   {
@@ -5242,8 +5242,8 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999998,
-      "Doxing": 2e-06,
+      "Cyberstalking": 0.999999,
+      "Doxing": 1e-06,
       "Revenge Porn": 0.0,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
@@ -5257,11 +5257,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 5e-06,
-      "Doxing": 0.000314,
-      "Revenge Porn": 0.116947,
-      "Sexual Harassment": 0.002985,
-      "Slut Shaming": 0.879749
+      "Cyberstalking": 0.0,
+      "Doxing": 2e-06,
+      "Revenge Porn": 0.001565,
+      "Sexual Harassment": 5e-06,
+      "Slut Shaming": 0.998428
     }
   },
   {
@@ -5319,9 +5319,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Revenge Porn": 1e-06,
+      "Sexual Harassment": 2e-06,
+      "Slut Shaming": 0.999996
     }
   },
   {
@@ -5332,10 +5332,10 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.999456,
-      "Doxing": 1.4e-05,
-      "Revenge Porn": 1.7e-05,
-      "Sexual Harassment": 0.000513,
+      "Cyberstalking": 0.99762,
+      "Doxing": 3.4e-05,
+      "Revenge Porn": 4.6e-05,
+      "Sexual Harassment": 0.0023,
       "Slut Shaming": 0.0
     }
   },
@@ -5348,8 +5348,8 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 1.0,
-      "Revenge Porn": 0.0,
+      "Doxing": 0.999997,
+      "Revenge Porn": 3e-06,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
@@ -5363,10 +5363,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 1e-05,
-      "Sexual Harassment": 3e-06,
-      "Slut Shaming": 0.999987
+      "Doxing": 1e-06,
+      "Revenge Porn": 1e-06,
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999997
     }
   },
   {
@@ -5377,10 +5377,10 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.999306,
-      "Doxing": 0.000617,
-      "Revenge Porn": 7.4e-05,
-      "Sexual Harassment": 2e-06,
+      "Cyberstalking": 0.969482,
+      "Doxing": 0.030046,
+      "Revenge Porn": 0.000349,
+      "Sexual Harassment": 0.000123,
       "Slut Shaming": 0.0
     }
   },
@@ -5392,11 +5392,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.050553,
-      "Doxing": 0.020316,
-      "Revenge Porn": 0.399548,
-      "Sexual Harassment": 0.525336,
-      "Slut Shaming": 0.004247
+      "Cyberstalking": 0.008154,
+      "Doxing": 0.030247,
+      "Revenge Porn": 0.025045,
+      "Sexual Harassment": 0.927005,
+      "Slut Shaming": 0.00955
     }
   },
   {
@@ -5422,11 +5422,11 @@
     "predicted_label": "Doxing",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.112158,
-      "Doxing": 0.804732,
-      "Revenge Porn": 0.081738,
-      "Sexual Harassment": 0.001369,
-      "Slut Shaming": 3e-06
+      "Cyberstalking": 0.010277,
+      "Doxing": 0.920081,
+      "Revenge Porn": 0.069039,
+      "Sexual Harassment": 0.000575,
+      "Slut Shaming": 2.7e-05
     }
   },
   {
@@ -5440,8 +5440,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 1.2e-05,
+      "Slut Shaming": 0.999987
     }
   },
   {
@@ -5454,9 +5454,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 2e-06,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.999998
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999999
     }
   },
   {
@@ -5464,14 +5464,14 @@
     "original_text": "@sapnapscameltoe and then the âracist commentsâ in questions are him making a poor taste joke or something. iâve seâ¦ https://t.co/kgRY8HicUJ",
     "cleansed_text": "@sapnapscameltoe and then the âracist commentsâ in questions are him making a poor taste joke or something. iâve seâ¦ https://t.co/kgRY8HicUJ",
     "true_label": "Cyberstalking",
-    "predicted_label": "Sexual Harassment",
+    "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.01235,
-      "Doxing": 0.005182,
-      "Revenge Porn": 0.284391,
-      "Sexual Harassment": 0.68425,
-      "Slut Shaming": 0.013827
+      "Cyberstalking": 0.001268,
+      "Doxing": 0.002802,
+      "Revenge Porn": 0.705323,
+      "Sexual Harassment": 0.078085,
+      "Slut Shaming": 0.212522
     }
   },
   {
@@ -5515,8 +5515,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.999999
+      "Sexual Harassment": 2e-06,
+      "Slut Shaming": 0.999997
     }
   },
   {
@@ -5529,9 +5529,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
+      "Revenge Porn": 0.0,
       "Sexual Harassment": 0.0,
-      "Slut Shaming": 0.999999
+      "Slut Shaming": 1.0
     }
   },
   {
@@ -5557,11 +5557,11 @@
     "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.095996,
-      "Doxing": 0.767339,
-      "Revenge Porn": 0.136381,
-      "Sexual Harassment": 0.000153,
-      "Slut Shaming": 0.000131
+      "Cyberstalking": 0.410631,
+      "Doxing": 0.520443,
+      "Revenge Porn": 0.064217,
+      "Sexual Harassment": 0.004654,
+      "Slut Shaming": 5.5e-05
     }
   },
   {
@@ -5572,10 +5572,10 @@
     "predicted_label": "Sexual Harassment",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.0,
+      "Cyberstalking": 2e-06,
       "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 1.0,
+      "Revenge Porn": 1e-05,
+      "Sexual Harassment": 0.999989,
       "Slut Shaming": 0.0
     }
   },
@@ -5602,10 +5602,10 @@
     "predicted_label": "Cyberstalking",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 1.0,
-      "Doxing": 0.0,
+      "Cyberstalking": 0.999997,
+      "Doxing": 2e-06,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
+      "Sexual Harassment": 1e-06,
       "Slut Shaming": 0.0
     }
   },
@@ -5617,11 +5617,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.001287,
-      "Doxing": 0.001307,
-      "Revenge Porn": 0.39927,
-      "Sexual Harassment": 0.593113,
-      "Slut Shaming": 0.005024
+      "Cyberstalking": 0.010813,
+      "Doxing": 0.042981,
+      "Revenge Porn": 0.304232,
+      "Sexual Harassment": 0.531234,
+      "Slut Shaming": 0.110739
     }
   },
   {
@@ -5648,8 +5648,8 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 1.0,
+      "Doxing": 1.3e-05,
+      "Revenge Porn": 0.999986,
       "Sexual Harassment": 0.0,
       "Slut Shaming": 0.0
     }
@@ -5677,11 +5677,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 6.8e-05,
-      "Doxing": 0.000533,
-      "Revenge Porn": 0.997706,
-      "Sexual Harassment": 0.001444,
-      "Slut Shaming": 0.000248
+      "Cyberstalking": 6e-05,
+      "Doxing": 0.00314,
+      "Revenge Porn": 0.984137,
+      "Sexual Harassment": 8.2e-05,
+      "Slut Shaming": 0.012581
     }
   },
   {
@@ -5694,8 +5694,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 3e-06,
-      "Sexual Harassment": 0.999996,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -5707,11 +5707,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000668,
-      "Doxing": 3e-06,
-      "Revenge Porn": 0.006117,
-      "Sexual Harassment": 0.992671,
-      "Slut Shaming": 0.000542
+      "Cyberstalking": 7e-06,
+      "Doxing": 2e-06,
+      "Revenge Porn": 0.000428,
+      "Sexual Harassment": 0.990463,
+      "Slut Shaming": 0.009099
     }
   },
   {
@@ -5752,11 +5752,11 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.579856,
-      "Doxing": 0.002354,
-      "Revenge Porn": 0.401534,
-      "Sexual Harassment": 0.016209,
-      "Slut Shaming": 4.7e-05
+      "Cyberstalking": 0.86382,
+      "Doxing": 0.001577,
+      "Revenge Porn": 0.094396,
+      "Sexual Harassment": 0.039959,
+      "Slut Shaming": 0.000248
     }
   },
   {
@@ -5767,11 +5767,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 5e-06,
-      "Doxing": 2.6e-05,
-      "Revenge Porn": 0.018959,
-      "Sexual Harassment": 0.001083,
-      "Slut Shaming": 0.979928
+      "Cyberstalking": 8e-06,
+      "Doxing": 0.000202,
+      "Revenge Porn": 0.00391,
+      "Sexual Harassment": 0.011941,
+      "Slut Shaming": 0.983939
     }
   },
   {
@@ -5784,9 +5784,9 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-05,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.999988
+      "Revenge Porn": 3e-06,
+      "Sexual Harassment": 2e-06,
+      "Slut Shaming": 0.999995
     }
   },
   {
@@ -5797,11 +5797,11 @@
     "predicted_label": "Cyberstalking",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.999929,
-      "Doxing": 1e-06,
-      "Revenge Porn": 7e-06,
-      "Sexual Harassment": 6.4e-05,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.979042,
+      "Doxing": 8e-06,
+      "Revenge Porn": 0.000299,
+      "Sexual Harassment": 0.02065,
+      "Slut Shaming": 1e-06
     }
   },
   {
@@ -5812,11 +5812,11 @@
     "predicted_label": "Sexual Harassment",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.449497,
-      "Doxing": 0.00042,
-      "Revenge Porn": 0.002246,
-      "Sexual Harassment": 0.547837,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.000654,
+      "Doxing": 0.000221,
+      "Revenge Porn": 0.000244,
+      "Sexual Harassment": 0.99887,
+      "Slut Shaming": 1.1e-05
     }
   },
   {
@@ -5830,8 +5830,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 6e-06,
+      "Slut Shaming": 0.999994
     }
   },
   {
@@ -5839,14 +5839,14 @@
     "original_text": "@StrawberrySope1 dang how dumb u gotta be to not realize that the admins of that gc aren't even blinks ??? real bliâ¦ https://t.co/xvTcLicKzF",
     "cleansed_text": "@StrawberrySope1 dang how dumb u gotta be to not realize that the admins of that gc aren't even blinks ??? real bliâ¦ https://t.co/xvTcLicKzF",
     "true_label": "Slut Shaming",
-    "predicted_label": "Doxing",
+    "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 3.1e-05,
-      "Doxing": 0.97192,
-      "Revenge Porn": 0.027659,
-      "Sexual Harassment": 0.000184,
-      "Slut Shaming": 0.000206
+      "Cyberstalking": 8.4e-05,
+      "Doxing": 0.272076,
+      "Revenge Porn": 0.67655,
+      "Sexual Harassment": 0.000367,
+      "Slut Shaming": 0.050922
     }
   },
   {
@@ -5857,11 +5857,11 @@
     "predicted_label": "Slut Shaming",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 5e-06,
-      "Doxing": 2.2e-05,
-      "Revenge Porn": 0.017947,
-      "Sexual Harassment": 0.001633,
-      "Slut Shaming": 0.980393
+      "Cyberstalking": 0.000514,
+      "Doxing": 0.000872,
+      "Revenge Porn": 0.01489,
+      "Sexual Harassment": 0.005739,
+      "Slut Shaming": 0.977986
     }
   },
   {
@@ -5869,14 +5869,14 @@
     "original_text": "dpnt mind them. like they want us to list the girls nonsense. always going to be checking the size of the guys dickâ¦ https://t.co/9cTMaoR6K7",
     "cleansed_text": "dpnt mind them. like they want us to list the girls nonsense. always going to be checking the size of the guys dickâ¦ https://t.co/9cTMaoR6K7",
     "true_label": "Slut Shaming",
-    "predicted_label": "Revenge Porn",
-    "correct": false,
+    "predicted_label": "Slut Shaming",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 3.9e-05,
-      "Doxing": 0.000136,
-      "Revenge Porn": 0.796292,
-      "Sexual Harassment": 0.002751,
-      "Slut Shaming": 0.200782
+      "Cyberstalking": 9e-06,
+      "Doxing": 1e-06,
+      "Revenge Porn": 0.019215,
+      "Sexual Harassment": 0.0001,
+      "Slut Shaming": 0.980675
     }
   },
   {
@@ -5884,13 +5884,13 @@
     "original_text": "Nicki Minaj Accused Of âIntimidatingâ Kenneth Petty Sexual Assault Victim In New Lawsuit https://t.co/rqpOVNLFzY via @HollywoodLife",
     "cleansed_text": "Nicki Minaj Accused Of âIntimidatingâ Kenneth Petty Sexual Assault Victim In New Lawsuit https://t.co/rqpOVNLFzY via @HollywoodLife",
     "true_label": "Sexual Harassment",
-    "predicted_label": "Cyberstalking",
-    "correct": false,
+    "predicted_label": "Sexual Harassment",
+    "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.617638,
+      "Cyberstalking": 0.008268,
       "Doxing": 0.0,
-      "Revenge Porn": 0.001381,
-      "Sexual Harassment": 0.380981,
+      "Revenge Porn": 0.000151,
+      "Sexual Harassment": 0.991581,
       "Slut Shaming": 0.0
     }
   },
@@ -5919,8 +5919,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 1e-06,
-      "Sexual Harassment": 0.999999,
+      "Revenge Porn": 0.0,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -5935,7 +5935,7 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.999999,
+      "Sexual Harassment": 1.0,
       "Slut Shaming": 0.0
     }
   },
@@ -5962,11 +5962,11 @@
     "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000671,
-      "Doxing": 0.001474,
-      "Revenge Porn": 0.410585,
-      "Sexual Harassment": 0.090467,
-      "Slut Shaming": 0.496803
+      "Cyberstalking": 0.048174,
+      "Doxing": 0.006956,
+      "Revenge Porn": 0.411252,
+      "Sexual Harassment": 0.088398,
+      "Slut Shaming": 0.445222
     }
   },
   {
@@ -5993,10 +5993,10 @@
     "correct": true,
     "probabilities": {
       "Cyberstalking": 0.0,
-      "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Doxing": 1e-06,
+      "Revenge Porn": 1e-06,
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999997
     }
   },
   {
@@ -6024,8 +6024,8 @@
     "probabilities": {
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
-      "Revenge Porn": 0.0,
-      "Sexual Harassment": 1.0,
+      "Revenge Porn": 1e-06,
+      "Sexual Harassment": 0.999999,
       "Slut Shaming": 0.0
     }
   },
@@ -6049,14 +6049,14 @@
     "original_text": "They keep saying âwhat?? What have we done? Why is everyone so mad? Itâs cause we tell THE TRUTHâ¦â When they know fâ¦ https://t.co/uFrwk8k1uW",
     "cleansed_text": "They keep saying âwhat?? What have we done? Why is everyone so mad? Itâs cause we tell THE TRUTHâ¦â When they know fâ¦ https://t.co/uFrwk8k1uW",
     "true_label": "Doxing",
-    "predicted_label": "Revenge Porn",
+    "predicted_label": "Slut Shaming",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.000149,
-      "Doxing": 9e-05,
-      "Revenge Porn": 0.526668,
-      "Sexual Harassment": 0.435644,
-      "Slut Shaming": 0.03745
+      "Cyberstalking": 0.0,
+      "Doxing": 2e-06,
+      "Revenge Porn": 0.000769,
+      "Sexual Harassment": 0.002905,
+      "Slut Shaming": 0.996324
     }
   },
   {
@@ -6070,8 +6070,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 1e-06,
-      "Slut Shaming": 0.999998
+      "Sexual Harassment": 0.0,
+      "Slut Shaming": 1.0
     }
   },
   {
@@ -6112,11 +6112,11 @@
     "predicted_label": "Revenge Porn",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.326014,
-      "Doxing": 0.065804,
-      "Revenge Porn": 0.574806,
-      "Sexual Harassment": 0.030558,
-      "Slut Shaming": 0.002817
+      "Cyberstalking": 0.039176,
+      "Doxing": 0.212507,
+      "Revenge Porn": 0.701876,
+      "Sexual Harassment": 0.015091,
+      "Slut Shaming": 0.031349
     }
   },
   {
@@ -6175,8 +6175,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 3e-06,
+      "Slut Shaming": 0.999997
     }
   },
   {
@@ -6235,8 +6235,8 @@
       "Cyberstalking": 0.0,
       "Doxing": 0.0,
       "Revenge Porn": 0.0,
-      "Sexual Harassment": 0.0,
-      "Slut Shaming": 1.0
+      "Sexual Harassment": 1e-06,
+      "Slut Shaming": 0.999999
     }
   },
   {
@@ -6247,11 +6247,11 @@
     "predicted_label": "Revenge Porn",
     "correct": true,
     "probabilities": {
-      "Cyberstalking": 0.011992,
-      "Doxing": 5e-06,
-      "Revenge Porn": 0.987663,
-      "Sexual Harassment": 0.00034,
-      "Slut Shaming": 0.0
+      "Cyberstalking": 0.016201,
+      "Doxing": 0.000162,
+      "Revenge Porn": 0.982608,
+      "Sexual Harassment": 0.001025,
+      "Slut Shaming": 3e-06
     }
   },
   {
@@ -6304,14 +6304,14 @@
     "original_text": "@HelenaGFiorenza @scourgchu And sure, call it human error, a mistake, that he didn't wanted to cause any damage, etâ¦ https://t.co/5fygvhz5dL",
     "cleansed_text": "@HelenaGFiorenza @scourgchu And sure, call it human error, a mistake, that he didn't wanted to cause any damage, etâ¦ https://t.co/5fygvhz5dL",
     "true_label": "Doxing",
-    "predicted_label": "Doxing",
-    "correct": true,
+    "predicted_label": "Revenge Porn",
+    "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.079514,
-      "Doxing": 0.708746,
-      "Revenge Porn": 0.149102,
-      "Sexual Harassment": 0.057073,
-      "Slut Shaming": 0.005566
+      "Cyberstalking": 0.034083,
+      "Doxing": 0.195066,
+      "Revenge Porn": 0.742402,
+      "Sexual Harassment": 0.028132,
+      "Slut Shaming": 0.000316
     }
   },
   {
@@ -6322,11 +6322,11 @@
     "predicted_label": "Doxing",
     "correct": false,
     "probabilities": {
-      "Cyberstalking": 0.002401,
-      "Doxing": 0.527206,
-      "Revenge Porn": 0.470159,
-      "Sexual Harassment": 0.000204,
-      "Slut Shaming": 2.9e-05
+      "Cyberstalking": 0.001136,
+      "Doxing": 0.735218,
+      "Revenge Porn": 0.100463,
+      "Sexual Harassment": 0.067434,
+      "Slut Shaming": 0.095749
     }
   }
 ]

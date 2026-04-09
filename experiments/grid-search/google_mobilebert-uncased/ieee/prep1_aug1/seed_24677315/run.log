@@ -1,64 +1,64 @@
-2026-03-22 14:29:31,641 - cyberbully - INFO - ============================================================
-2026-03-22 14:29:31,641 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-03-22 14:29:31,641 - cyberbully - INFO - ============================================================
-2026-03-22 14:29:31,641 - cyberbully - INFO - Configuration:
-2026-03-22 14:29:31,641 - cyberbully - INFO -   model          : google/mobilebert-uncased
-2026-03-22 14:29:31,641 - cyberbully - INFO -   dataset        : ieee
-2026-03-22 14:29:31,641 - cyberbully - INFO -   preprocess     : True
-2026-03-22 14:29:31,641 - cyberbully - INFO -   augment        : True
-2026-03-22 14:29:31,641 - cyberbully - INFO -   compute_attribution: False
-2026-03-22 14:29:31,642 - cyberbully - INFO -   seed           : 24677315
-2026-03-22 14:29:31,642 - cyberbully - INFO -   epochs         : 10
-2026-03-22 14:29:31,642 - cyberbully - INFO -   batch_size     : 32
-2026-03-22 14:29:31,642 - cyberbully - INFO -   lr             : 5e-05
-2026-03-22 14:29:31,642 - cyberbully - INFO -   max_length     : 128
-2026-03-22 14:29:31,642 - cyberbully - INFO -   output_dir     : grid-search
-2026-03-22 14:29:31,642 - cyberbully - INFO -   data_dir       : dataset
-2026-03-22 14:29:31,642 - cyberbully - INFO -   sbert          : False
-2026-03-22 14:29:31,642 - cyberbully - INFO -   supcon         : False
-2026-03-22 14:29:31,642 - cyberbully - INFO -   supcon_weight  : 0.1
-2026-03-22 14:29:31,642 - cyberbully - INFO -   proj_dim       : 128
-2026-03-22 14:29:31,642 - cyberbully - INFO -   grad_accum_steps: 1
-2026-03-22 14:29:31,642 - cyberbully - INFO -   overwrite      : False
-2026-03-22 14:29:31,642 - cyberbully - INFO -   device         : cuda
-2026-03-22 14:29:31,642 - cyberbully - INFO -   output_dir     : experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315
-2026-03-22 14:29:31,642 - cyberbully - INFO - ============================================================
-2026-03-22 14:29:31,642 - cyberbully - INFO - Step 1: Preparing data...
-2026-03-22 14:29:31,645 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
-2026-03-22 14:29:31,645 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
-2026-03-22 14:29:31,645 - cyberbully - INFO - Applying text preprocessing per split...
-2026-03-22 14:29:34,777 - cyberbully - INFO - After preprocessing — train: 1175, val: 304, test: 377
-2026-03-22 14:29:34,778 - cyberbully - INFO - Applying training data augmentation (oversampling)...
-2026-03-22 14:29:34,779 - cyberbully - INFO - After oversampling — class distribution: {0: 286, 1: 286, 2: 286, 3: 286, 4: 286}
-2026-03-22 14:29:34,780 - cyberbully - INFO - Number of classes: 5
-2026-03-22 14:29:34,781 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-03-22 14:29:34,781 - cyberbully - INFO - Loading model 'google/mobilebert-uncased' with 5 labels (sbert=False, supcon=False)
-2026-03-22 14:29:36,990 - cyberbully - WARNING - FP16 disabled for model_type='mobilebert' (known fp16 instability).
-2026-03-22 14:29:36,990 - cyberbully - INFO - Step 3: Creating datasets...
-2026-03-22 14:29:37,017 - cyberbully - INFO - Dataset sizes — train: 1430, val: 304, test: 377
-2026-03-22 14:29:37,017 - cyberbully - INFO - Step 4: Training...
-2026-03-22 14:29:37,235 - cyberbully - INFO - Starting training...
-2026-03-22 14:30:30,550 - cyberbully - INFO - Training complete.
-2026-03-22 14:30:30,564 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-90
-2026-03-22 14:30:30,858 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-180
-2026-03-22 14:30:30,888 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-225
-2026-03-22 14:30:30,902 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-135
-2026-03-22 14:30:30,918 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-315
-2026-03-22 14:30:30,935 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-450
-2026-03-22 14:30:30,951 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-360
-2026-03-22 14:30:30,966 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-45
-2026-03-22 14:30:30,982 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-270
-2026-03-22 14:30:30,999 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-405
-2026-03-22 14:30:30,999 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-03-22 14:30:35,670 - cyberbully - INFO - Metrics saved to experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/metrics.json
-2026-03-22 14:30:35,670 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/confusion_matrix.json
-2026-03-22 14:30:35,674 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/predictions.json
-2026-03-22 14:30:35,776 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/confusion_matrix.pdf
-2026-03-22 14:30:35,776 - cyberbully - INFO - Accuracy: 0.8090
-2026-03-22 14:30:35,776 - cyberbully - INFO - Weighted F1: 0.8090
-2026-03-22 14:30:35,776 - cyberbully - INFO - Micro F1: 0.8090
-2026-03-22 14:30:35,776 - cyberbully - INFO - Inference time: 0.37 seconds
-2026-03-22 14:30:35,776 - cyberbully - INFO - Energy consumption: 0.000019 kWh
-2026-03-22 14:30:35,776 - cyberbully - INFO - ============================================================
-2026-03-22 14:30:35,776 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315
-2026-03-22 14:30:35,776 - cyberbully - INFO - ============================================================
+2026-04-08 19:11:27,032 - cyberbully - INFO - ============================================================
+2026-04-08 19:11:27,032 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-08 19:11:27,032 - cyberbully - INFO - ============================================================
+2026-04-08 19:11:27,032 - cyberbully - INFO - Configuration:
+2026-04-08 19:11:27,032 - cyberbully - INFO -   model          : google/mobilebert-uncased
+2026-04-08 19:11:27,032 - cyberbully - INFO -   dataset        : ieee
+2026-04-08 19:11:27,032 - cyberbully - INFO -   preprocess     : True
+2026-04-08 19:11:27,032 - cyberbully - INFO -   augment        : True
+2026-04-08 19:11:27,032 - cyberbully - INFO -   compute_attribution: False
+2026-04-08 19:11:27,032 - cyberbully - INFO -   seed           : 24677315
+2026-04-08 19:11:27,032 - cyberbully - INFO -   epochs         : 10
+2026-04-08 19:11:27,032 - cyberbully - INFO -   batch_size     : 32
+2026-04-08 19:11:27,032 - cyberbully - INFO -   lr             : 5e-05
+2026-04-08 19:11:27,032 - cyberbully - INFO -   max_length     : 128
+2026-04-08 19:11:27,032 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-08 19:11:27,032 - cyberbully - INFO -   data_dir       : dataset
+2026-04-08 19:11:27,032 - cyberbully - INFO -   sbert          : False
+2026-04-08 19:11:27,032 - cyberbully - INFO -   supcon         : False
+2026-04-08 19:11:27,032 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-08 19:11:27,032 - cyberbully - INFO -   proj_dim       : 128
+2026-04-08 19:11:27,032 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-08 19:11:27,032 - cyberbully - INFO -   overwrite      : False
+2026-04-08 19:11:27,032 - cyberbully - INFO -   device         : cuda
+2026-04-08 19:11:27,032 - cyberbully - INFO -   output_dir     : experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315
+2026-04-08 19:11:27,032 - cyberbully - INFO - ============================================================
+2026-04-08 19:11:27,032 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-08 19:11:27,035 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-04-08 19:11:27,036 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-04-08 19:11:27,036 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-08 19:11:30,068 - cyberbully - INFO - After preprocessing — train: 1175, val: 303, test: 374
+2026-04-08 19:11:30,069 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-04-08 19:11:30,070 - cyberbully - INFO - After oversampling — class distribution: {0: 289, 1: 289, 2: 289, 3: 289, 4: 289}
+2026-04-08 19:11:30,071 - cyberbully - INFO - Number of classes: 5
+2026-04-08 19:11:30,072 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-08 19:11:30,072 - cyberbully - INFO - Loading model 'google/mobilebert-uncased' with 5 labels (sbert=False, supcon=False)
+2026-04-08 19:11:32,191 - cyberbully - WARNING - FP16 disabled for model_type='mobilebert' (known fp16 instability).
+2026-04-08 19:11:32,191 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-08 19:11:32,212 - cyberbully - INFO - Dataset sizes — train: 1445, val: 303, test: 374
+2026-04-08 19:11:32,212 - cyberbully - INFO - Step 4: Training...
+2026-04-08 19:11:32,284 - cyberbully - INFO - Starting training...
+2026-04-08 19:12:11,435 - cyberbully - INFO - Training complete.
+2026-04-08 19:12:11,456 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-368
+2026-04-08 19:12:11,474 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-92
+2026-04-08 19:12:11,496 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-276
+2026-04-08 19:12:11,515 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-460
+2026-04-08 19:12:11,533 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-46
+2026-04-08 19:12:11,555 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-230
+2026-04-08 19:12:11,572 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-184
+2026-04-08 19:12:11,590 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-138
+2026-04-08 19:12:11,611 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-414
+2026-04-08 19:12:11,632 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/checkpoint-322
+2026-04-08 19:12:11,632 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-08 19:12:16,044 - cyberbully - INFO - Metrics saved to experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/metrics.json
+2026-04-08 19:12:16,044 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/confusion_matrix.json
+2026-04-08 19:12:16,048 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/predictions.json
+2026-04-08 19:12:16,152 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315/confusion_matrix.pdf
+2026-04-08 19:12:16,152 - cyberbully - INFO - Accuracy: 0.7968
+2026-04-08 19:12:16,153 - cyberbully - INFO - Weighted F1: 0.7970
+2026-04-08 19:12:16,153 - cyberbully - INFO - Micro F1: 0.7968
+2026-04-08 19:12:16,153 - cyberbully - INFO - Inference time: 0.20 seconds
+2026-04-08 19:12:16,153 - cyberbully - INFO - Energy consumption: 0.000007 kWh
+2026-04-08 19:12:16,153 - cyberbully - INFO - ============================================================
+2026-04-08 19:12:16,153 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/google_mobilebert-uncased/ieee/prep1_aug1/seed_24677315
+2026-04-08 19:12:16,153 - cyberbully - INFO - ============================================================
