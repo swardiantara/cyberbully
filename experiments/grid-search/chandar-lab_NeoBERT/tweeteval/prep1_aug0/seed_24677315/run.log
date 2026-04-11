@@ -1,0 +1,61 @@
+2026-04-10 07:47:03,885 - cyberbully - INFO - ============================================================
+2026-04-10 07:47:03,885 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-10 07:47:03,885 - cyberbully - INFO - ============================================================
+2026-04-10 07:47:03,885 - cyberbully - INFO - Configuration:
+2026-04-10 07:47:03,885 - cyberbully - INFO -   model          : chandar-lab/NeoBERT
+2026-04-10 07:47:03,885 - cyberbully - INFO -   dataset        : tweeteval
+2026-04-10 07:47:03,885 - cyberbully - INFO -   preprocess     : True
+2026-04-10 07:47:03,885 - cyberbully - INFO -   augment        : False
+2026-04-10 07:47:03,885 - cyberbully - INFO -   compute_attribution: False
+2026-04-10 07:47:03,885 - cyberbully - INFO -   seed           : 24677315
+2026-04-10 07:47:03,885 - cyberbully - INFO -   epochs         : 10
+2026-04-10 07:47:03,885 - cyberbully - INFO -   batch_size     : 32
+2026-04-10 07:47:03,885 - cyberbully - INFO -   lr             : 5e-05
+2026-04-10 07:47:03,885 - cyberbully - INFO -   max_length     : 128
+2026-04-10 07:47:03,885 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-10 07:47:03,885 - cyberbully - INFO -   data_dir       : dataset
+2026-04-10 07:47:03,885 - cyberbully - INFO -   sbert          : False
+2026-04-10 07:47:03,885 - cyberbully - INFO -   supcon         : False
+2026-04-10 07:47:03,885 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-10 07:47:03,885 - cyberbully - INFO -   proj_dim       : 128
+2026-04-10 07:47:03,885 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-10 07:47:03,885 - cyberbully - INFO -   overwrite      : False
+2026-04-10 07:47:03,885 - cyberbully - INFO -   device         : cuda
+2026-04-10 07:47:03,885 - cyberbully - INFO -   output_dir     : experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315
+2026-04-10 07:47:03,885 - cyberbully - INFO - ============================================================
+2026-04-10 07:47:03,885 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-10 07:47:03,932 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-04-10 07:47:03,932 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-04-10 07:47:03,932 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-10 07:48:03,784 - cyberbully - INFO - After preprocessing — train: 30353, val: 7613, test: 9469
+2026-04-10 07:48:03,794 - cyberbully - INFO - Number of classes: 5
+2026-04-10 07:48:03,795 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-10 07:48:03,795 - cyberbully - INFO - Loading model 'chandar-lab/NeoBERT' with 5 labels (sbert=False, supcon=False)
+2026-04-10 07:48:05,605 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-10 07:48:06,332 - cyberbully - INFO - Dataset sizes — train: 30353, val: 7613, test: 9469
+2026-04-10 07:48:06,332 - cyberbully - INFO - Step 4: Training...
+2026-04-10 07:48:06,615 - cyberbully - INFO - Starting training...
+2026-04-10 08:20:08,780 - cyberbully - INFO - Training complete.
+2026-04-10 08:20:08,905 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-1898
+2026-04-10 08:20:09,027 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-7592
+2026-04-10 08:20:09,148 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-6643
+2026-04-10 08:20:09,271 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-2847
+2026-04-10 08:20:09,392 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-8541
+2026-04-10 08:20:09,515 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-5694
+2026-04-10 08:20:09,638 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-3796
+2026-04-10 08:20:09,768 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-949
+2026-04-10 08:20:09,914 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-9490
+2026-04-10 08:20:10,037 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/checkpoint-4745
+2026-04-10 08:20:10,037 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-10 08:20:30,539 - cyberbully - INFO - Metrics saved to experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/metrics.json
+2026-04-10 08:20:30,540 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/confusion_matrix.json
+2026-04-10 08:20:30,636 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/predictions.json
+2026-04-10 08:20:30,740 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315/confusion_matrix.pdf
+2026-04-10 08:20:30,740 - cyberbully - INFO - Accuracy: 0.9449
+2026-04-10 08:20:30,740 - cyberbully - INFO - Weighted F1: 0.9449
+2026-04-10 08:20:30,740 - cyberbully - INFO - Micro F1: 0.9449
+2026-04-10 08:20:30,740 - cyberbully - INFO - Inference time: 15.83 seconds
+2026-04-10 08:20:30,740 - cyberbully - INFO - Energy consumption: 0.000975 kWh
+2026-04-10 08:20:30,742 - cyberbully - INFO - ============================================================
+2026-04-10 08:20:30,743 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/chandar-lab_NeoBERT/tweeteval/prep1_aug0/seed_24677315
+2026-04-10 08:20:30,743 - cyberbully - INFO - ============================================================

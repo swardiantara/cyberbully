@@ -1,0 +1,61 @@
+2026-04-11 04:26:54,065 - cyberbully - INFO - ============================================================
+2026-04-11 04:26:54,066 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-11 04:26:54,066 - cyberbully - INFO - ============================================================
+2026-04-11 04:26:54,066 - cyberbully - INFO - Configuration:
+2026-04-11 04:26:54,066 - cyberbully - INFO -   model          : chandar-lab/NeoBERT
+2026-04-11 04:26:54,066 - cyberbully - INFO -   dataset        : kaggle
+2026-04-11 04:26:54,066 - cyberbully - INFO -   preprocess     : False
+2026-04-11 04:26:54,066 - cyberbully - INFO -   augment        : True
+2026-04-11 04:26:54,066 - cyberbully - INFO -   compute_attribution: False
+2026-04-11 04:26:54,066 - cyberbully - INFO -   seed           : 99511865
+2026-04-11 04:26:54,066 - cyberbully - INFO -   epochs         : 10
+2026-04-11 04:26:54,066 - cyberbully - INFO -   batch_size     : 32
+2026-04-11 04:26:54,066 - cyberbully - INFO -   lr             : 5e-05
+2026-04-11 04:26:54,066 - cyberbully - INFO -   max_length     : 128
+2026-04-11 04:26:54,066 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-11 04:26:54,066 - cyberbully - INFO -   data_dir       : dataset
+2026-04-11 04:26:54,066 - cyberbully - INFO -   sbert          : False
+2026-04-11 04:26:54,066 - cyberbully - INFO -   supcon         : False
+2026-04-11 04:26:54,066 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-11 04:26:54,066 - cyberbully - INFO -   proj_dim       : 128
+2026-04-11 04:26:54,066 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-11 04:26:54,066 - cyberbully - INFO -   overwrite      : False
+2026-04-11 04:26:54,066 - cyberbully - INFO -   device         : cuda
+2026-04-11 04:26:54,066 - cyberbully - INFO -   output_dir     : experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865
+2026-04-11 04:26:54,066 - cyberbully - INFO - ============================================================
+2026-04-11 04:26:54,066 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-11 04:26:54,111 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-04-11 04:26:54,111 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-04-11 04:26:54,114 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-04-11 04:26:54,118 - cyberbully - INFO - After oversampling — class distribution: {0: 5123, 1: 5123, 2: 5123, 3: 5123, 4: 5123}
+2026-04-11 04:26:54,127 - cyberbully - INFO - Number of classes: 5
+2026-04-11 04:26:54,128 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-11 04:26:54,128 - cyberbully - INFO - Loading model 'chandar-lab/NeoBERT' with 5 labels (sbert=False, supcon=False)
+2026-04-11 04:26:56,135 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-11 04:26:56,730 - cyberbully - INFO - Dataset sizes — train: 25615, val: 6401, test: 8002
+2026-04-11 04:26:56,730 - cyberbully - INFO - Step 4: Training...
+2026-04-11 04:26:57,002 - cyberbully - INFO - Starting training...
+2026-04-11 04:53:59,676 - cyberbully - INFO - Training complete.
+2026-04-11 04:53:59,797 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-5607
+2026-04-11 04:53:59,943 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-8010
+2026-04-11 04:54:00,065 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-6408
+2026-04-11 04:54:00,193 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-1602
+2026-04-11 04:54:00,317 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-3204
+2026-04-11 04:54:00,438 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-7209
+2026-04-11 04:54:00,562 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-4005
+2026-04-11 04:54:00,683 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-4806
+2026-04-11 04:54:00,817 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-801
+2026-04-11 04:54:00,942 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/checkpoint-2403
+2026-04-11 04:54:00,943 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-11 04:54:18,872 - cyberbully - INFO - Metrics saved to experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/metrics.json
+2026-04-11 04:54:18,872 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/confusion_matrix.json
+2026-04-11 04:54:18,956 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/predictions.json
+2026-04-11 04:54:19,059 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865/confusion_matrix.pdf
+2026-04-11 04:54:19,059 - cyberbully - INFO - Accuracy: 0.9551
+2026-04-11 04:54:19,060 - cyberbully - INFO - Weighted F1: 0.9553
+2026-04-11 04:54:19,060 - cyberbully - INFO - Micro F1: 0.9551
+2026-04-11 04:54:19,060 - cyberbully - INFO - Inference time: 13.26 seconds
+2026-04-11 04:54:19,060 - cyberbully - INFO - Energy consumption: 0.000835 kWh
+2026-04-11 04:54:19,061 - cyberbully - INFO - ============================================================
+2026-04-11 04:54:19,061 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/chandar-lab_NeoBERT/kaggle/prep0_aug1/seed_99511865
+2026-04-11 04:54:19,061 - cyberbully - INFO - ============================================================
