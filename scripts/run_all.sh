@@ -18,7 +18,8 @@ set -euo pipefail
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "chandar-lab/NeoBERT"
+    "sarkerlab/SocBERT-base"
+    # "chandar-lab/NeoBERT"
     # "answerdotai/ModernBERT-base"
     # "google/mobilebert-uncased"   # PC-AJK
     # "all-mpnet-base-v2"
@@ -35,14 +36,13 @@ MODELS=(
     # "albert/albert-base-v2"     # ww-pc
     # "bert-base-uncased"           # PC-AJK
     # "all-MiniLM-L6-v2"
-    # "sarkerlab/SocBERT-base"
     # "all-MiniLM-L12-v2"
 )
 
 DATASETS=(
+    "kaggle"
     "ieee"
     "tweeteval"
-    "kaggle"
 )
 
 # Training hyperparameters
