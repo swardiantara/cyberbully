@@ -1,0 +1,63 @@
+2026-04-11 19:03:31,789 - cyberbully - INFO - ============================================================
+2026-04-11 19:03:31,789 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-11 19:03:31,789 - cyberbully - INFO - ============================================================
+2026-04-11 19:03:31,789 - cyberbully - INFO - Configuration:
+2026-04-11 19:03:31,789 - cyberbully - INFO -   model          : answerdotai/ModernBERT-base
+2026-04-11 19:03:31,789 - cyberbully - INFO -   dataset        : kaggle
+2026-04-11 19:03:31,789 - cyberbully - INFO -   preprocess     : True
+2026-04-11 19:03:31,789 - cyberbully - INFO -   augment        : True
+2026-04-11 19:03:31,789 - cyberbully - INFO -   compute_attribution: False
+2026-04-11 19:03:31,789 - cyberbully - INFO -   seed           : 99511865
+2026-04-11 19:03:31,789 - cyberbully - INFO -   epochs         : 10
+2026-04-11 19:03:31,789 - cyberbully - INFO -   batch_size     : 32
+2026-04-11 19:03:31,789 - cyberbully - INFO -   lr             : 5e-05
+2026-04-11 19:03:31,789 - cyberbully - INFO -   max_length     : 128
+2026-04-11 19:03:31,789 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-11 19:03:31,789 - cyberbully - INFO -   data_dir       : dataset
+2026-04-11 19:03:31,789 - cyberbully - INFO -   sbert          : False
+2026-04-11 19:03:31,789 - cyberbully - INFO -   supcon         : False
+2026-04-11 19:03:31,789 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-11 19:03:31,789 - cyberbully - INFO -   proj_dim       : 128
+2026-04-11 19:03:31,789 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-11 19:03:31,789 - cyberbully - INFO -   overwrite      : False
+2026-04-11 19:03:31,789 - cyberbully - INFO -   device         : cuda
+2026-04-11 19:03:31,789 - cyberbully - INFO -   output_dir     : experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865
+2026-04-11 19:03:31,789 - cyberbully - INFO - ============================================================
+2026-04-11 19:03:31,789 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-11 19:03:31,834 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-04-11 19:03:31,834 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-04-11 19:03:31,834 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-11 19:04:19,366 - cyberbully - INFO - After preprocessing — train: 23551, val: 5980, test: 7426
+2026-04-11 19:04:19,368 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-04-11 19:04:19,372 - cyberbully - INFO - After oversampling — class distribution: {0: 5068, 1: 5068, 2: 5068, 3: 5068, 4: 5068}
+2026-04-11 19:04:19,382 - cyberbully - INFO - Number of classes: 5
+2026-04-11 19:04:19,383 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-11 19:04:19,383 - cyberbully - INFO - Loading model 'answerdotai/ModernBERT-base' with 5 labels (sbert=False, supcon=False)
+2026-04-11 19:04:21,044 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-11 19:04:21,937 - cyberbully - INFO - Dataset sizes — train: 25340, val: 5980, test: 7426
+2026-04-11 19:04:21,937 - cyberbully - INFO - Step 4: Training...
+2026-04-11 19:04:22,168 - cyberbully - INFO - Starting training...
+2026-04-11 19:20:17,402 - cyberbully - INFO - Training complete.
+2026-04-11 19:20:17,485 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-3960
+2026-04-11 19:20:17,573 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-1584
+2026-04-11 19:20:17,663 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-792
+2026-04-11 19:20:17,748 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-3168
+2026-04-11 19:20:17,847 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-7920
+2026-04-11 19:20:17,930 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-6336
+2026-04-11 19:20:18,013 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-7128
+2026-04-11 19:20:18,098 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-2376
+2026-04-11 19:20:18,182 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-5544
+2026-04-11 19:20:18,265 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/checkpoint-4752
+2026-04-11 19:20:18,265 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-11 19:20:30,140 - cyberbully - INFO - Metrics saved to experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/metrics.json
+2026-04-11 19:20:30,140 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/confusion_matrix.json
+2026-04-11 19:20:30,216 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/predictions.json
+2026-04-11 19:20:30,317 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865/confusion_matrix.pdf
+2026-04-11 19:20:30,317 - cyberbully - INFO - Accuracy: 0.9515
+2026-04-11 19:20:30,317 - cyberbully - INFO - Weighted F1: 0.9517
+2026-04-11 19:20:30,317 - cyberbully - INFO - Micro F1: 0.9515
+2026-04-11 19:20:30,317 - cyberbully - INFO - Inference time: 7.19 seconds
+2026-04-11 19:20:30,317 - cyberbully - INFO - Energy consumption: 0.000464 kWh
+2026-04-11 19:20:30,318 - cyberbully - INFO - ============================================================
+2026-04-11 19:20:30,319 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/answerdotai_ModernBERT-base/kaggle/prep1_aug1/seed_99511865
+2026-04-11 19:20:30,319 - cyberbully - INFO - ============================================================
