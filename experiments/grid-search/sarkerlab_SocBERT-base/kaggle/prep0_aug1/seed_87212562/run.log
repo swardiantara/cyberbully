@@ -1,61 +1,61 @@
-2026-03-25 06:24:59,652 - cyberbully - INFO - ============================================================
-2026-03-25 06:24:59,652 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-03-25 06:24:59,652 - cyberbully - INFO - ============================================================
-2026-03-25 06:24:59,652 - cyberbully - INFO - Configuration:
-2026-03-25 06:24:59,652 - cyberbully - INFO -   model          : sarkerlab/SocBERT-base
-2026-03-25 06:24:59,652 - cyberbully - INFO -   dataset        : kaggle
-2026-03-25 06:24:59,652 - cyberbully - INFO -   preprocess     : False
-2026-03-25 06:24:59,652 - cyberbully - INFO -   augment        : True
-2026-03-25 06:24:59,652 - cyberbully - INFO -   compute_attribution: False
-2026-03-25 06:24:59,652 - cyberbully - INFO -   seed           : 87212562
-2026-03-25 06:24:59,652 - cyberbully - INFO -   epochs         : 10
-2026-03-25 06:24:59,652 - cyberbully - INFO -   batch_size     : 32
-2026-03-25 06:24:59,652 - cyberbully - INFO -   lr             : 5e-05
-2026-03-25 06:24:59,652 - cyberbully - INFO -   max_length     : 128
-2026-03-25 06:24:59,652 - cyberbully - INFO -   output_dir     : grid-search
-2026-03-25 06:24:59,652 - cyberbully - INFO -   data_dir       : dataset
-2026-03-25 06:24:59,652 - cyberbully - INFO -   sbert          : False
-2026-03-25 06:24:59,652 - cyberbully - INFO -   supcon         : False
-2026-03-25 06:24:59,652 - cyberbully - INFO -   supcon_weight  : 0.1
-2026-03-25 06:24:59,652 - cyberbully - INFO -   proj_dim       : 128
-2026-03-25 06:24:59,652 - cyberbully - INFO -   grad_accum_steps: 1
-2026-03-25 06:24:59,652 - cyberbully - INFO -   overwrite      : False
-2026-03-25 06:24:59,652 - cyberbully - INFO -   device         : cuda
-2026-03-25 06:24:59,652 - cyberbully - INFO -   output_dir     : experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562
-2026-03-25 06:24:59,652 - cyberbully - INFO - ============================================================
-2026-03-25 06:24:59,652 - cyberbully - INFO - Step 1: Preparing data...
-2026-03-25 06:24:59,701 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
-2026-03-25 06:24:59,701 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
-2026-03-25 06:24:59,703 - cyberbully - INFO - Applying training data augmentation (oversampling)...
-2026-03-25 06:24:59,707 - cyberbully - INFO - After oversampling — class distribution: {0: 5123, 1: 5123, 2: 5123, 3: 5123, 4: 5123}
-2026-03-25 06:24:59,717 - cyberbully - INFO - Number of classes: 5
-2026-03-25 06:24:59,719 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-03-25 06:24:59,719 - cyberbully - INFO - Loading model 'sarkerlab/SocBERT-base' with 5 labels (sbert=False, supcon=False)
-2026-03-25 06:25:01,023 - cyberbully - INFO - Step 3: Creating datasets...
-2026-03-25 06:25:01,674 - cyberbully - INFO - Dataset sizes — train: 25615, val: 6401, test: 8002
-2026-03-25 06:25:01,675 - cyberbully - INFO - Step 4: Training...
-2026-03-25 06:25:01,928 - cyberbully - INFO - Starting training...
-2026-03-25 06:38:10,132 - cyberbully - INFO - Training complete.
-2026-03-25 06:38:10,214 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-5607
-2026-03-25 06:38:10,310 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-8010
-2026-03-25 06:38:10,392 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-6408
-2026-03-25 06:38:10,477 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-1602
-2026-03-25 06:38:10,562 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-3204
-2026-03-25 06:38:10,643 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-7209
-2026-03-25 06:38:10,728 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-4005
-2026-03-25 06:38:10,810 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-4806
-2026-03-25 06:38:10,897 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-801
-2026-03-25 06:38:10,981 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-2403
-2026-03-25 06:38:10,981 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-03-25 06:38:21,179 - cyberbully - INFO - Metrics saved to experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/metrics.json
-2026-03-25 06:38:21,179 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/confusion_matrix.json
-2026-03-25 06:38:21,257 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/predictions.json
-2026-03-25 06:38:21,358 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/confusion_matrix.pdf
-2026-03-25 06:38:21,358 - cyberbully - INFO - Accuracy: 0.9491
-2026-03-25 06:38:21,358 - cyberbully - INFO - Weighted F1: 0.9491
-2026-03-25 06:38:21,358 - cyberbully - INFO - Micro F1: 0.9491
-2026-03-25 06:38:21,359 - cyberbully - INFO - Inference time: 5.92 seconds
-2026-03-25 06:38:21,359 - cyberbully - INFO - Energy consumption: 0.000385 kWh
-2026-03-25 06:38:21,360 - cyberbully - INFO - ============================================================
-2026-03-25 06:38:21,360 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562
-2026-03-25 06:38:21,360 - cyberbully - INFO - ============================================================
+2026-04-11 16:18:23,825 - cyberbully - INFO - ============================================================
+2026-04-11 16:18:23,826 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-11 16:18:23,826 - cyberbully - INFO - ============================================================
+2026-04-11 16:18:23,826 - cyberbully - INFO - Configuration:
+2026-04-11 16:18:23,826 - cyberbully - INFO -   model          : sarkerlab/SocBERT-base
+2026-04-11 16:18:23,826 - cyberbully - INFO -   dataset        : kaggle
+2026-04-11 16:18:23,826 - cyberbully - INFO -   preprocess     : False
+2026-04-11 16:18:23,826 - cyberbully - INFO -   augment        : True
+2026-04-11 16:18:23,826 - cyberbully - INFO -   compute_attribution: False
+2026-04-11 16:18:23,826 - cyberbully - INFO -   seed           : 87212562
+2026-04-11 16:18:23,826 - cyberbully - INFO -   epochs         : 10
+2026-04-11 16:18:23,826 - cyberbully - INFO -   batch_size     : 32
+2026-04-11 16:18:23,826 - cyberbully - INFO -   lr             : 5e-05
+2026-04-11 16:18:23,826 - cyberbully - INFO -   max_length     : 128
+2026-04-11 16:18:23,826 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-11 16:18:23,826 - cyberbully - INFO -   data_dir       : dataset
+2026-04-11 16:18:23,826 - cyberbully - INFO -   sbert          : False
+2026-04-11 16:18:23,826 - cyberbully - INFO -   supcon         : False
+2026-04-11 16:18:23,826 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-11 16:18:23,826 - cyberbully - INFO -   proj_dim       : 128
+2026-04-11 16:18:23,826 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-11 16:18:23,826 - cyberbully - INFO -   overwrite      : False
+2026-04-11 16:18:23,826 - cyberbully - INFO -   device         : cuda
+2026-04-11 16:18:23,826 - cyberbully - INFO -   output_dir     : experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562
+2026-04-11 16:18:23,826 - cyberbully - INFO - ============================================================
+2026-04-11 16:18:23,826 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-11 16:18:23,879 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-04-11 16:18:23,879 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-04-11 16:18:23,881 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-04-11 16:18:23,885 - cyberbully - INFO - After oversampling — class distribution: {0: 5123, 1: 5123, 2: 5123, 3: 5123, 4: 5123}
+2026-04-11 16:18:23,896 - cyberbully - INFO - Number of classes: 5
+2026-04-11 16:18:23,898 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-11 16:18:23,898 - cyberbully - INFO - Loading model 'sarkerlab/SocBERT-base' with 5 labels (sbert=False, supcon=False)
+2026-04-11 16:18:25,014 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-11 16:18:25,597 - cyberbully - INFO - Dataset sizes — train: 25615, val: 6401, test: 8002
+2026-04-11 16:18:25,598 - cyberbully - INFO - Step 4: Training...
+2026-04-11 16:18:25,748 - cyberbully - INFO - Starting training...
+2026-04-11 16:28:53,939 - cyberbully - INFO - Training complete.
+2026-04-11 16:28:54,041 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-4806
+2026-04-11 16:28:54,142 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-7209
+2026-04-11 16:28:54,242 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-6408
+2026-04-11 16:28:54,341 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-5607
+2026-04-11 16:28:54,461 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-8010
+2026-04-11 16:28:54,560 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-3204
+2026-04-11 16:28:54,661 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-1602
+2026-04-11 16:28:54,768 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-801
+2026-04-11 16:28:54,868 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-2403
+2026-04-11 16:28:54,968 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/checkpoint-4005
+2026-04-11 16:28:54,968 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-11 16:29:03,344 - cyberbully - INFO - Metrics saved to experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/metrics.json
+2026-04-11 16:29:03,344 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/confusion_matrix.json
+2026-04-11 16:29:03,427 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/predictions.json
+2026-04-11 16:29:03,535 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562/confusion_matrix.pdf
+2026-04-11 16:29:03,535 - cyberbully - INFO - Accuracy: 0.9488
+2026-04-11 16:29:03,536 - cyberbully - INFO - Weighted F1: 0.9488
+2026-04-11 16:29:03,536 - cyberbully - INFO - Micro F1: 0.9488
+2026-04-11 16:29:03,536 - cyberbully - INFO - Inference time: 3.81 seconds
+2026-04-11 16:29:03,536 - cyberbully - INFO - Energy consumption: 0.000220 kWh
+2026-04-11 16:29:03,537 - cyberbully - INFO - ============================================================
+2026-04-11 16:29:03,537 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/sarkerlab_SocBERT-base/kaggle/prep0_aug1/seed_87212562
+2026-04-11 16:29:03,537 - cyberbully - INFO - ============================================================
