@@ -18,15 +18,15 @@ set -euo pipefail
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "sarkerlab/SocBERT-base"
+    "roberta-base"
+    "Twitter/twhin-bert-base"
+    # "vinai/bertweet-base"
+    # "all-mpnet-base-v2"
+    # "sarkerlab/SocBERT-base"
     # "chandar-lab/NeoBERT"
     # "answerdotai/ModernBERT-base"
     # "google/mobilebert-uncased"   # PC-AJK
-    # "all-mpnet-base-v2"
-    # "roberta-base"
     # "bert-base-cased"           # cased variant — investigate case sensitivity
-    # "Twitter/twhin-bert-base"
-    # "vinai/bertweet-base"
     # "all-distilroberta-v1"
     # "distilbert-base-cased"     # cased variant — investigate case sensitivity
     # "distilbert-base-uncased"
@@ -40,9 +40,9 @@ MODELS=(
 )
 
 DATASETS=(
-    "kaggle"
     "ieee"
     "tweeteval"
+    "kaggle"
 )
 
 # Training hyperparameters
