@@ -1,50 +1,63 @@
-2026-02-17 16:51:59,322 - cyberbully - INFO - ============================================================
-2026-02-17 16:51:59,322 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-17 16:51:59,322 - cyberbully - INFO - ============================================================
-2026-02-17 16:51:59,322 - cyberbully - INFO - Configuration:
-2026-02-17 16:51:59,322 - cyberbully - INFO -   model          : Twitter/twhin-bert-base
-2026-02-17 16:51:59,322 - cyberbully - INFO -   dataset        : ieee
-2026-02-17 16:51:59,322 - cyberbully - INFO -   preprocess     : True
-2026-02-17 16:51:59,322 - cyberbully - INFO -   augment        : True
-2026-02-17 16:51:59,323 - cyberbully - INFO -   compute_attribution: False
-2026-02-17 16:51:59,323 - cyberbully - INFO -   seed           : 24677315
-2026-02-17 16:51:59,323 - cyberbully - INFO -   epochs         : 5
-2026-02-17 16:51:59,323 - cyberbully - INFO -   batch_size     : 16
-2026-02-17 16:51:59,323 - cyberbully - INFO -   lr             : 2e-05
-2026-02-17 16:51:59,323 - cyberbully - INFO -   max_length     : 128
-2026-02-17 16:51:59,323 - cyberbully - INFO -   output_dir     : domain-model
-2026-02-17 16:51:59,323 - cyberbully - INFO -   data_dir       : dataset
-2026-02-17 16:51:59,323 - cyberbully - INFO -   sbert          : False
-2026-02-17 16:51:59,323 - cyberbully - INFO -   overwrite      : False
-2026-02-17 16:51:59,323 - cyberbully - INFO -   device         : cuda
-2026-02-17 16:51:59,323 - cyberbully - INFO -   output_dir     : experiments/domain-model/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315
-2026-02-17 16:51:59,323 - cyberbully - INFO - ============================================================
-2026-02-17 16:51:59,323 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-17 16:51:59,323 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
-2026-02-17 16:51:59,329 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
-2026-02-17 16:51:59,329 - cyberbully - INFO - Applying text preprocessing...
-2026-02-17 16:52:02,421 - cyberbully - INFO - After preprocessing: 1817 samples remain
-2026-02-17 16:52:02,422 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
-2026-02-17 16:52:02,424 - cyberbully - INFO - Split sizes — train: 1162, val: 291, test: 364
-2026-02-17 16:52:02,424 - cyberbully - INFO - Applying training data augmentation (oversampling)...
-2026-02-17 16:52:02,425 - cyberbully - INFO - After oversampling — class distribution: {0: 285, 1: 285, 2: 285, 3: 285, 4: 285}
-2026-02-17 16:52:02,425 - cyberbully - INFO - Number of classes: 5
-2026-02-17 16:52:02,425 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-17 16:52:02,426 - cyberbully - INFO - Loading model 'Twitter/twhin-bert-base' with 5 labels (sbert=False)
-2026-02-17 16:52:03,721 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-17 16:52:03,744 - cyberbully - INFO - Dataset sizes — train: 1425, val: 291, test: 364
-2026-02-17 16:52:03,744 - cyberbully - INFO - Step 4: Training...
-2026-02-17 16:52:04,076 - cyberbully - INFO - Starting training...
-2026-02-17 16:52:43,083 - cyberbully - INFO - Training complete.
-2026-02-17 16:52:43,083 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-17 16:52:47,668 - cyberbully - INFO - Metrics saved to experiments/domain-model/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/metrics.json
-2026-02-17 16:52:47,668 - cyberbully - INFO - Confusion matrix saved to experiments/domain-model/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/confusion_matrix.json
-2026-02-17 16:52:47,769 - cyberbully - INFO - Confusion matrix figure saved to experiments/domain-model/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/confusion_matrix.pdf
-2026-02-17 16:52:47,769 - cyberbully - INFO - Accuracy: 0.8434
-2026-02-17 16:52:47,769 - cyberbully - INFO - Weighted F1: 0.8423
-2026-02-17 16:52:47,769 - cyberbully - INFO - Micro F1: 0.8434
-2026-02-17 16:52:47,769 - cyberbully - INFO - Inference time: 0.29 seconds
-2026-02-17 16:52:47,769 - cyberbully - INFO - Energy consumption: 0.000015 kWh
-2026-02-17 16:52:47,769 - cyberbully - INFO - ============================================================
-2026-02-17 16:52:47,769 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/domain-model/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315
-2026-02-17 16:52:47,769 - cyberbully - INFO - ============================================================
+2026-04-13 05:00:51,370 - cyberbully - INFO - ============================================================
+2026-04-13 05:00:51,370 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-13 05:00:51,370 - cyberbully - INFO - ============================================================
+2026-04-13 05:00:51,370 - cyberbully - INFO - Configuration:
+2026-04-13 05:00:51,371 - cyberbully - INFO -   model          : Twitter/twhin-bert-base
+2026-04-13 05:00:51,371 - cyberbully - INFO -   dataset        : ieee
+2026-04-13 05:00:51,371 - cyberbully - INFO -   preprocess     : True
+2026-04-13 05:00:51,371 - cyberbully - INFO -   augment        : True
+2026-04-13 05:00:51,371 - cyberbully - INFO -   compute_attribution: False
+2026-04-13 05:00:51,371 - cyberbully - INFO -   seed           : 24677315
+2026-04-13 05:00:51,371 - cyberbully - INFO -   epochs         : 10
+2026-04-13 05:00:51,371 - cyberbully - INFO -   batch_size     : 32
+2026-04-13 05:00:51,371 - cyberbully - INFO -   lr             : 5e-05
+2026-04-13 05:00:51,371 - cyberbully - INFO -   max_length     : 128
+2026-04-13 05:00:51,371 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-13 05:00:51,371 - cyberbully - INFO -   data_dir       : dataset
+2026-04-13 05:00:51,371 - cyberbully - INFO -   sbert          : False
+2026-04-13 05:00:51,371 - cyberbully - INFO -   supcon         : False
+2026-04-13 05:00:51,371 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-13 05:00:51,371 - cyberbully - INFO -   proj_dim       : 128
+2026-04-13 05:00:51,371 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-13 05:00:51,371 - cyberbully - INFO -   overwrite      : False
+2026-04-13 05:00:51,371 - cyberbully - INFO -   device         : cuda
+2026-04-13 05:00:51,371 - cyberbully - INFO -   output_dir     : experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315
+2026-04-13 05:00:51,371 - cyberbully - INFO - ============================================================
+2026-04-13 05:00:51,371 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-13 05:00:51,374 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-04-13 05:00:51,375 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-04-13 05:00:51,375 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-13 05:00:55,353 - cyberbully - INFO - After preprocessing — train: 1173, val: 305, test: 377
+2026-04-13 05:00:55,354 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-04-13 05:00:55,355 - cyberbully - INFO - After oversampling — class distribution: {0: 285, 1: 285, 2: 285, 3: 285, 4: 285}
+2026-04-13 05:00:55,356 - cyberbully - INFO - Number of classes: 5
+2026-04-13 05:00:55,357 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-13 05:00:55,357 - cyberbully - INFO - Loading model 'Twitter/twhin-bert-base' with 5 labels (sbert=False, supcon=False)
+2026-04-13 05:00:56,907 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-13 05:00:56,938 - cyberbully - INFO - Dataset sizes — train: 1425, val: 305, test: 377
+2026-04-13 05:00:56,938 - cyberbully - INFO - Step 4: Training...
+2026-04-13 05:00:57,269 - cyberbully - INFO - Starting training...
+2026-04-13 05:11:56,576 - cyberbully - INFO - Training complete.
+2026-04-13 05:11:56,736 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-90
+2026-04-13 05:11:56,895 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-180
+2026-04-13 05:11:57,055 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-225
+2026-04-13 05:11:57,212 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-135
+2026-04-13 05:11:57,875 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-315
+2026-04-13 05:11:58,053 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-450
+2026-04-13 05:11:58,220 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-360
+2026-04-13 05:11:58,384 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-45
+2026-04-13 05:11:58,544 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-270
+2026-04-13 05:11:58,717 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/checkpoint-405
+2026-04-13 05:11:58,719 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-13 05:12:03,687 - cyberbully - INFO - Metrics saved to experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/metrics.json
+2026-04-13 05:12:03,687 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/confusion_matrix.json
+2026-04-13 05:12:03,692 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/predictions.json
+2026-04-13 05:12:03,793 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315/confusion_matrix.pdf
+2026-04-13 05:12:03,793 - cyberbully - INFO - Accuracy: 0.7984
+2026-04-13 05:12:03,793 - cyberbully - INFO - Weighted F1: 0.7985
+2026-04-13 05:12:03,793 - cyberbully - INFO - Micro F1: 0.7984
+2026-04-13 05:12:03,793 - cyberbully - INFO - Inference time: 0.29 seconds
+2026-04-13 05:12:03,793 - cyberbully - INFO - Energy consumption: 0.000019 kWh
+2026-04-13 05:12:03,793 - cyberbully - INFO - ============================================================
+2026-04-13 05:12:03,793 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/Twitter_twhin-bert-base/ieee/prep1_aug1/seed_24677315
+2026-04-13 05:12:03,793 - cyberbully - INFO - ============================================================

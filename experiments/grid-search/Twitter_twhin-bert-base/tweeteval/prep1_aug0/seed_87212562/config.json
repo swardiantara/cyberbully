@@ -5,16 +5,20 @@
   "augment": false,
   "compute_attribution": false,
   "seed": 87212562,
-  "epochs": 5,
-  "batch_size": 16,
-  "lr": 2e-05,
+  "epochs": 10,
+  "batch_size": 32,
+  "lr": 5e-05,
   "max_length": 128,
-  "output_dir": "domain-model",
+  "output_dir": "grid-search",
   "data_dir": "dataset",
   "sbert": false,
+  "supcon": false,
+  "supcon_weight": 0.1,
+  "proj_dim": 128,
+  "grad_accum_steps": 1,
   "overwrite": false,
   "device": "cuda",
-  "output_dir_resolved": "experiments/domain-model/Twitter_twhin-bert-base/tweeteval/prep1_aug0/seed_87212562",
+  "output_dir_resolved": "experiments/grid-search/Twitter_twhin-bert-base/tweeteval/prep1_aug0/seed_87212562",
   "dataset_statistics": {
     "num_classes": 5,
     "label_mapping": {
@@ -25,33 +29,33 @@
       "spiritual": 4
     },
     "train": {
-      "num_samples": 30327,
+      "num_samples": 30362,
       "class_distribution": {
-        "emotion": 2971,
-        "hate": 7755,
-        "offensive": 7639,
-        "religion": 6495,
-        "spiritual": 5467
+        "emotion": 2963,
+        "hate": 7761,
+        "offensive": 7670,
+        "religion": 6492,
+        "spiritual": 5476
       }
     },
     "val": {
-      "num_samples": 7582,
+      "num_samples": 7613,
       "class_distribution": {
         "emotion": 743,
-        "hate": 1939,
-        "offensive": 1909,
-        "religion": 1624,
-        "spiritual": 1367
+        "hate": 1953,
+        "offensive": 1922,
+        "religion": 1620,
+        "spiritual": 1375
       }
     },
     "test": {
-      "num_samples": 9478,
+      "num_samples": 9467,
       "class_distribution": {
-        "emotion": 929,
-        "hate": 2423,
-        "offensive": 2387,
-        "religion": 2030,
-        "spiritual": 1709
+        "emotion": 937,
+        "hate": 2415,
+        "offensive": 2365,
+        "religion": 2037,
+        "spiritual": 1713
       }
     }
   }
