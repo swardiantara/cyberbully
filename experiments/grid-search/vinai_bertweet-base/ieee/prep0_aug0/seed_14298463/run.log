@@ -1,46 +1,59 @@
-2026-02-18 13:57:06,253 - cyberbully - INFO - ============================================================
-2026-02-18 13:57:06,253 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-18 13:57:06,253 - cyberbully - INFO - ============================================================
-2026-02-18 13:57:06,253 - cyberbully - INFO - Configuration:
-2026-02-18 13:57:06,253 - cyberbully - INFO -   model          : vinai/bertweet-base
-2026-02-18 13:57:06,253 - cyberbully - INFO -   dataset        : ieee
-2026-02-18 13:57:06,253 - cyberbully - INFO -   preprocess     : False
-2026-02-18 13:57:06,254 - cyberbully - INFO -   augment        : False
-2026-02-18 13:57:06,254 - cyberbully - INFO -   compute_attribution: False
-2026-02-18 13:57:06,254 - cyberbully - INFO -   seed           : 14298463
-2026-02-18 13:57:06,254 - cyberbully - INFO -   epochs         : 5
-2026-02-18 13:57:06,254 - cyberbully - INFO -   batch_size     : 16
-2026-02-18 13:57:06,254 - cyberbully - INFO -   lr             : 2e-05
-2026-02-18 13:57:06,254 - cyberbully - INFO -   max_length     : 128
-2026-02-18 13:57:06,254 - cyberbully - INFO -   output_dir     : domain-model
-2026-02-18 13:57:06,254 - cyberbully - INFO -   data_dir       : dataset
-2026-02-18 13:57:06,254 - cyberbully - INFO -   sbert          : False
-2026-02-18 13:57:06,254 - cyberbully - INFO -   overwrite      : False
-2026-02-18 13:57:06,254 - cyberbully - INFO -   device         : cuda
-2026-02-18 13:57:06,254 - cyberbully - INFO -   output_dir     : experiments/domain-model/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463
-2026-02-18 13:57:06,254 - cyberbully - INFO - ============================================================
-2026-02-18 13:57:06,254 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-18 13:57:06,254 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
-2026-02-18 13:57:06,260 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
-2026-02-18 13:57:06,260 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
-2026-02-18 13:57:06,262 - cyberbully - INFO - Split sizes — train: 1348, val: 338, test: 422
-2026-02-18 13:57:06,262 - cyberbully - INFO - Number of classes: 5
-2026-02-18 13:57:06,264 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-18 13:57:06,264 - cyberbully - INFO - Loading model 'vinai/bertweet-base' with 5 labels (sbert=False)
-2026-02-18 13:57:46,777 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-18 13:57:47,054 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
-2026-02-18 13:57:47,054 - cyberbully - INFO - Step 4: Training...
-2026-02-18 13:57:47,303 - cyberbully - INFO - Starting training...
-2026-02-18 13:58:14,175 - cyberbully - INFO - Training complete.
-2026-02-18 13:58:14,175 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-18 13:58:19,241 - cyberbully - INFO - Metrics saved to experiments/domain-model/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/metrics.json
-2026-02-18 13:58:19,242 - cyberbully - INFO - Confusion matrix saved to experiments/domain-model/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/confusion_matrix.json
-2026-02-18 13:58:19,343 - cyberbully - INFO - Confusion matrix figure saved to experiments/domain-model/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/confusion_matrix.pdf
-2026-02-18 13:58:19,343 - cyberbully - INFO - Accuracy: 0.8531
-2026-02-18 13:58:19,343 - cyberbully - INFO - Weighted F1: 0.8525
-2026-02-18 13:58:19,343 - cyberbully - INFO - Micro F1: 0.8531
-2026-02-18 13:58:19,343 - cyberbully - INFO - Inference time: 0.32 seconds
-2026-02-18 13:58:19,343 - cyberbully - INFO - Energy consumption: 0.000022 kWh
-2026-02-18 13:58:19,343 - cyberbully - INFO - ============================================================
-2026-02-18 13:58:19,343 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/domain-model/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463
-2026-02-18 13:58:19,343 - cyberbully - INFO - ============================================================
+2026-04-12 13:02:48,085 - cyberbully - INFO - ============================================================
+2026-04-12 13:02:48,085 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-12 13:02:48,085 - cyberbully - INFO - ============================================================
+2026-04-12 13:02:48,085 - cyberbully - INFO - Configuration:
+2026-04-12 13:02:48,085 - cyberbully - INFO -   model          : vinai/bertweet-base
+2026-04-12 13:02:48,085 - cyberbully - INFO -   dataset        : ieee
+2026-04-12 13:02:48,085 - cyberbully - INFO -   preprocess     : False
+2026-04-12 13:02:48,085 - cyberbully - INFO -   augment        : False
+2026-04-12 13:02:48,085 - cyberbully - INFO -   compute_attribution: False
+2026-04-12 13:02:48,085 - cyberbully - INFO -   seed           : 14298463
+2026-04-12 13:02:48,085 - cyberbully - INFO -   epochs         : 10
+2026-04-12 13:02:48,085 - cyberbully - INFO -   batch_size     : 32
+2026-04-12 13:02:48,085 - cyberbully - INFO -   lr             : 5e-05
+2026-04-12 13:02:48,085 - cyberbully - INFO -   max_length     : 128
+2026-04-12 13:02:48,085 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-12 13:02:48,085 - cyberbully - INFO -   data_dir       : dataset
+2026-04-12 13:02:48,085 - cyberbully - INFO -   sbert          : False
+2026-04-12 13:02:48,085 - cyberbully - INFO -   supcon         : False
+2026-04-12 13:02:48,085 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-12 13:02:48,085 - cyberbully - INFO -   proj_dim       : 128
+2026-04-12 13:02:48,085 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-12 13:02:48,085 - cyberbully - INFO -   overwrite      : False
+2026-04-12 13:02:48,085 - cyberbully - INFO -   device         : cuda
+2026-04-12 13:02:48,085 - cyberbully - INFO -   output_dir     : experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463
+2026-04-12 13:02:48,085 - cyberbully - INFO - ============================================================
+2026-04-12 13:02:48,085 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-12 13:02:48,089 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-04-12 13:02:48,089 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-04-12 13:02:48,090 - cyberbully - INFO - Number of classes: 5
+2026-04-12 13:02:48,092 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-12 13:02:48,092 - cyberbully - INFO - Loading model 'vinai/bertweet-base' with 5 labels (sbert=False, supcon=False)
+2026-04-12 13:02:50,139 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-12 13:02:50,441 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-04-12 13:02:50,441 - cyberbully - INFO - Step 4: Training...
+2026-04-12 13:02:50,606 - cyberbully - INFO - Starting training...
+2026-04-12 13:05:05,448 - cyberbully - INFO - Training complete.
+2026-04-12 13:05:05,788 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-215
+2026-04-12 13:05:05,896 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-387
+2026-04-12 13:05:05,991 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-86
+2026-04-12 13:05:06,086 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-129
+2026-04-12 13:05:06,191 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-344
+2026-04-12 13:05:06,289 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-258
+2026-04-12 13:05:06,383 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-43
+2026-04-12 13:05:06,497 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-301
+2026-04-12 13:05:06,593 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-172
+2026-04-12 13:05:06,707 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/checkpoint-430
+2026-04-12 13:05:06,707 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-12 13:05:11,465 - cyberbully - INFO - Metrics saved to experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/metrics.json
+2026-04-12 13:05:11,465 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/confusion_matrix.json
+2026-04-12 13:05:11,470 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/predictions.json
+2026-04-12 13:05:11,576 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463/confusion_matrix.pdf
+2026-04-12 13:05:11,576 - cyberbully - INFO - Accuracy: 0.8341
+2026-04-12 13:05:11,576 - cyberbully - INFO - Weighted F1: 0.8349
+2026-04-12 13:05:11,576 - cyberbully - INFO - Micro F1: 0.8341
+2026-04-12 13:05:11,576 - cyberbully - INFO - Inference time: 0.21 seconds
+2026-04-12 13:05:11,576 - cyberbully - INFO - Energy consumption: 0.000009 kWh
+2026-04-12 13:05:11,576 - cyberbully - INFO - ============================================================
+2026-04-12 13:05:11,576 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/vinai_bertweet-base/ieee/prep0_aug0/seed_14298463
+2026-04-12 13:05:11,576 - cyberbully - INFO - ============================================================
