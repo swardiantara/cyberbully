@@ -1,51 +1,36 @@
-2026-02-21 09:31:32,437 - cyberbully - INFO - ============================================================
-2026-02-21 09:31:32,437 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-21 09:31:32,437 - cyberbully - INFO - ============================================================
-2026-02-21 09:31:32,437 - cyberbully - INFO - Configuration:
-2026-02-21 09:31:32,437 - cyberbully - INFO -   model          : all-mpnet-base-v2
-2026-02-21 09:31:32,437 - cyberbully - INFO -   dataset        : tweeteval
-2026-02-21 09:31:32,437 - cyberbully - INFO -   preprocess     : True
-2026-02-21 09:31:32,437 - cyberbully - INFO -   augment        : True
-2026-02-21 09:31:32,437 - cyberbully - INFO -   compute_attribution: False
-2026-02-21 09:31:32,437 - cyberbully - INFO -   seed           : 67351593
-2026-02-21 09:31:32,437 - cyberbully - INFO -   epochs         : 5
-2026-02-21 09:31:32,437 - cyberbully - INFO -   batch_size     : 16
-2026-02-21 09:31:32,437 - cyberbully - INFO -   lr             : 2e-05
-2026-02-21 09:31:32,437 - cyberbully - INFO -   max_length     : 128
-2026-02-21 09:31:32,437 - cyberbully - INFO -   output_dir     : sbert-model
-2026-02-21 09:31:32,438 - cyberbully - INFO -   data_dir       : dataset
-2026-02-21 09:31:32,438 - cyberbully - INFO -   sbert          : True
-2026-02-21 09:31:32,438 - cyberbully - INFO -   overwrite      : False
-2026-02-21 09:31:32,438 - cyberbully - INFO -   device         : cuda
-2026-02-21 09:31:32,438 - cyberbully - INFO -   output_dir     : experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep1_aug1/seed_67351593
-2026-02-21 09:31:32,438 - cyberbully - INFO - ============================================================
-2026-02-21 09:31:32,438 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-21 09:31:32,438 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
-2026-02-21 09:31:32,511 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
-2026-02-21 09:31:32,511 - cyberbully - INFO - Applying text preprocessing...
-2026-02-21 09:32:28,676 - cyberbully - INFO - After preprocessing: 47386 samples remain
-2026-02-21 09:32:28,679 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
-2026-02-21 09:32:28,692 - cyberbully - INFO - Split sizes — train: 30326, val: 7582, test: 9478
-2026-02-21 09:32:28,692 - cyberbully - INFO - Applying training data augmentation (oversampling)...
-2026-02-21 09:32:28,699 - cyberbully - INFO - After oversampling — class distribution: {0: 7754, 1: 7754, 2: 7754, 3: 7754, 4: 7754}
-2026-02-21 09:32:28,700 - cyberbully - INFO - Number of classes: 5
-2026-02-21 09:32:28,701 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-21 09:32:28,701 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 5 labels (sbert=True)
-2026-02-21 09:32:31,436 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, num_labels=5
-2026-02-21 09:32:31,734 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-21 09:32:32,621 - cyberbully - INFO - Dataset sizes — train: 38770, val: 7582, test: 9478
-2026-02-21 09:32:32,621 - cyberbully - INFO - Step 4: Training...
-2026-02-21 09:32:32,663 - cyberbully - INFO - Starting training...
-2026-02-21 09:45:04,588 - cyberbully - INFO - Training complete.
-2026-02-21 09:45:04,588 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-21 09:45:16,461 - cyberbully - INFO - Metrics saved to experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep1_aug1/seed_67351593/metrics.json
-2026-02-21 09:45:16,461 - cyberbully - INFO - Confusion matrix saved to experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep1_aug1/seed_67351593/confusion_matrix.json
-2026-02-21 09:45:16,562 - cyberbully - INFO - Confusion matrix figure saved to experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep1_aug1/seed_67351593/confusion_matrix.pdf
-2026-02-21 09:45:16,562 - cyberbully - INFO - Accuracy: 0.9467
-2026-02-21 09:45:16,562 - cyberbully - INFO - Weighted F1: 0.9467
-2026-02-21 09:45:16,562 - cyberbully - INFO - Micro F1: 0.9467
-2026-02-21 09:45:16,562 - cyberbully - INFO - Inference time: 7.58 seconds
-2026-02-21 09:45:16,562 - cyberbully - INFO - Energy consumption: 0.000500 kWh
-2026-02-21 09:45:16,562 - cyberbully - INFO - ============================================================
-2026-02-21 09:45:16,562 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/sbert-model/all-mpnet-base-v2/tweeteval/prep1_aug1/seed_67351593
-2026-02-21 09:45:16,562 - cyberbully - INFO - ============================================================
+2026-04-13 01:13:54,189 - cyberbully - INFO - Model 'all-mpnet-base-v2' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-04-13 01:13:54,189 - cyberbully - INFO - ============================================================
+2026-04-13 01:13:54,189 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-13 01:13:54,189 - cyberbully - INFO - ============================================================
+2026-04-13 01:13:54,189 - cyberbully - INFO - Configuration:
+2026-04-13 01:13:54,189 - cyberbully - INFO -   model          : all-mpnet-base-v2
+2026-04-13 01:13:54,189 - cyberbully - INFO -   dataset        : tweeteval
+2026-04-13 01:13:54,189 - cyberbully - INFO -   preprocess     : True
+2026-04-13 01:13:54,189 - cyberbully - INFO -   augment        : True
+2026-04-13 01:13:54,189 - cyberbully - INFO -   compute_attribution: False
+2026-04-13 01:13:54,189 - cyberbully - INFO -   seed           : 67351593
+2026-04-13 01:13:54,189 - cyberbully - INFO -   epochs         : 10
+2026-04-13 01:13:54,189 - cyberbully - INFO -   batch_size     : 32
+2026-04-13 01:13:54,189 - cyberbully - INFO -   lr             : 5e-05
+2026-04-13 01:13:54,189 - cyberbully - INFO -   max_length     : 128
+2026-04-13 01:13:54,189 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-13 01:13:54,189 - cyberbully - INFO -   data_dir       : dataset
+2026-04-13 01:13:54,189 - cyberbully - INFO -   sbert          : True
+2026-04-13 01:13:54,189 - cyberbully - INFO -   supcon         : False
+2026-04-13 01:13:54,189 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-13 01:13:54,189 - cyberbully - INFO -   proj_dim       : 128
+2026-04-13 01:13:54,189 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-13 01:13:54,189 - cyberbully - INFO -   overwrite      : False
+2026-04-13 01:13:54,189 - cyberbully - INFO -   device         : cuda
+2026-04-13 01:13:54,189 - cyberbully - INFO -   output_dir     : experiments/grid-search/all-mpnet-base-v2/tweeteval/prep1_aug1/seed_67351593
+2026-04-13 01:13:54,189 - cyberbully - INFO - ============================================================
+2026-04-13 01:13:54,189 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-13 01:13:54,239 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-04-13 01:13:54,239 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-04-13 01:13:54,239 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-13 01:14:51,730 - cyberbully - INFO - After preprocessing — train: 30363, val: 7616, test: 9464
+2026-04-13 01:14:51,732 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-04-13 01:14:51,737 - cyberbully - INFO - After oversampling — class distribution: {0: 7771, 1: 7771, 2: 7771, 3: 7771, 4: 7771}
+2026-04-13 01:14:51,746 - cyberbully - INFO - Number of classes: 5
+2026-04-13 01:14:51,748 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-13 01:14:51,748 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 5 labels (sbert=True, supcon=False)
