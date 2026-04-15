@@ -24,13 +24,16 @@ OVERWRITE=0
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "gpt2"                      # ww-pc
-    "xlnet-base-cased"
-    "bert-base-uncased"           # PC-AJK
-    "distilbert-base-uncased"
-    "sarkerlab/SocBERT-base"
+    "all-mpnet-base-v2"
+    "all-MiniLM-L6-v2"
+    "all-MiniLM-L12-v2"
+    # "gpt2"                      # ww-pc
+    # "xlnet-base-cased"
+    # "bert-base-uncased"           # PC-AJK
+    # "distilbert-base-uncased"
+    # "sarkerlab/SocBERT-base"
     # "vinai/bertweet-base"
-    # "all-mpnet-base-v2"
+    # "albert/albert-base-v2"     # ww-pc
     # "roberta-base"
     # "Twitter/twhin-bert-base"
     # "chandar-lab/NeoBERT"
@@ -41,9 +44,6 @@ MODELS=(
     # "distilbert-base-cased"     # cased variant — investigate case sensitivity
     # "distilbert-base-uncased"
     # "GroNLP/hateBERT"
-    # "albert/albert-base-v2"     # ww-pc
-    # "all-MiniLM-L6-v2"
-    # "all-MiniLM-L12-v2"
 )
 
 DATASETS=(
