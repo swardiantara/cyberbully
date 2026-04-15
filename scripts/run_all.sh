@@ -19,7 +19,7 @@ set -euo pipefail
 # Set OVERWRITE=0 (default) to skip scenarios that already have metrics.json
 # and predictions.json (bash-level check) and let main.py skip them too
 # (python-level check via --overwrite flag).
-OVERWRITE=1
+OVERWRITE=0
 
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
@@ -27,11 +27,12 @@ MODELS=(
     "gpt2"                      # ww-pc
     "xlnet-base-cased"
     "bert-base-uncased"           # PC-AJK
+    "distilbert-base-uncased"
+    "sarkerlab/SocBERT-base"
     # "vinai/bertweet-base"
     # "all-mpnet-base-v2"
     # "roberta-base"
     # "Twitter/twhin-bert-base"
-    # "sarkerlab/SocBERT-base"
     # "chandar-lab/NeoBERT"
     # "answerdotai/ModernBERT-base"
     # "google/mobilebert-uncased"   # PC-AJK
