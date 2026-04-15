@@ -15,6 +15,12 @@
 set -euo pipefail
 
 # --- Configuration ---
+# Set OVERWRITE=1 to rerun all scenarios and overwrite existing results.
+# Set OVERWRITE=0 (default) to skip scenarios that already have metrics.json
+# and predictions.json (bash-level check) and let main.py skip them too
+# (python-level check via --overwrite flag).
+OVERWRITE=1
+
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
@@ -101,10 +107,16 @@ for model in "${MODELS[@]}"; do
                         aug_flag="--augment"
                     fi
 
-                    # Skip if already completed
+                    overwrite_flag=""
+                    if [ "${OVERWRITE}" -eq 1 ]; then
+                        overwrite_flag="--overwrite"
+                    fi
+
                     model_short="${model//\//_}"
                     OUTDIR="experiments/${OUTPUT_DIR}/${model_short}/${dataset}/prep${preprocess}_aug${augment}/seed_${seed}"
-                    if [ -f "${OUTDIR}/metrics.json" ]; then
+
+                    # Bash-level skip: only active when OVERWRITE=0
+                    if [ "${OVERWRITE}" -eq 0 ] && [ -f "${OUTDIR}/metrics.json" ] && [ -f "${OUTDIR}/predictions.json" ]; then
                         echo "[${run_id}/${total}] SKIP (complete): ${model} / ${dataset} / prep${preprocess}_aug${augment} / seed_${seed}"
                         continue
                     fi
@@ -118,6 +130,7 @@ for model in "${MODELS[@]}"; do
                         --dataset "${dataset}" \
                         ${prep_flag} \
                         ${aug_flag} \
+                        ${overwrite_flag} \
                         --seed "${seed}" \
                         --epochs "${EPOCHS}" \
                         --batch_size "${BATCH_SIZE}" \
