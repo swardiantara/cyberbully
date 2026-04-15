@@ -70,7 +70,7 @@ failed=0
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
         for preprocess in 0 1; do
-            for augment in 0 1; do
+            for augment in 0; do
                 for seed in "${SEEDS[@]}"; do
                     total=$((total + 1))
                 done
@@ -92,7 +92,7 @@ echo ""
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
         for preprocess in 0 1; do
-            for augment in 0 1; do
+            for augment in 0; do
                 for seed in "${SEEDS[@]}"; do
                     run_id=$((completed + failed + 1))
 
