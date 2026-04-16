@@ -1,49 +1,62 @@
-2026-02-18 22:37:26,521 - cyberbully - INFO - ============================================================
-2026-02-18 22:37:26,521 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-18 22:37:26,521 - cyberbully - INFO - ============================================================
-2026-02-18 22:37:26,521 - cyberbully - INFO - Configuration:
-2026-02-18 22:37:26,521 - cyberbully - INFO -   model          : gpt2
-2026-02-18 22:37:26,521 - cyberbully - INFO -   dataset        : tweeteval
-2026-02-18 22:37:26,521 - cyberbully - INFO -   preprocess     : True
-2026-02-18 22:37:26,521 - cyberbully - INFO -   augment        : False
-2026-02-18 22:37:26,521 - cyberbully - INFO -   compute_attribution: False
-2026-02-18 22:37:26,521 - cyberbully - INFO -   seed           : 43782163
-2026-02-18 22:37:26,521 - cyberbully - INFO -   epochs         : 5
-2026-02-18 22:37:26,521 - cyberbully - INFO -   batch_size     : 16
-2026-02-18 22:37:26,521 - cyberbully - INFO -   lr             : 2e-05
-2026-02-18 22:37:26,521 - cyberbully - INFO -   max_length     : 128
-2026-02-18 22:37:26,521 - cyberbully - INFO -   output_dir     : grid-search
-2026-02-18 22:37:26,521 - cyberbully - INFO -   data_dir       : dataset
-2026-02-18 22:37:26,521 - cyberbully - INFO -   sbert          : False
-2026-02-18 22:37:26,521 - cyberbully - INFO -   overwrite      : False
-2026-02-18 22:37:26,521 - cyberbully - INFO -   device         : cuda
-2026-02-18 22:37:26,521 - cyberbully - INFO -   output_dir     : experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163
-2026-02-18 22:37:26,521 - cyberbully - INFO - ============================================================
-2026-02-18 22:37:26,521 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-18 22:37:26,521 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
-2026-02-18 22:37:26,596 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
-2026-02-18 22:37:26,596 - cyberbully - INFO - Applying text preprocessing...
-2026-02-18 22:38:25,854 - cyberbully - INFO - After preprocessing: 47373 samples remain
-2026-02-18 22:38:25,857 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
-2026-02-18 22:38:25,869 - cyberbully - INFO - Split sizes — train: 30318, val: 7580, test: 9475
-2026-02-18 22:38:25,870 - cyberbully - INFO - Number of classes: 5
-2026-02-18 22:38:25,871 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-18 22:38:25,871 - cyberbully - INFO - Loading model 'gpt2' with 5 labels (sbert=False)
-2026-02-18 22:38:26,565 - cyberbully - INFO - Set pad_token to eos_token ('<|endoftext|>') for model 'gpt2'
-2026-02-18 22:38:26,565 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-18 22:38:27,325 - cyberbully - INFO - Dataset sizes — train: 30318, val: 7580, test: 9475
-2026-02-18 22:38:27,326 - cyberbully - INFO - Step 4: Training...
-2026-02-18 22:38:27,462 - cyberbully - INFO - Starting training...
-2026-02-18 22:47:38,058 - cyberbully - INFO - Training complete.
-2026-02-18 22:47:38,058 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-18 22:47:51,777 - cyberbully - INFO - Metrics saved to experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/metrics.json
-2026-02-18 22:47:51,777 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/confusion_matrix.json
-2026-02-18 22:47:51,884 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/confusion_matrix.pdf
-2026-02-18 22:47:51,884 - cyberbully - INFO - Accuracy: 0.9358
-2026-02-18 22:47:51,884 - cyberbully - INFO - Weighted F1: 0.9360
-2026-02-18 22:47:51,884 - cyberbully - INFO - Micro F1: 0.9358
-2026-02-18 22:47:51,884 - cyberbully - INFO - Inference time: 8.64 seconds
-2026-02-18 22:47:51,884 - cyberbully - INFO - Energy consumption: 0.000454 kWh
-2026-02-18 22:47:51,884 - cyberbully - INFO - ============================================================
-2026-02-18 22:47:51,884 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163
-2026-02-18 22:47:51,884 - cyberbully - INFO - ============================================================
+2026-04-15 23:31:46,965 - cyberbully - INFO - ============================================================
+2026-04-15 23:31:46,965 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-15 23:31:46,965 - cyberbully - INFO - ============================================================
+2026-04-15 23:31:46,966 - cyberbully - INFO - Configuration:
+2026-04-15 23:31:46,966 - cyberbully - INFO -   model          : gpt2
+2026-04-15 23:31:46,966 - cyberbully - INFO -   dataset        : tweeteval
+2026-04-15 23:31:46,966 - cyberbully - INFO -   preprocess     : True
+2026-04-15 23:31:46,966 - cyberbully - INFO -   augment        : False
+2026-04-15 23:31:46,966 - cyberbully - INFO -   compute_attribution: False
+2026-04-15 23:31:46,966 - cyberbully - INFO -   seed           : 43782163
+2026-04-15 23:31:46,966 - cyberbully - INFO -   epochs         : 10
+2026-04-15 23:31:46,966 - cyberbully - INFO -   batch_size     : 32
+2026-04-15 23:31:46,966 - cyberbully - INFO -   lr             : 5e-05
+2026-04-15 23:31:46,966 - cyberbully - INFO -   max_length     : 128
+2026-04-15 23:31:46,966 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-15 23:31:46,966 - cyberbully - INFO -   data_dir       : dataset
+2026-04-15 23:31:46,966 - cyberbully - INFO -   sbert          : False
+2026-04-15 23:31:46,966 - cyberbully - INFO -   supcon         : False
+2026-04-15 23:31:46,966 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-15 23:31:46,966 - cyberbully - INFO -   proj_dim       : 128
+2026-04-15 23:31:46,966 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-15 23:31:46,966 - cyberbully - INFO -   overwrite      : False
+2026-04-15 23:31:46,966 - cyberbully - INFO -   device         : cuda
+2026-04-15 23:31:46,966 - cyberbully - INFO -   output_dir     : experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163
+2026-04-15 23:31:46,966 - cyberbully - INFO - ============================================================
+2026-04-15 23:31:46,966 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-15 23:31:47,017 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-04-15 23:31:47,017 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-04-15 23:31:47,017 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-15 23:32:44,272 - cyberbully - INFO - After preprocessing — train: 30352, val: 7616, test: 9461
+2026-04-15 23:32:44,283 - cyberbully - INFO - Number of classes: 5
+2026-04-15 23:32:44,284 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-15 23:32:44,284 - cyberbully - INFO - Loading model 'gpt2' with 5 labels (sbert=False, supcon=False)
+2026-04-15 23:32:45,075 - cyberbully - INFO - Set pad_token to eos_token ('<|endoftext|>') for model 'gpt2'
+2026-04-15 23:32:45,076 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-15 23:32:45,663 - cyberbully - INFO - Dataset sizes — train: 30352, val: 7616, test: 9461
+2026-04-15 23:32:45,663 - cyberbully - INFO - Step 4: Training...
+2026-04-15 23:32:45,818 - cyberbully - INFO - Starting training...
+2026-04-15 23:51:58,010 - cyberbully - INFO - Training complete.
+2026-04-15 23:51:58,100 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-4745
+2026-04-15 23:51:58,205 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-9490
+2026-04-15 23:51:58,292 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-7592
+2026-04-15 23:51:58,380 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-6643
+2026-04-15 23:51:58,467 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-3796
+2026-04-15 23:51:58,556 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-2847
+2026-04-15 23:51:58,645 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-1898
+2026-04-15 23:51:58,733 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-5694
+2026-04-15 23:51:58,821 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-8541
+2026-04-15 23:51:58,918 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/checkpoint-949
+2026-04-15 23:51:58,918 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-15 23:52:12,770 - cyberbully - INFO - Metrics saved to experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/metrics.json
+2026-04-15 23:52:12,770 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/confusion_matrix.json
+2026-04-15 23:52:12,863 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/predictions.json
+2026-04-15 23:52:12,969 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163/confusion_matrix.pdf
+2026-04-15 23:52:12,969 - cyberbully - INFO - Accuracy: 0.9372
+2026-04-15 23:52:12,969 - cyberbully - INFO - Weighted F1: 0.9373
+2026-04-15 23:52:12,969 - cyberbully - INFO - Micro F1: 0.9372
+2026-04-15 23:52:12,969 - cyberbully - INFO - Inference time: 9.12 seconds
+2026-04-15 23:52:12,969 - cyberbully - INFO - Energy consumption: 0.000507 kWh
+2026-04-15 23:52:12,970 - cyberbully - INFO - ============================================================
+2026-04-15 23:52:12,970 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/gpt2/tweeteval/prep1_aug0/seed_43782163
+2026-04-15 23:52:12,970 - cyberbully - INFO - ============================================================
