@@ -1,46 +1,59 @@
-2026-02-18 07:33:17,115 - cyberbully - INFO - ============================================================
-2026-02-18 07:33:17,115 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-18 07:33:17,115 - cyberbully - INFO - ============================================================
-2026-02-18 07:33:17,115 - cyberbully - INFO - Configuration:
-2026-02-18 07:33:17,115 - cyberbully - INFO -   model          : distilbert-base-uncased
-2026-02-18 07:33:17,115 - cyberbully - INFO -   dataset        : tweeteval
-2026-02-18 07:33:17,115 - cyberbully - INFO -   preprocess     : False
-2026-02-18 07:33:17,115 - cyberbully - INFO -   augment        : False
-2026-02-18 07:33:17,115 - cyberbully - INFO -   compute_attribution: False
-2026-02-18 07:33:17,115 - cyberbully - INFO -   seed           : 24677315
-2026-02-18 07:33:17,115 - cyberbully - INFO -   epochs         : 5
-2026-02-18 07:33:17,115 - cyberbully - INFO -   batch_size     : 16
-2026-02-18 07:33:17,115 - cyberbully - INFO -   lr             : 2e-05
-2026-02-18 07:33:17,115 - cyberbully - INFO -   max_length     : 128
-2026-02-18 07:33:17,115 - cyberbully - INFO -   output_dir     : grid-search
-2026-02-18 07:33:17,115 - cyberbully - INFO -   data_dir       : dataset
-2026-02-18 07:33:17,115 - cyberbully - INFO -   sbert          : False
-2026-02-18 07:33:17,115 - cyberbully - INFO -   overwrite      : False
-2026-02-18 07:33:17,115 - cyberbully - INFO -   device         : cuda
-2026-02-18 07:33:17,115 - cyberbully - INFO -   output_dir     : experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315
-2026-02-18 07:33:17,115 - cyberbully - INFO - ============================================================
-2026-02-18 07:33:17,115 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-18 07:33:17,115 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
-2026-02-18 07:33:17,192 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
-2026-02-18 07:33:17,194 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
-2026-02-18 07:33:17,208 - cyberbully - INFO - Split sizes — train: 32485, val: 8122, test: 10152
-2026-02-18 07:33:17,208 - cyberbully - INFO - Number of classes: 5
-2026-02-18 07:33:17,209 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-18 07:33:17,209 - cyberbully - INFO - Loading model 'distilbert-base-uncased' with 5 labels (sbert=False)
-2026-02-18 07:33:18,043 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-18 07:33:18,767 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
-2026-02-18 07:33:18,767 - cyberbully - INFO - Step 4: Training...
-2026-02-18 07:33:18,851 - cyberbully - INFO - Starting training...
-2026-02-18 07:37:45,487 - cyberbully - INFO - Training complete.
-2026-02-18 07:37:45,487 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-18 07:37:52,272 - cyberbully - INFO - Metrics saved to experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/metrics.json
-2026-02-18 07:37:52,272 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/confusion_matrix.json
-2026-02-18 07:37:52,378 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/confusion_matrix.pdf
-2026-02-18 07:37:52,378 - cyberbully - INFO - Accuracy: 0.9703
-2026-02-18 07:37:52,378 - cyberbully - INFO - Weighted F1: 0.9702
-2026-02-18 07:37:52,378 - cyberbully - INFO - Micro F1: 0.9703
-2026-02-18 07:37:52,378 - cyberbully - INFO - Inference time: 2.56 seconds
-2026-02-18 07:37:52,378 - cyberbully - INFO - Energy consumption: 0.000146 kWh
-2026-02-18 07:37:52,378 - cyberbully - INFO - ============================================================
-2026-02-18 07:37:52,378 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315
-2026-02-18 07:37:52,378 - cyberbully - INFO - ============================================================
+2026-04-16 12:46:14,703 - cyberbully - INFO - ============================================================
+2026-04-16 12:46:14,703 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-16 12:46:14,703 - cyberbully - INFO - ============================================================
+2026-04-16 12:46:14,703 - cyberbully - INFO - Configuration:
+2026-04-16 12:46:14,703 - cyberbully - INFO -   model          : distilbert-base-uncased
+2026-04-16 12:46:14,703 - cyberbully - INFO -   dataset        : tweeteval
+2026-04-16 12:46:14,703 - cyberbully - INFO -   preprocess     : False
+2026-04-16 12:46:14,703 - cyberbully - INFO -   augment        : False
+2026-04-16 12:46:14,703 - cyberbully - INFO -   compute_attribution: False
+2026-04-16 12:46:14,703 - cyberbully - INFO -   seed           : 24677315
+2026-04-16 12:46:14,703 - cyberbully - INFO -   epochs         : 10
+2026-04-16 12:46:14,703 - cyberbully - INFO -   batch_size     : 32
+2026-04-16 12:46:14,703 - cyberbully - INFO -   lr             : 5e-05
+2026-04-16 12:46:14,703 - cyberbully - INFO -   max_length     : 128
+2026-04-16 12:46:14,703 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-16 12:46:14,704 - cyberbully - INFO -   data_dir       : dataset
+2026-04-16 12:46:14,704 - cyberbully - INFO -   sbert          : False
+2026-04-16 12:46:14,704 - cyberbully - INFO -   supcon         : False
+2026-04-16 12:46:14,704 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-16 12:46:14,704 - cyberbully - INFO -   proj_dim       : 128
+2026-04-16 12:46:14,704 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-16 12:46:14,704 - cyberbully - INFO -   overwrite      : False
+2026-04-16 12:46:14,704 - cyberbully - INFO -   device         : cuda
+2026-04-16 12:46:14,704 - cyberbully - INFO -   output_dir     : experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315
+2026-04-16 12:46:14,704 - cyberbully - INFO - ============================================================
+2026-04-16 12:46:14,704 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-16 12:46:14,754 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-04-16 12:46:14,754 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-04-16 12:46:14,766 - cyberbully - INFO - Number of classes: 5
+2026-04-16 12:46:14,767 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-16 12:46:14,767 - cyberbully - INFO - Loading model 'distilbert-base-uncased' with 5 labels (sbert=False, supcon=False)
+2026-04-16 12:46:15,496 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-16 12:46:16,176 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
+2026-04-16 12:46:16,176 - cyberbully - INFO - Step 4: Training...
+2026-04-16 12:46:16,277 - cyberbully - INFO - Starting training...
+2026-04-16 12:53:25,469 - cyberbully - INFO - Training complete.
+2026-04-16 12:53:25,520 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-2032
+2026-04-16 12:53:25,569 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-6096
+2026-04-16 12:53:25,618 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-3048
+2026-04-16 12:53:25,665 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-9144
+2026-04-16 12:53:25,713 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-5080
+2026-04-16 12:53:25,760 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-8128
+2026-04-16 12:53:25,808 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-4064
+2026-04-16 12:53:25,861 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-1016
+2026-04-16 12:53:25,908 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-7112
+2026-04-16 12:53:25,965 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/checkpoint-10160
+2026-04-16 12:53:25,965 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-16 12:53:33,045 - cyberbully - INFO - Metrics saved to experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/metrics.json
+2026-04-16 12:53:33,045 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/confusion_matrix.json
+2026-04-16 12:53:33,146 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/predictions.json
+2026-04-16 12:53:33,251 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315/confusion_matrix.pdf
+2026-04-16 12:53:33,251 - cyberbully - INFO - Accuracy: 0.9693
+2026-04-16 12:53:33,251 - cyberbully - INFO - Weighted F1: 0.9693
+2026-04-16 12:53:33,251 - cyberbully - INFO - Micro F1: 0.9693
+2026-04-16 12:53:33,251 - cyberbully - INFO - Inference time: 2.50 seconds
+2026-04-16 12:53:33,251 - cyberbully - INFO - Energy consumption: 0.000144 kWh
+2026-04-16 12:53:33,252 - cyberbully - INFO - ============================================================
+2026-04-16 12:53:33,252 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/distilbert-base-uncased/tweeteval/prep0_aug0/seed_24677315
+2026-04-16 12:53:33,252 - cyberbully - INFO - ============================================================
