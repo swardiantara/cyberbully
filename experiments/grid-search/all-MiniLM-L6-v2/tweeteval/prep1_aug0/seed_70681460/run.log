@@ -1,49 +1,63 @@
-2026-02-20 10:10:32,778 - cyberbully - INFO - ============================================================
-2026-02-20 10:10:32,778 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-20 10:10:32,778 - cyberbully - INFO - ============================================================
-2026-02-20 10:10:32,778 - cyberbully - INFO - Configuration:
-2026-02-20 10:10:32,778 - cyberbully - INFO -   model          : all-MiniLM-L6-v2
-2026-02-20 10:10:32,778 - cyberbully - INFO -   dataset        : tweeteval
-2026-02-20 10:10:32,778 - cyberbully - INFO -   preprocess     : True
-2026-02-20 10:10:32,778 - cyberbully - INFO -   augment        : False
-2026-02-20 10:10:32,778 - cyberbully - INFO -   compute_attribution: False
-2026-02-20 10:10:32,778 - cyberbully - INFO -   seed           : 70681460
-2026-02-20 10:10:32,778 - cyberbully - INFO -   epochs         : 5
-2026-02-20 10:10:32,778 - cyberbully - INFO -   batch_size     : 16
-2026-02-20 10:10:32,778 - cyberbully - INFO -   lr             : 2e-05
-2026-02-20 10:10:32,778 - cyberbully - INFO -   max_length     : 128
-2026-02-20 10:10:32,778 - cyberbully - INFO -   output_dir     : sbert-model
-2026-02-20 10:10:32,778 - cyberbully - INFO -   data_dir       : dataset
-2026-02-20 10:10:32,778 - cyberbully - INFO -   sbert          : True
-2026-02-20 10:10:32,778 - cyberbully - INFO -   overwrite      : False
-2026-02-20 10:10:32,779 - cyberbully - INFO -   device         : cuda
-2026-02-20 10:10:32,779 - cyberbully - INFO -   output_dir     : experiments/sbert-model/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460
-2026-02-20 10:10:32,779 - cyberbully - INFO - ============================================================
-2026-02-20 10:10:32,779 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-20 10:10:32,779 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
-2026-02-20 10:10:32,854 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
-2026-02-20 10:10:32,854 - cyberbully - INFO - Applying text preprocessing...
-2026-02-20 10:11:29,413 - cyberbully - INFO - After preprocessing: 47375 samples remain
-2026-02-20 10:11:29,416 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
-2026-02-20 10:11:29,428 - cyberbully - INFO - Split sizes — train: 30320, val: 7580, test: 9475
-2026-02-20 10:11:29,428 - cyberbully - INFO - Number of classes: 5
-2026-02-20 10:11:29,429 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-20 10:11:29,429 - cyberbully - INFO - Loading model 'all-MiniLM-L6-v2' with 5 labels (sbert=True)
-2026-02-20 10:11:32,395 - cyberbully - INFO - SBERTClassifier: embedding_dim=384, hidden=256, num_labels=5
-2026-02-20 10:11:32,709 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-20 10:11:33,637 - cyberbully - INFO - Dataset sizes — train: 30320, val: 7580, test: 9475
-2026-02-20 10:11:33,637 - cyberbully - INFO - Step 4: Training...
-2026-02-20 10:11:33,679 - cyberbully - INFO - Starting training...
-2026-02-20 10:14:02,558 - cyberbully - INFO - Training complete.
-2026-02-20 10:14:02,558 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-20 10:14:08,728 - cyberbully - INFO - Metrics saved to experiments/sbert-model/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/metrics.json
-2026-02-20 10:14:08,728 - cyberbully - INFO - Confusion matrix saved to experiments/sbert-model/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/confusion_matrix.json
-2026-02-20 10:14:08,829 - cyberbully - INFO - Confusion matrix figure saved to experiments/sbert-model/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/confusion_matrix.pdf
-2026-02-20 10:14:08,829 - cyberbully - INFO - Accuracy: 0.9330
-2026-02-20 10:14:08,829 - cyberbully - INFO - Weighted F1: 0.9329
-2026-02-20 10:14:08,829 - cyberbully - INFO - Micro F1: 0.9330
-2026-02-20 10:14:08,829 - cyberbully - INFO - Inference time: 1.84 seconds
-2026-02-20 10:14:08,829 - cyberbully - INFO - Energy consumption: 0.000107 kWh
-2026-02-20 10:14:08,829 - cyberbully - INFO - ============================================================
-2026-02-20 10:14:08,829 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/sbert-model/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460
-2026-02-20 10:14:08,829 - cyberbully - INFO - ============================================================
+2026-04-16 01:22:54,215 - cyberbully - INFO - Model 'all-MiniLM-L6-v2' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-04-16 01:22:54,215 - cyberbully - INFO - ============================================================
+2026-04-16 01:22:54,215 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-16 01:22:54,215 - cyberbully - INFO - ============================================================
+2026-04-16 01:22:54,215 - cyberbully - INFO - Configuration:
+2026-04-16 01:22:54,215 - cyberbully - INFO -   model          : all-MiniLM-L6-v2
+2026-04-16 01:22:54,215 - cyberbully - INFO -   dataset        : tweeteval
+2026-04-16 01:22:54,215 - cyberbully - INFO -   preprocess     : True
+2026-04-16 01:22:54,215 - cyberbully - INFO -   augment        : False
+2026-04-16 01:22:54,215 - cyberbully - INFO -   compute_attribution: False
+2026-04-16 01:22:54,215 - cyberbully - INFO -   seed           : 70681460
+2026-04-16 01:22:54,215 - cyberbully - INFO -   epochs         : 10
+2026-04-16 01:22:54,215 - cyberbully - INFO -   batch_size     : 32
+2026-04-16 01:22:54,215 - cyberbully - INFO -   lr             : 5e-05
+2026-04-16 01:22:54,215 - cyberbully - INFO -   max_length     : 128
+2026-04-16 01:22:54,215 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-16 01:22:54,215 - cyberbully - INFO -   data_dir       : dataset
+2026-04-16 01:22:54,215 - cyberbully - INFO -   sbert          : True
+2026-04-16 01:22:54,215 - cyberbully - INFO -   supcon         : False
+2026-04-16 01:22:54,215 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-16 01:22:54,215 - cyberbully - INFO -   proj_dim       : 128
+2026-04-16 01:22:54,215 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-16 01:22:54,215 - cyberbully - INFO -   overwrite      : False
+2026-04-16 01:22:54,215 - cyberbully - INFO -   device         : cuda
+2026-04-16 01:22:54,215 - cyberbully - INFO -   output_dir     : experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460
+2026-04-16 01:22:54,215 - cyberbully - INFO - ============================================================
+2026-04-16 01:22:54,215 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-16 01:22:54,262 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-04-16 01:22:54,262 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-04-16 01:22:54,262 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-16 01:23:54,113 - cyberbully - INFO - After preprocessing — train: 30364, val: 7612, test: 9470
+2026-04-16 01:23:54,123 - cyberbully - INFO - Number of classes: 5
+2026-04-16 01:23:54,124 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-16 01:23:54,124 - cyberbully - INFO - Loading model 'all-MiniLM-L6-v2' with 5 labels (sbert=True, supcon=False)
+2026-04-16 01:23:58,050 - cyberbully - INFO - SBERTClassifier: embedding_dim=384, hidden=256, proj_dim=None, num_labels=5
+2026-04-16 01:23:58,640 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-16 01:23:59,818 - cyberbully - INFO - Dataset sizes — train: 30364, val: 7612, test: 9470
+2026-04-16 01:23:59,818 - cyberbully - INFO - Step 4: Training...
+2026-04-16 01:23:59,860 - cyberbully - INFO - Starting training...
+2026-04-16 01:26:59,825 - cyberbully - INFO - Training complete.
+2026-04-16 01:26:59,838 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-1898
+2026-04-16 01:27:00,518 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-7592
+2026-04-16 01:27:00,543 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-6643
+2026-04-16 01:27:00,557 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-2847
+2026-04-16 01:27:01,202 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-8541
+2026-04-16 01:27:01,216 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-5694
+2026-04-16 01:27:01,229 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-3796
+2026-04-16 01:27:01,243 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-949
+2026-04-16 01:27:01,258 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-9490
+2026-04-16 01:27:01,271 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/checkpoint-4745
+2026-04-16 01:27:01,271 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-16 01:27:07,215 - cyberbully - INFO - Metrics saved to experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/metrics.json
+2026-04-16 01:27:07,216 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/confusion_matrix.json
+2026-04-16 01:27:07,312 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/predictions.json
+2026-04-16 01:27:07,417 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460/confusion_matrix.pdf
+2026-04-16 01:27:07,417 - cyberbully - INFO - Accuracy: 0.9392
+2026-04-16 01:27:07,417 - cyberbully - INFO - Weighted F1: 0.9394
+2026-04-16 01:27:07,417 - cyberbully - INFO - Micro F1: 0.9392
+2026-04-16 01:27:07,417 - cyberbully - INFO - Inference time: 1.28 seconds
+2026-04-16 01:27:07,417 - cyberbully - INFO - Energy consumption: 0.000091 kWh
+2026-04-16 01:27:07,419 - cyberbully - INFO - ============================================================
+2026-04-16 01:27:07,419 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/all-MiniLM-L6-v2/tweeteval/prep1_aug0/seed_70681460
+2026-04-16 01:27:07,419 - cyberbully - INFO - ============================================================
