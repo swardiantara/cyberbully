@@ -19,19 +19,19 @@ set -euo pipefail
 # Set OVERWRITE=0 (default) to skip scenarios that already have metrics.json
 # and predictions.json (bash-level check) and let main.py skip them too
 # (python-level check via --overwrite flag).
-OVERWRITE=0
+OVERWRITE=1
 
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    # "all-mpnet-base-v2"
-    # "all-MiniLM-L6-v2"
-    # "all-MiniLM-L12-v2"
+    "all-mpnet-base-v2"
+    "all-MiniLM-L6-v2"
+    "all-MiniLM-L12-v2"
+    "sarkerlab/SocBERT-base"
     # "gpt2"                      # ww-pc
     # "xlnet-base-cased"
     # "bert-base-uncased"           # PC-AJK
     # "distilbert-base-uncased"
-    "sarkerlab/SocBERT-base"
     # "vinai/bertweet-base"
     # "albert/albert-base-v2"     # ww-pc
     # "roberta-base"
@@ -71,7 +71,7 @@ failed=0
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
         for preprocess in 0 1; do
-            for augment in 0; do
+            for augment in 1; do
                 for seed in "${SEEDS[@]}"; do
                     total=$((total + 1))
                 done
@@ -93,7 +93,7 @@ echo ""
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
         for preprocess in 0 1; do
-            for augment in 0; do
+            for augment in 1; do
                 for seed in "${SEEDS[@]}"; do
                     run_id=$((completed + failed + 1))
 
