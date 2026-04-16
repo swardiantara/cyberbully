@@ -1,48 +1,61 @@
-2026-02-19 06:24:09,149 - cyberbully - INFO - ============================================================
-2026-02-19 06:24:09,149 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-19 06:24:09,149 - cyberbully - INFO - ============================================================
-2026-02-19 06:24:09,149 - cyberbully - INFO - Configuration:
-2026-02-19 06:24:09,149 - cyberbully - INFO -   model          : sarkerlab/SocBERT-base
-2026-02-19 06:24:09,149 - cyberbully - INFO -   dataset        : ieee
-2026-02-19 06:24:09,149 - cyberbully - INFO -   preprocess     : True
-2026-02-19 06:24:09,149 - cyberbully - INFO -   augment        : False
-2026-02-19 06:24:09,149 - cyberbully - INFO -   compute_attribution: False
-2026-02-19 06:24:09,149 - cyberbully - INFO -   seed           : 70681460
-2026-02-19 06:24:09,149 - cyberbully - INFO -   epochs         : 5
-2026-02-19 06:24:09,149 - cyberbully - INFO -   batch_size     : 16
-2026-02-19 06:24:09,149 - cyberbully - INFO -   lr             : 2e-05
-2026-02-19 06:24:09,149 - cyberbully - INFO -   max_length     : 128
-2026-02-19 06:24:09,149 - cyberbully - INFO -   output_dir     : domain-model
-2026-02-19 06:24:09,149 - cyberbully - INFO -   data_dir       : dataset
-2026-02-19 06:24:09,149 - cyberbully - INFO -   sbert          : False
-2026-02-19 06:24:09,149 - cyberbully - INFO -   overwrite      : False
-2026-02-19 06:24:09,149 - cyberbully - INFO -   device         : cuda
-2026-02-19 06:24:09,149 - cyberbully - INFO -   output_dir     : experiments/domain-model/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460
-2026-02-19 06:24:09,149 - cyberbully - INFO - ============================================================
-2026-02-19 06:24:09,149 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-19 06:24:09,149 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
-2026-02-19 06:24:09,155 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
-2026-02-19 06:24:09,155 - cyberbully - INFO - Applying text preprocessing...
-2026-02-19 06:24:12,271 - cyberbully - INFO - After preprocessing: 1812 samples remain
-2026-02-19 06:24:12,271 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
-2026-02-19 06:24:12,273 - cyberbully - INFO - Split sizes — train: 1159, val: 290, test: 363
-2026-02-19 06:24:12,274 - cyberbully - INFO - Number of classes: 5
-2026-02-19 06:24:12,274 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-19 06:24:12,274 - cyberbully - INFO - Loading model 'sarkerlab/SocBERT-base' with 5 labels (sbert=False)
-2026-02-19 06:24:13,432 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-19 06:24:13,453 - cyberbully - INFO - Dataset sizes — train: 1159, val: 290, test: 363
-2026-02-19 06:24:13,453 - cyberbully - INFO - Step 4: Training...
-2026-02-19 06:24:13,716 - cyberbully - INFO - Starting training...
-2026-02-19 06:24:37,617 - cyberbully - INFO - Training complete.
-2026-02-19 06:24:37,617 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-19 06:24:42,155 - cyberbully - INFO - Metrics saved to experiments/domain-model/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/metrics.json
-2026-02-19 06:24:42,155 - cyberbully - INFO - Confusion matrix saved to experiments/domain-model/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/confusion_matrix.json
-2026-02-19 06:24:42,266 - cyberbully - INFO - Confusion matrix figure saved to experiments/domain-model/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/confusion_matrix.pdf
-2026-02-19 06:24:42,266 - cyberbully - INFO - Accuracy: 0.8375
-2026-02-19 06:24:42,266 - cyberbully - INFO - Weighted F1: 0.8379
-2026-02-19 06:24:42,266 - cyberbully - INFO - Micro F1: 0.8375
-2026-02-19 06:24:42,266 - cyberbully - INFO - Inference time: 0.27 seconds
-2026-02-19 06:24:42,266 - cyberbully - INFO - Energy consumption: 0.000015 kWh
-2026-02-19 06:24:42,266 - cyberbully - INFO - ============================================================
-2026-02-19 06:24:42,266 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/domain-model/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460
-2026-02-19 06:24:42,266 - cyberbully - INFO - ============================================================
+2026-04-16 10:53:21,401 - cyberbully - INFO - ============================================================
+2026-04-16 10:53:21,402 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-16 10:53:21,402 - cyberbully - INFO - ============================================================
+2026-04-16 10:53:21,402 - cyberbully - INFO - Configuration:
+2026-04-16 10:53:21,402 - cyberbully - INFO -   model          : sarkerlab/SocBERT-base
+2026-04-16 10:53:21,402 - cyberbully - INFO -   dataset        : ieee
+2026-04-16 10:53:21,402 - cyberbully - INFO -   preprocess     : True
+2026-04-16 10:53:21,402 - cyberbully - INFO -   augment        : False
+2026-04-16 10:53:21,402 - cyberbully - INFO -   compute_attribution: False
+2026-04-16 10:53:21,402 - cyberbully - INFO -   seed           : 70681460
+2026-04-16 10:53:21,402 - cyberbully - INFO -   epochs         : 10
+2026-04-16 10:53:21,402 - cyberbully - INFO -   batch_size     : 32
+2026-04-16 10:53:21,402 - cyberbully - INFO -   lr             : 5e-05
+2026-04-16 10:53:21,402 - cyberbully - INFO -   max_length     : 128
+2026-04-16 10:53:21,402 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-16 10:53:21,402 - cyberbully - INFO -   data_dir       : dataset
+2026-04-16 10:53:21,402 - cyberbully - INFO -   sbert          : False
+2026-04-16 10:53:21,402 - cyberbully - INFO -   supcon         : False
+2026-04-16 10:53:21,402 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-16 10:53:21,402 - cyberbully - INFO -   proj_dim       : 128
+2026-04-16 10:53:21,402 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-16 10:53:21,402 - cyberbully - INFO -   overwrite      : False
+2026-04-16 10:53:21,402 - cyberbully - INFO -   device         : cuda
+2026-04-16 10:53:21,402 - cyberbully - INFO -   output_dir     : experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460
+2026-04-16 10:53:21,402 - cyberbully - INFO - ============================================================
+2026-04-16 10:53:21,402 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-16 10:53:21,406 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-04-16 10:53:21,406 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-04-16 10:53:21,406 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-16 10:53:25,423 - cyberbully - INFO - After preprocessing — train: 1177, val: 304, test: 376
+2026-04-16 10:53:25,425 - cyberbully - INFO - Number of classes: 5
+2026-04-16 10:53:25,426 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-16 10:53:25,426 - cyberbully - INFO - Loading model 'sarkerlab/SocBERT-base' with 5 labels (sbert=False, supcon=False)
+2026-04-16 10:53:26,945 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-16 10:53:26,968 - cyberbully - INFO - Dataset sizes — train: 1177, val: 304, test: 376
+2026-04-16 10:53:26,968 - cyberbully - INFO - Step 4: Training...
+2026-04-16 10:53:27,218 - cyberbully - INFO - Starting training...
+2026-04-16 10:54:43,811 - cyberbully - INFO - Training complete.
+2026-04-16 10:54:43,903 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-111
+2026-04-16 10:54:43,996 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-370
+2026-04-16 10:54:44,088 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-37
+2026-04-16 10:54:44,175 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-148
+2026-04-16 10:54:44,266 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-296
+2026-04-16 10:54:44,359 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-333
+2026-04-16 10:54:44,447 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-185
+2026-04-16 10:54:44,536 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-222
+2026-04-16 10:54:45,068 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-259
+2026-04-16 10:54:45,157 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/checkpoint-74
+2026-04-16 10:54:45,157 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-16 10:54:50,034 - cyberbully - INFO - Metrics saved to experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/metrics.json
+2026-04-16 10:54:50,034 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/confusion_matrix.json
+2026-04-16 10:54:50,038 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/predictions.json
+2026-04-16 10:54:50,139 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460/confusion_matrix.pdf
+2026-04-16 10:54:50,139 - cyberbully - INFO - Accuracy: 0.8298
+2026-04-16 10:54:50,139 - cyberbully - INFO - Weighted F1: 0.8300
+2026-04-16 10:54:50,139 - cyberbully - INFO - Micro F1: 0.8298
+2026-04-16 10:54:50,139 - cyberbully - INFO - Inference time: 0.23 seconds
+2026-04-16 10:54:50,139 - cyberbully - INFO - Energy consumption: 0.000010 kWh
+2026-04-16 10:54:50,139 - cyberbully - INFO - ============================================================
+2026-04-16 10:54:50,139 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/sarkerlab_SocBERT-base/ieee/prep1_aug0/seed_70681460
+2026-04-16 10:54:50,139 - cyberbully - INFO - ============================================================
