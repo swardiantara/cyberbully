@@ -1,46 +1,59 @@
-2026-02-18 04:09:35,830 - cyberbully - INFO - ============================================================
-2026-02-18 04:09:35,831 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-18 04:09:35,831 - cyberbully - INFO - ============================================================
-2026-02-18 04:09:35,831 - cyberbully - INFO - Configuration:
-2026-02-18 04:09:35,831 - cyberbully - INFO -   model          : distilbert-base-uncased
-2026-02-18 04:09:35,831 - cyberbully - INFO -   dataset        : ieee
-2026-02-18 04:09:35,831 - cyberbully - INFO -   preprocess     : False
-2026-02-18 04:09:35,831 - cyberbully - INFO -   augment        : False
-2026-02-18 04:09:35,831 - cyberbully - INFO -   compute_attribution: False
-2026-02-18 04:09:35,831 - cyberbully - INFO -   seed           : 90995999
-2026-02-18 04:09:35,831 - cyberbully - INFO -   epochs         : 5
-2026-02-18 04:09:35,831 - cyberbully - INFO -   batch_size     : 16
-2026-02-18 04:09:35,831 - cyberbully - INFO -   lr             : 2e-05
-2026-02-18 04:09:35,831 - cyberbully - INFO -   max_length     : 128
-2026-02-18 04:09:35,831 - cyberbully - INFO -   output_dir     : grid-search
-2026-02-18 04:09:35,831 - cyberbully - INFO -   data_dir       : dataset
-2026-02-18 04:09:35,831 - cyberbully - INFO -   sbert          : False
-2026-02-18 04:09:35,831 - cyberbully - INFO -   overwrite      : False
-2026-02-18 04:09:35,831 - cyberbully - INFO -   device         : cuda
-2026-02-18 04:09:35,831 - cyberbully - INFO -   output_dir     : experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999
-2026-02-18 04:09:35,831 - cyberbully - INFO - ============================================================
-2026-02-18 04:09:35,831 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-18 04:09:35,831 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
-2026-02-18 04:09:35,836 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
-2026-02-18 04:09:35,837 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
-2026-02-18 04:09:35,839 - cyberbully - INFO - Split sizes — train: 1348, val: 338, test: 422
-2026-02-18 04:09:35,839 - cyberbully - INFO - Number of classes: 5
-2026-02-18 04:09:35,840 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-18 04:09:35,840 - cyberbully - INFO - Loading model 'distilbert-base-uncased' with 5 labels (sbert=False)
-2026-02-18 04:09:36,522 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-18 04:09:36,543 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
-2026-02-18 04:09:36,544 - cyberbully - INFO - Step 4: Training...
-2026-02-18 04:09:36,640 - cyberbully - INFO - Starting training...
-2026-02-18 04:09:47,972 - cyberbully - INFO - Training complete.
-2026-02-18 04:09:47,972 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-18 04:09:52,270 - cyberbully - INFO - Metrics saved to experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/metrics.json
-2026-02-18 04:09:52,270 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/confusion_matrix.json
-2026-02-18 04:09:52,377 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/confusion_matrix.pdf
-2026-02-18 04:09:52,377 - cyberbully - INFO - Accuracy: 0.8175
-2026-02-18 04:09:52,377 - cyberbully - INFO - Weighted F1: 0.8172
-2026-02-18 04:09:52,377 - cyberbully - INFO - Micro F1: 0.8175
-2026-02-18 04:09:52,377 - cyberbully - INFO - Inference time: 0.11 seconds
-2026-02-18 04:09:52,377 - cyberbully - INFO - Energy consumption: 0.000003 kWh
-2026-02-18 04:09:52,377 - cyberbully - INFO - ============================================================
-2026-02-18 04:09:52,377 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999
-2026-02-18 04:09:52,377 - cyberbully - INFO - ============================================================
+2026-04-16 12:27:35,440 - cyberbully - INFO - ============================================================
+2026-04-16 12:27:35,440 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-16 12:27:35,440 - cyberbully - INFO - ============================================================
+2026-04-16 12:27:35,440 - cyberbully - INFO - Configuration:
+2026-04-16 12:27:35,440 - cyberbully - INFO -   model          : distilbert-base-uncased
+2026-04-16 12:27:35,440 - cyberbully - INFO -   dataset        : ieee
+2026-04-16 12:27:35,440 - cyberbully - INFO -   preprocess     : False
+2026-04-16 12:27:35,440 - cyberbully - INFO -   augment        : False
+2026-04-16 12:27:35,440 - cyberbully - INFO -   compute_attribution: False
+2026-04-16 12:27:35,441 - cyberbully - INFO -   seed           : 90995999
+2026-04-16 12:27:35,441 - cyberbully - INFO -   epochs         : 10
+2026-04-16 12:27:35,441 - cyberbully - INFO -   batch_size     : 32
+2026-04-16 12:27:35,441 - cyberbully - INFO -   lr             : 5e-05
+2026-04-16 12:27:35,441 - cyberbully - INFO -   max_length     : 128
+2026-04-16 12:27:35,441 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-16 12:27:35,441 - cyberbully - INFO -   data_dir       : dataset
+2026-04-16 12:27:35,441 - cyberbully - INFO -   sbert          : False
+2026-04-16 12:27:35,441 - cyberbully - INFO -   supcon         : False
+2026-04-16 12:27:35,441 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-16 12:27:35,441 - cyberbully - INFO -   proj_dim       : 128
+2026-04-16 12:27:35,441 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-16 12:27:35,441 - cyberbully - INFO -   overwrite      : False
+2026-04-16 12:27:35,441 - cyberbully - INFO -   device         : cuda
+2026-04-16 12:27:35,441 - cyberbully - INFO -   output_dir     : experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999
+2026-04-16 12:27:35,441 - cyberbully - INFO - ============================================================
+2026-04-16 12:27:35,441 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-16 12:27:35,444 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-04-16 12:27:35,444 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-04-16 12:27:35,446 - cyberbully - INFO - Number of classes: 5
+2026-04-16 12:27:35,447 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-16 12:27:35,447 - cyberbully - INFO - Loading model 'distilbert-base-uncased' with 5 labels (sbert=False, supcon=False)
+2026-04-16 12:27:36,109 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-16 12:27:36,134 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-04-16 12:27:36,134 - cyberbully - INFO - Step 4: Training...
+2026-04-16 12:27:36,249 - cyberbully - INFO - Starting training...
+2026-04-16 12:28:20,711 - cyberbully - INFO - Training complete.
+2026-04-16 12:28:20,766 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-215
+2026-04-16 12:28:20,823 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-387
+2026-04-16 12:28:21,631 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-86
+2026-04-16 12:28:22,507 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-129
+2026-04-16 12:28:22,562 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-344
+2026-04-16 12:28:22,616 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-258
+2026-04-16 12:28:22,673 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-43
+2026-04-16 12:28:22,728 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-301
+2026-04-16 12:28:22,922 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-172
+2026-04-16 12:28:22,979 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/checkpoint-430
+2026-04-16 12:28:22,979 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-16 12:28:27,605 - cyberbully - INFO - Metrics saved to experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/metrics.json
+2026-04-16 12:28:27,605 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/confusion_matrix.json
+2026-04-16 12:28:27,610 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/predictions.json
+2026-04-16 12:28:27,718 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999/confusion_matrix.pdf
+2026-04-16 12:28:27,718 - cyberbully - INFO - Accuracy: 0.8318
+2026-04-16 12:28:27,718 - cyberbully - INFO - Weighted F1: 0.8319
+2026-04-16 12:28:27,718 - cyberbully - INFO - Micro F1: 0.8318
+2026-04-16 12:28:27,718 - cyberbully - INFO - Inference time: 0.11 seconds
+2026-04-16 12:28:27,718 - cyberbully - INFO - Energy consumption: 0.000002 kWh
+2026-04-16 12:28:27,718 - cyberbully - INFO - ============================================================
+2026-04-16 12:28:27,718 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/distilbert-base-uncased/ieee/prep0_aug0/seed_90995999
+2026-04-16 12:28:27,718 - cyberbully - INFO - ============================================================
