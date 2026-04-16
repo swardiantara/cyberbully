@@ -29,9 +29,9 @@ MODELS=(
     # "all-MiniLM-L12-v2"
     # "gpt2"                      # ww-pc
     # "xlnet-base-cased"
-    # "bert-base-uncased"           # PC-AJK
+    "bert-base-uncased"           # PC-AJK
     "distilbert-base-uncased"
-    "sarkerlab/SocBERT-base"
+    # "sarkerlab/SocBERT-base"
     # "vinai/bertweet-base"
     # "albert/albert-base-v2"     # ww-pc
     # "roberta-base"
