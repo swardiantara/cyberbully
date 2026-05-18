@@ -24,9 +24,12 @@ OVERWRITE=1
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "answerdotai/ModernBERT-base"
-    "chandar-lab/NeoBERT"
-    # "all-distilroberta-v1"
+    # "answerdotai/ModernBERT-base"
+    # "chandar-lab/NeoBERT"
+    "roberta-base"
+    "all-distilroberta-v1"
+    "Twitter/twhin-bert-base"
+    "albert/albert-base-v2"     # ww-pc
     # "all-mpnet-base-v2"
     # "all-MiniLM-L6-v2"
     # "all-MiniLM-L12-v2"
@@ -36,9 +39,6 @@ MODELS=(
     # "bert-base-uncased"           # PC-AJK
     # "distilbert-base-uncased"
     # "vinai/bertweet-base"
-    # "albert/albert-base-v2"     # ww-pc
-    # "roberta-base"
-    # "Twitter/twhin-bert-base"
     # "google/mobilebert-uncased"   # PC-AJK
     # "bert-base-cased"           # cased variant — investigate case sensitivity
     # "distilbert-base-cased"     # cased variant — investigate case sensitivity
