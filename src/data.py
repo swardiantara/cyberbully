@@ -101,16 +101,17 @@ def augment_training_data(train_df: pd.DataFrame) -> pd.DataFrame:
     """Apply RandomOverSampler to balance the training set."""
     ros = RandomOverSampler()
     X_resampled, y_resampled = ros.fit_resample(
-        np.array(train_df["text"]).reshape(-1, 1),
+        np.array(train_df["cleansed"]).reshape(-1, 1),
         np.array(train_df["label"]).reshape(-1, 1),
     )
+    texts = X_resampled.flatten()
     augmented_df = pd.DataFrame(
-        {"text": X_resampled.flatten(), "label": y_resampled.flatten()}
+        {"text": texts, "cleansed": texts, "label": y_resampled.flatten()}
     )
 
     unique, counts = np.unique(augmented_df["label"], return_counts=True)
     logger.info(
-        "After oversampling — class distribution: %s",
+        "After oversampling -- class distribution: %s",
         dict(zip(unique.tolist(), counts.tolist())),
     )
     return augmented_df
@@ -210,6 +211,11 @@ def prepare_data(
     id2label = {idx: label for label, idx in label2id.items()}
     logger.info("Label mapping: %s", label2id)
 
+    # Attach raw text before any preprocessing so it stays aligned with the
+    # surviving rows after preprocess_dataframe filters/deduplicates.
+    for df in (train_df, val_df, test_df):
+        df["raw"] = df["text"]
+
     # Preprocessing is applied per-split to avoid data leakage and to preserve
     # the original distribution used for splitting.
     if preprocess:
@@ -218,9 +224,14 @@ def prepare_data(
         val_df = preprocess_dataframe(val_df)
         test_df = preprocess_dataframe(test_df)
         logger.info(
-            "After preprocessing — train: %d, val: %d, test: %d",
+            "After preprocessing -- train: %d, val: %d, test: %d",
             len(train_df), len(val_df), len(test_df),
         )
+
+    # cleansed == raw when preprocessing is disabled; always present for
+    # consistent downstream use (training, logging, attribution).
+    for df in (train_df, val_df, test_df):
+        df["cleansed"] = df["text"]
 
     # Encode string labels to integers using the saved mapping
     for df in (train_df, val_df, test_df):

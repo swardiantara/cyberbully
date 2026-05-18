@@ -43,12 +43,12 @@ def strip_emoji(text: str) -> str:
 def strip_all_entities(text: str) -> str:
     if not isinstance(text, str):
         text = str(text)
-    text = re.sub(r"\r|\n", " ", text.lower())
-    text = re.sub(r"(?:\@|https?\://)\S+", "", text)
-    text = re.sub(r"[^\x00-\x7f]", "", text)
-    table = str.maketrans("", "", string.punctuation)
+    text = re.sub(r"\r|\n", " ", text.lower()) # Converts all characters to lowercase. Replaces newline (\n) and carriage return (\r) with spaces.
+    text = re.sub(r"(?:\@|https?\://)\S+", "", text) # remove mentions and URLs
+    text = re.sub(r"[^\x00-\x7f]", "", text)    # remove non-ASCII characters
+    table = str.maketrans("", "", string.punctuation)   # Deletes all punctuation characters: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
     text = text.translate(table)
-    text = " ".join(word for word in text.split() if word not in _stop_words)
+    text = " ".join(word for word in text.split() if word not in _stop_words) # remove stopwords
     return text
 
 
@@ -158,9 +158,9 @@ def clean_tweet(tweet: str) -> str:
     """Apply the full text cleaning pipeline to a single tweet."""
     if not isinstance(tweet, str):
         tweet = str(tweet)
+    tweet = filter_non_english(tweet)
     tweet = strip_emoji(tweet)
     tweet = expand_contractions_text(tweet)
-    tweet = filter_non_english(tweet)
     tweet = strip_all_entities(tweet)
     tweet = clean_hashtags(tweet)
     tweet = filter_chars(tweet)

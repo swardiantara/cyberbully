@@ -24,23 +24,23 @@ OVERWRITE=1
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
+    "answerdotai/ModernBERT-base"
+    "chandar-lab/NeoBERT"
+    # "all-distilroberta-v1"
     # "all-mpnet-base-v2"
     # "all-MiniLM-L6-v2"
     # "all-MiniLM-L12-v2"
     # "sarkerlab/SocBERT-base"
-    "gpt2"                      # ww-pc
-    "xlnet-base-cased"
-    "bert-base-uncased"           # PC-AJK
-    "distilbert-base-uncased"
+    # "gpt2"                      # ww-pc
+    # "xlnet-base-cased"
+    # "bert-base-uncased"           # PC-AJK
+    # "distilbert-base-uncased"
     # "vinai/bertweet-base"
     # "albert/albert-base-v2"     # ww-pc
     # "roberta-base"
     # "Twitter/twhin-bert-base"
-    # "chandar-lab/NeoBERT"
-    # "answerdotai/ModernBERT-base"
     # "google/mobilebert-uncased"   # PC-AJK
     # "bert-base-cased"           # cased variant — investigate case sensitivity
-    # "all-distilroberta-v1"
     # "distilbert-base-cased"     # cased variant — investigate case sensitivity
     # "distilbert-base-uncased"
     # "GroNLP/hateBERT"
@@ -49,7 +49,7 @@ MODELS=(
 DATASETS=(
     "ieee"
     "tweeteval"
-    # "kaggle"
+    "kaggle"
 )
 
 # Training hyperparameters
@@ -59,7 +59,7 @@ LR=5e-5
 MAX_LENGTH=128
 
 # Directories
-OUTPUT_DIR="grid-search"
+OUTPUT_DIR="verification"
 DATA_DIR="dataset"
 
 # --- Run experiments ---
@@ -70,8 +70,8 @@ failed=0
 # Count total runs
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
-        for preprocess in 0 1; do
-            for augment in 1; do
+        for preprocess in 1; do
+            for augment in 0; do
                 for seed in "${SEEDS[@]}"; do
                     total=$((total + 1))
                 done
@@ -92,8 +92,8 @@ echo ""
 
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
-        for preprocess in 0 1; do
-            for augment in 1; do
+        for preprocess in 1; do
+            for augment in 0; do
                 for seed in "${SEEDS[@]}"; do
                     run_id=$((completed + failed + 1))
 

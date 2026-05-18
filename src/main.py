@@ -4,7 +4,7 @@ import os
 import sys
 
 from utils import set_seed, get_device, get_output_dir, setup_logging
-from data import prepare_data, load_raw_test_texts
+from data import prepare_data
 from model import load_model_and_tokenizer
 from train import (
     CyberbullyDataset,
@@ -185,10 +185,10 @@ def main():
         augment=args.augment,
     )
 
-    # Raw (pre-preprocessing) test texts — always from the saved split CSV so
-    # they are never affected by the --preprocess flag.
-    original_test_texts = load_raw_test_texts(args.data_dir, args.dataset)
-    cleansed_test_texts = test_df["text"].tolist()
+    # raw and cleansed are set by prepare_data, guaranteed row-aligned even
+    # when preprocessing drops rows (empty texts / deduplication).
+    original_test_texts = test_df["raw"].tolist()
+    cleansed_test_texts = test_df["cleansed"].tolist()
 
     num_labels = len(label2id)
     logger.info("Number of classes: %d", num_labels)
@@ -243,13 +243,13 @@ def main():
     # --- Dataset creation (tokenization happens inside the Dataset) ---
     logger.info("Step 3: Creating datasets...")
     train_dataset = CyberbullyDataset(
-        train_df["text"].tolist(), train_df["label"].tolist(), tokenizer, args.max_length,
+        train_df["cleansed"].tolist(), train_df["label"].tolist(), tokenizer, args.max_length,
     )
     val_dataset = CyberbullyDataset(
-        val_df["text"].tolist(), val_df["label"].tolist(), tokenizer, args.max_length,
+        val_df["cleansed"].tolist(), val_df["label"].tolist(), tokenizer, args.max_length,
     )
     test_dataset = CyberbullyDataset(
-        test_df["text"].tolist(), test_df["label"].tolist(), tokenizer, args.max_length,
+        test_df["cleansed"].tolist(), test_df["label"].tolist(), tokenizer, args.max_length,
     )
 
     logger.info(
@@ -297,7 +297,7 @@ def main():
             id2label=id2label,
             device=device,
             output_dir=output_dir,
-            texts=test_df["text"].tolist(),
+            texts=test_df["cleansed"].tolist(),
         )
 
     # --- Integrated Gradients Attribution ---
@@ -306,7 +306,7 @@ def main():
         compute_attributions(
             model=model,
             tokenizer=tokenizer,
-            test_texts=test_df["text"].tolist(),
+            test_texts=test_df["cleansed"].tolist(),
             test_labels=test_df["label"].tolist(),
             id2label=id2label,
             device=device,
