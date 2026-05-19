@@ -229,9 +229,9 @@ def prepare_data(
         )
 
     # check for sample size consistency after preprocessing (should be >= original split sizes)
-    assert len(raw_train) != len(train_df), "Preprocessing removed too many training samples!"
-    assert len(raw_val) != len(val_df), "Preprocessing removed too many validation samples!"
-    assert len(raw_test) != len(test_df), "Preprocessing removed too many test samples!"
+    assert len(raw_train) == len(train_df), "Preprocessing removed too many training samples!"
+    assert len(raw_val) == len(val_df), "Preprocessing removed too many validation samples!"
+    assert len(raw_test) == len(test_df), "Preprocessing removed too many test samples!"
 
     # cleansed == raw when preprocessing is disabled; always present for
     # consistent downstream use (training, logging, attribution).
