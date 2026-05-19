@@ -1,0 +1,34 @@
+2026-05-18 21:56:56,210 - cyberbully - INFO - Model 'all-distilroberta-v1' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-05-18 21:56:56,210 - cyberbully - INFO - ============================================================
+2026-05-18 21:56:56,210 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-05-18 21:56:56,210 - cyberbully - INFO - ============================================================
+2026-05-18 21:56:56,210 - cyberbully - INFO - Configuration:
+2026-05-18 21:56:56,210 - cyberbully - INFO -   model          : all-distilroberta-v1
+2026-05-18 21:56:56,210 - cyberbully - INFO -   dataset        : kaggle
+2026-05-18 21:56:56,210 - cyberbully - INFO -   preprocess     : True
+2026-05-18 21:56:56,210 - cyberbully - INFO -   augment        : False
+2026-05-18 21:56:56,210 - cyberbully - INFO -   compute_attribution: False
+2026-05-18 21:56:56,210 - cyberbully - INFO -   seed           : 70681460
+2026-05-18 21:56:56,210 - cyberbully - INFO -   epochs         : 10
+2026-05-18 21:56:56,210 - cyberbully - INFO -   batch_size     : 32
+2026-05-18 21:56:56,210 - cyberbully - INFO -   lr             : 5e-05
+2026-05-18 21:56:56,210 - cyberbully - INFO -   max_length     : 128
+2026-05-18 21:56:56,210 - cyberbully - INFO -   output_dir     : verification
+2026-05-18 21:56:56,210 - cyberbully - INFO -   data_dir       : dataset
+2026-05-18 21:56:56,210 - cyberbully - INFO -   sbert          : True
+2026-05-18 21:56:56,210 - cyberbully - INFO -   supcon         : False
+2026-05-18 21:56:56,210 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-05-18 21:56:56,210 - cyberbully - INFO -   proj_dim       : 128
+2026-05-18 21:56:56,210 - cyberbully - INFO -   grad_accum_steps: 1
+2026-05-18 21:56:56,210 - cyberbully - INFO -   overwrite      : True
+2026-05-18 21:56:56,210 - cyberbully - INFO -   device         : cuda
+2026-05-18 21:56:56,210 - cyberbully - INFO -   output_dir     : experiments/verification/all-distilroberta-v1/kaggle/prep1_aug0/seed_70681460
+2026-05-18 21:56:56,210 - cyberbully - INFO - ============================================================
+2026-05-18 21:56:56,210 - cyberbully - INFO - Step 1: Preparing data...
+2026-05-18 21:56:56,261 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-05-18 21:56:56,261 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-05-18 21:56:56,262 - cyberbully - INFO - Applying text preprocessing per split...
+2026-05-18 21:57:41,801 - cyberbully - INFO - After preprocessing -- train: 23520, val: 5969, test: 7401
+2026-05-18 21:57:41,804 - cyberbully - INFO - Number of classes: 5
+2026-05-18 21:57:41,805 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-05-18 21:57:41,805 - cyberbully - INFO - Loading model 'all-distilroberta-v1' with 5 labels (sbert=True, supcon=False)

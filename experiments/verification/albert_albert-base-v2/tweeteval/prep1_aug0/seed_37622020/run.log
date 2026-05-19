@@ -1,0 +1,61 @@
+2026-05-19 04:49:20,717 - cyberbully - INFO - ============================================================
+2026-05-19 04:49:20,717 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-05-19 04:49:20,717 - cyberbully - INFO - ============================================================
+2026-05-19 04:49:20,717 - cyberbully - INFO - Configuration:
+2026-05-19 04:49:20,717 - cyberbully - INFO -   model          : albert/albert-base-v2
+2026-05-19 04:49:20,717 - cyberbully - INFO -   dataset        : tweeteval
+2026-05-19 04:49:20,717 - cyberbully - INFO -   preprocess     : True
+2026-05-19 04:49:20,717 - cyberbully - INFO -   augment        : False
+2026-05-19 04:49:20,717 - cyberbully - INFO -   compute_attribution: False
+2026-05-19 04:49:20,717 - cyberbully - INFO -   seed           : 37622020
+2026-05-19 04:49:20,717 - cyberbully - INFO -   epochs         : 10
+2026-05-19 04:49:20,717 - cyberbully - INFO -   batch_size     : 32
+2026-05-19 04:49:20,717 - cyberbully - INFO -   lr             : 5e-05
+2026-05-19 04:49:20,718 - cyberbully - INFO -   max_length     : 128
+2026-05-19 04:49:20,718 - cyberbully - INFO -   output_dir     : verification
+2026-05-19 04:49:20,718 - cyberbully - INFO -   data_dir       : dataset
+2026-05-19 04:49:20,718 - cyberbully - INFO -   sbert          : False
+2026-05-19 04:49:20,718 - cyberbully - INFO -   supcon         : False
+2026-05-19 04:49:20,718 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-05-19 04:49:20,718 - cyberbully - INFO -   proj_dim       : 128
+2026-05-19 04:49:20,718 - cyberbully - INFO -   grad_accum_steps: 1
+2026-05-19 04:49:20,718 - cyberbully - INFO -   overwrite      : True
+2026-05-19 04:49:20,718 - cyberbully - INFO -   device         : cuda
+2026-05-19 04:49:20,718 - cyberbully - INFO -   output_dir     : experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020
+2026-05-19 04:49:20,718 - cyberbully - INFO - ============================================================
+2026-05-19 04:49:20,718 - cyberbully - INFO - Step 1: Preparing data...
+2026-05-19 04:49:20,770 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-05-19 04:49:20,770 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-05-19 04:49:20,771 - cyberbully - INFO - Applying text preprocessing per split...
+2026-05-19 04:50:19,051 - cyberbully - INFO - After preprocessing -- train: 30337, val: 7601, test: 9465
+2026-05-19 04:50:19,054 - cyberbully - INFO - Number of classes: 5
+2026-05-19 04:50:19,055 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-05-19 04:50:19,055 - cyberbully - INFO - Loading model 'albert/albert-base-v2' with 5 labels (sbert=False, supcon=False)
+2026-05-19 04:50:19,944 - cyberbully - INFO - Step 3: Creating datasets...
+2026-05-19 04:50:20,846 - cyberbully - INFO - Dataset sizes — train: 30337, val: 7601, test: 9465
+2026-05-19 04:50:20,847 - cyberbully - INFO - Step 4: Training...
+2026-05-19 04:50:20,958 - cyberbully - INFO - Starting training...
+2026-05-19 05:05:43,717 - cyberbully - INFO - Training complete.
+2026-05-19 05:05:43,726 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-4745
+2026-05-19 05:05:43,737 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-9490
+2026-05-19 05:05:43,747 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-7592
+2026-05-19 05:05:43,757 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-6643
+2026-05-19 05:05:43,767 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-3796
+2026-05-19 05:05:43,776 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-2847
+2026-05-19 05:05:43,786 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-1898
+2026-05-19 05:05:43,795 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-5694
+2026-05-19 05:05:43,804 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-8541
+2026-05-19 05:05:43,814 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/checkpoint-949
+2026-05-19 05:05:43,814 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-05-19 05:05:58,963 - cyberbully - INFO - Metrics saved to experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/metrics.json
+2026-05-19 05:05:58,963 - cyberbully - INFO - Confusion matrix saved to experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/confusion_matrix.json
+2026-05-19 05:05:59,057 - cyberbully - INFO - Per-sample predictions saved to experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/predictions.json
+2026-05-19 05:05:59,166 - cyberbully - INFO - Confusion matrix figure saved to experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020/confusion_matrix.pdf
+2026-05-19 05:05:59,166 - cyberbully - INFO - Accuracy: 0.9419
+2026-05-19 05:05:59,166 - cyberbully - INFO - Weighted F1: 0.9417
+2026-05-19 05:05:59,166 - cyberbully - INFO - Micro F1: 0.9419
+2026-05-19 05:05:59,166 - cyberbully - INFO - Inference time: 9.05 seconds
+2026-05-19 05:05:59,166 - cyberbully - INFO - Energy consumption: 0.000498 kWh
+2026-05-19 05:05:59,167 - cyberbully - INFO - ============================================================
+2026-05-19 05:05:59,167 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/verification/albert_albert-base-v2/tweeteval/prep1_aug0/seed_37622020
+2026-05-19 05:05:59,167 - cyberbully - INFO - ============================================================

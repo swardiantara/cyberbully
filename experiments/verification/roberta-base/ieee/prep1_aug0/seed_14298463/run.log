@@ -1,0 +1,29 @@
+2026-05-19 11:54:41,018 - cyberbully - INFO - ============================================================
+2026-05-19 11:54:41,018 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-05-19 11:54:41,018 - cyberbully - INFO - ============================================================
+2026-05-19 11:54:41,018 - cyberbully - INFO - Configuration:
+2026-05-19 11:54:41,018 - cyberbully - INFO -   model          : roberta-base
+2026-05-19 11:54:41,018 - cyberbully - INFO -   dataset        : ieee
+2026-05-19 11:54:41,018 - cyberbully - INFO -   preprocess     : True
+2026-05-19 11:54:41,018 - cyberbully - INFO -   augment        : False
+2026-05-19 11:54:41,018 - cyberbully - INFO -   compute_attribution: False
+2026-05-19 11:54:41,018 - cyberbully - INFO -   seed           : 14298463
+2026-05-19 11:54:41,018 - cyberbully - INFO -   epochs         : 10
+2026-05-19 11:54:41,018 - cyberbully - INFO -   batch_size     : 32
+2026-05-19 11:54:41,018 - cyberbully - INFO -   lr             : 5e-05
+2026-05-19 11:54:41,018 - cyberbully - INFO -   max_length     : 128
+2026-05-19 11:54:41,018 - cyberbully - INFO -   output_dir     : verification
+2026-05-19 11:54:41,018 - cyberbully - INFO -   data_dir       : dataset
+2026-05-19 11:54:41,018 - cyberbully - INFO -   sbert          : False
+2026-05-19 11:54:41,018 - cyberbully - INFO -   supcon         : False
+2026-05-19 11:54:41,018 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-05-19 11:54:41,018 - cyberbully - INFO -   proj_dim       : 128
+2026-05-19 11:54:41,018 - cyberbully - INFO -   grad_accum_steps: 1
+2026-05-19 11:54:41,018 - cyberbully - INFO -   overwrite      : True
+2026-05-19 11:54:41,018 - cyberbully - INFO -   device         : cuda
+2026-05-19 11:54:41,018 - cyberbully - INFO -   output_dir     : experiments/verification/roberta-base/ieee/prep1_aug0/seed_14298463
+2026-05-19 11:54:41,018 - cyberbully - INFO - ============================================================
+2026-05-19 11:54:41,018 - cyberbully - INFO - Step 1: Preparing data...
+2026-05-19 11:54:41,022 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-05-19 11:54:41,022 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-05-19 11:54:41,023 - cyberbully - INFO - Applying text preprocessing per split...

@@ -1,0 +1,61 @@
+2026-05-18 19:52:47,690 - cyberbully - INFO - ============================================================
+2026-05-18 19:52:47,690 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-05-18 19:52:47,690 - cyberbully - INFO - ============================================================
+2026-05-18 19:52:47,690 - cyberbully - INFO - Configuration:
+2026-05-18 19:52:47,690 - cyberbully - INFO -   model          : roberta-base
+2026-05-18 19:52:47,690 - cyberbully - INFO -   dataset        : kaggle
+2026-05-18 19:52:47,690 - cyberbully - INFO -   preprocess     : True
+2026-05-18 19:52:47,690 - cyberbully - INFO -   augment        : False
+2026-05-18 19:52:47,690 - cyberbully - INFO -   compute_attribution: False
+2026-05-18 19:52:47,690 - cyberbully - INFO -   seed           : 14298463
+2026-05-18 19:52:47,690 - cyberbully - INFO -   epochs         : 10
+2026-05-18 19:52:47,690 - cyberbully - INFO -   batch_size     : 32
+2026-05-18 19:52:47,690 - cyberbully - INFO -   lr             : 5e-05
+2026-05-18 19:52:47,690 - cyberbully - INFO -   max_length     : 128
+2026-05-18 19:52:47,690 - cyberbully - INFO -   output_dir     : verification
+2026-05-18 19:52:47,690 - cyberbully - INFO -   data_dir       : dataset
+2026-05-18 19:52:47,690 - cyberbully - INFO -   sbert          : False
+2026-05-18 19:52:47,690 - cyberbully - INFO -   supcon         : False
+2026-05-18 19:52:47,690 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-05-18 19:52:47,690 - cyberbully - INFO -   proj_dim       : 128
+2026-05-18 19:52:47,691 - cyberbully - INFO -   grad_accum_steps: 1
+2026-05-18 19:52:47,691 - cyberbully - INFO -   overwrite      : True
+2026-05-18 19:52:47,691 - cyberbully - INFO -   device         : cuda
+2026-05-18 19:52:47,691 - cyberbully - INFO -   output_dir     : experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463
+2026-05-18 19:52:47,691 - cyberbully - INFO - ============================================================
+2026-05-18 19:52:47,691 - cyberbully - INFO - Step 1: Preparing data...
+2026-05-18 19:52:47,843 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-05-18 19:52:47,844 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-05-18 19:52:47,845 - cyberbully - INFO - Applying text preprocessing per split...
+2026-05-18 19:53:39,674 - cyberbully - INFO - After preprocessing -- train: 23517, val: 5962, test: 7406
+2026-05-18 19:53:39,677 - cyberbully - INFO - Number of classes: 5
+2026-05-18 19:53:39,678 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-05-18 19:53:39,678 - cyberbully - INFO - Loading model 'roberta-base' with 5 labels (sbert=False, supcon=False)
+2026-05-18 19:53:40,600 - cyberbully - INFO - Step 3: Creating datasets...
+2026-05-18 19:53:41,109 - cyberbully - INFO - Dataset sizes — train: 23517, val: 5962, test: 7406
+2026-05-18 19:53:41,109 - cyberbully - INFO - Step 4: Training...
+2026-05-18 19:53:41,296 - cyberbully - INFO - Starting training...
+2026-05-18 20:03:54,088 - cyberbully - INFO - Training complete.
+2026-05-18 20:03:54,178 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-5145
+2026-05-18 20:03:54,272 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-6615
+2026-05-18 20:03:54,383 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-7350
+2026-05-18 20:03:54,475 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-2205
+2026-05-18 20:03:54,568 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-1470
+2026-05-18 20:03:54,660 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-2940
+2026-05-18 20:03:54,750 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-5880
+2026-05-18 20:03:54,843 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-735
+2026-05-18 20:03:54,933 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-3675
+2026-05-18 20:03:55,023 - cyberbully - INFO - Removed checkpoint: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/checkpoint-4410
+2026-05-18 20:03:55,023 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-05-18 20:04:05,088 - cyberbully - INFO - Metrics saved to experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/metrics.json
+2026-05-18 20:04:05,088 - cyberbully - INFO - Confusion matrix saved to experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/confusion_matrix.json
+2026-05-18 20:04:05,169 - cyberbully - INFO - Per-sample predictions saved to experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/predictions.json
+2026-05-18 20:04:05,288 - cyberbully - INFO - Confusion matrix figure saved to experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463/confusion_matrix.pdf
+2026-05-18 20:04:05,288 - cyberbully - INFO - Accuracy: 0.9518
+2026-05-18 20:04:05,289 - cyberbully - INFO - Weighted F1: 0.9518
+2026-05-18 20:04:05,289 - cyberbully - INFO - Micro F1: 0.9518
+2026-05-18 20:04:05,289 - cyberbully - INFO - Inference time: 4.01 seconds
+2026-05-18 20:04:05,289 - cyberbully - INFO - Energy consumption: 0.000225 kWh
+2026-05-18 20:04:05,290 - cyberbully - INFO - ============================================================
+2026-05-18 20:04:05,290 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/verification/roberta-base/kaggle/prep1_aug0/seed_14298463
+2026-05-18 20:04:05,290 - cyberbully - INFO - ============================================================
