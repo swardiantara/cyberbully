@@ -182,6 +182,6 @@ def preprocess_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """Apply cleaning to the 'text' column, drop empty rows and duplicates."""
     df = df.copy()
     df["text"] = df["text"].apply(clean_tweet)
-    df = df[df["text"].str.strip().astype(bool)].reset_index(drop=True)
+    df = df[df["text"].str.strip().astype(bool)].reset_index(drop=False)
     # df = df.drop_duplicates(subset=["text"]).reset_index(drop=True)
     return df
