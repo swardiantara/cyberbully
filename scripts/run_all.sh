@@ -30,20 +30,20 @@ MODELS=(
     # "all-distilroberta-v1" # done
     # "Twitter/twhin-bert-base" # done
     # "albert/albert-base-v2"     # done
-    "bert-base-cased"           # cased variant — investigate case sensitivity
-    "xlnet-base-cased"
-    "bert-base-uncased"           # PC-AJK
-    "distilbert-base-cased"     # cased variant — investigate case sensitivity
-    "distilbert-base-uncased"
-    "distilbert-base-uncased"
-    "gpt2"                      # ww-pc
-    # "google/mobilebert-uncased"   # PC-AJK
-    # "vinai/bertweet-base"
-    # "sarkerlab/SocBERT-base"
-    # "GroNLP/hateBERT"
-    # "all-mpnet-base-v2"
-    # "all-MiniLM-L6-v2"
-    # "all-MiniLM-L12-v2"
+    # "bert-base-cased"           # cased variant — investigate case sensitivity
+    # "xlnet-base-cased"
+    # "bert-base-uncased"           # PC-AJK
+    # "distilbert-base-cased"     # cased variant — investigate case sensitivity
+    # "distilbert-base-uncased"
+    # "distilbert-base-uncased"
+    # "gpt2"                      # ww-pc
+    "google/mobilebert-uncased"   # PC-AJK
+    "vinai/bertweet-base"
+    "sarkerlab/SocBERT-base"
+    "GroNLP/hateBERT"
+    "all-mpnet-base-v2"
+    "all-MiniLM-L6-v2"
+    "all-MiniLM-L12-v2"
 )
 
 DATASETS=(
