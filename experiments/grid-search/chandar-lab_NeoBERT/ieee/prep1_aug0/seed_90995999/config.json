@@ -9,16 +9,16 @@
   "batch_size": 32,
   "lr": 5e-05,
   "max_length": 128,
-  "output_dir": "grid-search",
+  "output_dir": "verification",
   "data_dir": "dataset",
   "sbert": false,
   "supcon": false,
   "supcon_weight": 0.1,
   "proj_dim": 128,
   "grad_accum_steps": 1,
-  "overwrite": false,
+  "overwrite": true,
   "device": "cuda",
-  "output_dir_resolved": "experiments/grid-search/chandar-lab_NeoBERT/ieee/prep1_aug0/seed_90995999",
+  "output_dir_resolved": "experiments/verification/chandar-lab_NeoBERT/ieee/prep1_aug0/seed_90995999",
   "dataset_statistics": {
     "num_classes": 5,
     "label_mapping": {
@@ -32,20 +32,20 @@
       "num_samples": 1175,
       "class_distribution": {
         "Cyberstalking": 172,
-        "Doxing": 234,
+        "Doxing": 233,
         "Revenge Porn": 227,
-        "Sexual Harassment": 256,
-        "Slut Shaming": 286
+        "Sexual Harassment": 254,
+        "Slut Shaming": 289
       }
     },
     "val": {
       "num_samples": 304,
       "class_distribution": {
         "Cyberstalking": 40,
-        "Doxing": 65,
+        "Doxing": 64,
         "Revenge Porn": 58,
         "Sexual Harassment": 69,
-        "Slut Shaming": 72
+        "Slut Shaming": 73
       }
     },
     "test": {
