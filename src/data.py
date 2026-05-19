@@ -207,7 +207,7 @@ def prepare_data(
         label2id = {label: idx for idx, label in enumerate(unique_labels)}
         train_df, val_df, test_df = split_data(df)
         _save_splits(data_dir, dataset_name, train_df, val_df, test_df, label2id)
-
+    raw_train, raw_val, raw_test = train_df, val_df, test_df
     id2label = {idx: label for label, idx in label2id.items()}
     logger.info("Label mapping: %s", label2id)
 
@@ -227,6 +227,11 @@ def prepare_data(
             "After preprocessing -- train: %d, val: %d, test: %d",
             len(train_df), len(val_df), len(test_df),
         )
+
+    # check for sample size consistency after preprocessing (should be >= original split sizes)
+    assert len(raw_train) != len(train_df), "Preprocessing removed too many training samples!"
+    assert len(raw_val) != len(val_df), "Preprocessing removed too many validation samples!"
+    assert len(raw_test) != len(test_df), "Preprocessing removed too many test samples!"
 
     # cleansed == raw when preprocessing is disabled; always present for
     # consistent downstream use (training, logging, attribution).

@@ -158,7 +158,7 @@ def clean_tweet(tweet: str) -> str:
     """Apply the full text cleaning pipeline to a single tweet."""
     if not isinstance(tweet, str):
         tweet = str(tweet)
-    tweet = filter_non_english(tweet)
+    # tweet = filter_non_english(tweet)
     tweet = strip_emoji(tweet)
     tweet = expand_contractions_text(tweet)
     tweet = strip_all_entities(tweet)
@@ -173,7 +173,7 @@ def clean_tweet(tweet: str) -> str:
     tweet = remove_extra_whitespace(tweet)
     tweet = remove_url_shorteners(tweet)
     tweet = remove_spaces_tweets(tweet)
-    tweet = remove_short_tweets(tweet)
+    # tweet = remove_short_tweets(tweet)
     tweet = " ".join(tweet.split())
     return tweet
 
@@ -183,5 +183,5 @@ def preprocess_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     df["text"] = df["text"].apply(clean_tweet)
     df = df[df["text"].str.strip().astype(bool)].reset_index(drop=True)
-    df = df.drop_duplicates(subset=["text"]).reset_index(drop=True)
+    # df = df.drop_duplicates(subset=["text"]).reset_index(drop=True)
     return df
