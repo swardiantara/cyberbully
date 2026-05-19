@@ -24,26 +24,26 @@ OVERWRITE=0
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    # "answerdotai/ModernBERT-base"
-    # "chandar-lab/NeoBERT"
-    "roberta-base"
-    "all-distilroberta-v1"
-    "Twitter/twhin-bert-base"
-    "albert/albert-base-v2"     # ww-pc
+    # "answerdotai/ModernBERT-base" # done
+    # "chandar-lab/NeoBERT" # done
+    # "roberta-base" # done
+    # "all-distilroberta-v1" # done
+    # "Twitter/twhin-bert-base" # done
+    # "albert/albert-base-v2"     # done
+    "bert-base-cased"           # cased variant — investigate case sensitivity
+    "xlnet-base-cased"
+    "bert-base-uncased"           # PC-AJK
+    "distilbert-base-cased"     # cased variant — investigate case sensitivity
+    "distilbert-base-uncased"
+    "distilbert-base-uncased"
+    "gpt2"                      # ww-pc
+    # "google/mobilebert-uncased"   # PC-AJK
+    # "vinai/bertweet-base"
+    # "sarkerlab/SocBERT-base"
+    # "GroNLP/hateBERT"
     # "all-mpnet-base-v2"
     # "all-MiniLM-L6-v2"
     # "all-MiniLM-L12-v2"
-    # "sarkerlab/SocBERT-base"
-    # "gpt2"                      # ww-pc
-    # "xlnet-base-cased"
-    # "bert-base-uncased"           # PC-AJK
-    # "distilbert-base-uncased"
-    # "vinai/bertweet-base"
-    # "google/mobilebert-uncased"   # PC-AJK
-    # "bert-base-cased"           # cased variant — investigate case sensitivity
-    # "distilbert-base-cased"     # cased variant — investigate case sensitivity
-    # "distilbert-base-uncased"
-    # "GroNLP/hateBERT"
 )
 
 DATASETS=(
@@ -59,7 +59,7 @@ LR=5e-5
 MAX_LENGTH=128
 
 # Directories
-OUTPUT_DIR="verification"
+OUTPUT_DIR="grid-search" # "supcon-grid"
 DATA_DIR="dataset"
 
 # --- Run experiments ---
