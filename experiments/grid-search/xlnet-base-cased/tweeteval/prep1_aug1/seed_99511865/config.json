@@ -5,14 +5,18 @@
   "augment": true,
   "compute_attribution": false,
   "seed": 99511865,
-  "epochs": 5,
-  "batch_size": 16,
-  "lr": 2e-05,
+  "epochs": 10,
+  "batch_size": 32,
+  "lr": 5e-05,
   "max_length": 128,
   "output_dir": "grid-search",
   "data_dir": "dataset",
   "sbert": false,
-  "overwrite": false,
+  "supcon": false,
+  "supcon_weight": 0.1,
+  "proj_dim": 128,
+  "grad_accum_steps": 1,
+  "overwrite": true,
   "device": "cuda",
   "output_dir_resolved": "experiments/grid-search/xlnet-base-cased/tweeteval/prep1_aug1/seed_99511865",
   "dataset_statistics": {
@@ -25,33 +29,33 @@
       "spiritual": 4
     },
     "train": {
-      "num_samples": 38775,
+      "num_samples": 38825,
       "class_distribution": {
-        "emotion": 7755,
-        "hate": 7755,
-        "offensive": 7755,
-        "religion": 7755,
-        "spiritual": 7755
+        "emotion": 7765,
+        "hate": 7765,
+        "offensive": 7765,
+        "religion": 7765,
+        "spiritual": 7765
       }
     },
     "val": {
-      "num_samples": 7586,
+      "num_samples": 7619,
       "class_distribution": {
-        "emotion": 743,
-        "hate": 1939,
-        "offensive": 1912,
-        "religion": 1624,
-        "spiritual": 1368
+        "emotion": 746,
+        "hate": 1955,
+        "offensive": 1922,
+        "religion": 1620,
+        "spiritual": 1376
       }
     },
     "test": {
-      "num_samples": 9482,
+      "num_samples": 9471,
       "class_distribution": {
-        "emotion": 929,
-        "hate": 2424,
-        "offensive": 2389,
-        "religion": 2030,
-        "spiritual": 1710
+        "emotion": 937,
+        "hate": 2408,
+        "offensive": 2369,
+        "religion": 2043,
+        "spiritual": 1714
       }
     }
   }

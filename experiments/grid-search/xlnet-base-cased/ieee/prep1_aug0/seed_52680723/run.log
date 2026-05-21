@@ -1,0 +1,61 @@
+2026-05-19 23:46:58,239 - cyberbully - INFO - ============================================================
+2026-05-19 23:46:58,239 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-05-19 23:46:58,239 - cyberbully - INFO - ============================================================
+2026-05-19 23:46:58,239 - cyberbully - INFO - Configuration:
+2026-05-19 23:46:58,239 - cyberbully - INFO -   model          : xlnet-base-cased
+2026-05-19 23:46:58,239 - cyberbully - INFO -   dataset        : ieee
+2026-05-19 23:46:58,239 - cyberbully - INFO -   preprocess     : True
+2026-05-19 23:46:58,239 - cyberbully - INFO -   augment        : False
+2026-05-19 23:46:58,239 - cyberbully - INFO -   compute_attribution: False
+2026-05-19 23:46:58,239 - cyberbully - INFO -   seed           : 52680723
+2026-05-19 23:46:58,239 - cyberbully - INFO -   epochs         : 10
+2026-05-19 23:46:58,239 - cyberbully - INFO -   batch_size     : 32
+2026-05-19 23:46:58,239 - cyberbully - INFO -   lr             : 5e-05
+2026-05-19 23:46:58,239 - cyberbully - INFO -   max_length     : 128
+2026-05-19 23:46:58,239 - cyberbully - INFO -   output_dir     : grid-search
+2026-05-19 23:46:58,239 - cyberbully - INFO -   data_dir       : dataset
+2026-05-19 23:46:58,239 - cyberbully - INFO -   sbert          : False
+2026-05-19 23:46:58,239 - cyberbully - INFO -   supcon         : False
+2026-05-19 23:46:58,239 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-05-19 23:46:58,239 - cyberbully - INFO -   proj_dim       : 128
+2026-05-19 23:46:58,239 - cyberbully - INFO -   grad_accum_steps: 1
+2026-05-19 23:46:58,239 - cyberbully - INFO -   overwrite      : True
+2026-05-19 23:46:58,239 - cyberbully - INFO -   device         : cuda
+2026-05-19 23:46:58,239 - cyberbully - INFO -   output_dir     : experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723
+2026-05-19 23:46:58,239 - cyberbully - INFO - ============================================================
+2026-05-19 23:46:58,239 - cyberbully - INFO - Step 1: Preparing data...
+2026-05-19 23:46:58,243 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-05-19 23:46:58,243 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-05-19 23:46:58,244 - cyberbully - INFO - Applying text preprocessing per split...
+2026-05-19 23:46:58,942 - cyberbully - INFO - After preprocessing -- train: 1348, val: 338, test: 422
+2026-05-19 23:46:58,945 - cyberbully - INFO - Number of classes: 5
+2026-05-19 23:46:58,946 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-05-19 23:46:58,946 - cyberbully - INFO - Loading model 'xlnet-base-cased' with 5 labels (sbert=False, supcon=False)
+2026-05-19 23:47:01,261 - cyberbully - INFO - Step 3: Creating datasets...
+2026-05-19 23:47:01,286 - cyberbully - INFO - Dataset sizes — train: 1348, val: 338, test: 422
+2026-05-19 23:47:01,286 - cyberbully - INFO - Step 4: Training...
+2026-05-19 23:47:01,442 - cyberbully - INFO - Starting training...
+2026-05-19 23:47:55,949 - cyberbully - INFO - Training complete.
+2026-05-19 23:47:56,057 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-215
+2026-05-19 23:47:56,164 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-387
+2026-05-19 23:47:56,262 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-86
+2026-05-19 23:47:56,357 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-129
+2026-05-19 23:47:56,463 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-344
+2026-05-19 23:47:56,571 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-258
+2026-05-19 23:47:56,679 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-43
+2026-05-19 23:47:56,787 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-301
+2026-05-19 23:47:57,286 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-172
+2026-05-19 23:47:57,393 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/checkpoint-430
+2026-05-19 23:47:57,393 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-05-19 23:48:03,831 - cyberbully - INFO - Metrics saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/metrics.json
+2026-05-19 23:48:03,832 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/confusion_matrix.json
+2026-05-19 23:48:03,836 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/predictions.json
+2026-05-19 23:48:03,956 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723/confusion_matrix.pdf
+2026-05-19 23:48:03,957 - cyberbully - INFO - Accuracy: 0.8152
+2026-05-19 23:48:03,957 - cyberbully - INFO - Weighted F1: 0.8152
+2026-05-19 23:48:03,957 - cyberbully - INFO - Micro F1: 0.8152
+2026-05-19 23:48:03,957 - cyberbully - INFO - Inference time: 0.36 seconds
+2026-05-19 23:48:03,957 - cyberbully - INFO - Energy consumption: 0.000031 kWh
+2026-05-19 23:48:03,957 - cyberbully - INFO - ============================================================
+2026-05-19 23:48:03,957 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug0/seed_52680723
+2026-05-19 23:48:03,957 - cyberbully - INFO - ============================================================

@@ -1,50 +1,63 @@
-2026-02-19 02:19:47,263 - cyberbully - INFO - ============================================================
-2026-02-19 02:19:47,263 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-19 02:19:47,263 - cyberbully - INFO - ============================================================
-2026-02-19 02:19:47,263 - cyberbully - INFO - Configuration:
-2026-02-19 02:19:47,263 - cyberbully - INFO -   model          : xlnet-base-cased
-2026-02-19 02:19:47,263 - cyberbully - INFO -   dataset        : ieee
-2026-02-19 02:19:47,263 - cyberbully - INFO -   preprocess     : True
-2026-02-19 02:19:47,263 - cyberbully - INFO -   augment        : True
-2026-02-19 02:19:47,263 - cyberbully - INFO -   compute_attribution: False
-2026-02-19 02:19:47,263 - cyberbully - INFO -   seed           : 52680723
-2026-02-19 02:19:47,263 - cyberbully - INFO -   epochs         : 5
-2026-02-19 02:19:47,263 - cyberbully - INFO -   batch_size     : 16
-2026-02-19 02:19:47,263 - cyberbully - INFO -   lr             : 2e-05
-2026-02-19 02:19:47,263 - cyberbully - INFO -   max_length     : 128
-2026-02-19 02:19:47,263 - cyberbully - INFO -   output_dir     : grid-search
-2026-02-19 02:19:47,263 - cyberbully - INFO -   data_dir       : dataset
-2026-02-19 02:19:47,263 - cyberbully - INFO -   sbert          : False
-2026-02-19 02:19:47,263 - cyberbully - INFO -   overwrite      : False
-2026-02-19 02:19:47,263 - cyberbully - INFO -   device         : cuda
-2026-02-19 02:19:47,263 - cyberbully - INFO -   output_dir     : experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723
-2026-02-19 02:19:47,263 - cyberbully - INFO - ============================================================
-2026-02-19 02:19:47,263 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-19 02:19:47,263 - cyberbully - INFO - Loading dataset 'ieee' from dataset/IEEE Data Port.csv
-2026-02-19 02:19:47,269 - cyberbully - INFO - Loaded 2108 samples with 5 classes: ['Cyberstalking', 'Doxing', 'Revenge Porn', 'Sexual Harassment', 'Slut Shaming']
-2026-02-19 02:19:47,269 - cyberbully - INFO - Applying text preprocessing...
-2026-02-19 02:19:50,337 - cyberbully - INFO - After preprocessing: 1813 samples remain
-2026-02-19 02:19:50,337 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
-2026-02-19 02:19:50,339 - cyberbully - INFO - Split sizes — train: 1160, val: 290, test: 363
-2026-02-19 02:19:50,339 - cyberbully - INFO - Applying training data augmentation (oversampling)...
-2026-02-19 02:19:50,340 - cyberbully - INFO - After oversampling — class distribution: {0: 286, 1: 286, 2: 286, 3: 286, 4: 286}
-2026-02-19 02:19:50,340 - cyberbully - INFO - Number of classes: 5
-2026-02-19 02:19:50,341 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-19 02:19:50,341 - cyberbully - INFO - Loading model 'xlnet-base-cased' with 5 labels (sbert=False)
-2026-02-19 02:19:52,265 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-19 02:19:52,287 - cyberbully - INFO - Dataset sizes — train: 1430, val: 290, test: 363
-2026-02-19 02:19:52,287 - cyberbully - INFO - Step 4: Training...
-2026-02-19 02:19:52,416 - cyberbully - INFO - Starting training...
-2026-02-19 02:20:18,357 - cyberbully - INFO - Training complete.
-2026-02-19 02:20:18,357 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-19 02:20:22,885 - cyberbully - INFO - Metrics saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/metrics.json
-2026-02-19 02:20:22,885 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/confusion_matrix.json
-2026-02-19 02:20:22,990 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/confusion_matrix.pdf
-2026-02-19 02:20:22,990 - cyberbully - INFO - Accuracy: 0.8320
-2026-02-19 02:20:22,991 - cyberbully - INFO - Weighted F1: 0.8324
-2026-02-19 02:20:22,991 - cyberbully - INFO - Micro F1: 0.8320
-2026-02-19 02:20:22,991 - cyberbully - INFO - Inference time: 0.30 seconds
-2026-02-19 02:20:22,991 - cyberbully - INFO - Energy consumption: 0.000014 kWh
-2026-02-19 02:20:22,991 - cyberbully - INFO - ============================================================
-2026-02-19 02:20:22,991 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723
-2026-02-19 02:20:22,991 - cyberbully - INFO - ============================================================
+2026-04-17 03:08:06,968 - cyberbully - INFO - ============================================================
+2026-04-17 03:08:06,968 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-17 03:08:06,968 - cyberbully - INFO - ============================================================
+2026-04-17 03:08:06,968 - cyberbully - INFO - Configuration:
+2026-04-17 03:08:06,968 - cyberbully - INFO -   model          : xlnet-base-cased
+2026-04-17 03:08:06,968 - cyberbully - INFO -   dataset        : ieee
+2026-04-17 03:08:06,968 - cyberbully - INFO -   preprocess     : True
+2026-04-17 03:08:06,968 - cyberbully - INFO -   augment        : True
+2026-04-17 03:08:06,968 - cyberbully - INFO -   compute_attribution: False
+2026-04-17 03:08:06,968 - cyberbully - INFO -   seed           : 52680723
+2026-04-17 03:08:06,968 - cyberbully - INFO -   epochs         : 10
+2026-04-17 03:08:06,968 - cyberbully - INFO -   batch_size     : 32
+2026-04-17 03:08:06,968 - cyberbully - INFO -   lr             : 5e-05
+2026-04-17 03:08:06,968 - cyberbully - INFO -   max_length     : 128
+2026-04-17 03:08:06,968 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-17 03:08:06,968 - cyberbully - INFO -   data_dir       : dataset
+2026-04-17 03:08:06,968 - cyberbully - INFO -   sbert          : False
+2026-04-17 03:08:06,968 - cyberbully - INFO -   supcon         : False
+2026-04-17 03:08:06,968 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-17 03:08:06,968 - cyberbully - INFO -   proj_dim       : 128
+2026-04-17 03:08:06,968 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-17 03:08:06,968 - cyberbully - INFO -   overwrite      : True
+2026-04-17 03:08:06,968 - cyberbully - INFO -   device         : cuda
+2026-04-17 03:08:06,968 - cyberbully - INFO -   output_dir     : experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723
+2026-04-17 03:08:06,968 - cyberbully - INFO - ============================================================
+2026-04-17 03:08:06,968 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-17 03:08:06,972 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-04-17 03:08:06,972 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-04-17 03:08:06,972 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-17 03:08:10,138 - cyberbully - INFO - After preprocessing — train: 1176, val: 304, test: 377
+2026-04-17 03:08:10,139 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-04-17 03:08:10,140 - cyberbully - INFO - After oversampling — class distribution: {0: 289, 1: 289, 2: 289, 3: 289, 4: 289}
+2026-04-17 03:08:10,141 - cyberbully - INFO - Number of classes: 5
+2026-04-17 03:08:10,142 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-17 03:08:10,142 - cyberbully - INFO - Loading model 'xlnet-base-cased' with 5 labels (sbert=False, supcon=False)
+2026-04-17 03:08:12,434 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-17 03:08:12,455 - cyberbully - INFO - Dataset sizes — train: 1445, val: 304, test: 377
+2026-04-17 03:08:12,455 - cyberbully - INFO - Step 4: Training...
+2026-04-17 03:08:12,632 - cyberbully - INFO - Starting training...
+2026-04-17 03:10:06,319 - cyberbully - INFO - Training complete.
+2026-04-17 03:10:06,672 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-368
+2026-04-17 03:10:06,758 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-92
+2026-04-17 03:10:07,134 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-276
+2026-04-17 03:10:07,241 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-460
+2026-04-17 03:10:07,263 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-46
+2026-04-17 03:10:07,350 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-230
+2026-04-17 03:10:07,436 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-184
+2026-04-17 03:10:07,524 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-138
+2026-04-17 03:10:07,618 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-414
+2026-04-17 03:10:07,707 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/checkpoint-322
+2026-04-17 03:10:07,707 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-17 03:10:12,520 - cyberbully - INFO - Metrics saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/metrics.json
+2026-04-17 03:10:12,520 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/confusion_matrix.json
+2026-04-17 03:10:12,525 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/predictions.json
+2026-04-17 03:10:12,632 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723/confusion_matrix.pdf
+2026-04-17 03:10:12,632 - cyberbully - INFO - Accuracy: 0.7958
+2026-04-17 03:10:12,632 - cyberbully - INFO - Weighted F1: 0.7984
+2026-04-17 03:10:12,632 - cyberbully - INFO - Micro F1: 0.7958
+2026-04-17 03:10:12,632 - cyberbully - INFO - Inference time: 0.28 seconds
+2026-04-17 03:10:12,632 - cyberbully - INFO - Energy consumption: 0.000012 kWh
+2026-04-17 03:10:12,632 - cyberbully - INFO - ============================================================
+2026-04-17 03:10:12,632 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/xlnet-base-cased/ieee/prep1_aug1/seed_52680723
+2026-04-17 03:10:12,632 - cyberbully - INFO - ============================================================

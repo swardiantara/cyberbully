@@ -1,0 +1,62 @@
+2026-05-20 20:24:52,944 - cyberbully - INFO - ============================================================
+2026-05-20 20:24:52,944 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-05-20 20:24:52,944 - cyberbully - INFO - ============================================================
+2026-05-20 20:24:52,944 - cyberbully - INFO - Configuration:
+2026-05-20 20:24:52,944 - cyberbully - INFO -   model          : gpt2
+2026-05-20 20:24:52,944 - cyberbully - INFO -   dataset        : kaggle
+2026-05-20 20:24:52,944 - cyberbully - INFO -   preprocess     : True
+2026-05-20 20:24:52,944 - cyberbully - INFO -   augment        : False
+2026-05-20 20:24:52,944 - cyberbully - INFO -   compute_attribution: False
+2026-05-20 20:24:52,944 - cyberbully - INFO -   seed           : 14298463
+2026-05-20 20:24:52,944 - cyberbully - INFO -   epochs         : 10
+2026-05-20 20:24:52,944 - cyberbully - INFO -   batch_size     : 32
+2026-05-20 20:24:52,944 - cyberbully - INFO -   lr             : 5e-05
+2026-05-20 20:24:52,944 - cyberbully - INFO -   max_length     : 128
+2026-05-20 20:24:52,944 - cyberbully - INFO -   output_dir     : grid-search
+2026-05-20 20:24:52,944 - cyberbully - INFO -   data_dir       : dataset
+2026-05-20 20:24:52,944 - cyberbully - INFO -   sbert          : False
+2026-05-20 20:24:52,944 - cyberbully - INFO -   supcon         : False
+2026-05-20 20:24:52,944 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-05-20 20:24:52,944 - cyberbully - INFO -   proj_dim       : 128
+2026-05-20 20:24:52,944 - cyberbully - INFO -   grad_accum_steps: 1
+2026-05-20 20:24:52,944 - cyberbully - INFO -   overwrite      : True
+2026-05-20 20:24:52,944 - cyberbully - INFO -   device         : cuda
+2026-05-20 20:24:52,944 - cyberbully - INFO -   output_dir     : experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463
+2026-05-20 20:24:52,944 - cyberbully - INFO - ============================================================
+2026-05-20 20:24:52,944 - cyberbully - INFO - Step 1: Preparing data...
+2026-05-20 20:24:53,002 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-05-20 20:24:53,002 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-05-20 20:24:53,003 - cyberbully - INFO - Applying text preprocessing per split...
+2026-05-20 20:24:57,429 - cyberbully - INFO - After preprocessing -- train: 25604, val: 6401, test: 8002
+2026-05-20 20:24:57,433 - cyberbully - INFO - Number of classes: 5
+2026-05-20 20:24:57,434 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-05-20 20:24:57,434 - cyberbully - INFO - Loading model 'gpt2' with 5 labels (sbert=False, supcon=False)
+2026-05-20 20:24:58,430 - cyberbully - INFO - Set pad_token to eos_token ('<|endoftext|>') for model 'gpt2'
+2026-05-20 20:24:58,430 - cyberbully - INFO - Step 3: Creating datasets...
+2026-05-20 20:24:59,180 - cyberbully - INFO - Dataset sizes — train: 25604, val: 6401, test: 8002
+2026-05-20 20:24:59,180 - cyberbully - INFO - Step 4: Training...
+2026-05-20 20:24:59,359 - cyberbully - INFO - Starting training...
+2026-05-20 20:42:27,946 - cyberbully - INFO - Training complete.
+2026-05-20 20:42:28,041 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-4806
+2026-05-20 20:42:28,135 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-7209
+2026-05-20 20:42:28,229 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-6408
+2026-05-20 20:42:28,327 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-5607
+2026-05-20 20:42:28,440 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-8010
+2026-05-20 20:42:28,540 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-3204
+2026-05-20 20:42:28,644 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-1602
+2026-05-20 20:42:28,750 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-801
+2026-05-20 20:42:28,849 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-2403
+2026-05-20 20:42:28,945 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/checkpoint-4005
+2026-05-20 20:42:28,945 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-05-20 20:42:43,611 - cyberbully - INFO - Metrics saved to experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/metrics.json
+2026-05-20 20:42:43,612 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/confusion_matrix.json
+2026-05-20 20:42:43,697 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/predictions.json
+2026-05-20 20:42:43,815 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463/confusion_matrix.pdf
+2026-05-20 20:42:43,815 - cyberbully - INFO - Accuracy: 0.9438
+2026-05-20 20:42:43,815 - cyberbully - INFO - Weighted F1: 0.9437
+2026-05-20 20:42:43,816 - cyberbully - INFO - Micro F1: 0.9438
+2026-05-20 20:42:43,816 - cyberbully - INFO - Inference time: 8.44 seconds
+2026-05-20 20:42:43,816 - cyberbully - INFO - Energy consumption: 0.000454 kWh
+2026-05-20 20:42:43,817 - cyberbully - INFO - ============================================================
+2026-05-20 20:42:43,817 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/gpt2/kaggle/prep1_aug0/seed_14298463
+2026-05-20 20:42:43,817 - cyberbully - INFO - ============================================================
