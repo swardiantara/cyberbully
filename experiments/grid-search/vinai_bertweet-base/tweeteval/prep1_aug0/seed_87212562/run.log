@@ -1,0 +1,61 @@
+2026-05-20 03:59:11,383 - cyberbully - INFO - ============================================================
+2026-05-20 03:59:11,383 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-05-20 03:59:11,383 - cyberbully - INFO - ============================================================
+2026-05-20 03:59:11,383 - cyberbully - INFO - Configuration:
+2026-05-20 03:59:11,383 - cyberbully - INFO -   model          : vinai/bertweet-base
+2026-05-20 03:59:11,383 - cyberbully - INFO -   dataset        : tweeteval
+2026-05-20 03:59:11,383 - cyberbully - INFO -   preprocess     : True
+2026-05-20 03:59:11,383 - cyberbully - INFO -   augment        : False
+2026-05-20 03:59:11,383 - cyberbully - INFO -   compute_attribution: False
+2026-05-20 03:59:11,383 - cyberbully - INFO -   seed           : 87212562
+2026-05-20 03:59:11,383 - cyberbully - INFO -   epochs         : 10
+2026-05-20 03:59:11,383 - cyberbully - INFO -   batch_size     : 32
+2026-05-20 03:59:11,383 - cyberbully - INFO -   lr             : 5e-05
+2026-05-20 03:59:11,383 - cyberbully - INFO -   max_length     : 128
+2026-05-20 03:59:11,383 - cyberbully - INFO -   output_dir     : grid-search
+2026-05-20 03:59:11,383 - cyberbully - INFO -   data_dir       : dataset
+2026-05-20 03:59:11,383 - cyberbully - INFO -   sbert          : False
+2026-05-20 03:59:11,383 - cyberbully - INFO -   supcon         : False
+2026-05-20 03:59:11,383 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-05-20 03:59:11,383 - cyberbully - INFO -   proj_dim       : 128
+2026-05-20 03:59:11,383 - cyberbully - INFO -   grad_accum_steps: 1
+2026-05-20 03:59:11,383 - cyberbully - INFO -   overwrite      : True
+2026-05-20 03:59:11,383 - cyberbully - INFO -   device         : cuda
+2026-05-20 03:59:11,383 - cyberbully - INFO -   output_dir     : experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562
+2026-05-20 03:59:11,383 - cyberbully - INFO - ============================================================
+2026-05-20 03:59:11,384 - cyberbully - INFO - Step 1: Preparing data...
+2026-05-20 03:59:11,430 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-05-20 03:59:11,430 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-05-20 03:59:11,431 - cyberbully - INFO - Applying text preprocessing per split...
+2026-05-20 03:59:16,921 - cyberbully - INFO - After preprocessing -- train: 32485, val: 8122, test: 10152
+2026-05-20 03:59:16,925 - cyberbully - INFO - Number of classes: 5
+2026-05-20 03:59:16,926 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-05-20 03:59:16,926 - cyberbully - INFO - Loading model 'vinai/bertweet-base' with 5 labels (sbert=False, supcon=False)
+2026-05-20 03:59:19,440 - cyberbully - INFO - Step 3: Creating datasets...
+2026-05-20 03:59:23,335 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
+2026-05-20 03:59:23,335 - cyberbully - INFO - Step 4: Training...
+2026-05-20 03:59:23,559 - cyberbully - INFO - Starting training...
+2026-05-20 04:13:58,669 - cyberbully - INFO - Training complete.
+2026-05-20 04:13:58,745 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-3048
+2026-05-20 04:13:58,820 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-7112
+2026-05-20 04:13:58,898 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-9144
+2026-05-20 04:13:58,977 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-1016
+2026-05-20 04:13:59,054 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-2032
+2026-05-20 04:13:59,144 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-10160
+2026-05-20 04:13:59,222 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-6096
+2026-05-20 04:13:59,299 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-5080
+2026-05-20 04:13:59,374 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-8128
+2026-05-20 04:13:59,450 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/checkpoint-4064
+2026-05-20 04:13:59,450 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-05-20 04:14:11,868 - cyberbully - INFO - Metrics saved to experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/metrics.json
+2026-05-20 04:14:11,868 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/confusion_matrix.json
+2026-05-20 04:14:11,969 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/predictions.json
+2026-05-20 04:14:12,072 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562/confusion_matrix.pdf
+2026-05-20 04:14:12,072 - cyberbully - INFO - Accuracy: 0.9435
+2026-05-20 04:14:12,072 - cyberbully - INFO - Weighted F1: 0.9434
+2026-05-20 04:14:12,072 - cyberbully - INFO - Micro F1: 0.9435
+2026-05-20 04:14:12,072 - cyberbully - INFO - Inference time: 6.25 seconds
+2026-05-20 04:14:12,072 - cyberbully - INFO - Energy consumption: 0.000383 kWh
+2026-05-20 04:14:12,074 - cyberbully - INFO - ============================================================
+2026-05-20 04:14:12,074 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/vinai_bertweet-base/tweeteval/prep1_aug0/seed_87212562
+2026-05-20 04:14:12,074 - cyberbully - INFO - ============================================================

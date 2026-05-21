@@ -16,7 +16,7 @@
   "supcon_weight": 0.1,
   "proj_dim": 128,
   "grad_accum_steps": 1,
-  "overwrite": false,
+  "overwrite": true,
   "device": "cuda",
   "output_dir_resolved": "experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_37622020",
   "dataset_statistics": {
@@ -29,13 +29,13 @@
       "Slut Shaming": 4
     },
     "train": {
-      "num_samples": 1440,
+      "num_samples": 1430,
       "class_distribution": {
-        "Cyberstalking": 288,
-        "Doxing": 288,
-        "Revenge Porn": 288,
-        "Sexual Harassment": 288,
-        "Slut Shaming": 288
+        "Cyberstalking": 286,
+        "Doxing": 286,
+        "Revenge Porn": 286,
+        "Sexual Harassment": 286,
+        "Slut Shaming": 286
       }
     },
     "val": {
@@ -43,17 +43,17 @@
       "class_distribution": {
         "Cyberstalking": 40,
         "Doxing": 65,
-        "Revenge Porn": 59,
+        "Revenge Porn": 58,
         "Sexual Harassment": 69,
-        "Slut Shaming": 71
+        "Slut Shaming": 72
       }
     },
     "test": {
-      "num_samples": 378,
+      "num_samples": 377,
       "class_distribution": {
         "Cyberstalking": 57,
         "Doxing": 79,
-        "Revenge Porn": 71,
+        "Revenge Porn": 70,
         "Sexual Harassment": 82,
         "Slut Shaming": 89
       }

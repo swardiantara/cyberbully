@@ -1,50 +1,63 @@
-2026-02-19 21:56:40,900 - cyberbully - INFO - ============================================================
-2026-02-19 21:56:40,901 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-02-19 21:56:40,901 - cyberbully - INFO - ============================================================
-2026-02-19 21:56:40,901 - cyberbully - INFO - Configuration:
-2026-02-19 21:56:40,901 - cyberbully - INFO -   model          : sarkerlab/SocBERT-base
-2026-02-19 21:56:40,901 - cyberbully - INFO -   dataset        : tweeteval
-2026-02-19 21:56:40,901 - cyberbully - INFO -   preprocess     : True
-2026-02-19 21:56:40,901 - cyberbully - INFO -   augment        : True
-2026-02-19 21:56:40,901 - cyberbully - INFO -   compute_attribution: False
-2026-02-19 21:56:40,901 - cyberbully - INFO -   seed           : 90995999
-2026-02-19 21:56:40,901 - cyberbully - INFO -   epochs         : 5
-2026-02-19 21:56:40,901 - cyberbully - INFO -   batch_size     : 16
-2026-02-19 21:56:40,901 - cyberbully - INFO -   lr             : 2e-05
-2026-02-19 21:56:40,901 - cyberbully - INFO -   max_length     : 128
-2026-02-19 21:56:40,901 - cyberbully - INFO -   output_dir     : domain-model
-2026-02-19 21:56:40,901 - cyberbully - INFO -   data_dir       : dataset
-2026-02-19 21:56:40,901 - cyberbully - INFO -   sbert          : False
-2026-02-19 21:56:40,901 - cyberbully - INFO -   overwrite      : False
-2026-02-19 21:56:40,901 - cyberbully - INFO -   device         : cuda
-2026-02-19 21:56:40,901 - cyberbully - INFO -   output_dir     : experiments/domain-model/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999
-2026-02-19 21:56:40,901 - cyberbully - INFO - ============================================================
-2026-02-19 21:56:40,901 - cyberbully - INFO - Step 1: Preparing data...
-2026-02-19 21:56:40,901 - cyberbully - INFO - Loading dataset 'tweeteval' from dataset/Tweeteval.csv
-2026-02-19 21:56:40,972 - cyberbully - INFO - Loaded 50759 samples with 5 classes: ['emotion', 'hate', 'offensive', 'religion', 'spiritual']
-2026-02-19 21:56:40,972 - cyberbully - INFO - Applying text preprocessing...
-2026-02-19 21:57:36,094 - cyberbully - INFO - After preprocessing: 47374 samples remain
-2026-02-19 21:57:36,097 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
-2026-02-19 21:57:36,109 - cyberbully - INFO - Split sizes — train: 30319, val: 7580, test: 9475
-2026-02-19 21:57:36,109 - cyberbully - INFO - Applying training data augmentation (oversampling)...
-2026-02-19 21:57:36,116 - cyberbully - INFO - After oversampling — class distribution: {0: 7749, 1: 7749, 2: 7749, 3: 7749, 4: 7749}
-2026-02-19 21:57:36,117 - cyberbully - INFO - Number of classes: 5
-2026-02-19 21:57:36,118 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-02-19 21:57:36,118 - cyberbully - INFO - Loading model 'sarkerlab/SocBERT-base' with 5 labels (sbert=False)
-2026-02-19 21:57:37,302 - cyberbully - INFO - Step 3: Creating datasets...
-2026-02-19 21:57:38,199 - cyberbully - INFO - Dataset sizes — train: 38745, val: 7580, test: 9475
-2026-02-19 21:57:38,199 - cyberbully - INFO - Step 4: Training...
-2026-02-19 21:57:38,472 - cyberbully - INFO - Starting training...
-2026-02-19 22:10:31,324 - cyberbully - INFO - Training complete.
-2026-02-19 22:10:31,324 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-02-19 22:10:42,722 - cyberbully - INFO - Metrics saved to experiments/domain-model/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/metrics.json
-2026-02-19 22:10:42,722 - cyberbully - INFO - Confusion matrix saved to experiments/domain-model/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/confusion_matrix.json
-2026-02-19 22:10:42,822 - cyberbully - INFO - Confusion matrix figure saved to experiments/domain-model/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/confusion_matrix.pdf
-2026-02-19 22:10:42,822 - cyberbully - INFO - Accuracy: 0.9384
-2026-02-19 22:10:42,823 - cyberbully - INFO - Weighted F1: 0.9380
-2026-02-19 22:10:42,823 - cyberbully - INFO - Micro F1: 0.9384
-2026-02-19 22:10:42,823 - cyberbully - INFO - Inference time: 7.06 seconds
-2026-02-19 22:10:42,823 - cyberbully - INFO - Energy consumption: 0.000450 kWh
-2026-02-19 22:10:42,823 - cyberbully - INFO - ============================================================
-2026-02-19 22:10:42,823 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/domain-model/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999
-2026-02-19 22:10:42,823 - cyberbully - INFO - ============================================================
+2026-04-17 11:23:02,289 - cyberbully - INFO - ============================================================
+2026-04-17 11:23:02,289 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-17 11:23:02,289 - cyberbully - INFO - ============================================================
+2026-04-17 11:23:02,289 - cyberbully - INFO - Configuration:
+2026-04-17 11:23:02,289 - cyberbully - INFO -   model          : sarkerlab/SocBERT-base
+2026-04-17 11:23:02,289 - cyberbully - INFO -   dataset        : tweeteval
+2026-04-17 11:23:02,289 - cyberbully - INFO -   preprocess     : True
+2026-04-17 11:23:02,289 - cyberbully - INFO -   augment        : True
+2026-04-17 11:23:02,289 - cyberbully - INFO -   compute_attribution: False
+2026-04-17 11:23:02,289 - cyberbully - INFO -   seed           : 90995999
+2026-04-17 11:23:02,289 - cyberbully - INFO -   epochs         : 10
+2026-04-17 11:23:02,289 - cyberbully - INFO -   batch_size     : 32
+2026-04-17 11:23:02,289 - cyberbully - INFO -   lr             : 5e-05
+2026-04-17 11:23:02,289 - cyberbully - INFO -   max_length     : 128
+2026-04-17 11:23:02,289 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-17 11:23:02,289 - cyberbully - INFO -   data_dir       : dataset
+2026-04-17 11:23:02,289 - cyberbully - INFO -   sbert          : False
+2026-04-17 11:23:02,289 - cyberbully - INFO -   supcon         : False
+2026-04-17 11:23:02,289 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-17 11:23:02,289 - cyberbully - INFO -   proj_dim       : 128
+2026-04-17 11:23:02,289 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-17 11:23:02,289 - cyberbully - INFO -   overwrite      : True
+2026-04-17 11:23:02,289 - cyberbully - INFO -   device         : cuda
+2026-04-17 11:23:02,289 - cyberbully - INFO -   output_dir     : experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999
+2026-04-17 11:23:02,289 - cyberbully - INFO - ============================================================
+2026-04-17 11:23:02,289 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-17 11:23:02,337 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-04-17 11:23:02,337 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-04-17 11:23:02,337 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-17 11:24:02,431 - cyberbully - INFO - After preprocessing — train: 30381, val: 7613, test: 9461
+2026-04-17 11:24:02,433 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-04-17 11:24:02,439 - cyberbully - INFO - After oversampling — class distribution: {0: 7767, 1: 7767, 2: 7767, 3: 7767, 4: 7767}
+2026-04-17 11:24:02,448 - cyberbully - INFO - Number of classes: 5
+2026-04-17 11:24:02,449 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-17 11:24:02,449 - cyberbully - INFO - Loading model 'sarkerlab/SocBERT-base' with 5 labels (sbert=False, supcon=False)
+2026-04-17 11:24:04,050 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-17 11:24:05,196 - cyberbully - INFO - Dataset sizes — train: 38835, val: 7613, test: 9461
+2026-04-17 11:24:05,196 - cyberbully - INFO - Step 4: Training...
+2026-04-17 11:24:05,444 - cyberbully - INFO - Starting training...
+2026-04-17 11:41:08,805 - cyberbully - INFO - Training complete.
+2026-04-17 11:41:08,889 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-2428
+2026-04-17 11:41:08,970 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-6070
+2026-04-17 11:41:09,050 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-7284
+2026-04-17 11:41:09,129 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-9712
+2026-04-17 11:41:09,215 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-1214
+2026-04-17 11:41:09,296 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-4856
+2026-04-17 11:41:09,379 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-3642
+2026-04-17 11:41:09,458 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-10926
+2026-04-17 11:41:09,538 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-8498
+2026-04-17 11:41:09,634 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/checkpoint-12140
+2026-04-17 11:41:09,634 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-17 11:41:19,967 - cyberbully - INFO - Metrics saved to experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/metrics.json
+2026-04-17 11:41:19,967 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/confusion_matrix.json
+2026-04-17 11:41:20,064 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/predictions.json
+2026-04-17 11:41:20,169 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999/confusion_matrix.pdf
+2026-04-17 11:41:20,169 - cyberbully - INFO - Accuracy: 0.9443
+2026-04-17 11:41:20,169 - cyberbully - INFO - Weighted F1: 0.9446
+2026-04-17 11:41:20,170 - cyberbully - INFO - Micro F1: 0.9443
+2026-04-17 11:41:20,170 - cyberbully - INFO - Inference time: 5.65 seconds
+2026-04-17 11:41:20,170 - cyberbully - INFO - Energy consumption: 0.000385 kWh
+2026-04-17 11:41:20,172 - cyberbully - INFO - ============================================================
+2026-04-17 11:41:20,172 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/sarkerlab_SocBERT-base/tweeteval/prep1_aug1/seed_90995999
+2026-04-17 11:41:20,172 - cyberbully - INFO - ============================================================

@@ -1,65 +1,65 @@
-2026-04-15 14:26:51,814 - cyberbully - INFO - Model 'all-mpnet-base-v2' detected as SBERT-based. Using SBERTClassifier pipeline.
-2026-04-15 14:26:51,815 - cyberbully - INFO - ============================================================
-2026-04-15 14:26:51,815 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-04-15 14:26:51,815 - cyberbully - INFO - ============================================================
-2026-04-15 14:26:51,815 - cyberbully - INFO - Configuration:
-2026-04-15 14:26:51,815 - cyberbully - INFO -   model          : all-mpnet-base-v2
-2026-04-15 14:26:51,815 - cyberbully - INFO -   dataset        : ieee
-2026-04-15 14:26:51,815 - cyberbully - INFO -   preprocess     : True
-2026-04-15 14:26:51,815 - cyberbully - INFO -   augment        : True
-2026-04-15 14:26:51,815 - cyberbully - INFO -   compute_attribution: False
-2026-04-15 14:26:51,815 - cyberbully - INFO -   seed           : 43782163
-2026-04-15 14:26:51,815 - cyberbully - INFO -   epochs         : 10
-2026-04-15 14:26:51,815 - cyberbully - INFO -   batch_size     : 32
-2026-04-15 14:26:51,815 - cyberbully - INFO -   lr             : 5e-05
-2026-04-15 14:26:51,815 - cyberbully - INFO -   max_length     : 128
-2026-04-15 14:26:51,815 - cyberbully - INFO -   output_dir     : grid-search
-2026-04-15 14:26:51,815 - cyberbully - INFO -   data_dir       : dataset
-2026-04-15 14:26:51,815 - cyberbully - INFO -   sbert          : True
-2026-04-15 14:26:51,815 - cyberbully - INFO -   supcon         : False
-2026-04-15 14:26:51,815 - cyberbully - INFO -   supcon_weight  : 0.1
-2026-04-15 14:26:51,815 - cyberbully - INFO -   proj_dim       : 128
-2026-04-15 14:26:51,815 - cyberbully - INFO -   grad_accum_steps: 1
-2026-04-15 14:26:51,815 - cyberbully - INFO -   overwrite      : False
-2026-04-15 14:26:51,815 - cyberbully - INFO -   device         : cuda
-2026-04-15 14:26:51,815 - cyberbully - INFO -   output_dir     : experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163
-2026-04-15 14:26:51,815 - cyberbully - INFO - ============================================================
-2026-04-15 14:26:51,815 - cyberbully - INFO - Step 1: Preparing data...
-2026-04-15 14:26:51,818 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
-2026-04-15 14:26:51,818 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
-2026-04-15 14:26:51,818 - cyberbully - INFO - Applying text preprocessing per split...
-2026-04-15 14:26:55,834 - cyberbully - INFO - After preprocessing — train: 1174, val: 304, test: 379
-2026-04-15 14:26:55,835 - cyberbully - INFO - Applying training data augmentation (oversampling)...
-2026-04-15 14:26:55,837 - cyberbully - INFO - After oversampling — class distribution: {0: 287, 1: 287, 2: 287, 3: 287, 4: 287}
-2026-04-15 14:26:55,838 - cyberbully - INFO - Number of classes: 5
-2026-04-15 14:26:55,839 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-04-15 14:26:55,839 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 5 labels (sbert=True, supcon=False)
-2026-04-15 14:27:00,023 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, proj_dim=None, num_labels=5
-2026-04-15 14:27:00,587 - cyberbully - INFO - Step 3: Creating datasets...
-2026-04-15 14:27:00,619 - cyberbully - INFO - Dataset sizes — train: 1435, val: 304, test: 379
-2026-04-15 14:27:00,619 - cyberbully - INFO - Step 4: Training...
-2026-04-15 14:27:00,669 - cyberbully - INFO - Starting training...
-2026-04-15 14:27:54,172 - cyberbully - INFO - Training complete.
-2026-04-15 14:27:54,239 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-90
-2026-04-15 14:27:54,573 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-180
-2026-04-15 14:27:54,651 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-225
-2026-04-15 14:27:55,306 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-135
-2026-04-15 14:27:55,378 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-315
-2026-04-15 14:27:55,450 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-450
-2026-04-15 14:27:55,524 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-360
-2026-04-15 14:27:55,651 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-45
-2026-04-15 14:27:55,724 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-270
-2026-04-15 14:27:55,797 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-405
-2026-04-15 14:27:55,797 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-04-15 14:28:00,988 - cyberbully - INFO - Metrics saved to experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/metrics.json
-2026-04-15 14:28:00,988 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/confusion_matrix.json
-2026-04-15 14:28:00,992 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/predictions.json
-2026-04-15 14:28:01,094 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/confusion_matrix.pdf
-2026-04-15 14:28:01,094 - cyberbully - INFO - Accuracy: 0.8232
-2026-04-15 14:28:01,094 - cyberbully - INFO - Weighted F1: 0.8246
-2026-04-15 14:28:01,094 - cyberbully - INFO - Micro F1: 0.8232
-2026-04-15 14:28:01,094 - cyberbully - INFO - Inference time: 0.29 seconds
-2026-04-15 14:28:01,094 - cyberbully - INFO - Energy consumption: 0.000000 kWh
-2026-04-15 14:28:01,094 - cyberbully - INFO - ============================================================
-2026-04-15 14:28:01,094 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163
-2026-04-15 14:28:01,094 - cyberbully - INFO - ============================================================
+2026-04-16 17:12:48,873 - cyberbully - INFO - Model 'all-mpnet-base-v2' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-04-16 17:12:48,874 - cyberbully - INFO - ============================================================
+2026-04-16 17:12:48,874 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-04-16 17:12:48,874 - cyberbully - INFO - ============================================================
+2026-04-16 17:12:48,874 - cyberbully - INFO - Configuration:
+2026-04-16 17:12:48,874 - cyberbully - INFO -   model          : all-mpnet-base-v2
+2026-04-16 17:12:48,874 - cyberbully - INFO -   dataset        : ieee
+2026-04-16 17:12:48,874 - cyberbully - INFO -   preprocess     : True
+2026-04-16 17:12:48,874 - cyberbully - INFO -   augment        : True
+2026-04-16 17:12:48,874 - cyberbully - INFO -   compute_attribution: False
+2026-04-16 17:12:48,874 - cyberbully - INFO -   seed           : 43782163
+2026-04-16 17:12:48,874 - cyberbully - INFO -   epochs         : 10
+2026-04-16 17:12:48,874 - cyberbully - INFO -   batch_size     : 32
+2026-04-16 17:12:48,874 - cyberbully - INFO -   lr             : 5e-05
+2026-04-16 17:12:48,874 - cyberbully - INFO -   max_length     : 128
+2026-04-16 17:12:48,874 - cyberbully - INFO -   output_dir     : grid-search
+2026-04-16 17:12:48,874 - cyberbully - INFO -   data_dir       : dataset
+2026-04-16 17:12:48,874 - cyberbully - INFO -   sbert          : True
+2026-04-16 17:12:48,874 - cyberbully - INFO -   supcon         : False
+2026-04-16 17:12:48,874 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-04-16 17:12:48,874 - cyberbully - INFO -   proj_dim       : 128
+2026-04-16 17:12:48,874 - cyberbully - INFO -   grad_accum_steps: 1
+2026-04-16 17:12:48,874 - cyberbully - INFO -   overwrite      : True
+2026-04-16 17:12:48,874 - cyberbully - INFO -   device         : cuda
+2026-04-16 17:12:48,874 - cyberbully - INFO -   output_dir     : experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163
+2026-04-16 17:12:48,874 - cyberbully - INFO - ============================================================
+2026-04-16 17:12:48,874 - cyberbully - INFO - Step 1: Preparing data...
+2026-04-16 17:12:48,877 - cyberbully - INFO - Loaded pre-split data from dataset/ieee — train: 1348, val: 338, test: 422
+2026-04-16 17:12:48,877 - cyberbully - INFO - Label mapping: {'Cyberstalking': 0, 'Doxing': 1, 'Revenge Porn': 2, 'Sexual Harassment': 3, 'Slut Shaming': 4}
+2026-04-16 17:12:48,878 - cyberbully - INFO - Applying text preprocessing per split...
+2026-04-16 17:12:52,886 - cyberbully - INFO - After preprocessing — train: 1178, val: 303, test: 377
+2026-04-16 17:12:52,887 - cyberbully - INFO - Applying training data augmentation (oversampling)...
+2026-04-16 17:12:52,888 - cyberbully - INFO - After oversampling — class distribution: {0: 289, 1: 289, 2: 289, 3: 289, 4: 289}
+2026-04-16 17:12:52,889 - cyberbully - INFO - Number of classes: 5
+2026-04-16 17:12:52,890 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-04-16 17:12:52,890 - cyberbully - INFO - Loading model 'all-mpnet-base-v2' with 5 labels (sbert=True, supcon=False)
+2026-04-16 17:12:56,876 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, proj_dim=None, num_labels=5
+2026-04-16 17:12:57,453 - cyberbully - INFO - Step 3: Creating datasets...
+2026-04-16 17:12:57,480 - cyberbully - INFO - Dataset sizes — train: 1445, val: 303, test: 377
+2026-04-16 17:12:57,481 - cyberbully - INFO - Step 4: Training...
+2026-04-16 17:12:57,533 - cyberbully - INFO - Starting training...
+2026-04-16 17:13:49,238 - cyberbully - INFO - Training complete.
+2026-04-16 17:13:49,310 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-138
+2026-04-16 17:13:49,374 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-92
+2026-04-16 17:13:49,439 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-46
+2026-04-16 17:13:49,511 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-230
+2026-04-16 17:13:49,584 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-184
+2026-04-16 17:13:49,655 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-276
+2026-04-16 17:13:49,729 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-414
+2026-04-16 17:13:49,800 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-322
+2026-04-16 17:13:49,873 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-460
+2026-04-16 17:13:49,944 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/checkpoint-368
+2026-04-16 17:13:49,944 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-04-16 17:13:54,827 - cyberbully - INFO - Metrics saved to experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/metrics.json
+2026-04-16 17:13:54,827 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/confusion_matrix.json
+2026-04-16 17:13:54,831 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/predictions.json
+2026-04-16 17:13:54,933 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163/confusion_matrix.pdf
+2026-04-16 17:13:54,933 - cyberbully - INFO - Accuracy: 0.8408
+2026-04-16 17:13:54,934 - cyberbully - INFO - Weighted F1: 0.8414
+2026-04-16 17:13:54,934 - cyberbully - INFO - Micro F1: 0.8408
+2026-04-16 17:13:54,934 - cyberbully - INFO - Inference time: 0.29 seconds
+2026-04-16 17:13:54,934 - cyberbully - INFO - Energy consumption: 0.000018 kWh
+2026-04-16 17:13:54,934 - cyberbully - INFO - ============================================================
+2026-04-16 17:13:54,934 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/all-mpnet-base-v2/ieee/prep1_aug1/seed_43782163
+2026-04-16 17:13:54,934 - cyberbully - INFO - ============================================================
