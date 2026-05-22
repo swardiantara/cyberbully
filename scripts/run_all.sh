@@ -24,12 +24,12 @@ OVERWRITE=1
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "answerdotai/ModernBERT-base" # done
-    "chandar-lab/NeoBERT" # done
-    "all-distilroberta-v1" # done
-    # "roberta-base" # done
-    # "Twitter/twhin-bert-base" # done
-    # "albert/albert-base-v2"     # done
+    # "answerdotai/ModernBERT-base" # done
+    # "chandar-lab/NeoBERT" # done
+    # "all-distilroberta-v1" # done
+    "roberta-base" # done
+    "Twitter/twhin-bert-base" # done
+    "albert/albert-base-v2"     # done
     # "bert-base-cased"           # cased variant — investigate case sensitivity
     # "xlnet-base-cased"
     # "bert-base-uncased"           # PC-AJK
