@@ -1,63 +1,63 @@
-2026-05-19 12:35:45,751 - cyberbully - INFO - Model 'all-distilroberta-v1' detected as SBERT-based. Using SBERTClassifier pipeline.
-2026-05-19 12:35:45,752 - cyberbully - INFO - ============================================================
-2026-05-19 12:35:45,752 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-05-19 12:35:45,752 - cyberbully - INFO - ============================================================
-2026-05-19 12:35:45,752 - cyberbully - INFO - Configuration:
-2026-05-19 12:35:45,752 - cyberbully - INFO -   model          : all-distilroberta-v1
-2026-05-19 12:35:45,752 - cyberbully - INFO -   dataset        : tweeteval
-2026-05-19 12:35:45,752 - cyberbully - INFO -   preprocess     : True
-2026-05-19 12:35:45,752 - cyberbully - INFO -   augment        : False
-2026-05-19 12:35:45,752 - cyberbully - INFO -   compute_attribution: False
-2026-05-19 12:35:45,752 - cyberbully - INFO -   seed           : 43782163
-2026-05-19 12:35:45,752 - cyberbully - INFO -   epochs         : 10
-2026-05-19 12:35:45,752 - cyberbully - INFO -   batch_size     : 32
-2026-05-19 12:35:45,752 - cyberbully - INFO -   lr             : 5e-05
-2026-05-19 12:35:45,752 - cyberbully - INFO -   max_length     : 128
-2026-05-19 12:35:45,752 - cyberbully - INFO -   output_dir     : verification
-2026-05-19 12:35:45,752 - cyberbully - INFO -   data_dir       : dataset
-2026-05-19 12:35:45,752 - cyberbully - INFO -   sbert          : True
-2026-05-19 12:35:45,752 - cyberbully - INFO -   supcon         : False
-2026-05-19 12:35:45,752 - cyberbully - INFO -   supcon_weight  : 0.1
-2026-05-19 12:35:45,752 - cyberbully - INFO -   proj_dim       : 128
-2026-05-19 12:35:45,752 - cyberbully - INFO -   grad_accum_steps: 1
-2026-05-19 12:35:45,752 - cyberbully - INFO -   overwrite      : False
-2026-05-19 12:35:45,752 - cyberbully - INFO -   device         : cuda
-2026-05-19 12:35:45,752 - cyberbully - INFO -   output_dir     : experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163
-2026-05-19 12:35:45,752 - cyberbully - INFO - ============================================================
-2026-05-19 12:35:45,752 - cyberbully - INFO - Step 1: Preparing data...
-2026-05-19 12:35:45,799 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
-2026-05-19 12:35:45,799 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
-2026-05-19 12:35:45,800 - cyberbully - INFO - Applying text preprocessing per split...
-2026-05-19 12:36:46,526 - cyberbully - INFO - After preprocessing -- train: 30352, val: 7605, test: 9457
-2026-05-19 12:36:46,529 - cyberbully - INFO - Number of classes: 5
-2026-05-19 12:36:46,530 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-05-19 12:36:46,530 - cyberbully - INFO - Loading model 'all-distilroberta-v1' with 5 labels (sbert=True, supcon=False)
-2026-05-19 12:36:50,668 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, proj_dim=None, num_labels=5
-2026-05-19 12:36:51,288 - cyberbully - INFO - Step 3: Creating datasets...
-2026-05-19 12:36:52,003 - cyberbully - INFO - Dataset sizes — train: 30352, val: 7605, test: 9457
-2026-05-19 12:36:52,004 - cyberbully - INFO - Step 4: Training...
-2026-05-19 12:36:52,053 - cyberbully - INFO - Starting training...
-2026-05-19 12:44:12,310 - cyberbully - INFO - Training complete.
-2026-05-19 12:44:12,357 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-1898
-2026-05-19 12:44:12,403 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-7592
-2026-05-19 12:44:12,450 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-6643
-2026-05-19 12:44:12,496 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-2847
-2026-05-19 12:44:12,544 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-8541
-2026-05-19 12:44:12,591 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-5694
-2026-05-19 12:44:12,637 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-3796
-2026-05-19 12:44:12,685 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-949
-2026-05-19 12:44:12,741 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-9490
-2026-05-19 12:44:12,787 - cyberbully - INFO - Removed checkpoint: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-4745
-2026-05-19 12:44:12,787 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-05-19 12:44:21,991 - cyberbully - INFO - Metrics saved to experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/metrics.json
-2026-05-19 12:44:21,991 - cyberbully - INFO - Confusion matrix saved to experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/confusion_matrix.json
-2026-05-19 12:44:22,087 - cyberbully - INFO - Per-sample predictions saved to experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/predictions.json
-2026-05-19 12:44:22,191 - cyberbully - INFO - Confusion matrix figure saved to experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/confusion_matrix.pdf
-2026-05-19 12:44:22,191 - cyberbully - INFO - Accuracy: 0.9427
-2026-05-19 12:44:22,191 - cyberbully - INFO - Weighted F1: 0.9425
-2026-05-19 12:44:22,191 - cyberbully - INFO - Micro F1: 0.9427
-2026-05-19 12:44:22,191 - cyberbully - INFO - Inference time: 3.04 seconds
-2026-05-19 12:44:22,191 - cyberbully - INFO - Energy consumption: 0.000203 kWh
-2026-05-19 12:44:22,193 - cyberbully - INFO - ============================================================
-2026-05-19 12:44:22,193 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/verification/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163
-2026-05-19 12:44:22,193 - cyberbully - INFO - ============================================================
+2026-05-22 11:17:56,131 - cyberbully - INFO - Model 'all-distilroberta-v1' detected as SBERT-based. Using SBERTClassifier pipeline.
+2026-05-22 11:17:56,131 - cyberbully - INFO - ============================================================
+2026-05-22 11:17:56,131 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-05-22 11:17:56,131 - cyberbully - INFO - ============================================================
+2026-05-22 11:17:56,131 - cyberbully - INFO - Configuration:
+2026-05-22 11:17:56,131 - cyberbully - INFO -   model          : all-distilroberta-v1
+2026-05-22 11:17:56,131 - cyberbully - INFO -   dataset        : tweeteval
+2026-05-22 11:17:56,131 - cyberbully - INFO -   preprocess     : True
+2026-05-22 11:17:56,131 - cyberbully - INFO -   augment        : False
+2026-05-22 11:17:56,131 - cyberbully - INFO -   compute_attribution: False
+2026-05-22 11:17:56,131 - cyberbully - INFO -   seed           : 43782163
+2026-05-22 11:17:56,131 - cyberbully - INFO -   epochs         : 10
+2026-05-22 11:17:56,131 - cyberbully - INFO -   batch_size     : 32
+2026-05-22 11:17:56,131 - cyberbully - INFO -   lr             : 5e-05
+2026-05-22 11:17:56,131 - cyberbully - INFO -   max_length     : 128
+2026-05-22 11:17:56,131 - cyberbully - INFO -   output_dir     : grid-search
+2026-05-22 11:17:56,131 - cyberbully - INFO -   data_dir       : dataset
+2026-05-22 11:17:56,131 - cyberbully - INFO -   sbert          : True
+2026-05-22 11:17:56,131 - cyberbully - INFO -   supcon         : False
+2026-05-22 11:17:56,131 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-05-22 11:17:56,131 - cyberbully - INFO -   proj_dim       : 128
+2026-05-22 11:17:56,131 - cyberbully - INFO -   grad_accum_steps: 1
+2026-05-22 11:17:56,131 - cyberbully - INFO -   overwrite      : True
+2026-05-22 11:17:56,131 - cyberbully - INFO -   device         : cuda
+2026-05-22 11:17:56,131 - cyberbully - INFO -   output_dir     : experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163
+2026-05-22 11:17:56,131 - cyberbully - INFO - ============================================================
+2026-05-22 11:17:56,131 - cyberbully - INFO - Step 1: Preparing data...
+2026-05-22 11:17:56,177 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-05-22 11:17:56,177 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-05-22 11:17:56,178 - cyberbully - INFO - Applying text preprocessing per split...
+2026-05-22 11:18:01,680 - cyberbully - INFO - After preprocessing -- train: 32485, val: 8122, test: 10152
+2026-05-22 11:18:01,684 - cyberbully - INFO - Number of classes: 5
+2026-05-22 11:18:01,685 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-05-22 11:18:01,685 - cyberbully - INFO - Loading model 'all-distilroberta-v1' with 5 labels (sbert=True, supcon=False)
+2026-05-22 11:18:05,650 - cyberbully - INFO - SBERTClassifier: embedding_dim=768, hidden=256, proj_dim=None, num_labels=5
+2026-05-22 11:18:06,260 - cyberbully - INFO - Step 3: Creating datasets...
+2026-05-22 11:18:07,009 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
+2026-05-22 11:18:07,009 - cyberbully - INFO - Step 4: Training...
+2026-05-22 11:18:07,051 - cyberbully - INFO - Starting training...
+2026-05-22 11:26:00,233 - cyberbully - INFO - Training complete.
+2026-05-22 11:26:00,281 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-3048
+2026-05-22 11:26:00,328 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-7112
+2026-05-22 11:26:00,374 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-9144
+2026-05-22 11:26:00,422 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-1016
+2026-05-22 11:26:00,470 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-2032
+2026-05-22 11:26:00,526 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-10160
+2026-05-22 11:26:00,573 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-6096
+2026-05-22 11:26:00,621 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-5080
+2026-05-22 11:26:00,668 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-8128
+2026-05-22 11:26:00,716 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/checkpoint-4064
+2026-05-22 11:26:00,716 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-05-22 11:26:10,167 - cyberbully - INFO - Metrics saved to experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/metrics.json
+2026-05-22 11:26:10,167 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/confusion_matrix.json
+2026-05-22 11:26:10,269 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/predictions.json
+2026-05-22 11:26:10,373 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163/confusion_matrix.pdf
+2026-05-22 11:26:10,373 - cyberbully - INFO - Accuracy: 0.9395
+2026-05-22 11:26:10,373 - cyberbully - INFO - Weighted F1: 0.9390
+2026-05-22 11:26:10,373 - cyberbully - INFO - Micro F1: 0.9395
+2026-05-22 11:26:10,373 - cyberbully - INFO - Inference time: 3.31 seconds
+2026-05-22 11:26:10,373 - cyberbully - INFO - Energy consumption: 0.000222 kWh
+2026-05-22 11:26:10,375 - cyberbully - INFO - ============================================================
+2026-05-22 11:26:10,375 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/all-distilroberta-v1/tweeteval/prep1_aug0/seed_43782163
+2026-05-22 11:26:10,375 - cyberbully - INFO - ============================================================
