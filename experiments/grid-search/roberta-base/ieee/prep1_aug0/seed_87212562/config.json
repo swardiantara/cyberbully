@@ -9,7 +9,7 @@
   "batch_size": 32,
   "lr": 5e-05,
   "max_length": 128,
-  "output_dir": "verification",
+  "output_dir": "grid-search",
   "data_dir": "dataset",
   "sbert": false,
   "supcon": false,
@@ -18,7 +18,7 @@
   "grad_accum_steps": 1,
   "overwrite": true,
   "device": "cuda",
-  "output_dir_resolved": "experiments/verification/roberta-base/ieee/prep1_aug0/seed_87212562",
+  "output_dir_resolved": "experiments/grid-search/roberta-base/ieee/prep1_aug0/seed_87212562",
   "dataset_statistics": {
     "num_classes": 5,
     "label_mapping": {
@@ -29,33 +29,33 @@
       "Slut Shaming": 4
     },
     "train": {
-      "num_samples": 1175,
+      "num_samples": 1348,
       "class_distribution": {
-        "Cyberstalking": 172,
-        "Doxing": 234,
-        "Revenge Porn": 227,
-        "Sexual Harassment": 255,
-        "Slut Shaming": 287
+        "Cyberstalking": 192,
+        "Doxing": 279,
+        "Revenge Porn": 245,
+        "Sexual Harassment": 316,
+        "Slut Shaming": 316
       }
     },
     "val": {
-      "num_samples": 303,
+      "num_samples": 338,
       "class_distribution": {
-        "Cyberstalking": 40,
-        "Doxing": 63,
-        "Revenge Porn": 58,
-        "Sexual Harassment": 69,
-        "Slut Shaming": 73
+        "Cyberstalking": 48,
+        "Doxing": 70,
+        "Revenge Porn": 61,
+        "Sexual Harassment": 79,
+        "Slut Shaming": 80
       }
     },
     "test": {
-      "num_samples": 379,
+      "num_samples": 422,
       "class_distribution": {
-        "Cyberstalking": 57,
-        "Doxing": 80,
-        "Revenge Porn": 71,
-        "Sexual Harassment": 82,
-        "Slut Shaming": 89
+        "Cyberstalking": 60,
+        "Doxing": 88,
+        "Revenge Porn": 76,
+        "Sexual Harassment": 99,
+        "Slut Shaming": 99
       }
     }
   }

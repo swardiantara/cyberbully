@@ -1,61 +1,61 @@
-2026-05-19 07:28:38,255 - cyberbully - INFO - ============================================================
-2026-05-19 07:28:38,255 - cyberbully - INFO - Cyberbullying Detection Pipeline
-2026-05-19 07:28:38,255 - cyberbully - INFO - ============================================================
-2026-05-19 07:28:38,255 - cyberbully - INFO - Configuration:
-2026-05-19 07:28:38,255 - cyberbully - INFO -   model          : albert/albert-base-v2
-2026-05-19 07:28:38,255 - cyberbully - INFO -   dataset        : kaggle
-2026-05-19 07:28:38,255 - cyberbully - INFO -   preprocess     : True
-2026-05-19 07:28:38,255 - cyberbully - INFO -   augment        : False
-2026-05-19 07:28:38,255 - cyberbully - INFO -   compute_attribution: False
-2026-05-19 07:28:38,255 - cyberbully - INFO -   seed           : 37622020
-2026-05-19 07:28:38,255 - cyberbully - INFO -   epochs         : 10
-2026-05-19 07:28:38,255 - cyberbully - INFO -   batch_size     : 32
-2026-05-19 07:28:38,255 - cyberbully - INFO -   lr             : 5e-05
-2026-05-19 07:28:38,255 - cyberbully - INFO -   max_length     : 128
-2026-05-19 07:28:38,255 - cyberbully - INFO -   output_dir     : verification
-2026-05-19 07:28:38,255 - cyberbully - INFO -   data_dir       : dataset
-2026-05-19 07:28:38,255 - cyberbully - INFO -   sbert          : False
-2026-05-19 07:28:38,255 - cyberbully - INFO -   supcon         : False
-2026-05-19 07:28:38,255 - cyberbully - INFO -   supcon_weight  : 0.1
-2026-05-19 07:28:38,255 - cyberbully - INFO -   proj_dim       : 128
-2026-05-19 07:28:38,255 - cyberbully - INFO -   grad_accum_steps: 1
-2026-05-19 07:28:38,255 - cyberbully - INFO -   overwrite      : True
-2026-05-19 07:28:38,255 - cyberbully - INFO -   device         : cuda
-2026-05-19 07:28:38,255 - cyberbully - INFO -   output_dir     : experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020
-2026-05-19 07:28:38,255 - cyberbully - INFO - ============================================================
-2026-05-19 07:28:38,255 - cyberbully - INFO - Step 1: Preparing data...
-2026-05-19 07:28:38,308 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
-2026-05-19 07:28:38,308 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
-2026-05-19 07:28:38,309 - cyberbully - INFO - Applying text preprocessing per split...
-2026-05-19 07:29:25,834 - cyberbully - INFO - After preprocessing -- train: 23512, val: 5974, test: 7403
-2026-05-19 07:29:25,837 - cyberbully - INFO - Number of classes: 5
-2026-05-19 07:29:25,838 - cyberbully - INFO - Step 2: Loading model and tokenizer...
-2026-05-19 07:29:25,838 - cyberbully - INFO - Loading model 'albert/albert-base-v2' with 5 labels (sbert=False, supcon=False)
-2026-05-19 07:29:26,588 - cyberbully - INFO - Step 3: Creating datasets...
-2026-05-19 07:29:27,152 - cyberbully - INFO - Dataset sizes — train: 23512, val: 5974, test: 7403
-2026-05-19 07:29:27,153 - cyberbully - INFO - Step 4: Training...
-2026-05-19 07:29:27,239 - cyberbully - INFO - Starting training...
-2026-05-19 07:41:20,903 - cyberbully - INFO - Training complete.
-2026-05-19 07:41:20,912 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-5145
-2026-05-19 07:41:20,922 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-6615
-2026-05-19 07:41:20,933 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-7350
-2026-05-19 07:41:20,943 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-2205
-2026-05-19 07:41:20,953 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-1470
-2026-05-19 07:41:20,962 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-2940
-2026-05-19 07:41:20,971 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-5880
-2026-05-19 07:41:20,980 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-735
-2026-05-19 07:41:20,990 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-3675
-2026-05-19 07:41:20,999 - cyberbully - INFO - Removed checkpoint: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-4410
-2026-05-19 07:41:20,999 - cyberbully - INFO - Step 5: Evaluating on test set...
-2026-05-19 07:41:34,284 - cyberbully - INFO - Metrics saved to experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/metrics.json
-2026-05-19 07:41:34,284 - cyberbully - INFO - Confusion matrix saved to experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/confusion_matrix.json
-2026-05-19 07:41:34,357 - cyberbully - INFO - Per-sample predictions saved to experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/predictions.json
-2026-05-19 07:41:34,465 - cyberbully - INFO - Confusion matrix figure saved to experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/confusion_matrix.pdf
-2026-05-19 07:41:34,465 - cyberbully - INFO - Accuracy: 0.9489
-2026-05-19 07:41:34,465 - cyberbully - INFO - Weighted F1: 0.9492
-2026-05-19 07:41:34,465 - cyberbully - INFO - Micro F1: 0.9489
-2026-05-19 07:41:34,465 - cyberbully - INFO - Inference time: 7.24 seconds
-2026-05-19 07:41:34,466 - cyberbully - INFO - Energy consumption: 0.000397 kWh
-2026-05-19 07:41:34,467 - cyberbully - INFO - ============================================================
-2026-05-19 07:41:34,467 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/verification/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020
-2026-05-19 07:41:34,467 - cyberbully - INFO - ============================================================
+2026-05-23 06:51:27,287 - cyberbully - INFO - ============================================================
+2026-05-23 06:51:27,288 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-05-23 06:51:27,288 - cyberbully - INFO - ============================================================
+2026-05-23 06:51:27,288 - cyberbully - INFO - Configuration:
+2026-05-23 06:51:27,288 - cyberbully - INFO -   model          : albert/albert-base-v2
+2026-05-23 06:51:27,288 - cyberbully - INFO -   dataset        : kaggle
+2026-05-23 06:51:27,288 - cyberbully - INFO -   preprocess     : True
+2026-05-23 06:51:27,288 - cyberbully - INFO -   augment        : False
+2026-05-23 06:51:27,288 - cyberbully - INFO -   compute_attribution: False
+2026-05-23 06:51:27,288 - cyberbully - INFO -   seed           : 37622020
+2026-05-23 06:51:27,288 - cyberbully - INFO -   epochs         : 10
+2026-05-23 06:51:27,288 - cyberbully - INFO -   batch_size     : 32
+2026-05-23 06:51:27,288 - cyberbully - INFO -   lr             : 5e-05
+2026-05-23 06:51:27,288 - cyberbully - INFO -   max_length     : 128
+2026-05-23 06:51:27,288 - cyberbully - INFO -   output_dir     : grid-search
+2026-05-23 06:51:27,288 - cyberbully - INFO -   data_dir       : dataset
+2026-05-23 06:51:27,288 - cyberbully - INFO -   sbert          : False
+2026-05-23 06:51:27,288 - cyberbully - INFO -   supcon         : False
+2026-05-23 06:51:27,288 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-05-23 06:51:27,288 - cyberbully - INFO -   proj_dim       : 128
+2026-05-23 06:51:27,288 - cyberbully - INFO -   grad_accum_steps: 1
+2026-05-23 06:51:27,288 - cyberbully - INFO -   overwrite      : True
+2026-05-23 06:51:27,288 - cyberbully - INFO -   device         : cuda
+2026-05-23 06:51:27,288 - cyberbully - INFO -   output_dir     : experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020
+2026-05-23 06:51:27,288 - cyberbully - INFO - ============================================================
+2026-05-23 06:51:27,288 - cyberbully - INFO - Step 1: Preparing data...
+2026-05-23 06:51:27,332 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-05-23 06:51:27,332 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-05-23 06:51:27,333 - cyberbully - INFO - Applying text preprocessing per split...
+2026-05-23 06:51:31,866 - cyberbully - INFO - After preprocessing -- train: 25604, val: 6401, test: 8002
+2026-05-23 06:51:31,870 - cyberbully - INFO - Number of classes: 5
+2026-05-23 06:51:31,871 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-05-23 06:51:31,871 - cyberbully - INFO - Loading model 'albert/albert-base-v2' with 5 labels (sbert=False, supcon=False)
+2026-05-23 06:51:32,923 - cyberbully - INFO - Step 3: Creating datasets...
+2026-05-23 06:51:33,658 - cyberbully - INFO - Dataset sizes — train: 25604, val: 6401, test: 8002
+2026-05-23 06:51:33,658 - cyberbully - INFO - Step 4: Training...
+2026-05-23 06:51:33,819 - cyberbully - INFO - Starting training...
+2026-05-23 07:05:09,774 - cyberbully - INFO - Training complete.
+2026-05-23 07:05:09,781 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-5607
+2026-05-23 07:05:09,790 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-8010
+2026-05-23 07:05:09,797 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-6408
+2026-05-23 07:05:09,804 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-1602
+2026-05-23 07:05:09,811 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-3204
+2026-05-23 07:05:09,818 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-7209
+2026-05-23 07:05:09,825 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-4005
+2026-05-23 07:05:09,832 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-4806
+2026-05-23 07:05:09,840 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-801
+2026-05-23 07:05:09,847 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/checkpoint-2403
+2026-05-23 07:05:09,847 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-05-23 07:05:23,965 - cyberbully - INFO - Metrics saved to experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/metrics.json
+2026-05-23 07:05:23,965 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/confusion_matrix.json
+2026-05-23 07:05:24,047 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/predictions.json
+2026-05-23 07:05:24,151 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020/confusion_matrix.pdf
+2026-05-23 07:05:24,151 - cyberbully - INFO - Accuracy: 0.9485
+2026-05-23 07:05:24,151 - cyberbully - INFO - Weighted F1: 0.9488
+2026-05-23 07:05:24,151 - cyberbully - INFO - Micro F1: 0.9485
+2026-05-23 07:05:24,151 - cyberbully - INFO - Inference time: 7.98 seconds
+2026-05-23 07:05:24,152 - cyberbully - INFO - Energy consumption: 0.000494 kWh
+2026-05-23 07:05:24,153 - cyberbully - INFO - ============================================================
+2026-05-23 07:05:24,153 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/albert_albert-base-v2/kaggle/prep1_aug0/seed_37622020
+2026-05-23 07:05:24,153 - cyberbully - INFO - ============================================================
