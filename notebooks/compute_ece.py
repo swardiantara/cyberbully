@@ -18,6 +18,7 @@ Stability = average number of unique predicted labels per sample across seeds.
 import glob
 import json
 import math
+from collections import Counter
 from pathlib import Path
 
 import matplotlib.patches as mpatches
@@ -35,7 +36,7 @@ BASE_DIR = Path("experiments/grid-search")
 OUTPUT_BASE = Path("analysis/reliability")
 
 DATASETS = ["ieee", "kaggle", "tweeteval"]
-CONFIGS = ["prep0_aug0", "prep0_aug1", "prep1_aug0", "prep1_aug1"]
+CONFIGS = ["prep0_aug0", "prep1_aug0"] # "prep0_aug1", "prep1_aug1" 
 N_BINS = 10
 
 
@@ -211,6 +212,37 @@ def compute_stability(seed_preds: dict) -> float:
     if not sample_labels:
         return float("nan")
     return float(np.mean([len(set(lbls)) for lbls in sample_labels.values()]))
+
+
+def compute_entropy(seed_preds: dict) -> float:
+    """
+    Average prediction entropy (bits) across samples.
+
+    For each sample the empirical label distribution across all seeds is built
+    from raw label counts, and its Shannon entropy H = -Σ p·log₂(p) is
+    computed.  The per-sample entropies are then averaged over all samples.
+
+    A value of 0 means every seed agreed on the same label for every sample.
+    Higher values indicate greater predictive uncertainty induced by stochastic
+    training.  The theoretical maximum is log₂(#classes) bits.
+    """
+    sample_labels: dict = {}
+    for preds in seed_preds.values():
+        for p in preds:
+            key = p.get("_text_key") or p.get("_sample_key") or p["id"]
+            sample_labels.setdefault(key, []).append(p["predicted_label"])
+
+    if not sample_labels:
+        return float("nan")
+
+    entropies = []
+    for lbls in sample_labels.values():
+        counts = np.array(list(Counter(lbls).values()), dtype=float)
+        probs = counts / counts.sum()
+        # All counts > 0 by construction, so log2 is safe
+        entropies.append(-float(np.sum(probs * np.log2(probs))))
+
+    return float(np.mean(entropies))
 
 
 def compute_confidence_gap(predictions: list) -> float:
@@ -430,6 +462,7 @@ def export_scores(model_results: dict, out_path: Path) -> None:
             "Model": model,
             "ECE": round(res["ece"], 6),
             "Stability (avg unique labels/sample)": round(res["stability"], 4),
+            "Entropy (avg bits/sample)": round(res["entropy"], 6),
         }
         for model, res in model_results.items()
     ]
@@ -475,6 +508,7 @@ def run_combination(dataset_key: str, config: str) -> None:
 
             ece, bin_data, confs, corrs = compute_ece(all_preds)
             stability = compute_stability(seed_preds)
+            entropy = compute_entropy(seed_preds)
 
             model_results[model] = {
                 "ece": ece,
@@ -482,8 +516,9 @@ def run_combination(dataset_key: str, config: str) -> None:
                 "confidences": confs,
                 "corrects": corrs,
                 "stability": stability,
+                "entropy": entropy,
             }
-            print(f"  {display_name(model):30s}  ECE={ece:.4f}  Stability={stability:.4f}")
+            print(f"  {display_name(model):30s}  ECE={ece:.4f}  Stability={stability:.4f}  Entropy={entropy:.4f}")
 
         except Exception as exc:
             print(f"  [ERROR] {model}: {exc}")
@@ -538,11 +573,13 @@ def collect_and_export_csv_metrics() -> None:
                         ece_rows.append({**base, "ECE": round(ece_val, 6)})
                         gap_rows.append({**base, "ConfidenceGap": round(gap_val, 6)})
 
-                    # ── Per-config: stability (uses all seeds together) ───
+                    # ── Per-config: stability + entropy (all seeds together) ─
                     stab_val = compute_stability(seed_preds)
+                    entropy_val = compute_entropy(seed_preds)
                     stab_rows.append({
                         "Model": model, "Dataset": ds, "Config": config,
                         "Stability": round(stab_val, 6),
+                        "Entropy": round(entropy_val, 6),
                     })
 
                     print(f"  {display_name(model):30s}  {ds:10s}  {config}")
