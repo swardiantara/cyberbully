@@ -1,0 +1,48 @@
+Global Analysis: prep0_aug0 vs prep1_aug0
+============================================================
+
+Aggregated Diffs (n=24, one mean per model x dataset cell)
+============================================================
+
+Descriptive Statistics
+------------------------------------------------------------
+Mean   improvement : -0.019960
+Median improvement : -0.013873
+Std    deviation   : 0.012565
+# positive (trt > ctrl) : 1 / 57
+# negative (trt < ctrl) : 56 / 57
+# zero                  : 0 / 57
+
+Wilcoxon Signed-Rank Test (two-sided)
+------------------------------------------------------------
+W statistic    : 1.0000
+p-value        : 0.000000  ***
+Effect size r  : -0.9988  (rank-biserial correlation)
+
+Binomial Sign Test (H0: P(improvement) = 0.5, two-sided)
+------------------------------------------------------------
+# positive / # non-zero : 1 / 57
+p-value                 : 0.000000  ***
+
+Raw Diffs (n=570, all per-seed diffs pooled)
+============================================================
+
+Descriptive Statistics
+------------------------------------------------------------
+Mean   improvement : -0.019960
+Median improvement : -0.015655
+Std    deviation   : 0.015347
+# positive (trt > ctrl) : 40 / 570
+# negative (trt < ctrl) : 530 / 570
+# zero                  : 0 / 570
+
+Wilcoxon Signed-Rank Test (two-sided)
+------------------------------------------------------------
+W statistic    : 5366.0000
+p-value        : 0.000000  ***
+Effect size r  : -0.9341  (rank-biserial correlation)
+
+Binomial Sign Test (H0: P(improvement) = 0.5, two-sided)
+------------------------------------------------------------
+# positive / # non-zero : 40 / 570
+p-value                 : 0.000000  ***
