@@ -303,7 +303,7 @@ def run_global_analysis(raw_diffs: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Multi-metric analysis (F1 + ECE + Confidence Gap + Stability)
+# Multi-metric analysis (F1 + ECE + Confidence Gap + Stability + Entropy)
 # ---------------------------------------------------------------------------
 
 def load_per_seed_agg_diffs(csv_path: Path, value_col: str) -> np.ndarray:
@@ -337,17 +337,32 @@ def load_stability_agg_diffs(csv_path: Path) -> np.ndarray:
     return (trt.loc[common] - ctrl.loc[common]).values
 
 
+def load_entropy_agg_diffs(csv_path: Path) -> np.ndarray:
+    """
+    Load the pre-aggregated stability/entropy CSV and return entropy differences
+    (treatment - control), one per (Model, Dataset) cell.
+
+    Only cells present in both CONTROL and TREATMENT are included.
+    """
+    df = pd.read_csv(csv_path)
+    ctrl = df[df["Config"] == CONTROL].set_index(["Model", "Dataset"])["Entropy"]
+    trt  = df[df["Config"] == TREATMENT].set_index(["Model", "Dataset"])["Entropy"]
+    common = ctrl.index.intersection(trt.index)
+    return (trt.loc[common] - ctrl.loc[common]).values
+
+
 def run_multi_metric_analysis(f1_raw_diffs: dict) -> dict:
     """
-    Run Wilcoxon + binomial sign test on aggregated differences for 4 metrics:
-    Macro-avg F1, ECE, Confidence Gap, and Stability.
+    Run Wilcoxon + binomial sign test on aggregated differences for 5 metrics:
+    Macro-avg F1, ECE, Confidence Gap, Stability, and Entropy.
 
     All differences are at the aggregated level: one mean per (Model, Dataset) cell.
     Direction is always (treatment - control).
-      - F1  : positive diff = improvement
-      - ECE : negative diff = improvement (lower calibration error = better)
-      - ConfGap: negative diff = improvement (lower gap = better)
+      - F1       : positive diff = improvement
+      - ECE      : negative diff = improvement (lower calibration error = better)
+      - ConfGap  : negative diff = improvement (lower gap = better)
       - Stability: negative diff = improvement (lower variation = more stable)
+      - Entropy  : negative diff = improvement (lower entropy = more consistent)
 
     Parameters
     ----------
@@ -369,17 +384,22 @@ def run_multi_metric_analysis(f1_raw_diffs: dict) -> dict:
     stability_agg = load_stability_agg_diffs(
         RELIABILITY_DIR / "stability_per_config.csv"
     )
+    entropy_agg = load_entropy_agg_diffs(
+        RELIABILITY_DIR / "stability_per_config.csv"
+    )
 
     print(f"  F1 agg diffs          : n={len(f1_agg)}")
     print(f"  ECE agg diffs         : n={len(ece_agg)}")
     print(f"  Confidence Gap diffs  : n={len(conf_gap_agg)}")
     print(f"  Stability diffs       : n={len(stability_agg)}")
+    print(f"  Entropy diffs         : n={len(entropy_agg)}")
 
     return {
         "Macro-avg F1":   _full_stats(f1_agg),
         "ECE":            _full_stats(ece_agg),
         "Confidence Gap": _full_stats(conf_gap_agg),
         "Stability":      _full_stats(stability_agg),
+        "Entropy":        _full_stats(entropy_agg),
     }
 
 
@@ -389,7 +409,7 @@ def save_multi_metric_excel(multi_stats: dict, comparison_tag: str) -> None:
 
     Sheets
     ------
-    summary      : all 4 metrics as columns, all statistics as rows —
+    summary      : all metrics as columns, all statistics as rows —
                    the primary paper-reporting table.
     <MetricName> : one sheet per metric with a vertical detail table.
     """
@@ -523,10 +543,41 @@ def run_stability_comparison() -> tuple[pd.DataFrame, pd.DataFrame]:
     return mean_diff.astype(float), marks
 
 
+def run_entropy_comparison() -> tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Compute per-(model, dataset) differences for the pre-aggregated Entropy
+    metric. No significance testing is possible (one value per cell).
+
+    Returns
+    -------
+    mean_diff : DataFrame[MODELS_DISPLAY × DATASETS], float
+    marks     : DataFrame[MODELS_DISPLAY × DATASETS], all empty strings
+    """
+    df = pd.read_csv(RELIABILITY_DIR / "stability_per_config.csv")
+
+    mean_diff = pd.DataFrame(index=MODELS_DISPLAY, columns=DATASETS, dtype=float)
+    marks     = pd.DataFrame(index=MODELS_DISPLAY, columns=DATASETS, dtype=object)
+
+    for model in MODELS_DISPLAY:
+        for dataset in DATASETS:
+            ctrl_row = df[(df["Model"] == model) & (df["Dataset"] == dataset) &
+                          (df["Config"] == CONTROL)]["Entropy"].values
+            trt_row  = df[(df["Model"] == model) & (df["Dataset"] == dataset) &
+                          (df["Config"] == TREATMENT)]["Entropy"].values
+
+            if len(ctrl_row) == 0 or len(trt_row) == 0:
+                mean_diff.loc[model, dataset] = np.nan
+            else:
+                mean_diff.loc[model, dataset] = float(trt_row[0]) - float(ctrl_row[0])
+            marks.loc[model, dataset] = ""
+
+    return mean_diff.astype(float), marks
+
+
 def save_reliability_heatmaps(comparison_tag: str) -> None:
     """
-    Generate and save heatmaps for ECE, Confidence Gap, and Stability using
-    the same visual format as the F1 heatmap.
+    Generate and save heatmaps for ECE, Confidence Gap, Stability, and Entropy
+    using the same visual format as the F1 heatmap.
     """
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -554,6 +605,13 @@ def save_reliability_heatmaps(comparison_tag: str) -> None:
             "cbar_label":  "Stability Difference (treatment - control)",
             "tag":         "stability",
             "flip_colors": True,   # lower stability score = more stable
+        },
+        {
+            "name":        "Entropy",
+            "loader":      lambda: run_entropy_comparison(),
+            "cbar_label":  "Mean Entropy Difference (treatment - control)",
+            "tag":         "entropy",
+            "flip_colors": True,   # lower entropy = more consistent predictions
         },
     ]
 
