@@ -214,7 +214,7 @@ Reproduce the statistical analyses from the paper:
 Rscript notebooks/compute_lmm.r
 ```
 
-This command will produce excel files (`lmm_results_F1.xlsx`, `lmm_results_ECE.xlsx`, `lmm_results_Stability.xlsx`, and `lmm_results_Entropy.xlsx`) storing the LMM fitting results on each metric with a model of:
+This command produces excel files (`lmm_results_F1.xlsx`, `lmm_results_ECE.xlsx`, `lmm_results_Stability.xlsx`, and `lmm_results_Entropy.xlsx` under the `analysis/lmm-test` folder) storing the LMM fitting results on each metric with a model of:
 $$
 \text{Metric} \sim  \text{Prep.} + (1|\text{Data}) + (1|\text{Model}) + (1|\text{Model}:\text{Data})
 $$
@@ -222,14 +222,20 @@ The fitting results are used to construct Table IV and Table V.
 
 **Wilcoxon & Binomial Sign Tests (Python):**
 ```bash
-python notebooks/compute_wilcoxon_test.py     # Table VI
-python notebooks/compute_ece.py               # Fig. 2-5
+python notebooks/compute_ece.py
 ```
+This command produces the `ece_per_seed.csv` and `stability_per_config.csv` files under the `analysis/reliability` folder. The computed metrics are used to generate Fig. 2-5.
+
+```bash
+python notebooks/compute_wilcoxon_test.py
+```
+This command performs the wilcoxon and binomial sign tests on the four metrics, as well as generates the heatmaps shown in Fig. 2-5. The output is stored in `analysis/statistical-test/multi_metric_stats_prep0_aug0_vs_prep1_aug0.xlsx`.
 
 **Kruskal–Wallis + Dunn post-hoc with Benjamini–Hochberg correction (Python):**
 ```bash
 python notebooks/compute_kruskal.py
 ```
+This command performs the Kruskal-Wallis tests on the F1 and ECE scores. The results (`kruskal_preprocessing_f1.xlsx`, `kruskal_preprocessing_ece.xlsx`) are stored under the `analysis/statistical-test` folder and used to construct Table VII and Table VIII.
 
 ---
 
