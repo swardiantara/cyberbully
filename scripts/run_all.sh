@@ -2,8 +2,8 @@
 #
 # run_all.sh — Baseline (CE-only) experiment suite
 #
-# Loops over: models × datasets × preprocess (on/off) × augment (on/off) × seeds
-# Total: 14 models × 3 datasets × 2 × 2 × 10 seeds = 1680 runs
+# Loops over: models x datasets x preprocess (on/off) x augment (on/off) x seeds
+# Total: 19 models x 3 datasets x 2 x 10 seeds = 1140 runs
 #
 # No SupCon — use run_supcon.sh for the SupCon auxiliary-loss experiments.
 #
@@ -19,31 +19,31 @@ set -euo pipefail
 # Set OVERWRITE=0 (default) to skip scenarios that already have metrics.json
 # and predictions.json (bash-level check) and let main.py skip them too
 # (python-level check via --overwrite flag).
-OVERWRITE=1
+OVERWRITE=0
 
 SEEDS=( 14298463 24677315 37622020 43782163 52680723 67351593 70681460 87212562 90995999 99511865 )
 
 MODELS=(
-    "answerdotai/ModernBERT-base" # done
-    "google/mobilebert-uncased"   # PC-AJK
-    # "chandar-lab/NeoBERT" # done
-    # "all-distilroberta-v1" # done
-    # "roberta-base" # done
-    # "Twitter/twhin-bert-base" # done
-    # "albert/albert-base-v2"     # done
-    # "bert-base-cased"           # cased variant — investigate case sensitivity
-    # "xlnet-base-cased"
-    # "bert-base-uncased"           # PC-AJK
-    # "distilbert-base-cased"     # cased variant — investigate case sensitivity
-    # "distilbert-base-uncased"
-    # "distilbert-base-uncased"
-    # "gpt2"                      # ww-pc
-    # "vinai/bertweet-base"
-    # "sarkerlab/SocBERT-base"
-    # "GroNLP/hateBERT"
-    # "all-mpnet-base-v2"
-    # "all-MiniLM-L6-v2"
-    # "all-MiniLM-L12-v2"
+    "answerdotai/ModernBERT-base"
+    "google/mobilebert-uncased"
+    "chandar-lab/NeoBERT"
+    "all-distilroberta-v1"
+    "roberta-base"
+    "Twitter/twhin-bert-base"
+    "albert/albert-base-v2"    
+    "bert-base-cased"      
+    "xlnet-base-cased"
+    "bert-base-uncased"          
+    "distilbert-base-cased"
+    "distilbert-base-uncased"
+    "distilbert-base-uncased"
+    "gpt2"                      
+    "vinai/bertweet-base"
+    "sarkerlab/SocBERT-base"
+    "GroNLP/hateBERT"
+    "all-mpnet-base-v2"
+    "all-MiniLM-L6-v2"
+    "all-MiniLM-L12-v2"
 )
 
 DATASETS=(
@@ -70,7 +70,7 @@ failed=0
 # Count total runs
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
-        for preprocess in 1; do
+        for preprocess in 0 1; do
             for augment in 0; do
                 for seed in "${SEEDS[@]}"; do
                     total=$((total + 1))
@@ -92,7 +92,7 @@ echo ""
 
 for model in "${MODELS[@]}"; do
     for dataset in "${DATASETS[@]}"; do
-        for preprocess in 1; do
+        for preprocess in 0 1; do
             for augment in 0; do
                 for seed in "${SEEDS[@]}"; do
                     run_id=$((completed + failed + 1))

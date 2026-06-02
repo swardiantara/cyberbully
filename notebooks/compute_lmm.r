@@ -1,7 +1,7 @@
 # =============================================================================
 # Linear Mixed-Effects Model (LMM) — Effect of Preprocessing
 # =============================================================================
-# Metrics  : macro-F1, ECE, Confidence Gap, Stability
+# Metrics  : macro-F1, ECE, Stability, Entropy
 # Configs  : prep0_aug0 (Preprocessing=0) and prep1_aug0 (Preprocessing=1) only
 #
 # Model formula (one LMM per metric):
@@ -15,10 +15,10 @@
 # Metric definitions
 #   F1          : macro-averaged F1 from metrics.json  (per seed)
 #   ECE         : Expected Calibration Error           (per seed, from predictions.json)
-#   ConfGap     : Confidence Gap = mean(conf|correct) - mean(conf|incorrect)
-#                 (per seed, from predictions.json; higher = more discriminative)
 #   Stability   : avg. unique predicted labels per sample across seeds
 #                 (per config, from predictions.json; lower = more stable)
+#   Entropy     : avg. Shannon entropy (bits) of per-sample label distributions
+#                 across seeds (per config; lower = more consistent predictions)
 #
 # Output: one Excel file per metric → analysis/lmm-test/lmm_results_{metric}.xlsx
 #         Each file has 6 sheets: Fixed_Effects, Random_Effects,
@@ -97,17 +97,6 @@ compute_ece <- function(preds, n_bins = N_BINS) {
   ece
 }
 
-#' Confidence Gap = mean(conf | correct) - mean(conf | incorrect)
-compute_conf_gap <- function(preds) {
-  confs  <- vapply(preds, function(p)
-    as.numeric(p$probabilities[[p$predicted_label]]), numeric(1))
-  corrs  <- vapply(preds, function(p) isTRUE(p$correct), logical(1))
-  c_conf <- confs[corrs]
-  i_conf <- confs[!corrs]
-  if (length(c_conf) == 0L || length(i_conf) == 0L) return(NA_real_)
-  mean(c_conf) - mean(i_conf)
-}
-
 #' Stability = mean unique predicted labels per sample across all seeds
 #' `all_seed_preds` is a named list of per-seed prediction lists.
 compute_stability <- function(all_seed_preds) {
@@ -122,16 +111,35 @@ compute_stability <- function(all_seed_preds) {
   mean(vapply(sample_labels, function(lbls) length(unique(lbls)), numeric(1)))
 }
 
+#' Average Shannon entropy (bits) of per-sample label distributions across seeds
+#' `all_seed_preds` is a named list of per-seed prediction lists.
+compute_entropy <- function(all_seed_preds) {
+  sample_labels <- list()
+  for (seed_preds in all_seed_preds) {
+    for (p in seed_preds) {
+      key <- as.character(p$id)
+      sample_labels[[key]] <- c(sample_labels[[key]], p$predicted_label)
+    }
+  }
+  if (length(sample_labels) == 0L) return(NA_real_)
+  entropies <- vapply(sample_labels, function(lbls) {
+    counts <- as.numeric(table(lbls))   # all > 0 by construction
+    probs  <- counts / sum(counts)
+    -sum(probs * log2(probs))
+  }, numeric(1))
+  mean(entropies)
+}
+
 # =============================================================================
 # Data Loading
 # =============================================================================
 load_all_data <- function() {
   cat("Loading data ...\n")
-  rows_f1   <- list()
-  rows_ece  <- list()
-  rows_gap  <- list()
-  rows_stab <- list()
-  missing   <- character(0)
+  rows_f1      <- list()
+  rows_ece     <- list()
+  rows_stab    <- list()
+  rows_entropy <- list()
+  missing      <- character(0)
 
   for (grp_name in names(MODELS)) {
     for (model in MODELS[[grp_name]]) {
@@ -150,7 +158,7 @@ load_all_data <- function() {
           seed_dirs <- sort(list.dirs(config_path, recursive = FALSE, full.names = FALSE))
           seed_dirs <- seed_dirs[grepl("^seed_", seed_dirs)]
 
-          all_seed_preds <- list()   # collect for stability
+          all_seed_preds <- list()   # collect for stability + entropy
 
           for (seed_name in seed_dirs) {
             base_row <- list(Group = grp_name, Model = model, Dataset = dataset,
@@ -165,26 +173,26 @@ load_all_data <- function() {
               missing <- c(missing, mf)
             }
 
-            # ── ECE + ConfGap from predictions.json ──────────────────────
+            # ── ECE from predictions.json (per seed) ─────────────────────
             pf <- file.path(EXPR_PATH, model_dir, dataset, config, seed_name, "predictions.json")
             if (file.exists(pf)) {
               preds <- fromJSON(pf, simplifyVector = FALSE)
               rows_ece <- c(rows_ece,
                 list(c(base_row, list(Value = compute_ece(preds)))))
-              rows_gap <- c(rows_gap,
-                list(c(base_row, list(Value = compute_conf_gap(preds)))))
               all_seed_preds[[seed_name]] <- preds
             } else {
               missing <- c(missing, pf)
             }
           }
 
-          # ── Stability across all seeds for this (model, dataset, config) ──
+          # ── Stability + Entropy across all seeds (per config) ─────────
           if (length(all_seed_preds) > 0L) {
-            stab_row <- list(Group = grp_name, Model = model, Dataset = dataset,
-                             Preprocessing = prep, Config = config,
-                             Value = compute_stability(all_seed_preds))
-            rows_stab <- c(rows_stab, list(stab_row))
+            config_row <- list(Group = grp_name, Model = model, Dataset = dataset,
+                               Preprocessing = prep, Config = config)
+            rows_stab <- c(rows_stab,
+              list(c(config_row, list(Value = compute_stability(all_seed_preds)))))
+            rows_entropy <- c(rows_entropy,
+              list(c(config_row, list(Value = compute_entropy(all_seed_preds)))))
           }
         }
       }
@@ -204,9 +212,8 @@ load_all_data <- function() {
   list(
     F1        = make_df(rows_f1),
     ECE       = make_df(rows_ece),
-    ConfGap   = make_df(rows_gap), # take out
-    Stability = make_df(rows_stab)
-    # add entropy
+    Stability = make_df(rows_stab),
+    Entropy   = make_df(rows_entropy)
   )
 }
 
@@ -345,10 +352,10 @@ metric_direction <- list(
                    unit = "macro-F1 score"),
   ECE       = list(good = "lower",  positive_is = "harmful (worse calibration)",
                    unit = "ECE (lower = better calibrated)"),
-  ConfGap   = list(good = "higher", positive_is = "beneficial (more discriminative)",
-                   unit = "confidence gap (higher = more discriminative)"),
   Stability = list(good = "lower",  positive_is = "harmful (less stable predictions)",
-                   unit = "avg. unique labels/sample (lower = more stable)")
+                   unit = "avg. unique labels/sample (lower = more stable)"),
+  Entropy   = list(good = "lower",  positive_is = "harmful (less consistent predictions)",
+                   unit = "avg. entropy in bits/sample (lower = more consistent)")
 )
 
 build_fe_interpretation <- function(fe_df, metric_name) {
@@ -515,13 +522,13 @@ data_list <- load_all_data()
 
 cat(sprintf("\nLoaded F1        : %d observations\n", nrow(data_list$F1)))
 cat(sprintf("Loaded ECE       : %d observations\n",  nrow(data_list$ECE)))
-cat(sprintf("Loaded ConfGap   : %d observations\n",  nrow(data_list$ConfGap)))
 cat(sprintf("Loaded Stability : %d observations\n",  nrow(data_list$Stability)))
+cat(sprintf("Loaded Entropy   : %d observations\n",  nrow(data_list$Entropy)))
 
 run_metric(data_list$F1,        "F1")
 run_metric(data_list$ECE,       "ECE")
-run_metric(data_list$ConfGap,   "ConfGap")
 run_metric(data_list$Stability, "Stability")
+run_metric(data_list$Entropy,   "Entropy")
 
 cat("\n", strrep("=", 60), "\n")
 cat(" Done. All results saved to:", OUTPUT_PATH, "\n")
