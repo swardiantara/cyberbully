@@ -144,7 +144,7 @@ The 19 models evaluated, grouped by family, are listed below. All are loaded via
 | | `google/mobilebert-uncased` | 25M |
 | | `albert-base-v2` | 12M |
 | **Recent** | `answerdotai/ModernBERT-base` | 150M |
-| | `liu-nlp/NeoBERT` | 245M |
+| | `chandar-lab/NeoBERT` | 245M |
 
 ---
 
