@@ -7,7 +7,7 @@ import pandas as pd
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.model_selection import train_test_split
 
-from preprocessing import preprocess_dataframe
+from preprocessing import preprocess_dataframe, preprocess_dataframe_partial
 
 logger = logging.getLogger("cyberbully")
 
@@ -186,6 +186,7 @@ def prepare_data(
     data_dir: str,
     preprocess: bool = False,
     augment: bool = False,
+    prep_mode: int = None,
 ):
     """Full data preparation pipeline.
 
@@ -216,13 +217,27 @@ def prepare_data(
     for df in (train_df, val_df, test_df):
         df["raw"] = df["text"]
 
+    # Determine effective preprocessing mode:
+    # prep_mode (0=none, 1=full, 2=partial) takes precedence when given;
+    # otherwise fall back to the legacy --preprocess boolean flag.
+    effective_prep = prep_mode if prep_mode is not None else (1 if preprocess else 0)
+
     # Preprocessing is applied per-split to avoid data leakage and to preserve
     # the original distribution used for splitting.
-    if preprocess:
-        logger.info("Applying text preprocessing per split...")
+    if effective_prep == 1:
+        logger.info("Applying full text preprocessing per split...")
         train_df = preprocess_dataframe(train_df)
         val_df = preprocess_dataframe(val_df)
         test_df = preprocess_dataframe(test_df)
+        logger.info(
+            "After preprocessing -- train: %d, val: %d, test: %d",
+            len(train_df), len(val_df), len(test_df),
+        )
+    elif effective_prep == 2:
+        logger.info("Applying partial text preprocessing per split...")
+        train_df = preprocess_dataframe_partial(train_df)
+        val_df = preprocess_dataframe_partial(val_df)
+        test_df = preprocess_dataframe_partial(test_df)
         logger.info(
             "After preprocessing -- train: %d, val: %d, test: %d",
             len(train_df), len(val_df), len(test_df),

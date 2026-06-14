@@ -39,7 +39,16 @@ def parse_args():
         "--preprocess",
         action="store_true",
         default=False,
-        help="Apply text preprocessing/cleaning",
+        help="Apply full text preprocessing/cleaning (equiv. to --prep_mode 1). "
+             "Ignored when --prep_mode is set.",
+    )
+    parser.add_argument(
+        "--prep_mode",
+        type=int,
+        default=None,
+        choices=[0, 1, 2],
+        help="Preprocessing mode: 0=none, 1=full, 2=partial (transformer-friendly). "
+             "Overrides --preprocess when set.",
     )
     parser.add_argument(
         "--augment",
@@ -150,6 +159,7 @@ def main():
     output_dir = get_output_dir(
         args.output_dir, args.model, args.dataset,
         args.preprocess, args.augment, args.seed,
+        prep_mode=args.prep_mode,
     )
     logger = setup_logging(output_dir)
 
@@ -183,6 +193,7 @@ def main():
         data_dir=args.data_dir,
         preprocess=args.preprocess,
         augment=args.augment,
+        prep_mode=args.prep_mode,
     )
 
     # raw and cleansed are set by prepare_data, guaranteed row-aligned even

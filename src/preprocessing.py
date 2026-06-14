@@ -154,6 +154,16 @@ def remove_short_tweets(tweet: str, min_words: int = 3) -> str:
     return tweet if len(words) >= min_words else ""
 
 
+def strip_minimal_entities(text: str) -> str:
+    """Like strip_all_entities but without punctuation or stopword removal."""
+    if not isinstance(text, str):
+        text = str(text)
+    text = re.sub(r"\r|\n", " ", text.lower())
+    text = re.sub(r"(?:\@|https?\://)\S+", "", text)
+    text = re.sub(r"[^\x00-\x7f]", "", text)
+    return text
+
+
 def clean_tweet(tweet: str) -> str:
     """Apply the full text cleaning pipeline to a single tweet."""
     if not isinstance(tweet, str):
@@ -178,10 +188,38 @@ def clean_tweet(tweet: str) -> str:
     return tweet
 
 
+def clean_tweet_partial(tweet: str) -> str:
+    """Partial preprocessing: removes noise (URLs, mentions, emojis) but preserves
+    morphological features — no punctuation removal, stopwords, numbers, lemmatization,
+    or short-word filtering. Suited for transformer models that rely on full token context."""
+    if not isinstance(tweet, str):
+        tweet = str(tweet)
+    tweet = strip_emoji(tweet)
+    tweet = expand_contractions_text(tweet)
+    tweet = strip_minimal_entities(tweet)
+    tweet = clean_hashtags(tweet)
+    tweet = filter_chars(tweet)
+    tweet = remove_mult_spaces(tweet)
+    tweet = replace_elongated_words(tweet)
+    tweet = remove_repeated_punctuation(tweet)
+    tweet = remove_extra_whitespace(tweet)
+    tweet = remove_url_shorteners(tweet)
+    tweet = remove_spaces_tweets(tweet)
+    tweet = " ".join(tweet.split())
+    return tweet
+
+
 def preprocess_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    """Apply cleaning to the 'text' column, drop empty rows and duplicates."""
+    """Apply full cleaning to the 'text' column."""
     df = df.copy()
     df["text"] = df["text"].apply(clean_tweet)
     # df = df[df["text"].str.strip().astype(bool)].reset_index(drop=False)
     # df = df.drop_duplicates(subset=["text"]).reset_index(drop=True)
+    return df
+
+
+def preprocess_dataframe_partial(df: pd.DataFrame) -> pd.DataFrame:
+    """Apply partial cleaning to the 'text' column (preserves morphological features)."""
+    df = df.copy()
+    df["text"] = df["text"].apply(clean_tweet_partial)
     return df

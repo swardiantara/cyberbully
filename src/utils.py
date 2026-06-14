@@ -28,11 +28,15 @@ def get_output_dir(
     preprocess: bool,
     augment: bool,
     seed: int,
+    prep_mode: int = None,
 ) -> str:
     """Build a systematic output directory path for a single experiment run."""
-    # Sanitize model name (e.g., "bert-base-uncased" -> "bert-base-uncased")
     model_short = model_name.replace("/", "_")
-    prep_flag = "prep1" if preprocess else "prep0"
+    # prep_mode (0/1/2) takes precedence; fall back to legacy --preprocess boolean.
+    if prep_mode is not None:
+        prep_flag = f"prep{prep_mode}"
+    else:
+        prep_flag = "prep1" if preprocess else "prep0"
     aug_flag = "aug1" if augment else "aug0"
     dir_name = os.path.join(model_short, dataset_name, f"{prep_flag}_{aug_flag}", f"seed_{seed}")
     output_dir = os.path.join("experiments", base_dir, dir_name)
