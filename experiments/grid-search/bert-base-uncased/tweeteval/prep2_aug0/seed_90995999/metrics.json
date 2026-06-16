@@ -1,0 +1,56 @@
+{
+  "per_class": {
+    "emotion": {
+      "precision": 0.8318840579710145,
+      "recall": 0.8558648111332008,
+      "f1-score": 0.843704066634003,
+      "support": 1006.0
+    },
+    "hate": {
+      "precision": 0.9461004491629237,
+      "recall": 0.9147256217923411,
+      "f1-score": 0.93014853472501,
+      "support": 2533.0
+    },
+    "offensive": {
+      "precision": 0.9128907622058307,
+      "recall": 0.9255698005698005,
+      "f1-score": 0.9191865605658709,
+      "support": 2808.0
+    },
+    "religion": {
+      "precision": 0.9913957934990439,
+      "recall": 1.0,
+      "f1-score": 0.9956793086893903,
+      "support": 2074.0
+    },
+    "spiritual": {
+      "precision": 0.9994216310005783,
+      "recall": 0.9982668977469671,
+      "f1-score": 0.9988439306358381,
+      "support": 1731.0
+    }
+  },
+  "weighted_avg": {
+    "precision": 0.9439419601360832,
+    "recall": 0.9435579196217494,
+    "f1-score": 0.9436511152200211,
+    "support": 10152.0
+  },
+  "micro_avg": {
+    "precision": 0.9435579196217494,
+    "recall": 0.9435579196217494,
+    "f1-score": 0.9435579196217494,
+    "support": 10152
+  },
+  "macro_avg": {
+    "precision": 0.9363385387678782,
+    "recall": 0.9388854262484619,
+    "f1-score": 0.9375124802500224,
+    "support": 10152.0
+  },
+  "accuracy": 0.9435579196217494,
+  "inference_time_seconds": 5.76037859916687,
+  "energy_kwh": 0.0003541113593031083,
+  "num_test_samples": 10152
+}
