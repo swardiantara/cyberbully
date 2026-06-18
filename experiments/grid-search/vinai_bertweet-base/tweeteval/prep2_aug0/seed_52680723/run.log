@@ -1,0 +1,62 @@
+2026-06-16 10:56:19,518 - cyberbully - INFO - ============================================================
+2026-06-16 10:56:19,518 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-06-16 10:56:19,518 - cyberbully - INFO - ============================================================
+2026-06-16 10:56:19,519 - cyberbully - INFO - Configuration:
+2026-06-16 10:56:19,519 - cyberbully - INFO -   model          : vinai/bertweet-base
+2026-06-16 10:56:19,519 - cyberbully - INFO -   dataset        : tweeteval
+2026-06-16 10:56:19,519 - cyberbully - INFO -   preprocess     : False
+2026-06-16 10:56:19,519 - cyberbully - INFO -   prep_mode      : 2
+2026-06-16 10:56:19,519 - cyberbully - INFO -   augment        : False
+2026-06-16 10:56:19,519 - cyberbully - INFO -   compute_attribution: False
+2026-06-16 10:56:19,519 - cyberbully - INFO -   seed           : 52680723
+2026-06-16 10:56:19,519 - cyberbully - INFO -   epochs         : 10
+2026-06-16 10:56:19,519 - cyberbully - INFO -   batch_size     : 32
+2026-06-16 10:56:19,519 - cyberbully - INFO -   lr             : 5e-05
+2026-06-16 10:56:19,519 - cyberbully - INFO -   max_length     : 128
+2026-06-16 10:56:19,519 - cyberbully - INFO -   output_dir     : grid-search
+2026-06-16 10:56:19,519 - cyberbully - INFO -   data_dir       : dataset
+2026-06-16 10:56:19,519 - cyberbully - INFO -   sbert          : False
+2026-06-16 10:56:19,519 - cyberbully - INFO -   supcon         : False
+2026-06-16 10:56:19,519 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-06-16 10:56:19,519 - cyberbully - INFO -   proj_dim       : 128
+2026-06-16 10:56:19,519 - cyberbully - INFO -   grad_accum_steps: 1
+2026-06-16 10:56:19,519 - cyberbully - INFO -   overwrite      : False
+2026-06-16 10:56:19,519 - cyberbully - INFO -   device         : cuda
+2026-06-16 10:56:19,519 - cyberbully - INFO -   output_dir     : experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723
+2026-06-16 10:56:19,519 - cyberbully - INFO - ============================================================
+2026-06-16 10:56:19,519 - cyberbully - INFO - Step 1: Preparing data...
+2026-06-16 10:56:19,567 - cyberbully - INFO - Loaded pre-split data from dataset/tweeteval — train: 32485, val: 8122, test: 10152
+2026-06-16 10:56:19,567 - cyberbully - INFO - Label mapping: {'emotion': 0, 'hate': 1, 'offensive': 2, 'religion': 3, 'spiritual': 4}
+2026-06-16 10:56:19,568 - cyberbully - INFO - Applying partial text preprocessing per split...
+2026-06-16 10:56:21,211 - cyberbully - INFO - After preprocessing -- train: 32485, val: 8122, test: 10152
+2026-06-16 10:56:21,216 - cyberbully - INFO - Number of classes: 5
+2026-06-16 10:56:21,217 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-06-16 10:56:21,217 - cyberbully - INFO - Loading model 'vinai/bertweet-base' with 5 labels (sbert=False, supcon=False)
+2026-06-16 10:56:23,677 - cyberbully - INFO - Step 3: Creating datasets...
+2026-06-16 10:56:29,345 - cyberbully - INFO - Dataset sizes — train: 32485, val: 8122, test: 10152
+2026-06-16 10:56:29,345 - cyberbully - INFO - Step 4: Training...
+2026-06-16 10:56:29,569 - cyberbully - INFO - Starting training...
+2026-06-16 11:12:52,629 - cyberbully - INFO - Training complete.
+2026-06-16 11:12:52,707 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-3048
+2026-06-16 11:12:52,787 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-7112
+2026-06-16 11:12:52,866 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-9144
+2026-06-16 11:12:52,947 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-1016
+2026-06-16 11:12:53,026 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-2032
+2026-06-16 11:12:53,120 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-10160
+2026-06-16 11:12:53,198 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-6096
+2026-06-16 11:12:53,277 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-5080
+2026-06-16 11:12:53,356 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-8128
+2026-06-16 11:12:53,436 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/checkpoint-4064
+2026-06-16 11:12:53,436 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-06-16 11:13:06,589 - cyberbully - INFO - Metrics saved to experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/metrics.json
+2026-06-16 11:13:06,590 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/confusion_matrix.json
+2026-06-16 11:13:06,696 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/predictions.json
+2026-06-16 11:13:06,801 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723/confusion_matrix.pdf
+2026-06-16 11:13:06,802 - cyberbully - INFO - Accuracy: 0.9408
+2026-06-16 11:13:06,802 - cyberbully - INFO - Weighted F1: 0.9407
+2026-06-16 11:13:06,802 - cyberbully - INFO - Micro F1: 0.9408
+2026-06-16 11:13:06,802 - cyberbully - INFO - Inference time: 7.00 seconds
+2026-06-16 11:13:06,802 - cyberbully - INFO - Energy consumption: 0.000442 kWh
+2026-06-16 11:13:06,804 - cyberbully - INFO - ============================================================
+2026-06-16 11:13:06,804 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/vinai_bertweet-base/tweeteval/prep2_aug0/seed_52680723
+2026-06-16 11:13:06,804 - cyberbully - INFO - ============================================================
