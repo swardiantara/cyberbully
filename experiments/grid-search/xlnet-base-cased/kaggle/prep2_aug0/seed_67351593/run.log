@@ -1,0 +1,62 @@
+2026-06-17 13:10:35,266 - cyberbully - INFO - ============================================================
+2026-06-17 13:10:35,266 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-06-17 13:10:35,266 - cyberbully - INFO - ============================================================
+2026-06-17 13:10:35,266 - cyberbully - INFO - Configuration:
+2026-06-17 13:10:35,266 - cyberbully - INFO -   model          : xlnet-base-cased
+2026-06-17 13:10:35,266 - cyberbully - INFO -   dataset        : kaggle
+2026-06-17 13:10:35,266 - cyberbully - INFO -   preprocess     : False
+2026-06-17 13:10:35,266 - cyberbully - INFO -   prep_mode      : 2
+2026-06-17 13:10:35,266 - cyberbully - INFO -   augment        : False
+2026-06-17 13:10:35,266 - cyberbully - INFO -   compute_attribution: False
+2026-06-17 13:10:35,266 - cyberbully - INFO -   seed           : 67351593
+2026-06-17 13:10:35,266 - cyberbully - INFO -   epochs         : 10
+2026-06-17 13:10:35,266 - cyberbully - INFO -   batch_size     : 32
+2026-06-17 13:10:35,266 - cyberbully - INFO -   lr             : 5e-05
+2026-06-17 13:10:35,266 - cyberbully - INFO -   max_length     : 128
+2026-06-17 13:10:35,266 - cyberbully - INFO -   output_dir     : grid-search
+2026-06-17 13:10:35,266 - cyberbully - INFO -   data_dir       : dataset
+2026-06-17 13:10:35,266 - cyberbully - INFO -   sbert          : False
+2026-06-17 13:10:35,266 - cyberbully - INFO -   supcon         : False
+2026-06-17 13:10:35,266 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-06-17 13:10:35,266 - cyberbully - INFO -   proj_dim       : 128
+2026-06-17 13:10:35,266 - cyberbully - INFO -   grad_accum_steps: 1
+2026-06-17 13:10:35,266 - cyberbully - INFO -   overwrite      : False
+2026-06-17 13:10:35,266 - cyberbully - INFO -   device         : cuda
+2026-06-17 13:10:35,266 - cyberbully - INFO -   output_dir     : experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593
+2026-06-17 13:10:35,266 - cyberbully - INFO - ============================================================
+2026-06-17 13:10:35,266 - cyberbully - INFO - Step 1: Preparing data...
+2026-06-17 13:10:35,313 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-06-17 13:10:35,313 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-06-17 13:10:35,314 - cyberbully - INFO - Applying partial text preprocessing per split...
+2026-06-17 13:10:36,626 - cyberbully - INFO - After preprocessing -- train: 25604, val: 6401, test: 8002
+2026-06-17 13:10:36,629 - cyberbully - INFO - Number of classes: 5
+2026-06-17 13:10:36,631 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-06-17 13:10:36,631 - cyberbully - INFO - Loading model 'xlnet-base-cased' with 5 labels (sbert=False, supcon=False)
+2026-06-17 13:10:39,530 - cyberbully - INFO - Step 3: Creating datasets...
+2026-06-17 13:10:40,325 - cyberbully - INFO - Dataset sizes — train: 25604, val: 6401, test: 8002
+2026-06-17 13:10:40,325 - cyberbully - INFO - Step 4: Training...
+2026-06-17 13:10:40,566 - cyberbully - INFO - Starting training...
+2026-06-17 13:29:56,659 - cyberbully - INFO - Training complete.
+2026-06-17 13:29:56,727 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-5607
+2026-06-17 13:29:56,808 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-8010
+2026-06-17 13:29:56,876 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-6408
+2026-06-17 13:29:56,948 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-1602
+2026-06-17 13:29:57,017 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-3204
+2026-06-17 13:29:57,085 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-7209
+2026-06-17 13:29:57,153 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-4005
+2026-06-17 13:29:57,222 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-4806
+2026-06-17 13:29:57,293 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-801
+2026-06-17 13:29:57,362 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/checkpoint-2403
+2026-06-17 13:29:57,363 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-06-17 13:30:13,410 - cyberbully - INFO - Metrics saved to experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/metrics.json
+2026-06-17 13:30:13,410 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/confusion_matrix.json
+2026-06-17 13:30:13,496 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/predictions.json
+2026-06-17 13:30:13,603 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593/confusion_matrix.pdf
+2026-06-17 13:30:13,603 - cyberbully - INFO - Accuracy: 0.9486
+2026-06-17 13:30:13,603 - cyberbully - INFO - Weighted F1: 0.9488
+2026-06-17 13:30:13,603 - cyberbully - INFO - Micro F1: 0.9486
+2026-06-17 13:30:13,603 - cyberbully - INFO - Inference time: 9.90 seconds
+2026-06-17 13:30:13,603 - cyberbully - INFO - Energy consumption: 0.000609 kWh
+2026-06-17 13:30:13,605 - cyberbully - INFO - ============================================================
+2026-06-17 13:30:13,605 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/xlnet-base-cased/kaggle/prep2_aug0/seed_67351593
+2026-06-17 13:30:13,605 - cyberbully - INFO - ============================================================
