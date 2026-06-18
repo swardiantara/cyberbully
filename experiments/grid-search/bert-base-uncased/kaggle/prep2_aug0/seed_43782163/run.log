@@ -1,0 +1,62 @@
+2026-06-14 21:42:18,642 - cyberbully - INFO - ============================================================
+2026-06-14 21:42:18,642 - cyberbully - INFO - Cyberbullying Detection Pipeline
+2026-06-14 21:42:18,642 - cyberbully - INFO - ============================================================
+2026-06-14 21:42:18,642 - cyberbully - INFO - Configuration:
+2026-06-14 21:42:18,642 - cyberbully - INFO -   model          : bert-base-uncased
+2026-06-14 21:42:18,642 - cyberbully - INFO -   dataset        : kaggle
+2026-06-14 21:42:18,642 - cyberbully - INFO -   preprocess     : False
+2026-06-14 21:42:18,642 - cyberbully - INFO -   prep_mode      : 2
+2026-06-14 21:42:18,642 - cyberbully - INFO -   augment        : False
+2026-06-14 21:42:18,642 - cyberbully - INFO -   compute_attribution: False
+2026-06-14 21:42:18,642 - cyberbully - INFO -   seed           : 43782163
+2026-06-14 21:42:18,642 - cyberbully - INFO -   epochs         : 10
+2026-06-14 21:42:18,642 - cyberbully - INFO -   batch_size     : 32
+2026-06-14 21:42:18,642 - cyberbully - INFO -   lr             : 5e-05
+2026-06-14 21:42:18,642 - cyberbully - INFO -   max_length     : 128
+2026-06-14 21:42:18,643 - cyberbully - INFO -   output_dir     : grid-search
+2026-06-14 21:42:18,643 - cyberbully - INFO -   data_dir       : dataset
+2026-06-14 21:42:18,643 - cyberbully - INFO -   sbert          : False
+2026-06-14 21:42:18,643 - cyberbully - INFO -   supcon         : False
+2026-06-14 21:42:18,643 - cyberbully - INFO -   supcon_weight  : 0.1
+2026-06-14 21:42:18,643 - cyberbully - INFO -   proj_dim       : 128
+2026-06-14 21:42:18,643 - cyberbully - INFO -   grad_accum_steps: 1
+2026-06-14 21:42:18,643 - cyberbully - INFO -   overwrite      : False
+2026-06-14 21:42:18,643 - cyberbully - INFO -   device         : cuda
+2026-06-14 21:42:18,643 - cyberbully - INFO -   output_dir     : experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163
+2026-06-14 21:42:18,643 - cyberbully - INFO - ============================================================
+2026-06-14 21:42:18,643 - cyberbully - INFO - Step 1: Preparing data...
+2026-06-14 21:42:18,691 - cyberbully - INFO - Loaded pre-split data from dataset/kaggle — train: 25604, val: 6401, test: 8002
+2026-06-14 21:42:18,691 - cyberbully - INFO - Label mapping: {'age': 0, 'ethnicity': 1, 'gender': 2, 'other_cyberbullying': 3, 'religion': 4}
+2026-06-14 21:42:18,692 - cyberbully - INFO - Applying partial text preprocessing per split...
+2026-06-14 21:42:20,110 - cyberbully - INFO - After preprocessing -- train: 25604, val: 6401, test: 8002
+2026-06-14 21:42:20,114 - cyberbully - INFO - Number of classes: 5
+2026-06-14 21:42:20,115 - cyberbully - INFO - Step 2: Loading model and tokenizer...
+2026-06-14 21:42:20,115 - cyberbully - INFO - Loading model 'bert-base-uncased' with 5 labels (sbert=False, supcon=False)
+2026-06-14 21:42:21,516 - cyberbully - INFO - Step 3: Creating datasets...
+2026-06-14 21:42:22,185 - cyberbully - INFO - Dataset sizes — train: 25604, val: 6401, test: 8002
+2026-06-14 21:42:22,185 - cyberbully - INFO - Step 4: Training...
+2026-06-14 21:42:22,418 - cyberbully - INFO - Starting training...
+2026-06-14 21:54:42,775 - cyberbully - INFO - Training complete.
+2026-06-14 21:54:42,854 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-4806
+2026-06-14 21:54:42,936 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-7209
+2026-06-14 21:54:43,018 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-6408
+2026-06-14 21:54:43,097 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-5607
+2026-06-14 21:54:43,198 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-8010
+2026-06-14 21:54:43,279 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-3204
+2026-06-14 21:54:43,361 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-1602
+2026-06-14 21:54:43,444 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-801
+2026-06-14 21:54:43,525 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-2403
+2026-06-14 21:54:43,608 - cyberbully - INFO - Removed checkpoint: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/checkpoint-4005
+2026-06-14 21:54:43,608 - cyberbully - INFO - Step 5: Evaluating on test set...
+2026-06-14 21:54:54,610 - cyberbully - INFO - Metrics saved to experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/metrics.json
+2026-06-14 21:54:54,610 - cyberbully - INFO - Confusion matrix saved to experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/confusion_matrix.json
+2026-06-14 21:54:54,704 - cyberbully - INFO - Per-sample predictions saved to experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/predictions.json
+2026-06-14 21:54:54,824 - cyberbully - INFO - Confusion matrix figure saved to experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163/confusion_matrix.pdf
+2026-06-14 21:54:54,824 - cyberbully - INFO - Accuracy: 0.9455
+2026-06-14 21:54:54,825 - cyberbully - INFO - Weighted F1: 0.9457
+2026-06-14 21:54:54,825 - cyberbully - INFO - Micro F1: 0.9455
+2026-06-14 21:54:54,825 - cyberbully - INFO - Inference time: 4.86 seconds
+2026-06-14 21:54:54,825 - cyberbully - INFO - Energy consumption: 0.000303 kWh
+2026-06-14 21:54:54,826 - cyberbully - INFO - ============================================================
+2026-06-14 21:54:54,826 - cyberbully - INFO - Pipeline complete. Results saved to: experiments/grid-search/bert-base-uncased/kaggle/prep2_aug0/seed_43782163
+2026-06-14 21:54:54,826 - cyberbully - INFO - ============================================================
